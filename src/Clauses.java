@@ -25,10 +25,14 @@ public class Clauses {
 	public String toString() {
 		String output = "";
 		for (int i = 0; i < clauses.size() - 1; i ++) {
-			output += clauses.get(i) + "^";
+			output += clauses.get(i) + " ^ ";
 		}
 		output += clauses.get(clauses.size() - 1);
 		return output;
+	}
+	
+	public ArrayList<Clause> getClauses() {
+		return clauses;
 	}
 	
 }
