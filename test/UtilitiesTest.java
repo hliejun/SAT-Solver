@@ -3,31 +3,34 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ClauseTest {
+public class UtilitiesTest {
 
-	Clause clause;
 	@Before
 	public void setUp() throws Exception {
-		clause = new Clause();
 	}
 
 	@Test
-	public void testAdd() {
+	public void testConvertToString() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testRemove() {
+	public void testConvertToInt() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetClause() {
+	public void testSplitBySpace() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testToString() {
+	public void testIsCommentLine() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testIsLitPos() {
 		fail("Not yet implemented");
 	}
 

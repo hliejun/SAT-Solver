@@ -3,7 +3,7 @@ public class Literal {
 	private int variable;
 	private boolean truthValue;
 	
-	public Literal(String var, boolean value) {
+	public Literal(String var, boolean value) throws NumberFormatException{
 		variable = Utilities.convertToInt(var);
 		truthValue = value;
 	}
@@ -22,7 +22,6 @@ public class Literal {
 	}
 
 	public String toString() {
-		return (truthValue) ? Utilities.convertToString(variable) 
-				: "-" + Utilities.convertToString(variable);
+		return Utilities.convertToString(variable);
 	}
 }

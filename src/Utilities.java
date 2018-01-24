@@ -5,7 +5,14 @@ public class Utilities {
 	}
 	
 	public static int convertToInt(String s) {
-		return Integer.parseInt(s);
+		int result = 0;
+		try {
+			result = Integer.parseInt(s);
+			if (s.equals("0")) {
+				throw new NumberFormatException("Invalid literal detected : " + s);
+			}
+		} catch (NumberFormatException nfe) {}
+		return result;
 	}
 	
 	public static String[] splitBySpace(String s) {
