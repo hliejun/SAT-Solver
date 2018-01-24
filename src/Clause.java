@@ -15,14 +15,14 @@ public class Clause {
 		literals.remove(l);
 	}
 	
-	public ArrayList<Literal> getClause() {
+	public ArrayList<Literal> getLiterals() {
 		return literals;
 	}
 	
 	public String toString() {
 		String output = "(";
 		for (int i = 0; i < literals.size() - 1; i ++) {
-			output += literals.get(i) + "V";
+			output += literals.get(i) + " V ";
 		}
 		output += literals.get(literals.size() - 1);
 		output += ")";

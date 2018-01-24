@@ -5,10 +5,6 @@ import org.junit.Test;
 
 public class UtilitiesTest {
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
 	@Test
 	public void testConvertToString() {
 		fail("Not yet implemented");
