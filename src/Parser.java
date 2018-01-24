@@ -1,18 +1,21 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Parser {
-	Path path;
-	BufferedReader reader;
-	int numOfClauses;
-	int numOfLiterals;
+	private String fileName;
+	private BufferedReader reader;
+	private int numOfClauses;
+	private int numOfLiterals;
+	
 	public Parser(String fileName) {
-		path = Paths.get(fileName);
+		this.fileName = fileName;
 	}
 	
 	public Clauses parse(){
@@ -35,19 +38,19 @@ public class Parser {
 	}
 	
 	private void readToProblemStmt() {
-		try (BufferedReader br = Files.newBufferedReader(path,
-	            StandardCharsets.US_ASCII)) {
-			String line = br.readLine();
+		try {
+			File file = new File(fileName);
+			reader = new BufferedReader(new FileReader(file));
+			String line = reader.readLine();
 			while (line != null && Utilities.isCommentLine(line)) {
-				line = br.readLine();
+				line = reader.readLine();
 			}
 			init(line);
-			reader = br;
 		} catch (FileNotFoundException fnfe) {
 			System.out.println("File does not exist");
 			System.exit(0);
 		} catch (IOException ioe) {
-			System.out.print(ioe.getMessage());
+			System.out.println(ioe.getMessage());
 			System.exit(0);
 		}
 	}
@@ -56,5 +59,13 @@ public class Parser {
 		String[] input = Utilities.splitBySpace(line);
 		numOfLiterals = Utilities.convertToInt(input[input.length - 2]);
 		numOfClauses = Utilities.convertToInt(input[input.length - 1]);
+	}
+	
+	public int getNumOfClauses() {
+		return numOfClauses;
+	}
+	
+	public int getNumOfLiterals() {
+		return numOfLiterals;
 	}
 }
