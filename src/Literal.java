@@ -1,27 +1,71 @@
+public class Literal implements Comparable<Literal> {
+    private boolean sign;
+    private String label;
+    private Boolean truthValue;
 
-public class Literal {
-	private int variable;
-	private boolean truthValue;
-	
-	public Literal(String var, boolean value) throws NumberFormatException{
-		variable = Utilities.convertToInt(var);
-		truthValue = value;
-	}
-	
-	public void toggle() {
-		variable *= -1;
-		truthValue = !truthValue;
-	}
-	
-	public boolean getValue() {
-		return truthValue;
-	}
-	
-	public int getVariable() {
-		return variable;
-	}
+    public Literal(String variable) {
+        sign = Utilities.isPositive(variable);
+        label = Utilities.removeSignsAndSpaces(variable);
+        truthValue = null;
+    }
 
-	public String toString() {
-		return Utilities.convertToString(variable);
-	}
+    public Literal(String variable, boolean value) {
+        this(variable);
+        truthValue = value;
+    }
+
+    public void toggleValue() {
+        truthValue = !truthValue;
+    }
+
+    public void toggleSign() {
+        sign = !sign;
+    }
+
+    public boolean getLiteralSign() {
+        return sign;
+    }
+
+    public Boolean getLiteralValue() {
+        return truthValue;
+    }
+
+    public String getLiteralName() {
+        return label;
+    }
+
+    public Boolean evaluate() {
+        return truthValue == null ? null : !(sign ^ truthValue);
+    }
+
+    public String toString() {
+        return sign ? label : String.format("-%s", label);
+    }
+
+    @Override
+    public int compareTo(Literal otherLiteral) {
+        if (!label.equals(otherLiteral.label)) {
+            return label.compareTo(otherLiteral.label);
+        } else if (sign != otherLiteral.sign) {
+            return sign ? 1 : -1;
+        } else {
+            return 0;
+        }
+    }
+
+    @Override
+    public boolean equals(Object otherObject) {
+        if (otherObject == this) {
+            return true;
+        } else if (!(otherObject instanceof Literal)) {
+            return false;
+        }
+        Literal otherLiteral = (Literal) otherObject;
+        if ((truthValue != null && truthValue.equals(otherLiteral.truthValue))
+                || (truthValue == null && otherLiteral.truthValue == null)) {
+            return sign == otherLiteral.sign && label.equals(otherLiteral.label);
+        } else {
+            return false;
+        }
+    }
 }

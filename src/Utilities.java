@@ -1,29 +1,33 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.stream.Collectors;
 
 public class Utilities {
-	public static String convertToString(int i) {
-		return Integer.toString(i);
-	}
-	
-	public static int convertToInt(String s) {
-		int result = 0;
-		try {
-			result = Integer.parseInt(s);
-			if (s.equals("0")) {
-				throw new NumberFormatException("Invalid literal detected : " + s);
-			}
-		} catch (NumberFormatException nfe) {}
-		return result;
-	}
-	
-	public static String[] splitBySpace(String s) {
-		return s.split("\\s+");
-	}
-	
-	public static boolean isCommentLine(String line) {
-		return line.charAt(0) == 'c';
-	}
-	
-	public static boolean isLitPos(String lit) {
-		return (lit.indexOf("-") == -1);
-	}
+    public static String[] tokenizeAndRemoveZero(String input) {
+        return tokenizeAndRemoveZero(input, "\\s+");
+    }
+
+    public static String[] tokenizeAndRemoveZero(String input, String token) {
+        String[] output = input.trim().split(token);
+        if (output.length != 0 && output[output.length - 1].equals("0")) {
+            output = Arrays.copyOfRange(output, 0, output.length - 1);
+        }
+        return output;
+    }
+
+    public static String removeSignsAndSpaces(String input) {
+        return input.replaceAll("[\\s+-]+", "").toUpperCase();
+    }
+
+    public static boolean isComment(String line) {
+        return line.charAt(0) == 'c';
+    }
+
+    public static boolean isPositive(String literal) {
+        return literal.indexOf("-") == -1;
+    }
+
+    public static String implode(Collection collection, String separator) {
+        return collection.stream().map(Object::toString).collect(Collectors.joining(separator)).toString();
+    }
 }

@@ -3,39 +3,54 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class ClausesTest {
-	Clauses dummyClauses = new Clauses();
-	Literal dummyLit = new Literal("1", true);
-	Literal dummyLit2 = new Literal("-2", false);
-	Literal dummyLit3 = new Literal("10", true);
-	
-	@Before
-	public void setUp() throws Exception {
-		dummyClauses.addClause(new String[] {"1", "10", "0"});
-		dummyClauses.addClause(new String[] {"-2", "1", "0"});
-		dummyClauses.addClause(new String[] {"1", "-2", "10", "0"});
-	}
+    Clauses clauses;
+    Clause clauseA, clauseB, clauseC;
+    Literal literalA, literalNotB, literalC;
+    ArrayList<Literal> literals;
 
-	@Test
-	public void testAddClause() {
-		String[] expected = new String[] {"1", "2", "0"};
-		Clauses clauses = new Clauses();
-		clauses.addClause(expected);
-		assertTrue(clauses.getClauses().size() == 1);
-		for(int i = 0; i < clauses.getClauses().size(); i ++) {
-			Clause c = clauses.getClauses().get(i);
-			assertTrue(c.getLiterals().size() == 2);
-			for(int j = 0; j < c.getLiterals().size(); j ++) {
-				assertTrue(c.getLiterals().get(j).getVariable() == j + 1);
-				assertTrue(c.getLiterals().get(j).getValue());
-			}
-		}
-	}
+    @Before
+    public void setUp() throws Exception {
+        literalA = new Literal("A", true);
+        literalNotB = new Literal("-B", false);
+        literalC = new Literal("C", true);
+        literals = new ArrayList<Literal>();
+        literals.add(literalA);
+        literals.add(literalNotB);
+        literals.add(literalC);
+        clauseA = new Clause(new ArrayList<Literal>(literals.subList(0, 2)));
+        clauseB = new Clause(new ArrayList<Literal>(literals.subList(1, 3)));
+        clauseC = new Clause(literals);
+        clauses = new Clauses();
+        clauses.addClause(clauseA);
+        clauses.addClause(clauseB);
+        clauses.addClause(clauseC);
+    }
 
-	@Test
-	public void testToString() {
-		String expected = "(1 V 10) ^ (-2 V 1) ^ (1 V -2 V 10)";
-		assertTrue(dummyClauses.toString().equals(expected));
-	}
+    @Test
+    public void testAddClause() {
+        Clause clauseD = new Clause(new ArrayList<Literal>(literals.subList(1, 2)));
+        assertEquals("This clause set should contain 3 clauses.", 3, clauses.getClausesSet().size());
+        clauses.addClause(clauseD);
+        assertEquals(
+                "This clause set should contain 4 clauses after adding.",
+                4,
+                clauses.getClausesSet().size()
+        );
+        assertTrue(
+                "This clause set should contain the newly added clause.",
+                clauses.getClausesSet().contains(clauseD)
+        );
+    }
 
+    @Test
+    public void testToString() {
+        assertEquals(
+                "This clause set should be converted to string: '(A V -B) ^ (-B V C) ^ (A V -B V C)'.",
+                "(A V -B) ^ (-B V C) ^ (A V -B V C)",
+                clauses.toString()
+        );
+    }
 }

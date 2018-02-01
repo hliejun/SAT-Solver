@@ -5,29 +5,29 @@ import org.junit.Test;
 
 public class UtilitiesTest {
 
-	@Test
-	public void testConvertToString() {
-		fail("Not yet implemented");
-	}
+    @Test
+    public void testTokenizeAndRemoveZero() {
+        fail("Not yet implemented");
+    }
 
-	@Test
-	public void testConvertToInt() {
-		fail("Not yet implemented");
-	}
+    @Test
+    public void testRemoveSignsAndSpaces() {
+        fail("Not yet implemented");
+    }
 
-	@Test
-	public void testSplitBySpace() {
-		fail("Not yet implemented");
-	}
+    @Test
+    public void testIsComment() {
+        fail("Not yet implemented");
+    }
 
-	@Test
-	public void testIsCommentLine() {
-		fail("Not yet implemented");
-	}
+    @Test
+    public void testIsPositive() {
+        fail("Not yet implemented");
+    }
 
-	@Test
-	public void testIsLitPos() {
-		fail("Not yet implemented");
-	}
+    @Test
+    public void testImplode() {
+        fail("Not yet implemented");
+    }
 
 }
