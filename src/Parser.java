@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import DataStructures.*;
+
 public class Parser {
     private BufferedReader reader;
     private String fileName;

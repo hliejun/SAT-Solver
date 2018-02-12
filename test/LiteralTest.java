@@ -6,6 +6,8 @@ import org.junit.rules.ExpectedException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import DataStructures.*;
+
 public class LiteralTest {
     private String variable;
     private boolean value;

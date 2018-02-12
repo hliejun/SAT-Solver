@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import DataStructures.*;
+
 public class ClausesTest {
     Clauses clauses;
     Clause clauseA, clauseB, clauseC;

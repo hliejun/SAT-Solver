@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
+import DataStructures.*;
+
 public class ClauseTest {
     Clause clause;
     Literal literalA, literalNotB, literalC;

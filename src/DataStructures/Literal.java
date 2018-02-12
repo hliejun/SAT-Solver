@@ -1,3 +1,5 @@
+package DataStructures;
+
 public class Literal implements Comparable<Literal> {
     private boolean sign;
     private String label;
