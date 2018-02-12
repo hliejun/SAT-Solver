@@ -74,4 +74,5 @@ public class Clause implements Comparable<Clause> {
             return this.literals.equals(((Clause) otherObject).literals);
         }
     }
+
 }

@@ -2,7 +2,7 @@ package DataStructures;
 
 public class Literal implements Comparable<Literal> {
     private boolean sign;
-    private String label;
+    private final String label;
     private Boolean truthValue;
 
     public Literal(String variable) {
@@ -70,4 +70,10 @@ public class Literal implements Comparable<Literal> {
             return false;
         }
     }
+
+    @Override
+    public int hashCode() {
+        return label.hashCode();
+    }
+
 }

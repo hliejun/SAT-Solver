@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 public class Utilities {
+
     public static String[] tokenizeAndRemoveZero(String input) {
         return tokenizeAndRemoveZero(input, "\\s+");
     }
@@ -32,4 +33,5 @@ public class Utilities {
     public static String implode(Collection collection, String separator) {
         return collection.stream().map(Object::toString).collect(Collectors.joining(separator)).toString();
     }
+
 }

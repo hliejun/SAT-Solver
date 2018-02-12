@@ -65,4 +65,5 @@ public class Parser {
     public int getNumOfLiterals() {
         return numOfLiterals;
     }
+
 }

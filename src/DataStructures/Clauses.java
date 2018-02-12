@@ -32,6 +32,12 @@ public class Clauses implements Comparable<Clauses> {
         return clauses;
     }
 
+    public HashSet<Literal> getLiteralSet() {
+        HashSet<Literal> literals = new HashSet<Literal>();
+        clauses.forEach(clause -> literals.addAll(clause.getLiteralsSet()));
+        return literals;
+    }
+
     public ArrayList<Clause> toArray() {
         ArrayList<Clause> listOfClauses = new ArrayList<Clause>(clauses);
         Collections.sort(listOfClauses);
@@ -71,4 +77,5 @@ public class Clauses implements Comparable<Clauses> {
             return this.clauses.equals(((Clauses) otherObject).clauses);
         }
     }
+
 }

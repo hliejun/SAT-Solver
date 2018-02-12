@@ -2,7 +2,7 @@ package Solvers;
 
 import DataStructures.*;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class DPLLSolver extends Solver {
 
@@ -11,18 +11,36 @@ public class DPLLSolver extends Solver {
     }
 
     @Override
-    public HashSet<Literal> solve() {
+    public HashMap<String, Boolean> solve() {
+        resetSolver();
+        while (!isAllAssigned()) {
+            Literal assignment = pickBranchingAssignment();
+            if (assignment == null) {
+                return null; // Cannot find an assignment: UNSAT
+            }
+            if (propagateUnit(assignment.getLiteralName(), assignment.getLiteralValue())) {
+                level += 1;
+                continue;
+            }
+            Clauses conflicts = analyzeConflict();
+            level = backtrack(conflicts);
+            if (level == null) {
+                return null; // Cannot determine a backtrack point: UNSAT
+            }
+        }
+        return state.get(level);
+    }
+
+    @Override
+    protected Literal pickBranchingAssignment() {
+        // DPLL does this chronologically, independent of conflicts
         return null;
     }
 
     @Override
-    protected Literal pickBranchingVariable() {
-        return null;
-    }
-
-    @Override
-    protected Boolean propagateUnit() {
-        return null;
+    protected boolean propagateUnit(String variable, Boolean value) {
+        // Need to modify the states / attempts here...
+        return false;
     }
 
     @Override
@@ -31,12 +49,8 @@ public class DPLLSolver extends Solver {
     }
 
     @Override
-    protected Integer backtrack() {
-        return null;
-    }
-
-    @Override
-    protected Boolean isAllAssigned() {
+    protected Integer backtrack(Clauses conflicts) {
+        // Need to modify the states / attempts here...
         return null;
     }
 

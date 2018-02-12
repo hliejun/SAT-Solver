@@ -2,7 +2,7 @@ package Solvers;
 
 import DataStructures.*;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class CDCLSolver extends Solver {
 
@@ -11,18 +11,18 @@ public class CDCLSolver extends Solver {
     }
 
     @Override
-    public HashSet<Literal> solve() {
+    public HashMap<String, Boolean> solve() {
         return null;
     }
 
     @Override
-    protected Literal pickBranchingVariable() {
+    protected Literal pickBranchingAssignment() {
         return null;
     }
 
     @Override
-    protected Boolean propagateUnit() {
-        return null;
+    protected boolean propagateUnit(String variable, Boolean value) {
+        return false;
     }
 
     @Override
@@ -31,12 +31,7 @@ public class CDCLSolver extends Solver {
     }
 
     @Override
-    protected Integer backtrack() {
-        return null;
-    }
-
-    @Override
-    protected Boolean isAllAssigned() {
+    protected Integer backtrack(Clauses conflicts) {
         return null;
     }
 
