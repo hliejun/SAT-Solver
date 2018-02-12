@@ -16,6 +16,8 @@ abstract public class Solver {
     protected HashMap<Integer, HashSet<Literal>> attempts;
     // Level: The current level that the solver is operating in
     protected Integer level;
+    // Learnt Clauses: The "mistakes" that CDCL learnt not to repeat
+    protected Clauses learntClauses;
 
     public Solver(Clauses clauses) {
         formula = clauses;
