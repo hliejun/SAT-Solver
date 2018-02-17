@@ -49,16 +49,21 @@ public class Clause implements Comparable<Clause> {
     public int compareTo(Clause otherClause) {
         if (literals.equals(otherClause.literals)) {
             return 0;
-        } else if (literals.size() != otherClause.literals.size()) {
-            return literals.size() <= otherClause.literals.size() ? -1 : 1;
-        } else {
+        }
+//        } else if (literals.size() != otherClause.literals.size()) {
+//            return literals.size() <= otherClause.literals.size() ? -1 : 1;
+//        } else {
+        else {
             ArrayList<Literal> literalsList = toArray();
             ArrayList<Literal> otherLiteralsList = otherClause.toArray();
+            int order = 0;
             for (int index = 0; index < literalsList.size(); index++) {
-                int order = literalsList.get(index).compareTo(otherLiteralsList.get(index));
-                if (order != 0) {
-                    return order;
+                for (int otherIndex = 0; otherIndex < otherLiteralsList.size(); otherIndex++) {
+                    order += literalsList.get(index).compareTo(otherLiteralsList.get(otherIndex));
                 }
+            }
+            if (order != 0) {
+                return -1 * order;
             }
             return 0;
         }
