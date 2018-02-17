@@ -7,11 +7,9 @@ public class Assignment {
     private static final int F = -1;
     private static final int U = 0;
 
-    private final int literalsCount;
     private final int[] assignments;
 
     public Assignment(int literalsCount) {
-        this.literalsCount = literalsCount;
         this.assignments = new int[literalsCount];
     }
 

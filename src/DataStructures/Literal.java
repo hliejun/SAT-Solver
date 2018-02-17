@@ -28,6 +28,23 @@ public class Literal implements Comparable<Literal> {
         return sign;
     }
 
+    public boolean isConflicting(Assignment assignment) {
+        Boolean assignTruth = assignment.getAssignValue(getLiteralInteger() - 1);
+        if (assignTruth == null) {
+            return false;
+        }
+
+        if (assignTruth == true && !isPositive()) {
+            return true;
+        }
+
+        if (assignTruth == false && isPositive()) {
+            return true;
+        }
+
+        return false;
+    }
+
     public Boolean getLiteralValue() {
         return truthValue;
     }

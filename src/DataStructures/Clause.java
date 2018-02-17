@@ -46,14 +46,11 @@ public class Clause implements Comparable<Clause> {
 
     public boolean isConflicting(Assignment assignment) {
         for (Literal literal : literals) {
-            if (assignment.isUnassigned(literal.getLiteralName())) {
-                return false;
-            }
-            if (assignment.isTrue(literal.getLiteralName())) {
-                return false;
+            if (literal.isConflicting(assignment)) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public boolean isUnitClause(Assignment assignment) {
