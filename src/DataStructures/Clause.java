@@ -35,6 +35,46 @@ public class Clause implements Comparable<Clause> {
         return literals;
     }
 
+    public boolean isSat(Assignment assignment) {
+        for (Literal literal : literals) {
+            if (assignment.isTrue(literal.getLiteralName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isConflicting(Assignment assignment) {
+        for (Literal literal : literals) {
+            if (assignment.isUnassigned(literal.getLiteralName())) {
+                return false;
+            }
+            if (assignment.isTrue(literal.getLiteralName())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isUnitClause(Assignment assignment) {
+        int unassignedLiteralCount = 0;
+        for (Literal literal : literals) {
+            if (assignment.isUnassigned(literal.getLiteralName())) {
+                unassignedLiteralCount++;
+            }
+        }
+        return (unassignedLiteralCount == 1) ? true : false;
+    }
+
+    public Literal getUnassignLiteral(Assignment assignment) {
+        for (Literal literal : literals) {
+            if (assignment.isUnassigned(literal.getLiteralName())) {
+                return literal;
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Literal> toArray() {
         ArrayList<Literal> listOfLiterals = new ArrayList<Literal>(literals);
         Collections.sort(listOfLiterals);

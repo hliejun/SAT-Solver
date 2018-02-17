@@ -1,14 +1,16 @@
 package Solvers;
 
+import DataStructures.Clauses;
+import DataStructures.Literal;
+
 import java.util.HashMap;
 import java.util.HashSet;
-
-import DataStructures.*;
 
 // Solver outlines the main CDCL algorithm
 abstract public class Solver {
     protected final Clauses formula;
     protected final HashSet<String> variables;
+    protected final int numOfLiterals;
 
     // State: Every increment in level inherits assignments from previous levels; backtracking deletes entire level
     protected HashMap<Integer, HashMap<String, Boolean>> state;
@@ -19,8 +21,9 @@ abstract public class Solver {
     // Learnt Clauses: The "mistakes" that CDCL learnt not to repeat
     protected Clauses learntClauses;
 
-    public Solver(Clauses clauses) {
+    public Solver(Clauses clauses, int literalsCount) {
         formula = clauses;
+        numOfLiterals = literalsCount;
         variables = new HashSet<String>();
         formula.getLiteralSet().forEach(literal -> variables.add(literal.getLiteralName()));
     }

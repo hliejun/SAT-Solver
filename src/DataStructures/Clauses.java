@@ -38,6 +38,38 @@ public class Clauses implements Comparable<Clauses> {
         return literals;
     }
 
+    public boolean isSat(Assignment assignment) {
+        boolean sat = true;
+        for (Clause clause : clauses) {
+            sat = sat && clause.isSat(assignment);
+            // Lazy Evaluation
+            if (!sat) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isConflicting(Assignment assignment) {
+        for (Clause clause : clauses) {
+            if (clause.isConflicting(assignment)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Literal chooseUnassignLiteral(Assignment assignment) {
+        for (Clause clause : clauses) {
+            for (Literal literal : clause.getLiteralsSet()) {
+                if (assignment.isUnassigned(literal.getLiteralName())) {
+                    return literal;
+                }
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Clause> toArray() {
         ArrayList<Clause> listOfClauses = new ArrayList<Clause>(clauses);
         Collections.sort(listOfClauses);

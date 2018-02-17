@@ -1,7 +1,7 @@
 package DataStructures;
 
 public class Literal implements Comparable<Literal> {
-    private boolean sign;
+    private boolean sign; // negative = false
     private final String label;
     private Boolean truthValue;
 
@@ -24,7 +24,7 @@ public class Literal implements Comparable<Literal> {
         sign = !sign;
     }
 
-    public boolean getLiteralSign() {
+    public boolean isPositive() {
         return sign;
     }
 
@@ -35,6 +35,8 @@ public class Literal implements Comparable<Literal> {
     public String getLiteralName() {
         return label;
     }
+
+    public int getLiteralInteger() { return Integer.parseInt(label); }
 
     public Boolean evaluate() {
         return truthValue == null ? null : !(sign ^ truthValue);

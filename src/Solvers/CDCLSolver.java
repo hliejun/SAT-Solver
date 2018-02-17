@@ -6,8 +6,8 @@ import java.util.HashMap;
 
 public class CDCLSolver extends Solver {
 
-    public CDCLSolver(Clauses clauses) {
-        super(clauses);
+    public CDCLSolver(Clauses clauses, int literalsCount) {
+        super(clauses, literalsCount);
     }
 
     @Override

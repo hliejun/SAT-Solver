@@ -6,8 +6,8 @@ import java.util.HashMap;
 
 public class DPLLSolver extends Solver {
 
-    public DPLLSolver(Clauses clauses) {
-        super(clauses);
+    public DPLLSolver(Clauses clauses, int literalsCount) {
+        super(clauses, literalsCount);
     }
 
     @Override
