@@ -57,15 +57,12 @@ public class RecursiveDPLLSolver extends Solver {
 
     protected void pickBranchingAssign() {
         for (Clause c : formula.getClausesSet()) {
-            if (!c.isSat(assignments) && !c.isConflicting(assignments)) {
-                if (c.isUnitClause(assignments)) {
-                    Literal l = c.getUnassignLiteral(assignments);
-
-                    if (l.isPositive()) {
-                        assignments.assign(l, true);
-                    } else {
-                        assignments.assign(l, false);
-                    }
+            if (!c.isSat(assignments) && !c.isConflicting(assignments) && c.isUnitClause(assignments)) {
+                Literal l = c.getUnassignLiteral(assignments);
+                if (l.isPositive()) {
+                    assignments.assign(l, true);
+                } else {
+                    assignments.assign(l, false);
                 }
             }
         }

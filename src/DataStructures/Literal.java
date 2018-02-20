@@ -34,11 +34,11 @@ public class Literal implements Comparable<Literal> {
             return false;
         }
 
-        if (assignTruth == true && !isPositive()) {
+        if (assignTruth && !isPositive()) {
             return true;
         }
 
-        if (assignTruth == false && isPositive()) {
+        if (!assignTruth && isPositive()) {
             return true;
         }
 
