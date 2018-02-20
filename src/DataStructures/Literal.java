@@ -34,15 +34,7 @@ public class Literal implements Comparable<Literal> {
             return false;
         }
 
-        if (assignTruth && !isPositive()) {
-            return true;
-        }
-
-        if (!assignTruth && isPositive()) {
-            return true;
-        }
-
-        return false;
+        return (assignTruth && !isPositive()) || (!assignTruth && isPositive());
     }
 
     public Boolean getLiteralValue() {
