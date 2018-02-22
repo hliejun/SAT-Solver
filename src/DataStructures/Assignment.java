@@ -6,10 +6,12 @@ public class Assignment {
     private static final int T = 1;
     private static final int F = -1;
     private static final int U = 0;
+    private final int numOfLiterals;
 
     private final int[] assignments;
 
     public Assignment(int literalsCount) {
+        this.numOfLiterals = literalsCount;
         this.assignments = new int[literalsCount];
     }
 
@@ -49,6 +51,14 @@ public class Assignment {
             results.put(Integer.toString(idx + 1), getAssignValue(idx));
         }
         return results;
+    }
+
+    public Assignment clone() {
+        Assignment newAssignment = new Assignment(numOfLiterals);
+        for (int i = 0; i < numOfLiterals; i ++) {
+            newAssignment.assignments[i] = assignments[i];
+        }
+        return newAssignment;
     }
 
 }

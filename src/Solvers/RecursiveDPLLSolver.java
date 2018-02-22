@@ -9,60 +9,63 @@ import java.util.HashMap;
 
 public class RecursiveDPLLSolver extends Solver {
 
-    private Assignment assignments;
+    private Assignment satAssignments;
     private boolean isComplete = false;
+    private Assignment workingAssignments;
 
     public RecursiveDPLLSolver(Clauses clauses, int literalsCount) {
         super(clauses, literalsCount);
-        assignments = new Assignment(literalsCount);
+        workingAssignments = new Assignment(literalsCount);
     }
 
     @Override
     public HashMap<String, Boolean> solve() {
         resetSolver();
-        if(check()) {
-            return assignments.getAssignValues();
+        if(check(workingAssignments)) {
+            return satAssignments.getAssignValues();
         }
         return null;
     }
 
-    public boolean check() {
-        pickBranchingAssignment();
+    public boolean check(Assignment assignments) {
+        Assignment currAssignments = assignments.clone();
+        pickBranchingAssign(currAssignments);
 
-        if (formula.isSat(assignments)) {
+        if (formula.isSat(currAssignments)) {
             if(!isComplete) {
                 isComplete = true;
             }
+            satAssignments = currAssignments;
             return true;
         }
 
-        if (formula.isConflicting(assignments)) {
+        if (formula.isConflicting(currAssignments)) {
             return false;
         }
 
-        Literal nextLiteral = formula.chooseUnassignLiteral(assignments);
+        Literal nextLiteral = formula.chooseUnassignLiteral(currAssignments);
         if (nextLiteral == null) {
             return false;
         }
 
-        assignments.assign(nextLiteral, true);
-        if (check()) {
+        currAssignments.assign(nextLiteral, true);
+        if (check(currAssignments)) {
             return true;
         } else {
-            assignments.assign(nextLiteral, false);
-            return check();
+            currAssignments.assign(nextLiteral, false);
+            return check(currAssignments);
         }
 
     }
 
-    protected void pickBranchingAssign() {
+    protected void pickBranchingAssign(Assignment assignment) {
         for (Clause c : formula.getClausesSet()) {
-            if (!c.isSat(assignments) && !c.isConflicting(assignments) && c.isUnitClause(assignments)) {
-                Literal l = c.getUnassignLiteral(assignments);
+            if (!c.isSat(assignment) && !c.isConflicting(assignment) && c.isUnitClause(assignment)) {
+                Literal l = c.getUnitLiteral(assignment);
                 if (l.isPositive()) {
-                    assignments.assign(l, true);
+                    assignment.assign(l, true);
                 } else {
-                    assignments.assign(l, false);
+                    assignment.assign(l, false);
                 }
             }
         }

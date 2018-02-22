@@ -28,13 +28,30 @@ public class Literal implements Comparable<Literal> {
         return sign;
     }
 
+    public boolean isFalse(Assignment assignment) {
+        if (!isPositive()) {
+            return assignment.isTrue(label);
+        } else {
+            return assignment.isFalse(label);
+        }
+    }
+
+    public boolean isTrue(Assignment assignment) {
+        if (!isPositive()) {
+            return assignment.isFalse(label);
+        } else {
+            return assignment.isTrue(label);
+        }
+    }
+
     public boolean isConflicting(Assignment assignment) {
-        Boolean assignTruth = assignment.getAssignValue(getLiteralInteger() - 1);
-        if (assignTruth == null) {
+        if (assignment.isUnassigned(label)) {
             return false;
         }
-
-        return (assignTruth && !isPositive()) || (!assignTruth && isPositive());
+        if (!isFalse(assignment)) {
+            return false;
+        }
+        return true;
     }
 
     public Boolean getLiteralValue() {

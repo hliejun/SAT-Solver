@@ -37,7 +37,7 @@ public class Clause implements Comparable<Clause> {
 
     public boolean isSat(Assignment assignment) {
         for (Literal literal : literals) {
-            if (assignment.isTrue(literal.getLiteralName())) {
+            if (literal.isTrue(assignment)) {
                 return true;
             }
         }
@@ -46,11 +46,11 @@ public class Clause implements Comparable<Clause> {
 
     public boolean isConflicting(Assignment assignment) {
         for (Literal literal : literals) {
-            if (literal.isConflicting(assignment)) {
-                return true;
+            if (!literal.isConflicting(assignment)) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public boolean isUnitClause(Assignment assignment) {
@@ -63,10 +63,12 @@ public class Clause implements Comparable<Clause> {
         return (unassignedLiteralCount == 1) ? true : false;
     }
 
-    public Literal getUnassignLiteral(Assignment assignment) {
-        for (Literal literal : literals) {
-            if (assignment.isUnassigned(literal.getLiteralName())) {
-                return literal;
+    public Literal getUnitLiteral(Assignment assignment) {
+        if (isUnitClause(assignment)) {
+            for (Literal literal : literals) {
+                if (assignment.isUnassigned(literal.getLiteralName())) {
+                    return literal;
+                }
             }
         }
         return null;
