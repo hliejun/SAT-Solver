@@ -48,10 +48,7 @@ public class Literal implements Comparable<Literal> {
         if (assignment.isUnassigned(label)) {
             return false;
         }
-        if (!isFalse(assignment)) {
-            return false;
-        }
-        return true;
+        return isFalse(assignment);
     }
 
     public Boolean getLiteralValue() {
