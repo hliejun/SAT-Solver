@@ -2,8 +2,7 @@ package Solvers;
 
 import DataStructures.*;
 
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 // TODO: Abstract data structure comparisons to Solver
 
@@ -27,7 +26,7 @@ abstract public class Solver {
     // TODO: Do we need to check if all variables are assigned? Is it possible to have "don't care" variables?
     protected boolean isSatisfied() {
         Assignment currentState = state.get(level);
-        return formula.evaluate(currentState);
+        return formula.evaluate(currentState) && currentState.getAllValues().size() == variables.size();
     }
 
     protected void resetSolver() {

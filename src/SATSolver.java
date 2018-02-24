@@ -1,10 +1,11 @@
 import DataStructures.Clauses;
+import DataStructures.Utilities;
 import Solvers.CDCLSolver;
 import Solvers.DPLLSolver;
 import Solvers.RDPLLSolver;
 import Solvers.Solver;
 
-import java.util.HashMap;
+import java.util.*;
 
 // TODO: Pick strategy by arguments/parameters
 
@@ -12,7 +13,7 @@ public class SATSolver {
 
     public static void main(String[] args) {
         Solver solver = null;
-        String path = "./test/testcases/sat/7.cnf";
+        String path = "./test/testcases/sat/1.cnf";
         if (args.length != 0) {
             path = args[0];
         }
@@ -42,7 +43,7 @@ public class SATSolver {
 
         if (solver != null) {
             HashMap<String, Boolean> results = solver.solve();
-            String output = results == null ? "UNSAT" : results.toString();
+            String output = results == null ? "UNSAT" : Utilities.getOutputFromMap(results);
             System.out.println(output);
         } else {
             System.out.println("Unsupported strategy.");

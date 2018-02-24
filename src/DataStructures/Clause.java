@@ -1,8 +1,6 @@
 package DataStructures;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.*;
 
 // TODO: Redesign compareTo
 // TODO: Make sure literals are sorted before processing

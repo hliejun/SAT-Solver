@@ -1,8 +1,6 @@
 package DataStructures;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.*;
 
 // TODO: Redesign compareTo
 // TODO: Make sure clauses are sorted before processing
@@ -66,21 +64,6 @@ public class Clauses implements Comparable<Clauses> {
             for (Literal literal : clause.toArray()) {
                 if (assignment.getValue(literal.getName()) == null) {
                     return literal;
-                }
-            }
-        }
-        return null;
-    }
-
-    public Literal pickUnassignedLiteral(Assignment assignment, ArrayList<Literal> attempted) {
-        for (Clause clause : clauses) {
-            for (Literal literal : clause.toArray()) {
-                String symbol = literal.getName();
-                Literal inversedLiteral = new Literal(symbol, !literal.getSign());
-                if (assignment.getValue(symbol) == null && (attempted == null || !attempted.contains(literal))) {
-                    return literal;
-                } else if (assignment.getValue(symbol) == null && !attempted.contains(inversedLiteral)) {
-                    return inversedLiteral;
                 }
             }
         }

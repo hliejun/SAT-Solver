@@ -2,8 +2,7 @@ package Solvers;
 
 import DataStructures.*;
 
-import java.util.HashMap;
-import java.util.ArrayList;
+import java.util.*;
 
 public class DPLLSolver extends Solver {
 
