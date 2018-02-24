@@ -3,6 +3,7 @@ package Solvers;
 import DataStructures.*;
 
 import java.util.HashMap;
+import java.util.ArrayList;
 
 public class DPLLSolver extends Solver {
 
@@ -13,45 +14,67 @@ public class DPLLSolver extends Solver {
     @Override
     public HashMap<String, Boolean> solve() {
         resetSolver();
-        while (!isAllAssigned()) {
-            Literal assignment = pickBranchingAssignment();
-            if (assignment == null) {
-                return null; // Cannot find an assignment: UNSAT
+        while (!isSatisfied()) {
+            assignLoneClause();
+            if (isSatisfied()) {
+                break;
             }
-            if (propagateUnit(assignment.getLiteralName(), assignment.getLiteralValue())) {
-                level += 1;
+            Assignment levelState = state.get(level);
+            Literal selectedLiteral = pickBranchingAssignment();
+            if (selectedLiteral == null && level == 0) {
+                return null;
+            }
+            if (formula.hasConflicts(levelState) || selectedLiteral == null) {
+                Clauses conflicts = analyzeConflict(levelState);
+                level = backtrack(conflicts);
                 continue;
             }
-            Clauses conflicts = analyzeConflict();
-            level = backtrack(conflicts);
-            if (level == null) {
-                return null; // Cannot determine a backtrack point: UNSAT
+            Assignment propagatedState = propagateUnit(selectedLiteral);
+            level += 1;
+            state.put(level, propagatedState);
+        }
+        System.out.println("Assigned: " + state.get(level).getAllValues().size() + " / " + variables.size());
+        System.out.println("Unassigned: " + getUnassignedVariables(state.get(level)));
+        return state.get(level).getAllValues();
+    }
+
+    protected void assignLoneClause() {
+        Assignment levelState = state.get(level);
+        for (Clause clause : formula.getClausesSet()) {
+            if (!clause.evaluate(levelState) && !clause.hasConflicts(levelState) && clause.isUnitClause(levelState)) {
+                Literal literal = clause.getUnitLiteral(levelState);
+                levelState.assignValue(literal.getName(), literal.getSign());
             }
         }
-        return state.get(level);
     }
 
     @Override
     protected Literal pickBranchingAssignment() {
-        // DPLL does this chronologically, independent of conflicts
-        return null;
+        ArrayList<Literal> attemptedList = state.get(level).getAttempts();
+        if (attemptedList == null || attemptedList.isEmpty()) {
+            return formula.pickUnassignedLiteral(state.get(level));
+        } else if (attemptedList.size() >= 2) {
+            return null;
+        }
+        return attemptedList.get(0).getInverse();
     }
 
     @Override
-    protected boolean propagateUnit(String variable, Boolean value) {
-        // Need to modify the states / attempts here...
-        return false;
+    protected Assignment propagateUnit(Literal literal) {
+        state.get(level).addAttempt(literal);
+        Assignment assignment = new Assignment(state.get(level));
+        assignment.assignValue(literal.getName(), literal.getSign());
+        return assignment;
     }
 
     @Override
-    protected Clauses analyzeConflict() {
+    protected Clauses analyzeConflict(Assignment propagatedState) {
         return null;
     }
 
     @Override
     protected Integer backtrack(Clauses conflicts) {
-        // Need to modify the states / attempts here...
-        return null;
+        return level == 0 ? level : level - 1;
     }
 
 }

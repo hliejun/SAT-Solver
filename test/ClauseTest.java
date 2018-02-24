@@ -16,10 +16,10 @@ public class ClauseTest {
 
     @Before
     public void setUp() throws Exception {
-        literalA = new Literal("A", true);
-        literalNotB = new Literal("-B", true);
-        literalC = new Literal("C", false);
-        testLiterals = new ArrayList<Literal>();
+        literalA = new Literal("A");
+        literalNotB = new Literal("-B");
+        literalC = new Literal("C");
+        testLiterals = new ArrayList<>();
         testLiterals.add(literalA);
         testLiterals.add(literalNotB);
         testLiterals.add(literalC);
@@ -28,9 +28,9 @@ public class ClauseTest {
 
     @Test
     public void testAdd() {
-        Literal newLiteral = new Literal("D", true);
+        Literal newLiteral = new Literal("D");
         clause.addLiteral(newLiteral);
-        HashSet<Literal> literals = clause.getLiteralsSet();
+        ArrayList<Literal> literals = clause.toArray();
         assertEquals("Clause should contain 4 literals.", 4, literals.size());
         assertTrue("Clause should contain newly added literal.", literals.contains(newLiteral));
     }
@@ -38,17 +38,17 @@ public class ClauseTest {
     @Test
     public void testRemove() {
         clause.removeLiteral(literalA);
-        HashSet<Literal> literals = clause.getLiteralsSet();
+        ArrayList<Literal> literals = clause.toArray();
         assertFalse("Clause should not contain removed literal.", literals.contains(literalA));
         assertEquals("Clause should contain 2 literals after removal.", 2, literals.size());
     }
 
     @Test
     public void testGetClause() {
-        assertEquals("Clause should contain 3 literals.", 3, clause.getLiteralsSet().size());
-        assertTrue("Clause should contain literal: 'A'.", clause.getLiteralsSet().contains(literalA));
-        assertTrue("Clause should contain literal: '-B'.", clause.getLiteralsSet().contains(literalNotB));
-        assertTrue("Clause should contain literal: 'C'.", clause.getLiteralsSet().contains(literalC));
+        assertEquals("Clause should contain 3 literals.", 3, clause.toArray().size());
+        assertTrue("Clause should contain literal: 'A'.", clause.toArray().contains(literalA));
+        assertTrue("Clause should contain literal: '-B'.", clause.toArray().contains(literalNotB));
+        assertTrue("Clause should contain literal: 'C'.", clause.toArray().contains(literalC));
     }
 
     @Test
@@ -62,11 +62,11 @@ public class ClauseTest {
 
     @Test
     public void testComparableClauses() {
-        Clause firstClause = new Clause(new ArrayList<Literal>(testLiterals.subList(0, 1)));
-        Clause secondClause = new Clause(new ArrayList<Literal>(testLiterals.subList(2, 3)));
-        Clause thirdClause = new Clause(new ArrayList<Literal>(testLiterals.subList(0, 2)));
+        Clause firstClause = new Clause(new ArrayList<>(testLiterals.subList(0, 1)));
+        Clause secondClause = new Clause(new ArrayList<>(testLiterals.subList(2, 3)));
+        Clause thirdClause = new Clause(new ArrayList<>(testLiterals.subList(0, 2)));
         Clause fourthClause = new Clause(testLiterals);
-        ArrayList<Clause> clauses = new ArrayList<Clause>();
+        ArrayList<Clause> clauses = new ArrayList<>();
         clauses.add(fourthClause);
         clauses.add(firstClause);
         clauses.add(secondClause);
@@ -75,22 +75,22 @@ public class ClauseTest {
         assertEquals(
                 "First sorted clause should have size: 1.",
                 1,
-                clauses.remove(0).getLiteralsSet().size()
+                clauses.remove(0).toArray().size()
         );
         assertEquals(
                 "Second sorted clause should have size: 1.",
                 1,
-                clauses.remove(0).getLiteralsSet().size()
+                clauses.remove(0).toArray().size()
         );
         assertEquals(
                 "Third sorted clause should have size: 2.",
                 2,
-                clauses.remove(0).getLiteralsSet().size()
+                clauses.remove(0).toArray().size()
         );
         assertEquals(
                 "Fourth sorted clause should have size: 3.",
                 3,
-                clauses.remove(0).getLiteralsSet().size()
+                clauses.remove(0).toArray().size()
         );
     }
 }
