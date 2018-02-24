@@ -27,7 +27,7 @@ public class RDPLLSolver extends Solver {
     public boolean resolve(Assignment assignments) {
         Assignment currentAssignments = assignments.copy();
         assignLoneClauses(currentAssignments);
-        if (formula.evaluate(currentAssignments)) {
+        if (formula.evaluate(currentAssignments) && currentAssignments.getAllValues().size() == variables.size()) {
             satisfiedAssignments = currentAssignments;
             return true;
         }
