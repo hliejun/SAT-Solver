@@ -1,18 +1,19 @@
 package DataStructures;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.*;
+
+// TODO: Redesign compareTo
+// TODO: Make sure clauses are sorted before processing
 
 public class Clauses implements Comparable<Clauses> {
     private HashSet<Clause> clauses;
 
     public Clauses() {
-        clauses = new HashSet<Clause>();
+        clauses = new HashSet<>();
     }
 
     public Clauses(ArrayList<Clause> listOfClauses) {
-        clauses = new HashSet<Clause>();
+        clauses = new HashSet<>();
         listOfClauses.forEach(clause -> addClause(clause));
     }
 
@@ -33,36 +34,35 @@ public class Clauses implements Comparable<Clauses> {
     }
 
     public HashSet<Literal> getLiteralSet() {
-        HashSet<Literal> literals = new HashSet<Literal>();
-        clauses.forEach(clause -> literals.addAll(clause.getLiteralsSet()));
+        HashSet<Literal> literals = new HashSet<>();
+        clauses.forEach(clause -> literals.addAll(clause.toArray()));
         return literals;
     }
 
-    public boolean isSat(Assignment assignment) {
-        boolean sat = true;
+    public boolean evaluate(Assignment assignment) {
+        boolean isSatisfied = true;
         for (Clause clause : clauses) {
-            sat = sat && clause.isSat(assignment);
-            // Lazy Evaluation
-            if (!sat) {
+            isSatisfied &= clause.evaluate(assignment);
+            if (!isSatisfied) {
                 return false;
             }
         }
         return true;
     }
 
-    public boolean isConflicting(Assignment assignment) {
+    public boolean hasConflicts(Assignment assignment) {
         for (Clause clause : clauses) {
-            if (clause.isConflicting(assignment)) {
+            if (clause.hasConflicts(assignment)) {
                 return true;
             }
         }
         return false;
     }
 
-    public Literal chooseUnassignLiteral(Assignment assignment) {
+    public Literal pickUnassignedLiteral(Assignment assignment) {
         for (Clause clause : clauses) {
-            for (Literal literal : clause.getLiteralsSet()) {
-                if (assignment.isUnassigned(literal.getLiteralName())) {
+            for (Literal literal : clause.toArray()) {
+                if (assignment.getValue(literal.getName()) == null) {
                     return literal;
                 }
             }
@@ -71,13 +71,13 @@ public class Clauses implements Comparable<Clauses> {
     }
 
     public ArrayList<Clause> toArray() {
-        ArrayList<Clause> listOfClauses = new ArrayList<Clause>(clauses);
+        ArrayList<Clause> listOfClauses = new ArrayList<>(clauses);
         Collections.sort(listOfClauses);
         return listOfClauses;
     }
 
     public String toString() {
-        return Utilities.implode(toArray(), " ^ ");
+        return Utilities.implode(toArray(), " ∧ ");
     }
 
     @Override

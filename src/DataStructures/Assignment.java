@@ -1,63 +1,50 @@
 package DataStructures;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class Assignment {
-    private static final int T = 1;
-    private static final int F = -1;
-    private static final int U = 0;
-    private final int numOfLiterals;
+    private HashMap<String, Boolean> values;
+    private ArrayList<Literal> attempts;
+    private final int numOfVariables;
 
-    private final int[] assignments;
-
-    public Assignment(int literalsCount) {
-        this.numOfLiterals = literalsCount;
-        this.assignments = new int[literalsCount];
+    public Assignment(int numOfVariables) {
+        values = new HashMap<>();
+        attempts = new ArrayList<>();
+        this.numOfVariables = numOfVariables;
     }
 
-    public boolean isTrue(String literal) {
-        return assignments[Integer.parseInt(literal) - 1] == T;
+    public Assignment(Assignment oldAssignment) {
+        values = new HashMap<>(oldAssignment.getAllValues());
+        attempts = new ArrayList<>();
+        numOfVariables = oldAssignment.getNumOfVariables();
     }
 
-    public boolean isFalse(String literal) {
-        return assignments[Integer.parseInt(literal) - 1] == F;
+    public void assignValue(String variable, boolean value) {
+        values.put(variable, value);
     }
 
-    public boolean isUnassigned(String literal) {
-        return assignments[Integer.parseInt(literal) - 1] == U;
+    public void addAttempt(Literal literal) {
+        attempts.add(literal);
     }
 
-    public void assign(Literal literal, boolean literalTruth) {
-        int lit = literal.getLiteralInteger();
-        if (literalTruth) {
-            assignments[lit - 1] = T;
-        } else {
-            assignments[lit - 1] = F;
-        }
+    public Boolean getValue(String variable) {
+        return values.get(variable);
     }
 
-    public Boolean getAssignValue(int idx) {
-        if (assignments[idx] == T) {
-            return true;
-        } else if (assignments[idx] == F) {
-            return false;
-        }
-        return null;
+    public HashMap<String, Boolean> getAllValues() {
+        return values;
     }
 
-    public HashMap<String, Boolean> getAssignValues() {
-        HashMap<String, Boolean> results = new HashMap<String, Boolean>();
-        for (int idx = 0; idx < assignments.length; idx ++) {
-            results.put(Integer.toString(idx + 1), getAssignValue(idx));
-        }
-        return results;
+    public ArrayList<Literal> getAttempts() {
+        return attempts;
     }
 
-    public Assignment clone() {
-        Assignment newAssignment = new Assignment(numOfLiterals);
-        for (int i = 0; i < numOfLiterals; i ++) {
-            newAssignment.assignments[i] = assignments[i];
-        }
+    public int getNumOfVariables() {
+        return numOfVariables;
+    }
+
+    public Assignment copy() {
+        Assignment newAssignment = new Assignment(this);
         return newAssignment;
     }
 

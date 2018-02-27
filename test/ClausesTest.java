@@ -15,15 +15,15 @@ public class ClausesTest {
 
     @Before
     public void setUp() throws Exception {
-        literalA = new Literal("A", true);
-        literalNotB = new Literal("-B", false);
-        literalC = new Literal("C", true);
-        literals = new ArrayList<Literal>();
+        literalA = new Literal("A");
+        literalNotB = new Literal("-B");
+        literalC = new Literal("C");
+        literals = new ArrayList<>();
         literals.add(literalA);
         literals.add(literalNotB);
         literals.add(literalC);
-        clauseA = new Clause(new ArrayList<Literal>(literals.subList(0, 2)));
-        clauseB = new Clause(new ArrayList<Literal>(literals.subList(1, 3)));
+        clauseA = new Clause(new ArrayList<>(literals.subList(0, 2)));
+        clauseB = new Clause(new ArrayList<>(literals.subList(1, 3)));
         clauseC = new Clause(literals);
         clauses = new Clauses();
         clauses.addClause(clauseA);
@@ -33,7 +33,7 @@ public class ClausesTest {
 
     @Test
     public void testAddClause() {
-        Clause clauseD = new Clause(new ArrayList<Literal>(literals.subList(1, 2)));
+        Clause clauseD = new Clause(new ArrayList<>(literals.subList(1, 2)));
         assertEquals("This clause set should contain 3 clauses.", 3, clauses.getClausesSet().size());
         clauses.addClause(clauseD);
         assertEquals(

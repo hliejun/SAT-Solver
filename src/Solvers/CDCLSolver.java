@@ -21,17 +21,18 @@ public class CDCLSolver extends Solver {
     }
 
     @Override
-    protected boolean propagateUnit(String variable, Boolean value) {
-        return false;
+    protected Assignment propagateUnit(Literal literal) {
+        return null;
     }
 
     @Override
-    protected Clauses analyzeConflict() {
+    protected Clauses analyzeConflict(Assignment assignment) {
         return null;
     }
 
     @Override
     protected Integer backtrack(Clauses conflicts) {
+        // TODO: Every backtrack will need to evaluate from learnt clauses
         return null;
     }
 

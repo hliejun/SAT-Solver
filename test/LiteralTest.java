@@ -15,104 +15,66 @@ public class LiteralTest {
 
     @Test
     public void testPostiveValueNumericLiteral() {
-        Literal literal = new Literal("1", true);
-        assertTrue("Literal should yield true sign.", literal.getLiteralSign());
-        assertTrue(" Literal should yield true value.", literal.getLiteralValue());
-        assertTrue("Literal should evaluate to true.", literal.evaluate());
-        assertEquals("Literal should be named: '1'.", "1", literal.getLiteralName());
+        Literal literal = new Literal("1");
+        assertTrue("Literal should yield true sign.", literal.getSign());
+        assertTrue("Literal should evaluate to true.", literal.evaluate(true));
+        assertEquals("Literal should be named: '1'.", "1", literal.getName());
         assertEquals("Literal should be converted to string: '1'.", "1", literal.toString());
     }
 
     @Test
     public void testNegativeValueNumericLiteral() {
-        Literal literal = new Literal("1", false);
-        assertTrue("Literal should yield true sign.", literal.getLiteralSign());
-        assertFalse("Literal should yield false value.", literal.getLiteralValue());
-        assertFalse("Literal should evaluate to false.", literal.evaluate());
-        assertEquals("Literal should be named: '1'", "1", literal.getLiteralName());
+        Literal literal = new Literal("1");
+        assertTrue("Literal should yield true sign.", literal.getSign());
+        assertFalse("Literal should evaluate to false.", literal.evaluate(false));
+        assertEquals("Literal should be named: '1'", "1", literal.getName());
         assertEquals("Literal should be converted to string: '1'.", "1", literal.toString());
     }
 
     @Test
     public void testNegativeSignNumericLiteral() {
-        Literal literal = new Literal("-1", true);
-        assertFalse("Literal should yield false sign.", literal.getLiteralSign());
-        assertTrue("Literal should yield true value.", literal.getLiteralValue());
-        assertFalse("Literal should evaluate to false.", literal.evaluate());
-        assertEquals("Literal should be named: '1'.", "1", literal.getLiteralName());
+        Literal literal = new Literal("-1");
+        assertFalse("Literal should yield false sign.", literal.getSign());
+        assertFalse("Literal should evaluate to false.", literal.evaluate(true));
+        assertEquals("Literal should be named: '1'.", "1", literal.getName());
         assertEquals("Literal should be converted to string: '-1'.", "-1", literal.toString());
     }
 
     @Test
     public void testNegativeSignValueLiteral() {
-        Literal literal = new Literal("-1", false);
-        assertFalse("Literal should yield false sign.", literal.getLiteralSign());
-        assertFalse("Literal should yield false value.", literal.getLiteralValue());
-        assertTrue("Literal should evaluate to true.", literal.evaluate());
-        assertEquals("Literal should be named: '1'.", "1", literal.getLiteralName());
+        Literal literal = new Literal("-1");
+        assertFalse("Literal should yield false sign.", literal.getSign());
+        assertTrue("Literal should evaluate to true.", literal.evaluate(false));
+        assertEquals("Literal should be named: '1'.", "1", literal.getName());
         assertEquals("Literal should be converted to string: '-1'.", "-1", literal.toString());
     }
 
     @Test
     public void testZeroLabelledLiteral() {
-        Literal literal = new Literal("0", true);
-        assertTrue("Literal should yield true sign.", literal.getLiteralSign());
-        assertTrue("Literal should yield true value.", literal.getLiteralValue());
-        assertTrue("Literal should evaluate to true.", literal.evaluate());
-        assertEquals("Literal should be named: '0'.", "0", literal.getLiteralName());
+        Literal literal = new Literal("0");
+        assertTrue("Literal should yield true sign.", literal.getSign());
+        assertTrue("Literal should evaluate to true.", literal.evaluate(true));
+        assertEquals("Literal should be named: '0'.", "0", literal.getName());
         assertEquals("Literal should be converted to string: '0'.", "0", literal.toString());
     }
 
     @Test
-    public void testNullValueLiteral() {
-        Literal literal = new Literal("1");
-        assertTrue("Literal should yield true sign.", literal.getLiteralSign());
-        assertNull("Literal should yield null value.", literal.getLiteralValue());
-        assertNull("Literal should evaluate to null.", literal.evaluate());
-        assertEquals("Literal should be named: '1'.", "1", literal.getLiteralName());
-        assertEquals("Literal should be converted to string: '1'.", "1", literal.toString());
-    }
-
-    @Test
     public void testAlphabetLiteral() {
-        Literal literal = new Literal("-A", false);
-        assertFalse("Literal should yield false sign.", literal.getLiteralSign());
-        assertFalse("Literal should yield false value.", literal.getLiteralValue());
-        assertTrue("Literal should evaluate to true.", literal.evaluate());
-        assertEquals("Literal should be named: 'A'.", "A", literal.getLiteralName());
+        Literal literal = new Literal("-A");
+        assertFalse("Literal should yield false sign.", literal.getSign());
+        assertTrue("Literal should evaluate to true.", literal.evaluate(false));
+        assertEquals("Literal should be named: 'A'.", "A", literal.getName());
         assertEquals("Literal should be converted to string: '-A'.", "-A", literal.toString());
-    }
-
-    @Test
-    public void testPostiveValueToggle() {
-        Literal literal = new Literal("-A", false);
-        assertTrue("Literal should evaluate to true.", literal.evaluate());
-        literal.toggleValue();
-        assertFalse("Literal should retain false sign after value toggle.", literal.getLiteralSign());
-        assertTrue("Literal should yield true value after value toggle.", literal.getLiteralValue());
-        assertFalse("Literal should evaluate to false after value toggle.", literal.evaluate());
-        assertEquals("Literal should be converted to string: '-A'.", "-A", literal.toString());
-    }
-
-    @Test
-    public void testNegativeValueToggle() {
-        Literal literal = new Literal("A", true);
-        assertTrue("Literal should evaluate to true.", literal.evaluate());
-        literal.toggleValue();
-        assertTrue("Literal should retain true sign after value toggle.", literal.getLiteralSign());
-        assertFalse("Literal should yield false value after value toggle.", literal.getLiteralValue());
-        assertFalse("Literal should evaluate to false after value toggle.", literal.evaluate());
-        assertEquals("Literal should be converted to string: 'A'.", "A", literal.toString());
     }
 
     @Test
     public void testComparableLiterals() {
-        Literal literalA = new Literal("A", false);
-        Literal literalNegativeA = new Literal("-A", true);
+        Literal literalA = new Literal("A");
+        Literal literalNegativeA = new Literal("-A");
         Literal literalB = new Literal("B");
-        Literal literalNegativeB = new Literal("-B", false);
-        Literal literalC = new Literal("C", true);
-        Literal literalNegativeC = new Literal("-C", true);
+        Literal literalNegativeB = new Literal("-B");
+        Literal literalC = new Literal("C");
+        Literal literalNegativeC = new Literal("-C");
         ArrayList<Literal> literalsList = new ArrayList<Literal>();
         literalsList.add(literalC);
         literalsList.add(literalNegativeB);

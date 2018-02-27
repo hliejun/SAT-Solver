@@ -1,16 +1,19 @@
 import DataStructures.Clauses;
+import DataStructures.Utilities;
 import Solvers.CDCLSolver;
 import Solvers.DPLLSolver;
-import Solvers.RecursiveDPLLSolver;
+import Solvers.RDPLLSolver;
 import Solvers.Solver;
 
-import java.util.HashMap;
+import java.util.*;
+
+// TODO: Pick strategy by arguments/parameters
 
 public class SATSolver {
 
     public static void main(String[] args) {
         Solver solver = null;
-        String path = "./test/testcases/unsat/3.cnf";
+        String path = "./test/testcases/sat/3.cnf";
         if (args.length != 0) {
             path = args[0];
         }
@@ -20,13 +23,12 @@ public class SATSolver {
 
         System.out.println(clauses);
 
-        // TODO: Pick strategy(by args)...
+//        Strategy strategy = Strategy.DPLL;
         Strategy strategy = Strategy.RDPLL;
 
-        // TODO: Initialize solver...
         switch(strategy) {
             case RDPLL:
-                solver = new RecursiveDPLLSolver(clauses, literalsCount);
+                solver = new RDPLLSolver(clauses, literalsCount);
                 break;
             case DPLL:
                 solver = new DPLLSolver(clauses, literalsCount);
@@ -39,10 +41,9 @@ public class SATSolver {
 
         }
 
-        // TODO: Solve and print result...
         if (solver != null) {
             HashMap<String, Boolean> results = solver.solve();
-            String output = results == null ? "UNSAT" : results.toString();
+            String output = results == null ? "UNSAT" : Utilities.getOutputFromMap(results);
             System.out.println(output);
         } else {
             System.out.println("Unsupported strategy.");
