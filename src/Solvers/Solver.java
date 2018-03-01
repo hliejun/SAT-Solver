@@ -1,55 +1,48 @@
 package Solvers;
 
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 import DataStructures.*;
 
-// Solver outlines the main CDCL algorithm
 abstract public class Solver {
     protected final Clauses formula;
     protected final HashSet<String> variables;
-
-    // State: Every increment in level inherits assignments from previous levels; backtracking deletes entire level
-    protected HashMap<Integer, HashMap<String, Boolean>> state;
-    // Attempts: Each assignment made is registered as an attempt for each level
-    protected HashMap<Integer, HashSet<Literal>> attempts;
-    // Level: The current level that the solver is operating in
+    protected final int numOfLiterals;
+    protected HashMap<Integer, Assignment> state;
     protected Integer level;
-    // Learnt Clauses: The "mistakes" that CDCL learnt not to repeat
     protected Clauses learntClauses;
 
-    public Solver(Clauses clauses) {
+    public Solver(Clauses clauses, int literalsCount) {
         formula = clauses;
-        variables = new HashSet<String>();
-        formula.getLiteralSet().forEach(literal -> variables.add(literal.getLiteralName()));
+        numOfLiterals = literalsCount;
+        variables = new HashSet<>();
+        formula.getLiteralSet().forEach(literal -> variables.add(literal.getName()));
+        learntClauses = null;
+        resetSolver();
     }
 
-    protected boolean isAllAssigned() {
-        return state.get(level).keySet().size() == variables.size();
+    protected boolean isSatisfied() {
+        Assignment currentState = state.get(level);
+        return formula.evaluate(currentState) && currentState.getAllValues().size() == variables.size();
     }
 
     protected void resetSolver() {
+        state = new HashMap<>();
         level = 0;
-        state = new HashMap<Integer, HashMap<String, Boolean>>();
-        state.put(level, new HashMap<String, Boolean>());
-        attempts = new HashMap<Integer, HashSet<Literal>>();
-        attempts.put(level, new HashSet<Literal>());
+        state.put(level, new Assignment(variables.size()));
     }
 
-    protected HashSet<String> getUnassignedVariables() {
-        HashSet<String> variableSet = new HashSet<String>(variables);
-        variableSet.removeAll(state.get(level).keySet());
+    protected HashSet<String> getUnassignedVariables(Assignment state) {
+        HashSet<String> variableSet = new HashSet<>(variables);
+        variableSet.removeAll(state.getAllValues().keySet());
         return variableSet;
     }
 
-    // The only exposed method for public use
     abstract public HashMap<String, Boolean> solve();
 
-    // Fundamental methods generic to any CDCL algorithm
     abstract protected Literal pickBranchingAssignment();
-    abstract protected boolean propagateUnit(String variable, Boolean value);
-    abstract protected Clauses analyzeConflict();
+    abstract protected Assignment propagateUnit(Literal literal);
+    abstract protected Clauses analyzeConflict(Assignment assignment);
     abstract protected Integer backtrack(Clauses conflicts);
 
 }

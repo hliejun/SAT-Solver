@@ -1,13 +1,13 @@
 package Solvers;
 
-import DataStructures.*;
-
 import java.util.HashMap;
+
+import DataStructures.*;
 
 public class CDCLSolver extends Solver {
 
-    public CDCLSolver(Clauses clauses) {
-        super(clauses);
+    public CDCLSolver(Clauses clauses, int literalsCount) {
+        super(clauses, literalsCount);
     }
 
     @Override
@@ -21,17 +21,18 @@ public class CDCLSolver extends Solver {
     }
 
     @Override
-    protected boolean propagateUnit(String variable, Boolean value) {
-        return false;
+    protected Assignment propagateUnit(Literal literal) {
+        return null;
     }
 
     @Override
-    protected Clauses analyzeConflict() {
+    protected Clauses analyzeConflict(Assignment assignment) {
         return null;
     }
 
     @Override
     protected Integer backtrack(Clauses conflicts) {
+        // Evaluate from learnt clauses
         return null;
     }
 

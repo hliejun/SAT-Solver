@@ -1,47 +1,41 @@
 package DataStructures;
 
 public class Literal implements Comparable<Literal> {
-    private boolean sign;
+    private final boolean sign;
     private final String label;
-    private Boolean truthValue;
 
     public Literal(String variable) {
         sign = Utilities.isPositive(variable);
         label = Utilities.removeSignsAndSpaces(variable);
-        truthValue = null;
     }
 
-    public Literal(String variable, boolean value) {
-        this(variable);
-        truthValue = value;
+    public Literal(String label, boolean sign) {
+        this.sign = sign;
+        this.label = Utilities.removeSignsAndSpaces(label);
     }
 
-    public void toggleValue() {
-        truthValue = !truthValue;
-    }
-
-    public void toggleSign() {
-        sign = !sign;
-    }
-
-    public boolean getLiteralSign() {
-        return sign;
-    }
-
-    public Boolean getLiteralValue() {
-        return truthValue;
-    }
-
-    public String getLiteralName() {
+    public String getName() {
         return label;
     }
 
-    public Boolean evaluate() {
-        return truthValue == null ? null : !(sign ^ truthValue);
+    public boolean getSign() {
+        return sign;
+    }
+
+    public Literal getInverse() {
+        return new Literal(label, !sign);
+    }
+
+    public boolean hasConflicts(Assignment assignment) {
+        return assignment.getValue(label) != null && !evaluate(assignment.getValue(label));
+    }
+
+    public Boolean evaluate(boolean truthValue) {
+        return !(sign ^ truthValue);
     }
 
     public String toString() {
-        return sign ? label : String.format("-%s", label);
+        return sign ? label : String.format("¬%s", label);
     }
 
     @Override
@@ -63,17 +57,12 @@ public class Literal implements Comparable<Literal> {
             return false;
         }
         Literal otherLiteral = (Literal) otherObject;
-        if ((truthValue != null && truthValue.equals(otherLiteral.truthValue))
-                || (truthValue == null && otherLiteral.truthValue == null)) {
-            return sign == otherLiteral.sign && label.equals(otherLiteral.label);
-        } else {
-            return false;
-        }
+        return sign == otherLiteral.sign && label.equals(otherLiteral.label);
     }
 
     @Override
     public int hashCode() {
-        return label.hashCode();
+        return toString().hashCode();
     }
 
 }

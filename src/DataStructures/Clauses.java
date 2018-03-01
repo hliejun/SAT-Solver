@@ -1,19 +1,12 @@
 package DataStructures;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.*;
 
 public class Clauses implements Comparable<Clauses> {
     private HashSet<Clause> clauses;
 
     public Clauses() {
-        clauses = new HashSet<Clause>();
-    }
-
-    public Clauses(ArrayList<Clause> listOfClauses) {
-        clauses = new HashSet<Clause>();
-        listOfClauses.forEach(clause -> addClause(clause));
+        clauses = new HashSet<>();
     }
 
     public void addClause(Clause clause) {
@@ -24,46 +17,67 @@ public class Clauses implements Comparable<Clauses> {
         clauses.add(new Clause(literalsString));
     }
 
-    public void removeClause(Clause clause) {
-        clauses.remove(clause);
-    }
-
     public HashSet<Clause> getClausesSet() {
         return clauses;
     }
 
     public HashSet<Literal> getLiteralSet() {
-        HashSet<Literal> literals = new HashSet<Literal>();
-        clauses.forEach(clause -> literals.addAll(clause.getLiteralsSet()));
+        HashSet<Literal> literals = new HashSet<>();
+        clauses.forEach(clause -> literals.addAll(clause.toArray()));
         return literals;
     }
 
+    public boolean evaluate(Assignment assignment) {
+        boolean isSatisfied = true;
+//        ArrayList<Clause> clauses = toArray();
+        for (Clause clause : clauses) {
+            isSatisfied &= clause.evaluate(assignment);
+            if (!isSatisfied) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean hasConflicts(Assignment assignment) {
+//        ArrayList<Clause> clauses = toArray();
+        for (Clause clause : clauses) {
+            if (clause.hasConflicts(assignment)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Literal pickUnassignedLiteral(Assignment assignment) {
+//        ArrayList<Clause> clauses = toArray();
+        for (Clause clause : clauses) {
+            ArrayList<Literal> literals = clause.toArray();
+            for (Literal literal : literals) {
+                if (assignment.getValue(literal.getName()) == null) {
+                    return literal;
+                }
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Clause> toArray() {
-        ArrayList<Clause> listOfClauses = new ArrayList<Clause>(clauses);
+        ArrayList<Clause> listOfClauses = new ArrayList<>(clauses);
         Collections.sort(listOfClauses);
         return listOfClauses;
     }
 
     public String toString() {
-        return Utilities.implode(toArray(), " ^ ");
+        return Utilities.implode(toArray(), " ∧ ");
     }
 
     @Override
     public int compareTo(Clauses otherClauses) {
-        if (clauses.equals(otherClauses.clauses)) {
+        if (clauses.size() == otherClauses.clauses.size()) {
             return 0;
-        } else if (clauses.size() != otherClauses.clauses.size()) {
-            return clauses.size() <= otherClauses.clauses.size() ? -1 : 1;
         } else {
-            ArrayList<Clause> clausesList = toArray();
-            ArrayList<Clause> otherClausesList = otherClauses.toArray();
-            for (int index = 0; index < clausesList.size(); index++) {
-                int order = clausesList.get(index).compareTo(otherClausesList.get(index));
-                if (order != 0) {
-                    return order;
-                }
-            }
-            return 0;
+            return clauses.size() < otherClauses.clauses.size() ? -1 : 1;
         }
     }
 

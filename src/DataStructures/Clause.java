@@ -1,23 +1,17 @@
 package DataStructures;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.*;
 
 public class Clause implements Comparable<Clause> {
     private HashSet<Literal> literals;
 
-    public Clause() {
-        literals = new HashSet<Literal>();
-    }
-
     public Clause(ArrayList<Literal> listOfLiterals) {
-        literals = new HashSet<Literal>();
+        literals = new HashSet<>();
         listOfLiterals.forEach(literal -> addLiteral(literal));
     }
 
     public Clause(String[] literalsString) {
-        literals = new HashSet<Literal>();
+        literals = new HashSet<>();
         for (String literalCharacter : literalsString) {
             literals.add(new Literal(literalCharacter));
         }
@@ -31,41 +25,67 @@ public class Clause implements Comparable<Clause> {
         literals.remove(literal);
     }
 
-    public HashSet<Literal> getLiteralsSet() {
-        return literals;
+    public boolean evaluate(Assignment assignment) {
+//        ArrayList<Literal> literals = toArray();
+        for (Literal literal : literals) {
+            Boolean variableValue = assignment.getValue(literal.getName());
+            if (variableValue != null && literal.evaluate(variableValue)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasConflicts(Assignment assignment) {
+//        ArrayList<Literal> literals = toArray();
+        for (Literal literal: literals) {
+            if (!literal.hasConflicts(assignment)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isUnitClause(Assignment assignment) {
+        int numOfUnassignedLiterals = 0;
+//        ArrayList<Literal> literals = toArray();
+        for (Literal literal : literals) {
+            if (assignment.getValue(literal.getName()) == null) {
+                numOfUnassignedLiterals++;
+            }
+        }
+        return numOfUnassignedLiterals == 1;
+    }
+
+    public Literal getUnitLiteral(Assignment assignment) {
+        if (!isUnitClause(assignment)) {
+            return null;
+        }
+//        ArrayList<Literal> literals = toArray();
+        for (Literal literal : literals) {
+            if (assignment.getValue(literal.getName()) == null) {
+                return literal;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Literal> toArray() {
-        ArrayList<Literal> listOfLiterals = new ArrayList<Literal>(literals);
+        ArrayList<Literal> listOfLiterals = new ArrayList<>(literals);
         Collections.sort(listOfLiterals);
         return listOfLiterals;
     }
 
     public String toString() {
-        return String.format("(%s)", Utilities.implode(toArray(), " V "));
+        return String.format("(%s)", Utilities.implode(toArray(), " ∨ "));
     }
 
     @Override
     public int compareTo(Clause otherClause) {
-        if (literals.equals(otherClause.literals)) {
+        if (literals.size() == otherClause.literals.size()) {
             return 0;
-        }
-//        } else if (literals.size() != otherClause.literals.size()) {
-//            return literals.size() <= otherClause.literals.size() ? -1 : 1;
-//        } else {
-        else {
-            ArrayList<Literal> literalsList = toArray();
-            ArrayList<Literal> otherLiteralsList = otherClause.toArray();
-            int order = 0;
-            for (int index = 0; index < literalsList.size(); index++) {
-                for (int otherIndex = 0; otherIndex < otherLiteralsList.size(); otherIndex++) {
-                    order += literalsList.get(index).compareTo(otherLiteralsList.get(otherIndex));
-                }
-            }
-            if (order != 0) {
-                return -1 * order;
-            }
-            return 0;
+        } else {
+            return literals.size() < otherClause.literals.size() ? -1 : 1;
         }
     }
 

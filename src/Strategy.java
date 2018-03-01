@@ -11,8 +11,8 @@ CDCL techniques to research on:
 - Phase Saving
 - Luby Restarts
 - Literal Blocks Distance
-- Preprocessing / In-processing
+- Pre-processing / In-processing
  */
 public enum Strategy {
-    DPLL, CDCL
+    DPLL, RDPLL, CDCL
 }

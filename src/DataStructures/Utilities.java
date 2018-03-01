@@ -1,7 +1,6 @@
 package DataStructures;
 
-import java.util.Arrays;
-import java.util.Collection;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Utilities {
@@ -32,6 +31,16 @@ public class Utilities {
 
     public static String implode(Collection collection, String separator) {
         return collection.stream().map(Object::toString).collect(Collectors.joining(separator)).toString();
+    }
+
+    public static String getOutputFromMap(HashMap<String, Boolean> results) {
+        HashMap<Integer, Boolean> parsedResults = new HashMap<>();
+        results.forEach((key, value) -> parsedResults.put(Integer.parseInt(key), value));
+        List outputList = new ArrayList(parsedResults.keySet());
+        Collections.sort(outputList);
+        ArrayList<String> output = new ArrayList<>();
+        outputList.forEach(key -> output.add(key + "=" + parsedResults.get(key)));
+        return output.toString();
     }
 
 }
