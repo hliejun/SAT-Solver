@@ -16,12 +16,12 @@ public class Edge<T> {
         this.weight = weight;
     }
 
-    public T getSource() {
-        return source.getValue();
+    public Node<T> getSource() {
+        return source;
     }
 
-    public T getDestination() {
-        return destination.getValue();
+    public Node<T> getDestination() {
+        return destination;
     }
 
     public double getWeight() {
