@@ -29,7 +29,7 @@ public class Clauses implements Comparable<Clauses> {
 
     public boolean evaluate(Assignment assignment) {
         boolean isSatisfied = true;
-        ArrayList<Clause> clauses = toArray();
+//        ArrayList<Clause> clauses = toArray();
         for (Clause clause : clauses) {
             isSatisfied &= clause.evaluate(assignment);
             if (!isSatisfied) {
@@ -40,7 +40,7 @@ public class Clauses implements Comparable<Clauses> {
     }
 
     public boolean hasConflicts(Assignment assignment) {
-        ArrayList<Clause> clauses = toArray();
+//        ArrayList<Clause> clauses = toArray();
         for (Clause clause : clauses) {
             if (clause.hasConflicts(assignment)) {
                 return true;
@@ -50,7 +50,7 @@ public class Clauses implements Comparable<Clauses> {
     }
 
     public Literal pickUnassignedLiteral(Assignment assignment) {
-        ArrayList<Clause> clauses = toArray();
+//        ArrayList<Clause> clauses = toArray();
         for (Clause clause : clauses) {
             ArrayList<Literal> literals = clause.toArray();
             for (Literal literal : literals) {

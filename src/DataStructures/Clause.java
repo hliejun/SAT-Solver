@@ -26,7 +26,7 @@ public class Clause implements Comparable<Clause> {
     }
 
     public boolean evaluate(Assignment assignment) {
-        ArrayList<Literal> literals = toArray();
+//        ArrayList<Literal> literals = toArray();
         for (Literal literal : literals) {
             Boolean variableValue = assignment.getValue(literal.getName());
             if (variableValue != null && literal.evaluate(variableValue)) {
@@ -37,7 +37,7 @@ public class Clause implements Comparable<Clause> {
     }
 
     public boolean hasConflicts(Assignment assignment) {
-        ArrayList<Literal> literals = toArray();
+//        ArrayList<Literal> literals = toArray();
         for (Literal literal: literals) {
             if (!literal.hasConflicts(assignment)) {
                 return false;
@@ -48,7 +48,7 @@ public class Clause implements Comparable<Clause> {
 
     public boolean isUnitClause(Assignment assignment) {
         int numOfUnassignedLiterals = 0;
-        ArrayList<Literal> literals = toArray();
+//        ArrayList<Literal> literals = toArray();
         for (Literal literal : literals) {
             if (assignment.getValue(literal.getName()) == null) {
                 numOfUnassignedLiterals++;
@@ -61,7 +61,7 @@ public class Clause implements Comparable<Clause> {
         if (!isUnitClause(assignment)) {
             return null;
         }
-        ArrayList<Literal> literals = toArray();
+//        ArrayList<Literal> literals = toArray();
         for (Literal literal : literals) {
             if (assignment.getValue(literal.getName()) == null) {
                 return literal;
