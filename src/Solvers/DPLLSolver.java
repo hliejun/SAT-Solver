@@ -1,8 +1,8 @@
 package Solvers;
 
-import DataStructures.*;
-
 import java.util.*;
+
+import DataStructures.*;
 
 public class DPLLSolver extends Solver {
 
@@ -14,11 +14,11 @@ public class DPLLSolver extends Solver {
     public HashMap<String, Boolean> solve() {
         resetSolver();
         while (!isSatisfied()) {
-            assignLoneClause();
+            Assignment levelState = state.get(level);
+            assignLoneClause(levelState);
             if (isSatisfied()) {
                 break;
             }
-            Assignment levelState = state.get(level);
             Literal selectedLiteral = pickBranchingAssignment();
             if (selectedLiteral == null && level == 0) {
                 return null;
@@ -37,12 +37,12 @@ public class DPLLSolver extends Solver {
         return state.get(level).getAllValues();
     }
 
-    protected void assignLoneClause() {
-        Assignment levelState = state.get(level);
-        for (Clause clause : formula.getClausesSet()) {
-            if (!clause.evaluate(levelState) && !clause.hasConflicts(levelState) && clause.isUnitClause(levelState)) {
-                Literal literal = clause.getUnitLiteral(levelState);
-                levelState.assignValue(literal.getName(), literal.getSign());
+    protected void assignLoneClause(Assignment state) {
+        ArrayList<Clause> clauses = formula.toArray();
+        for (Clause clause : clauses) {
+            if (!clause.evaluate(state) && !clause.hasConflicts(state) && clause.isUnitClause(state)) {
+                Literal literal = clause.getUnitLiteral(state);
+                state.assignValue(literal.getName(), literal.getSign());
             }
         }
     }
@@ -63,6 +63,7 @@ public class DPLLSolver extends Solver {
         state.get(level).addAttempt(literal);
         Assignment assignment = new Assignment(state.get(level));
         assignment.assignValue(literal.getName(), literal.getSign());
+        assignLoneClause(assignment);
         return assignment;
     }
 

@@ -1,8 +1,8 @@
 package Solvers;
 
-import DataStructures.*;
-
 import java.util.HashMap;
+
+import DataStructures.*;
 
 public class CDCLSolver extends Solver {
 
@@ -32,7 +32,7 @@ public class CDCLSolver extends Solver {
 
     @Override
     protected Integer backtrack(Clauses conflicts) {
-        // TODO: Every backtrack will need to evaluate from learnt clauses
+        // Evaluate from learnt clauses
         return null;
     }
 

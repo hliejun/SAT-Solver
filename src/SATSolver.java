@@ -1,19 +1,13 @@
-import DataStructures.Clauses;
-import DataStructures.Utilities;
-import Solvers.CDCLSolver;
-import Solvers.DPLLSolver;
-import Solvers.RDPLLSolver;
-import Solvers.Solver;
-
 import java.util.*;
 
-// TODO: Pick strategy by arguments/parameters
+import DataStructures.*;
+import Solvers.*;
 
 public class SATSolver {
 
     public static void main(String[] args) {
         Solver solver = null;
-        String path = "./test/testcases/sat/3.cnf";
+        String path = "./test/testcases/sat/7.cnf";
         if (args.length != 0) {
             path = args[0];
         }
@@ -25,6 +19,8 @@ public class SATSolver {
 
 //        Strategy strategy = Strategy.DPLL;
         Strategy strategy = Strategy.RDPLL;
+
+        long startTime = System.currentTimeMillis();
 
         switch(strategy) {
             case RDPLL:
@@ -48,6 +44,10 @@ public class SATSolver {
         } else {
             System.out.println("Unsupported strategy.");
         }
+
+        long endTime = System.currentTimeMillis();
+        double elapsedTime = (endTime - startTime) / 1000.0;
+        System.out.println("Execution Time: " + elapsedTime + " seconds");
     }
 
 }

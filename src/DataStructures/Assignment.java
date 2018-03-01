@@ -44,8 +44,7 @@ public class Assignment {
     }
 
     public Assignment copy() {
-        Assignment newAssignment = new Assignment(this);
-        return newAssignment;
+        return new Assignment(this);
     }
 
 }

@@ -1,20 +1,14 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 import DataStructures.*;
 
 public class LiteralTest {
-    private String variable;
-    private boolean value;
-    private final ExpectedException exception = ExpectedException.none();
 
     @Test
-    public void testPostiveValueNumericLiteral() {
+    public void testPositiveValueNumericLiteral() {
         Literal literal = new Literal("1");
         assertTrue("Literal should yield true sign.", literal.getSign());
         assertTrue("Literal should evaluate to true.", literal.evaluate(true));

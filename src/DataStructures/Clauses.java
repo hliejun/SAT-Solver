@@ -2,19 +2,11 @@ package DataStructures;
 
 import java.util.*;
 
-// TODO: Redesign compareTo
-// TODO: Make sure clauses are sorted before processing
-
 public class Clauses implements Comparable<Clauses> {
     private HashSet<Clause> clauses;
 
     public Clauses() {
         clauses = new HashSet<>();
-    }
-
-    public Clauses(ArrayList<Clause> listOfClauses) {
-        clauses = new HashSet<>();
-        listOfClauses.forEach(clause -> addClause(clause));
     }
 
     public void addClause(Clause clause) {
@@ -23,10 +15,6 @@ public class Clauses implements Comparable<Clauses> {
 
     public void addClause(String[] literalsString) {
         clauses.add(new Clause(literalsString));
-    }
-
-    public void removeClause(Clause clause) {
-        clauses.remove(clause);
     }
 
     public HashSet<Clause> getClausesSet() {
@@ -41,6 +29,7 @@ public class Clauses implements Comparable<Clauses> {
 
     public boolean evaluate(Assignment assignment) {
         boolean isSatisfied = true;
+        ArrayList<Clause> clauses = toArray();
         for (Clause clause : clauses) {
             isSatisfied &= clause.evaluate(assignment);
             if (!isSatisfied) {
@@ -51,6 +40,7 @@ public class Clauses implements Comparable<Clauses> {
     }
 
     public boolean hasConflicts(Assignment assignment) {
+        ArrayList<Clause> clauses = toArray();
         for (Clause clause : clauses) {
             if (clause.hasConflicts(assignment)) {
                 return true;
@@ -60,8 +50,10 @@ public class Clauses implements Comparable<Clauses> {
     }
 
     public Literal pickUnassignedLiteral(Assignment assignment) {
+        ArrayList<Clause> clauses = toArray();
         for (Clause clause : clauses) {
-            for (Literal literal : clause.toArray()) {
+            ArrayList<Literal> literals = clause.toArray();
+            for (Literal literal : literals) {
                 if (assignment.getValue(literal.getName()) == null) {
                     return literal;
                 }
@@ -82,20 +74,10 @@ public class Clauses implements Comparable<Clauses> {
 
     @Override
     public int compareTo(Clauses otherClauses) {
-        if (clauses.equals(otherClauses.clauses)) {
+        if (clauses.size() == otherClauses.clauses.size()) {
             return 0;
-        } else if (clauses.size() != otherClauses.clauses.size()) {
-            return clauses.size() <= otherClauses.clauses.size() ? -1 : 1;
         } else {
-            ArrayList<Clause> clausesList = toArray();
-            ArrayList<Clause> otherClausesList = otherClauses.toArray();
-            for (int index = 0; index < clausesList.size(); index++) {
-                int order = clausesList.get(index).compareTo(otherClausesList.get(index));
-                if (order != 0) {
-                    return order;
-                }
-            }
-            return 0;
+            return clauses.size() < otherClauses.clauses.size() ? -1 : 1;
         }
     }
 

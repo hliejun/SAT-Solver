@@ -1,7 +1,5 @@
 package DataStructures;
 
-// TODO: Redesign compareTo
-
 public class Literal implements Comparable<Literal> {
     private final boolean sign;
     private final String label;
@@ -29,10 +27,7 @@ public class Literal implements Comparable<Literal> {
     }
 
     public boolean hasConflicts(Assignment assignment) {
-        if (assignment.getValue(label) == null) {
-            return false;
-        }
-        return !evaluate(assignment.getValue(label));
+        return assignment.getValue(label) != null && !evaluate(assignment.getValue(label));
     }
 
     public Boolean evaluate(boolean truthValue) {

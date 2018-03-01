@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import DataStructures.*;
@@ -7,7 +6,6 @@ import DataStructures.*;
 public class ParserTest {
     String testPath = "./test/testcases/";
     String validFileName = "input1.cnf";
-    String invalidFileName = "";
 
     /*
      *  p  cnf  3  2
