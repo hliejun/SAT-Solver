@@ -32,7 +32,6 @@ public class CDCLSolver extends Solver {
 
     @Override
     protected Integer backtrack(Clauses conflicts) {
-        // Evaluate from learnt clauses
         return null;
     }
 
