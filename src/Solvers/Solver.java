@@ -17,7 +17,6 @@ abstract public class Solver {
         numOfLiterals = literalsCount;
         variables = new HashSet<>();
         formula.getLiteralSet().forEach(literal -> variables.add(literal.getName()));
-        learntClauses = null;
         resetSolver();
     }
 
@@ -30,12 +29,17 @@ abstract public class Solver {
         state = new HashMap<>();
         level = 0;
         state.put(level, new Assignment(variables.size()));
+        learntClauses = new Clauses();
     }
 
     protected HashSet<String> getUnassignedVariables(Assignment state) {
         HashSet<String> variableSet = new HashSet<>(variables);
         variableSet.removeAll(state.getAllValues().keySet());
         return variableSet;
+    }
+
+    protected Assignment getLevelState() {
+        return state.get(level);
     }
 
     abstract public HashMap<String, Boolean> solve();

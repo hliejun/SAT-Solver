@@ -3,13 +3,13 @@ package DataStructures;
 import java.util.*;
 import java.util.stream.Collectors;
 
+// TODO: Test Graph
+
 public class Graph<T> {
-    protected boolean isDirected;
     protected HashMap<Node<T>, HashSet<Edge<T>>> adjacencyList;
 
-    public Graph(boolean isDirected) {
+    public Graph() {
         this.adjacencyList = new HashMap<>();
-        this.isDirected = isDirected;
     }
 
     public void addNode(Node<T> node) {

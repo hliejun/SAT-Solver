@@ -7,7 +7,7 @@ public class SATSolver {
 
     public static void main(String[] args) {
         Solver solver = null;
-        String path = "./test/testcases/sat/5.cnf";
+        String path = "./test/testcases/sat/1.cnf";
         if (args.length != 0) {
             path = args[0];
         }
@@ -17,7 +17,8 @@ public class SATSolver {
 
         System.out.println(clauses);
 
-        Strategy strategy = Strategy.DPLL;
+        Strategy strategy = Strategy.CDCL;
+//        Strategy strategy = Strategy.DPLL;
 //        Strategy strategy = Strategy.RDPLL;
 
         long startTime = System.currentTimeMillis();

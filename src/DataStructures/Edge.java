@@ -11,6 +11,12 @@ public class Edge<T> {
         this.weight = 0;
     }
 
+    public Edge(Node<T> source, Node<T> destination) {
+        this.source = source;
+        this.destination = destination;
+        this.weight = 0;
+    }
+
     public Edge(T source, T destination, double weight) {
         this(source, destination);
         this.weight = weight;

@@ -70,6 +70,10 @@ public class Clause implements Comparable<Clause> {
         return null;
     }
 
+    public HashSet<Literal> getLiterals() {
+        return literals;
+    }
+
     public ArrayList<Literal> toArray() {
         ArrayList<Literal> listOfLiterals = new ArrayList<>(literals);
         Collections.sort(listOfLiterals);
