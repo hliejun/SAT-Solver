@@ -30,7 +30,7 @@ public class CDCLSolver extends Solver {
             if (conflict != null) {
                 Integer proposedLevel = analyzeConflict(conflict);
                 if (proposedLevel == null) {
-                    return null;
+                    return null;g
                 }
                 backtrack(proposedLevel);
             }
@@ -103,7 +103,7 @@ public class CDCLSolver extends Solver {
                 queue.addAll(stateGraph.getAntecedentEdges(antecedentNode));
             }
         }
-        // Backtrack to latest level (of conflict clause variables)
+        // TODO: Backtrack to latest level (of conflict clause variables)
         return null;
     }
 
