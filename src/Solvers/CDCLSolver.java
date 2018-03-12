@@ -30,7 +30,7 @@ public class CDCLSolver extends Solver {
             if (conflict != null) {
                 Integer proposedLevel = analyzeConflict(conflict);
                 if (proposedLevel == null) {
-                    return null;g
+                    return null;
                 }
                 backtrack(proposedLevel);
             }
