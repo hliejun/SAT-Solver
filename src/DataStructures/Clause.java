@@ -46,6 +46,15 @@ public class Clause implements Comparable<Clause> {
         return true;
     }
 
+    public boolean containsVariable(String symbol) {
+        for (Literal literal : literals) {
+            if (literal.getName() == symbol) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean isUnitClause(Assignment assignment) {
         int numOfUnassignedLiterals = 0;
 //        ArrayList<Literal> literals = toArray();

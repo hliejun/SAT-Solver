@@ -9,6 +9,7 @@ public class IGraph {
     private HashMap<Integer, HashSet<Node<Variable>>> decisions;
     private HashSet<String> variables;
     private Clause conflictClause;
+    private Node<Variable> conflictNode;
 
     private enum Type { CONFLICT }
 
@@ -19,6 +20,7 @@ public class IGraph {
         levels = new HashMap<>();
         decisions = new HashMap<>();
         conflictClause = null;
+        conflictNode = null;
     }
 
     public boolean addAssignment(Node<Variable> node, int level) {
@@ -47,9 +49,9 @@ public class IGraph {
     public void addImplication(Clause antecedent, Variable implication, int propagationLevel) {
         HashSet<Literal> literals = antecedent.getLiterals();
         Literal impliedLiteral = new Literal(implication.getSymbol(), implication.getValue());
-        if (!literals.contains(impliedLiteral)) {
-            return; /** Guard against wrong antecedent clause **/
-        }
+//        if (!literals.contains(impliedLiteral)) {
+//            return; /** Guard against wrong antecedent clause **/
+//        }
         Node<Variable> impliedNode = new Node<>(implication);
         if (!addAssignment(impliedNode, propagationLevel)) {
             return; /** Guard against repeated or conflicting assignment **/
@@ -65,13 +67,14 @@ public class IGraph {
 
     public void addConflict(Clause conflictClause, int conflictLevel) {
         HashSet<Literal> literals = conflictClause.getLiterals();
-        if (!isConflicted(conflictClause)) {
-            return; /** Guard against adding non-conflicted clause **/
-        }
-        this.conflictClause = conflictClause;
+//        if (!isConflicted(conflictClause)) {
+//            return; /** Guard against adding non-conflicted clause **/
+//        }
         Type conflictLabel = Type.CONFLICT;
         Variable conflict = new Variable(conflictLabel.name(), true);
         Node<Variable> conflictNode = new Node<>(conflict.hashCode(), conflict);
+        this.conflictClause = conflictClause;
+        this.conflictNode = conflictNode;
         graph.addNode(conflictNode);
         levels.put(conflict, conflictLevel);
         literals.forEach(literal -> {
@@ -108,8 +111,50 @@ public class IGraph {
         return graph.getNodes().size() == variables.size();
     }
 
+    public boolean isAtUniqueImplicationPoint(Clause clause, int level) {
+        HashSet<Literal> literals = clause.getLiterals();
+        int count = 0;
+        for (Literal literal : literals) {
+            if (levels.get(new Variable(literal.getName(), literal.getSign())) == level) {
+                count += 1;
+            }
+        }
+        return count == 1;
+    }
+
+    public Variable getLoneVariable(Clause clause) {
+        HashSet<Literal> literals = clause.getLiterals();
+        Variable loneVariable = null;
+        for (Literal literal : literals) {
+            Node<Variable> node = values.get(literal.getName());
+            if (node == null) {
+                if (loneVariable != null) {
+                    return null;
+                }
+                loneVariable = new Variable(literal.getName(), literal.getSign());
+            } else if (literal.evaluate(node.value.getValue())) {
+                return null;
+            } else {
+                continue;
+            }
+        }
+        return loneVariable;
+    }
+
     public Clause getConflictClause() {
         return conflictClause;
+    }
+
+    public Node<Variable> getConflictNode() {
+        return conflictNode;
+    }
+
+    public Integer getLevelOfNode(Node<Variable> node) {
+        return levels.get(node);
+    }
+
+    public Set<Edge<Variable>> getAntecedentEdges(Node impliedNode) {
+        return graph.getEdgesToNode(impliedNode);
     }
 
     public HashMap<String, Boolean> getAssignment() {

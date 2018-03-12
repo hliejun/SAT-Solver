@@ -30,6 +30,10 @@ public class Edge<T> {
         return weight;
     }
 
+    public Clause getAntecedent() {
+        return antecedent;
+    }
+
     public String toString() {
         return source.toString() + " --" + antecedent.toString() + "-> " + destination.toString();
     }

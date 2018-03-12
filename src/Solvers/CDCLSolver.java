@@ -1,6 +1,6 @@
 package Solvers;
 
-import java.util.HashMap;
+import java.util.*;
 
 import DataStructures.*;
 
@@ -20,11 +20,15 @@ public class CDCLSolver extends Solver {
         }
         while (!stateGraph.isAllAssigned()) {
             Variable decision = pickBranchingVariable();
+            if (decision == null) {
+                return null;
+            }
             level += 1;
             stateGraph.addDecision(decision, level);
             performUnitPropagation(decision);
-            if (stateGraph.getConflictClause() != null) {
-                Integer proposedLevel = analyzeConflict();
+            Clause conflict = stateGraph.getConflictClause();
+            if (conflict != null) {
+                Integer proposedLevel = analyzeConflict(conflict);
                 if (proposedLevel == null) {
                     return null;
                 }
@@ -35,43 +39,94 @@ public class CDCLSolver extends Solver {
     }
 
     protected void performUnitPropagation() {
-        // Scan for lone clauses
-        // Add decisions
-        // For each decision made, perform unit propagation on assignment
-        // If assignment has conflict, break
+        HashSet<Clause> clauses = formula.getClausesSet();
+        for (Clause clause : clauses) {
+            Variable loneVariable = stateGraph.getLoneVariable(clause);
+            if (loneVariable == null) {
+                continue;
+            }
+            stateGraph.addDecision(loneVariable, level);
+            performUnitPropagation(loneVariable);
+            if (stateGraph.getConflictClause() != null) {
+                return;
+            }
+        }
     }
 
     protected void performUnitPropagation(Variable decision) {
-        // Given a literal assignment, scan for affected clauses
-        // For all affected clause:
-            // If affected clause is complete and conflicted, add conflict and break
-            // If affected clause is incomplete and lone, get implied literal and add implication
-            // Recurse propagation on implied literal
+        HashSet<Clause> clauses = formula.getClausesSet();
+        for (Clause clause : clauses) {
+            if (!clause.containsVariable(decision.getSymbol())) {
+                continue;
+            }
+            if (stateGraph.isConflicted(clause)) {
+                stateGraph.addConflict(clause, level);
+                return;
+            }
+            Variable loneVariable = stateGraph.getLoneVariable(clause);
+            if (loneVariable != null) {
+                stateGraph.addDecision(loneVariable, level);
+                performUnitPropagation(loneVariable);
+            }
+        }
     }
 
     protected Variable pickBranchingVariable() {
-        // Select assignment based on stateGraph
+        // TODO: Select assignment based on stateGraph
+        // If has conflict, pick learnt clause implied variable
+        // If no conflict, pick?
+            // #0. Random / Linear
+            // #1. Variable State Independent Decaying Sum (state-of-the-art?)
+            // #2. Exponential Recency Weighted Average
+            //     (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
         return null;
     }
 
-    protected Integer analyzeConflict() {
-        // Get conflict clause
-        // Starting from conflict clause and conflict node K, chain resolve:
-        // i = 1 : Use conflict clause as intermediary clause
-        // i > 1 : Backtrace edges to implied literals
-            // If assigned at current decision level, resolve with its antecedent
-            // If not assigned at current decision level, retain same intermediary clause
-        // i > 1, source == null : Reached decision literal, stop
-
-        // Alternatively, get all literals assigned at decision level < current, and select current level decision
-
-        // Use GRASP or CHAFF approach to determine decision level to backtrack to
+    protected Integer analyzeConflict(Clause conflictClause) {
+        Node<Variable> conflictNode = stateGraph.getConflictNode();
+        if (conflictClause == null || conflictNode == null) {
+            return null; /** This shouldn't happen... **/
+        }
+        Integer conflictLevel = stateGraph.getLevelOfNode(conflictNode);
+        HashSet<Clause> resolvedClauses = new HashSet<>();
+        Clause learntClause = new Clause(conflictClause.toArray());
+        LinkedList<Edge<Variable>> queue = new LinkedList<>();
+        queue.addAll(stateGraph.getAntecedentEdges(conflictNode));
+        while(!queue.isEmpty() && !stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
+            Edge<Variable> antecedentEdge = queue.pollFirst();
+            Node<Variable> antecedentNode = antecedentEdge.getSource();
+            boolean isSameLevel = stateGraph.getLevelOfNode(antecedentNode) == conflictLevel;
+            Clause antecedentClause = antecedentEdge.getAntecedent();
+            if (isSameLevel && antecedentClause != null && !resolvedClauses.contains(antecedentClause)) {
+                learntClause = resolve(learntClause, antecedentClause);
+                resolvedClauses.add(antecedentClause);
+                queue.addAll(stateGraph.getAntecedentEdges(antecedentNode));
+            }
+        }
+        // Backtrack to latest level (of conflict clause variables)
         return null;
     }
 
     protected void backtrack(int proposedLevel) {
         stateGraph.revertState(proposedLevel);
         level = proposedLevel;
+    }
+
+    protected Clause resolve(Clause firstClause, Clause secondClause) {
+        ArrayList<Literal> resolvedLiterals = new ArrayList<>();
+        HashMap<String, ArrayList<Literal>> clauseMap = new HashMap<>();
+        HashSet<Literal> combinedLiterals = new HashSet<>();
+        combinedLiterals.addAll(firstClause.getLiterals());
+        combinedLiterals.addAll(secondClause.getLiterals());
+        for (Literal literal : combinedLiterals) {
+            clauseMap.computeIfAbsent(literal.getName(), key -> new ArrayList<>()).add(literal);
+        }
+        clauseMap.forEach((symbol, literalSet) -> {
+            if (literalSet.size() == 1) {
+                resolvedLiterals.add(literalSet.get(0));
+            }
+        });
+        return new Clause(resolvedLiterals);
     }
 
     @Override
