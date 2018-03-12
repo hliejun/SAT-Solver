@@ -12,35 +12,66 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
 public class SATSolver {
+    public static Strategy strategy = Strategy.DPLL; // Default
+    public static String path = "../test/testcases/benchmark"; // Default
 
-    public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-        String path = "./test/testcases/benchmark";
-        if (args.length != 0) {
+    public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, InterruptedException {
+
+        String chosenStrategy = "DPLL";
+        if (args.length == 0) {
+            System.out.println("Running testcases from : " + path);
+            System.out.println("Running Strategy : " + chosenStrategy);
+            Thread.sleep(3000);
+            runBenchmarks(path, chosenStrategy);
+        } else {
             path = args[0];
+            if (args[1].equals("RDPLL")) {
+                strategy = Strategy.RDPLL;
+            } else if (args[1].equals("DPLL")) {
+                strategy = Strategy.DPLL;
+            } else if (args[1].equals("CDCL")) {
+                strategy = Strategy.CDCL;
+            }
+            chosenStrategy = args[1];
+            System.out.println("Running testcases from : " + path);
+            System.out.println("Running Strategy : " + chosenStrategy);
+            File folder = new File(path);
+            Thread.sleep(3000);
+            runTestcases(path, folder, folder.listFiles(), chosenStrategy);
         }
+    }
 
+    private static void runBenchmarks(String path, String chosenStrategy) throws FileNotFoundException, UnsupportedEncodingException {
         File folder = new File(path);
         File[] listOfFolders = folder.listFiles();
+        if (listOfFolders == null) {
+            System.out.println(path + " is an invalid path.");
+            System.exit(0);
+        }
+
         for (int i = 0; i < listOfFolders.length; i++) {
             System.out.println("Testing folder : " + listOfFolders[i].getName());
             System.out.println("************************************************************");
             System.out.println();
             File[] listOfFiles = listOfFolders[i].listFiles();
-            PrintWriter writer = new PrintWriter(listOfFolders[i].getName() + "-output.txt", "UTF-8");
-            for (int j = 0; j < listOfFiles.length; j++) {
-                String currentFile = (j + 1) + ".cnf";
-                System.out.println("Testing file : " + currentFile);
-                String filename = path + "/" + listOfFolders[i].getName() + "/" + currentFile;
-                writer.println("Testing file : " + filename);
-                writer.println("=================================================");
-                solve(filename, writer);
-                writer.println();
-            }
-            writer.close();
+            path = path + "/" + listOfFolders[i].getName();
+            runTestcases(path, listOfFolders[i], listOfFiles, chosenStrategy);
             System.out.println("Testing Completed!");
-            break;
         }
+    }
 
+    private static void runTestcases(String path, File folder, File[] listOfFiles, String chosenStrategy) throws FileNotFoundException, UnsupportedEncodingException {
+        PrintWriter writer = new PrintWriter(folder.getName() + "-output" + "-" + chosenStrategy + ".txt", "UTF-8");
+        for (int j = 0; j < listOfFiles.length; j++) {
+            String currentFile = (j + 1) + ".cnf";
+            System.out.println("Testing file : " + currentFile);
+            String filename = path + "/" + currentFile;
+            writer.println("Testing file : " + filename);
+            writer.println("=================================================");
+            solve(filename, writer);
+            writer.println();
+        }
+        writer.close();
     }
 
     public static void solve(String file, PrintWriter writer) {
@@ -50,10 +81,7 @@ public class SATSolver {
         Clauses clauses = parser.getParsedClauses();
         int literalsCount = parser.getNumOfLiterals();
 
-        System.out.println(clauses);
-
-//        Strategy strategy = Strategy.DPLL;
-        Strategy strategy = Strategy.RDPLL;
+        writer.println(clauses);
 
         switch(strategy) {
             case RDPLL:
@@ -84,6 +112,6 @@ public class SATSolver {
         long endTime = System.currentTimeMillis();
         double elapsedTime = (endTime - startTime) / 1000.0;
         writer.println("Execution Time: " + elapsedTime + " seconds");
+        System.out.println("Execution Time: " + elapsedTime + " seconds");
     }
-
 }
