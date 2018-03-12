@@ -19,7 +19,7 @@ public class Node<T> {
     }
 
     public String toString() {
-        return "N( " + value.toString() + " )";
+        return "N( " + value.toString() +  " )";
     }
 
     @Override

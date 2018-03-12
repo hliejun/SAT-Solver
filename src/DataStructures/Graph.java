@@ -3,8 +3,6 @@ package DataStructures;
 import java.util.*;
 import java.util.stream.Collectors;
 
-// TODO: Test Graph
-
 public class Graph<T> {
     protected HashMap<Node<T>, HashSet<Edge<T>>> adjacencyList;
 

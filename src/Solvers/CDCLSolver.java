@@ -1,12 +1,11 @@
 package Solvers;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import DataStructures.*;
 
 public class CDCLSolver extends Solver {
-    protected IGraph implications = new IGraph();
+    protected IGraph stateGraph = new IGraph(variables);
 
     public CDCLSolver(Clauses clauses, int literalsCount) {
         super(clauses, literalsCount);
@@ -15,68 +14,94 @@ public class CDCLSolver extends Solver {
     @Override
     public HashMap<String, Boolean> solve() {
         resetSolver();
-        while (!isSatisfied()) {
-            Literal selectedLiteral = pickBranchingAssignment();
-            if (selectedLiteral == null && level == 0) {
-                return null;
-            }
-            if (formula.hasConflicts(getLevelState()) || selectedLiteral == null) {
-                Clauses conflicts = analyzeConflict(getLevelState());
-                level = backtrack(conflicts);
-                continue;
-            }
-            Assignment propagatedState = propagateUnit(selectedLiteral);
-            level += 1;
-            state.put(level, propagatedState);
+        performUnitPropagation();
+        if (stateGraph.getConflictClause() != null) {
+            return null;
         }
-        System.out.println("Assigned: " + getLevelState().getAllValues().size() + " / " + variables.size());
-        System.out.println("Unassigned: " + getUnassignedVariables(getLevelState()));
-        return getLevelState().getAllValues();
+        while (!stateGraph.isAllAssigned()) {
+            Variable decision = pickBranchingVariable();
+            level += 1;
+            stateGraph.addDecision(decision, level);
+            performUnitPropagation(decision);
+            if (stateGraph.getConflictClause() != null) {
+                Integer proposedLevel = analyzeConflict();
+                if (proposedLevel == null) {
+                    return null;
+                }
+                backtrack(proposedLevel);
+            }
+        }
+        return stateGraph.getAssignment();
     }
+
+    protected void performUnitPropagation() {
+        // Scan for lone clauses
+        // Add decisions
+        // For each decision made, perform unit propagation on assignment
+        // If assignment has conflict, break
+    }
+
+    protected void performUnitPropagation(Variable decision) {
+        // Given a literal assignment, scan for affected clauses
+        // For all affected clause:
+            // If affected clause is complete and conflicted, add conflict and break
+            // If affected clause is incomplete and lone, get implied literal and add implication
+            // Recurse propagation on implied literal
+    }
+
+    protected Variable pickBranchingVariable() {
+        // Select assignment based on stateGraph
+        return null;
+    }
+
+    protected Integer analyzeConflict() {
+        // Get conflict clause
+        // Starting from conflict clause and conflict node K, chain resolve:
+        // i = 1 : Use conflict clause as intermediary clause
+        // i > 1 : Backtrace edges to implied literals
+            // If assigned at current decision level, resolve with its antecedent
+            // If not assigned at current decision level, retain same intermediary clause
+        // i > 1, source == null : Reached decision literal, stop
+
+        // Alternatively, get all literals assigned at decision level < current, and select current level decision
+
+        // Use GRASP or CHAFF approach to determine decision level to backtrack to
+        return null;
+    }
+
+    protected void backtrack(int proposedLevel) {
+        stateGraph.revertState(proposedLevel);
+        level = proposedLevel;
+    }
+
+    @Override
+    protected void resetSolver() {
+        super.resetSolver();
+        stateGraph = new IGraph(variables);
+    }
+
+    /**
+        Due to restructuring (to fit the described algorithm in the readings),
+        the following abstract methods are unsupported.
+     */
 
     @Override
     protected Literal pickBranchingAssignment() {
-        // TODO: Select assignment based on conflict clauses and attempted assignments
-        ArrayList<Literal> attemptedList = getLevelState().getAttempts();
-        if (attemptedList == null || attemptedList.isEmpty()) {
-            return formula.pickUnassignedLiteral(getLevelState());
-        } else if (attemptedList.size() >= 2) {
-            return null;
-        }
-        return attemptedList.get(0).getInverse();
+        return null;
     }
-
     @Override
     protected Assignment propagateUnit(Literal literal) {
-        Assignment assignment = new Assignment(getLevelState());
-
-        implications.addDecision(literal);
-        getLevelState().addAttempt(literal);
-        assignment.assignValue(literal.getName(), literal.getSign());
-
-        ArrayList<Clause> clauses = formula.toArray();
-        for (Clause clause : clauses) {
-            // TODO: Propagate lone clause (should lone clauses be added as decisions with implications too?)
-            // TODO: Propagate dependent unit clause + capture implications
-            if (!clause.evaluate(assignment) && !clause.hasConflicts(assignment) && clause.isUnitClause(assignment)) {
-                Literal unitLiteral = clause.getUnitLiteral(assignment);
-                assignment.assignValue(unitLiteral.getName(), unitLiteral.getSign());
-            }
-        }
-
-        return assignment;
+        return null;
     }
 
     @Override
     protected Clauses analyzeConflict(Assignment assignment) {
-        // TODO: Get conflict clause(s) from graph using UIP(s) schemes
         return null;
     }
 
     @Override
     protected Integer backtrack(Clauses conflicts) {
-        // TODO: Infer level to backtrack to from conflicts and graph
-        return level == 0 ? level : level - 1;
+        return 0;
     }
 
 }
