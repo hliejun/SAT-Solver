@@ -65,7 +65,7 @@ public class SATSolver {
         for (int j = 0; j < listOfFiles.length; j++) {
             String currentFile = (j + 1) + ".cnf";
             System.out.println("Testing file : " + currentFile);
-            String filename = path + "/" + currentFile;
+            String filename = path + currentFile;
             writer.println("Testing file : " + filename);
             writer.println("=================================================");
             solve(filename, writer);
@@ -81,7 +81,7 @@ public class SATSolver {
         Clauses clauses = parser.getParsedClauses();
         int literalsCount = parser.getNumOfLiterals();
 
-        writer.println(clauses);
+        // writer.println(clauses);
 
         switch(strategy) {
             case RDPLL:
@@ -95,7 +95,6 @@ public class SATSolver {
                 break;
             default:
                 break;
-
         }
 
         if (solver != null) {
