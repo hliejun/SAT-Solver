@@ -59,14 +59,14 @@ public class CDCLSolver extends Solver {
             if (!clause.containsVariable(decision.getSymbol())) {
                 continue;
             }
-            if (stateGraph.isConflicted(clause)) {
-                stateGraph.addConflict(clause, level);
-                return;
-            }
             Variable loneVariable = stateGraph.getLoneVariable(clause);
             if (loneVariable != null) {
                 stateGraph.addImplication(clause, loneVariable, level);
                 performUnitPropagation(loneVariable);
+            }
+            if (stateGraph.isConflicted(clause)) {
+                stateGraph.addConflict(clause, level);
+                return;
             }
         }
     }
@@ -90,6 +90,9 @@ public class CDCLSolver extends Solver {
             return null; /** This shouldn't happen... **/
         }
         Integer conflictLevel = stateGraph.getLevelOfNode(conflictNode);
+        if (conflictLevel == null) {
+            return null; /** This shouldn't happen... **/
+        }
         HashSet<Clause> resolvedClauses = new HashSet<>();
         Clause learntClause = new Clause(conflictClause.toArray());
         LinkedList<Edge<Variable>> queue = new LinkedList<>();
@@ -106,7 +109,7 @@ public class CDCLSolver extends Solver {
             }
         }
         this.learntClause = learntClause;
-        return stateGraph.getLargestLevel(conflictClause);
+        return stateGraph.getBacktrackLevel(conflictClause, conflictLevel);
     }
 
     protected void backtrack(int proposedLevel) {

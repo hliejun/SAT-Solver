@@ -66,12 +66,6 @@ public class Graph<T> {
         }
     }
 
-    public boolean containsEdge(Edge<T> edge) {
-        Node<T> source = edge.getSource();
-        HashSet<Edge<T>> edges = adjacencyList.get(source);
-        return edges != null && edges.contains(edge);
-    }
-
     public HashSet<Edge<T>> getEdgesFromNode(Node<T> node) {
         HashSet<Edge<T>> edges = adjacencyList.get(node);
         return edges == null ? new HashSet<>() : edges;
@@ -82,20 +76,10 @@ public class Graph<T> {
         return edges == null ? new HashSet<>() : edges;
     }
 
-    public HashSet<Edge<T>> getEdgesBetweenNodes(Node<T> firstNode, Node<T> secondNode) {
-        HashSet<Edge<T>> edgesFromFirstNode = adjacencyList.get(firstNode);
-        HashSet<Edge<T>> edgesFromSecondNode = adjacencyList.get(secondNode);
-        HashSet<Edge<T>> edges = new HashSet<>();
-
-        edges.addAll(edgesFromFirstNode.stream().filter(
-                edge -> edge.destination.equals(secondNode)
-        ).collect(Collectors.toList()));
-
-        edges.addAll(edgesFromSecondNode.stream().filter(
-                edge -> edge.destination.equals(firstNode)
-        ).collect(Collectors.toList()));
-
-        return edges;
+    public HashSet<Node<T>> getNodes() {
+        HashSet<Node<T>> nodes = new HashSet<>();
+        nodes.addAll(adjacencyList.keySet());
+        return nodes;
     }
 
     public HashSet<Node<T>> getAdjacentNodes(Node<T> node) {
@@ -112,15 +96,31 @@ public class Graph<T> {
         return incidentNodes;
     }
 
-    public HashSet<Node<T>> getNodes() {
-        HashSet<Node<T>> nodes = new HashSet<>();
-        nodes.addAll(adjacencyList.keySet());
-        return nodes;
-    }
-
     public HashSet<Edge<T>> getEdges() {
         HashSet<Edge<T>> edges = new HashSet<>();
         adjacencyList.values().forEach(edges::addAll);
+        return edges;
+    }
+
+    public boolean containsEdge(Edge<T> edge) {
+        Node<T> source = edge.getSource();
+        HashSet<Edge<T>> edges = adjacencyList.get(source);
+        return edges != null && edges.contains(edge);
+    }
+
+    public HashSet<Edge<T>> getEdgesBetweenNodes(Node<T> firstNode, Node<T> secondNode) {
+        HashSet<Edge<T>> edgesFromFirstNode = adjacencyList.get(firstNode);
+        HashSet<Edge<T>> edgesFromSecondNode = adjacencyList.get(secondNode);
+        HashSet<Edge<T>> edges = new HashSet<>();
+
+        edges.addAll(edgesFromFirstNode.stream().filter(
+                edge -> edge.destination.equals(secondNode)
+        ).collect(Collectors.toList()));
+
+        edges.addAll(edgesFromSecondNode.stream().filter(
+                edge -> edge.destination.equals(firstNode)
+        ).collect(Collectors.toList()));
+
         return edges;
     }
 
