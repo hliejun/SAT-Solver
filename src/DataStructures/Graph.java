@@ -24,11 +24,16 @@ public class Graph<T> {
         if (adjacencyList.get(node) == null) {
             return;
         }
-        getEdgesFromNode(node).forEach(this::removeEdge);
-        getEdgesToNode(node).forEach(this::removeEdge);
+        HashSet<Edge<T>> edgesFromNode = new HashSet<>(getEdgesFromNode(node));
+        for (Edge edge: edgesFromNode) {
+            removeEdge(edge);
+        }
+        HashSet<Edge<T>> edgesToNode = new HashSet<>(getEdgesToNode(node));
+        for (Edge edge: edgesToNode) {
+            removeEdge(edge);
+        }
         adjacencyList.remove(node);
         incidentList.remove(node);
-
     }
 
     public boolean containsNode(Node<T> node) {

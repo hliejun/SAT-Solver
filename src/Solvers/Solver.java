@@ -10,7 +10,7 @@ abstract public class Solver {
     protected final int numOfLiterals;
     protected HashMap<Integer, Assignment> state;
     protected Integer level;
-    protected Clauses learntClauses;
+    protected Clause learntClause;
 
     public Solver(Clauses clauses, int literalsCount) {
         formula = clauses;
@@ -29,7 +29,7 @@ abstract public class Solver {
         state = new HashMap<>();
         level = 0;
         state.put(level, new Assignment(variables.size()));
-        learntClauses = new Clauses();
+        learntClause = null;
     }
 
     protected HashSet<String> getUnassignedVariables(Assignment state) {

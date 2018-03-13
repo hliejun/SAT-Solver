@@ -64,22 +64,26 @@ public class CDCLSolver extends Solver {
                 return;
             }
             Variable loneVariable = stateGraph.getLoneVariable(clause);
+//            System.out.println(loneVariable);
+//            System.out.println(loneVariable);
             if (loneVariable != null) {
-                stateGraph.addDecision(loneVariable, level);
+                stateGraph.addImplication(clause, loneVariable, level);
                 performUnitPropagation(loneVariable);
             }
         }
     }
 
     protected Variable pickBranchingVariable() {
-        // TODO: Select assignment based on stateGraph
-        // If has conflict, pick learnt clause implied variable
+        if (learntClause != null) {
+            Variable branchingVariable = stateGraph.getLoneVariable(learntClause);
+            learntClause = null;
+            return branchingVariable;
+        }
         // If no conflict, pick?
-            // #0. Random / Linear
-            // #1. Variable State Independent Decaying Sum (state-of-the-art?)
-            // #2. Exponential Recency Weighted Average
-            //     (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
-        return null;
+        // #1. Variable State Independent Decaying Sum (state-of-the-art?)
+        // #2. Exponential Recency Weighted Average
+        //     (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
+        return stateGraph.pickUnassignedVariable(level);
     }
 
     protected Integer analyzeConflict(Clause conflictClause) {
@@ -103,8 +107,8 @@ public class CDCLSolver extends Solver {
                 queue.addAll(stateGraph.getAntecedentEdges(antecedentNode));
             }
         }
-        // TODO: Backtrack to latest level (of conflict clause variables)
-        return null;
+        this.learntClause = learntClause;
+        return stateGraph.getLargestLevel(conflictClause);
     }
 
     protected void backtrack(int proposedLevel) {
