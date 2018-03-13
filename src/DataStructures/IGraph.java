@@ -1,7 +1,6 @@
 package DataStructures;
 
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 public class IGraph {
@@ -25,17 +24,14 @@ public class IGraph {
         conflictNode = null;
     }
 
-    public boolean addAssignment(Node<Variable> node, int level) {
+    public boolean addAssignment(Node<Variable> node, int level, boolean isForced) {
         Variable assignment = node.value;
-        if (graph.containsNode(node)) {
-//            System.out.println(values);
-//            System.out.println("Error: Repeated or conflicting literal node assignment. See addAssignment.");
+        if (!isForced && graph.containsNode(node)) {
             return false; /** Guard against repeated or conflicting literal node assignment **/
         }
+        graph.removeNode(node);
         graph.addNode(node);
-//        System.out.println("ASSIGN SYMBOL: " + assignment.getSymbol());
         values.put(assignment.getSymbol(), node);
-        System.out.println("assignmentVALUES@36: " + values.get("36"));
         levels.put(assignment, level);
         return true;
     }
@@ -44,11 +40,9 @@ public class IGraph {
         Node<Variable> decisionNode = new Node<>(decision);
         HashSet<Node<Variable>> previousDecisions = decisions.get(decisionLevel);
         if (previousDecisions != null && previousDecisions.contains(decisionNode)) {
-//            System.out.println("Error: Repeated decisions. See addDecision.");
             return; /** Guard against repeated decisions **/
         }
-        if (!addAssignment(decisionNode, decisionLevel)) {
-//            System.out.println("Error: Repeated or conflicting assignment. See addDecision.");
+        if (!addAssignment(decisionNode, decisionLevel, true)) {
             return; /** Guard against repeated or conflicting assignment **/
         }
         decisions.computeIfAbsent(decisionLevel, key -> new HashSet<>()).add(decisionNode);
@@ -57,12 +51,8 @@ public class IGraph {
     public void addImplication(Clause antecedent, Variable implication, int propagationLevel) {
         HashSet<Literal> literals = antecedent.getLiterals();
         Literal impliedLiteral = new Literal(implication.getSymbol(), implication.getValue());
-//        if (!literals.contains(impliedLiteral)) {
-//            return; /** Guard against wrong antecedent clause **/
-//        }
         Node<Variable> impliedNode = new Node<>(implication);
-        if (!addAssignment(impliedNode, propagationLevel)) {
-//            System.out.println("Error: Repeated or conflicting assignment. See addImplication.");
+        if (!addAssignment(impliedNode, propagationLevel, false)) {
             return; /** Guard against repeated or conflicting assignment **/
         }
         literals.forEach(literal -> {
@@ -76,9 +66,6 @@ public class IGraph {
 
     public void addConflict(Clause conflictClause, int conflictLevel) {
         HashSet<Literal> literals = conflictClause.getLiterals();
-//        if (!isConflicted(conflictClause)) {
-//            return; /** Guard against adding non-conflicted clause **/
-//        }
         Type conflictLabel = Type.CONFLICT;
         Variable conflict = new Variable(conflictLabel.name(), true);
         Node<Variable> conflictNode = new Node<>(conflict.hashCode(), conflict);
@@ -94,7 +81,6 @@ public class IGraph {
     }
 
     public void revertState(int level) {
-        System.out.println("REVERT");
         graph.getNodes().forEach(node -> {
             Variable assignment = node.value;
             Integer assignedLevel = levels.get(assignment);
@@ -111,6 +97,7 @@ public class IGraph {
             }
         });
         conflictClause = null;
+//        System.out.println(levels);
     }
 
     public boolean isConflicted(Clause clause) {
@@ -145,9 +132,7 @@ public class IGraph {
         Variable loneVariable = null;
         for (Literal literal : literals) {
             Node<Variable> node = values.get(literal.getName());
-            System.out.println("getLoneVALUES@36: " + values.get("36"));
             if (node == null) {
-//                System.out.println("LITERAL: " + values.get(literal.getName()));
                 if (loneVariable != null) {
                     return null;
                 }

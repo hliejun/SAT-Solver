@@ -64,8 +64,6 @@ public class CDCLSolver extends Solver {
                 return;
             }
             Variable loneVariable = stateGraph.getLoneVariable(clause);
-//            System.out.println(loneVariable);
-//            System.out.println(loneVariable);
             if (loneVariable != null) {
                 stateGraph.addImplication(clause, loneVariable, level);
                 performUnitPropagation(loneVariable);
@@ -112,6 +110,7 @@ public class CDCLSolver extends Solver {
     }
 
     protected void backtrack(int proposedLevel) {
+        System.out.println("BACKTRACK: " + level + " -> " + proposedLevel);
         stateGraph.revertState(proposedLevel);
         level = proposedLevel;
     }
