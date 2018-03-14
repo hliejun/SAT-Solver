@@ -4,10 +4,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Graph<T> {
-    protected HashMap<Node<T>, HashSet<Edge<T>>> adjacencyList;
-    protected HashMap<Node<T>, HashSet<Edge<T>>> incidentList;
+    private HashMap<Node<T>, HashSet<Edge<T>>> adjacencyList;
+    private HashMap<Node<T>, HashSet<Edge<T>>> incidentList;
 
-    public Graph() {
+    Graph() {
         this.adjacencyList = new HashMap<>();
         this.incidentList = new HashMap<>();
     }
@@ -25,11 +25,11 @@ public class Graph<T> {
             return;
         }
         HashSet<Edge<T>> edgesFromNode = new HashSet<>(getEdgesFromNode(node));
-        for (Edge edge: edgesFromNode) {
+        for (Edge<T> edge: edgesFromNode) {
             removeEdge(edge);
         }
         HashSet<Edge<T>> edgesToNode = new HashSet<>(getEdgesToNode(node));
-        for (Edge edge: edgesToNode) {
+        for (Edge<T> edge: edgesToNode) {
             removeEdge(edge);
         }
         adjacencyList.remove(node);
@@ -53,7 +53,17 @@ public class Graph<T> {
         incomingEdges.add(edge);
     }
 
-    public void removeEdge(Edge<T> edge) {
+    public HashSet<Edge<T>> getEdgesToNode(Node<T> node) {
+        HashSet<Edge<T>> edges = incidentList.get(node);
+        edges = edges == null ? new HashSet<>() : edges;
+        return edges;
+    }
+
+    public HashSet<Node<T>> getNodes() {
+        return new HashSet<>(adjacencyList.keySet());
+    }
+
+    private void removeEdge(Edge<T> edge) {
         Node<T> source = edge.source;
         Node<T> destination = edge.destination;
         HashSet<Edge<T>> outgoingEdges = adjacencyList.get(source);
@@ -66,20 +76,9 @@ public class Graph<T> {
         }
     }
 
-    public HashSet<Edge<T>> getEdgesFromNode(Node<T> node) {
+    private HashSet<Edge<T>> getEdgesFromNode(Node<T> node) {
         HashSet<Edge<T>> edges = adjacencyList.get(node);
         return edges == null ? new HashSet<>() : edges;
-    }
-
-    public HashSet<Edge<T>> getEdgesToNode(Node<T> node) {
-        HashSet<Edge<T>> edges = incidentList.get(node);
-        return edges == null ? new HashSet<>() : edges;
-    }
-
-    public HashSet<Node<T>> getNodes() {
-        HashSet<Node<T>> nodes = new HashSet<>();
-        nodes.addAll(adjacencyList.keySet());
-        return nodes;
     }
 
     public HashSet<Node<T>> getAdjacentNodes(Node<T> node) {
@@ -103,7 +102,7 @@ public class Graph<T> {
     }
 
     public boolean containsEdge(Edge<T> edge) {
-        Node<T> source = edge.getSource();
+        Node<T> source = edge.source;
         HashSet<Edge<T>> edges = adjacencyList.get(source);
         return edges != null && edges.contains(edge);
     }

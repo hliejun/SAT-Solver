@@ -13,21 +13,8 @@ public class Edge<T> {
         this.weight = 0;
     }
 
-    public Edge(Node<T> source, Node<T> destination, Clause antecedent, double weight) {
-        this(source, destination, antecedent);
-        this.weight = weight;
-    }
-
     public Node<T> getSource() {
         return source;
-    }
-
-    public Node<T> getDestination() {
-        return destination;
-    }
-
-    public double getWeight() {
-        return weight;
     }
 
     public Clause getAntecedent() {
@@ -55,6 +42,19 @@ public class Edge<T> {
     @Override
     public int hashCode() {
         return toString().hashCode();
+    }
+
+    public Edge(Node<T> source, Node<T> destination, Clause antecedent, double weight) {
+        this(source, destination, antecedent);
+        this.weight = weight;
+    }
+
+    public Node<T> getDestination() {
+        return destination;
+    }
+
+    public double getWeight() {
+        return weight;
     }
 
 }

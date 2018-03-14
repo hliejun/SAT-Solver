@@ -6,7 +6,6 @@ import java.util.stream.IntStream;
 public class IGraph {
     private Graph<Variable> graph;
     private HashMap<String, Node<Variable>> values;
-    private HashMap<Variable, Integer> levels;
     private HashMap<Integer, HashSet<Node<Variable>>> decisions;
     private HashSet<String> variables;
     private Clause conflictClause;
@@ -14,43 +13,34 @@ public class IGraph {
 
     private enum Type { CONFLICT }
 
+    // TODO: Save conflict as substitution to previous decisions
+
     public IGraph(HashSet<String> variables) {
         this.variables = variables;
         graph = new Graph<>();
         values = new HashMap<>();
-        levels = new HashMap<>();
         decisions = new HashMap<>();
         conflictClause = null;
         conflictNode = null;
     }
 
-    public boolean addAssignment(Node<Variable> node, int level, boolean isForced) {
-        Variable assignment = node.value;
-        if (!isForced && graph.containsNode(node)) {
-            return false;
-        }
-        graph.removeNode(node);
-        graph.addNode(node);
-        values.put(assignment.getSymbol(), node);
-        levels.put(assignment, level);
-        return true;
-    }
-
     public void addDecision(Variable decision, int decisionLevel) {
+        int inferenceLevel = decision.getLevel();
+        decision.setLevel(decisionLevel);
         Node<Variable> decisionNode = new Node<>(decision);
-        addAssignment(decisionNode, decisionLevel, true);
-        decisions.computeIfAbsent(decisionLevel, key -> new HashSet<>()).add(decisionNode);
+        assign(decisionNode);
+        decisions.computeIfAbsent(inferenceLevel, key -> new HashSet<>()).add(decisionNode);
     }
 
-    public void addImplication(Clause antecedent, Variable implication, int propagationLevel) {
+    public void addImplication(Clause antecedent, Variable impliedVariable) {
         HashSet<Literal> literals = antecedent.getLiterals();
-        Literal impliedLiteral = new Literal(implication.getSymbol(), implication.getValue());
-        Node<Variable> impliedNode = new Node<>(implication);
-        addAssignment(impliedNode, propagationLevel, false);
+        Node<Variable> impliedNode = new Node<>(impliedVariable);
+        assign(impliedNode);
         literals.forEach(literal -> {
-            Variable antecedentAssignment = new Variable(literal.getName(), !literal.getSign());
-            Node<Variable> antecedentNode = new Node<>(antecedentAssignment);
-            if (!literal.equals(impliedLiteral) && graph.containsNode(antecedentNode)) {
+            Node<Variable> antecedentNode = values.get(literal.getName());
+            if (antecedentNode != null
+                    && !literal.getName().equals(impliedVariable.getSymbol())
+                    && graph.containsNode(antecedentNode)) {
                 graph.addEdge(new Edge<>(antecedentNode, impliedNode, antecedent));
             }
         });
@@ -58,14 +48,11 @@ public class IGraph {
 
     public void addConflict(Clause conflictClause, int conflictLevel) {
         HashSet<Literal> literals = conflictClause.getLiterals();
-        Type conflictLabel = Type.CONFLICT;
-        Variable conflict = new Variable(conflictLabel.name(), true);
-        Node<Variable> conflictNode = new Node<>(conflict.hashCode(), conflict);
+        Node<Variable> conflictNode = createConflictNode(conflictLevel);
         this.conflictClause = conflictClause;
         this.conflictNode = conflictNode;
         graph.addNode(conflictNode);
-        values.put(conflictLabel.name(), conflictNode);
-        levels.put(conflict, conflictLevel);
+        values.put(conflictNode.value.getSymbol(), conflictNode);
         literals.forEach(literal -> {
             Node<Variable> conflictSource = values.get(literal.getName());
             graph.addEdge(new Edge<>(conflictSource, conflictNode, conflictClause));
@@ -74,21 +61,18 @@ public class IGraph {
 
     public void revertState(int level) {
         graph.getNodes().forEach(node -> {
-            Variable assignment = node.value;
-            Integer assignedLevel = levels.get(assignment);
-            if(assignedLevel != null && assignedLevel > level) {
+            Variable assignedVariable = node.value;
+            if(assignedVariable.getLevel() > level) {
                 graph.removeNode(node);
-                values.remove(assignment.getSymbol());
-                levels.remove(assignment);
+                values.remove(assignedVariable.getSymbol());
                 int lastLevel = decisions.size() - 1;
                 if (lastLevel > level) {
-                    IntStream.range(level + 1, lastLevel).forEachOrdered(expiredLevel -> {
-                        decisions.remove(expiredLevel);
-                    });
+                    IntStream.range(level + 1, lastLevel).forEachOrdered(oldLevel -> decisions.remove(oldLevel));
                 }
             }
         });
         conflictClause = null;
+        conflictNode = null;
     }
 
     public boolean isConflicted(Clause clause) {
@@ -110,55 +94,58 @@ public class IGraph {
         HashSet<Literal> literals = clause.getLiterals();
         int count = 0;
         for (Literal literal : literals) {
-            Integer assignmentLevel = levels.get(new Variable(literal.getName(), literal.getSign()));
-            if (assignmentLevel != null && assignmentLevel == level) {
+            Node<Variable> node = values.get(literal.getName());
+            Integer assignedLevel = node == null ? null : node.value.getLevel();
+            if (assignedLevel != null && assignedLevel == level) {
                 count += 1;
             }
         }
         return count == 1;
     }
 
-    public Variable getLoneVariable(Clause clause) {
+    public Variable getImpliedVariable(Clause clause, int level) {
         HashSet<Literal> literals = clause.getLiterals();
-        Variable loneVariable = null;
+        Variable impliedVariable = null;
         for (Literal literal : literals) {
             Node<Variable> node = values.get(literal.getName());
-            if (node == null && loneVariable != null) {
+            if (node == null && impliedVariable != null) {
                 return null;
             } else if (node == null) {
-                loneVariable = new Variable(literal.getName(), literal.getSign());
+                impliedVariable = literal.toVariable(level);
             } else if (literal.evaluate(node.value.getValue())) {
                 return null;
             }
         }
-        return loneVariable;
+        return impliedVariable;
     }
 
-    public Integer getBacktrackLevel(Clause clause, int conflictLevel) {
-        int backtrackLevel = -1;
+    public Integer getHighestLevel(Clause clause, int conflictLevel) {
+        // TODO: Change to highest level of false assigned variables...
+        System.out.println("CONFLICT CLAUSE: " + clause);
+        int highestLevel = -1;
         HashSet<Literal> literals = clause.getLiterals();
         for (Literal literal : literals) {
-            Node literalNode = new Node<>(new Variable(literal.getName(), literal.getSign()));
-            Integer nodeLevel = getLevelOfNode(literalNode);
-            if (nodeLevel != null && nodeLevel > backtrackLevel && nodeLevel < conflictLevel) {
-                backtrackLevel = nodeLevel;
+            Node<Variable> literalNode = values.get(literal.getName());
+            Integer nodeLevel = literalNode == null ? null : literalNode.value.getLevel();
+            if (nodeLevel != null && nodeLevel > highestLevel && nodeLevel < conflictLevel) {
+                highestLevel = nodeLevel;
             }
         }
-        return backtrackLevel < 0 ? null : backtrackLevel;
+        return highestLevel < 0 ? null : highestLevel;
     }
 
     public Variable pickUnassignedVariable(int level) {
-        HashSet<Node<Variable>> nodes = graph.getNodes();
+        // TODO: Remove decision checking here?
         HashSet<String> unassignedSymbols = new HashSet<>();
         variables.forEach(symbol -> {
-            if (!nodes.contains(new Node<>(new Variable(symbol, true)))) {
+            if (values.get(symbol) == null) {
                 unassignedSymbols.add(symbol);
             }
         });
         HashSet<Node<Variable>> previousDecisions = decisions.get(level);
         for (String symbol : unassignedSymbols) {
-            Node<Variable> positiveAssignment = new Node<>(new Variable(symbol, true));
-            Node<Variable> negativeAssignment = new Node<>(new Variable(symbol, false));
+            Node<Variable> positiveAssignment = getNode(symbol, true, level);
+            Node<Variable> negativeAssignment = getNode(symbol, false, level);
             if (previousDecisions == null || !previousDecisions.contains(positiveAssignment)) {
                 return positiveAssignment.getValue();
             }
@@ -177,11 +164,7 @@ public class IGraph {
         return conflictNode;
     }
 
-    public Integer getLevelOfNode(Node<Variable> node) {
-        return levels.get(node.value);
-    }
-
-    public HashSet<Edge<Variable>> getAntecedentEdges(Node impliedNode) {
+    public HashSet<Edge<Variable>> getAntecedentEdges(Node<Variable> impliedNode) {
         return graph.getEdgesToNode(impliedNode);
     }
 
@@ -189,6 +172,41 @@ public class IGraph {
         HashMap<String, Boolean> assignment = new HashMap<>();
         values.forEach((key, node) -> assignment.put(key, node.value.getValue()));
         return assignment;
+    }
+
+    public boolean evaluate(Clauses formula) {
+        HashSet<Clause> clauses = formula.getClausesSet();
+        for (Clause clause : clauses) {
+            HashSet<Literal> literals = clause.getLiterals();
+            boolean isClauseSatisfied = false;
+            for (Literal literal : literals) {
+                Node<Variable> node = values.get(literal.getName());
+                if (node != null && literal.evaluate(node.value.getValue())) {
+                    isClauseSatisfied = true;
+                }
+            }
+            if (!isClauseSatisfied) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void assign(Node<Variable> node) {
+        Variable assignment = node.value;
+        graph.addNode(node);
+        values.put(assignment.getSymbol(), node);
+    }
+
+    private Node<Variable> getNode(String symbol, boolean value, int level) {
+        Variable variable = new Variable(symbol, value, level);
+        return new Node<>(variable);
+    }
+
+    private Node<Variable> createConflictNode(int conflictLevel) {
+        Type conflictLabel = Type.CONFLICT;
+        Variable conflict = new Variable(conflictLabel.name(), true, conflictLevel);
+        return new Node<>(conflict.hashCode(), conflict);
     }
 
 }

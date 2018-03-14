@@ -38,6 +38,10 @@ public class Literal implements Comparable<Literal> {
         return sign ? label : String.format("¬%s", label);
     }
 
+    public Variable toVariable(int level) {
+        return new Variable(label, sign, level);
+    }
+
     @Override
     public int compareTo(Literal otherLiteral) {
         if (!label.equals(otherLiteral.label)) {

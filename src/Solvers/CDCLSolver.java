@@ -5,7 +5,7 @@ import java.util.*;
 import DataStructures.*;
 
 public class CDCLSolver extends Solver {
-    protected IGraph stateGraph = new IGraph(variables);
+    private IGraph stateGraph = new IGraph(variables);
 
     public CDCLSolver(Clauses clauses, int literalsCount) {
         super(clauses, literalsCount);
@@ -35,64 +35,70 @@ public class CDCLSolver extends Solver {
                 backtrack(proposedLevel);
             }
         }
+        System.out.println("Satisfiable: " + stateGraph.evaluate(formula));
         return stateGraph.getAssignment();
     }
 
-    protected void performUnitPropagation() {
+    private void performUnitPropagation() {
         HashSet<Clause> clauses = formula.getClausesSet();
         for (Clause clause : clauses) {
-            Variable loneVariable = stateGraph.getLoneVariable(clause);
-            if (loneVariable == null) {
+            Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
+            if (impliedVariable == null) {
                 continue;
             }
-            stateGraph.addDecision(loneVariable, level);
-            performUnitPropagation(loneVariable);
+            stateGraph.addDecision(impliedVariable, level);
+            performUnitPropagation(impliedVariable);
             if (stateGraph.getConflictClause() != null) {
                 return;
             }
         }
     }
 
-    protected void performUnitPropagation(Variable decision) {
+    private void performUnitPropagation(Variable decision) {
         HashSet<Clause> clauses = formula.getClausesSet();
         for (Clause clause : clauses) {
             if (!clause.containsVariable(decision.getSymbol())) {
                 continue;
             }
-            Variable loneVariable = stateGraph.getLoneVariable(clause);
-            if (loneVariable != null) {
-                stateGraph.addImplication(clause, loneVariable, level);
-                performUnitPropagation(loneVariable);
-            }
             if (stateGraph.isConflicted(clause)) {
                 stateGraph.addConflict(clause, level);
                 return;
             }
+            Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
+            if (impliedVariable != null) {
+                stateGraph.addImplication(clause, impliedVariable);
+                if (stateGraph.isConflicted(clause)) {
+                    stateGraph.addConflict(clause, level);
+                    return;
+                }
+                performUnitPropagation(impliedVariable);
+            }
         }
     }
 
-    protected Variable pickBranchingVariable() {
+    /**
+     If no conflict, pick
+     #1. Variable State Independent Decaying Sum (state-of-the-art?)
+     #2. Exponential Recency Weighted Average
+     (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
+     */
+    private Variable pickBranchingVariable() {
         if (learntClause != null) {
-            Variable branchingVariable = stateGraph.getLoneVariable(learntClause);
+            // TODO: Check with decision otherwise return null
+            Variable branchingVariable = stateGraph.getImpliedVariable(learntClause, level);
             learntClause = null;
             return branchingVariable;
         }
-        // If no conflict, pick?
-        // #1. Variable State Independent Decaying Sum (state-of-the-art?)
-        // #2. Exponential Recency Weighted Average
-        //     (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
         return stateGraph.pickUnassignedVariable(level);
     }
 
-    protected Integer analyzeConflict(Clause conflictClause) {
+    private Integer analyzeConflict(Clause conflictClause) {
+        // TODO: Check this... seems that the learnt clause does not fit the notes description
         Node<Variable> conflictNode = stateGraph.getConflictNode();
         if (conflictClause == null || conflictNode == null) {
             return null; /** This shouldn't happen... **/
         }
-        Integer conflictLevel = stateGraph.getLevelOfNode(conflictNode);
-        if (conflictLevel == null) {
-            return null; /** This shouldn't happen... **/
-        }
+        Integer conflictLevel = conflictNode.getValue().getLevel();
         HashSet<Clause> resolvedClauses = new HashSet<>();
         Clause learntClause = new Clause(conflictClause.toArray());
         LinkedList<Edge<Variable>> queue = new LinkedList<>();
@@ -100,7 +106,7 @@ public class CDCLSolver extends Solver {
         while(!queue.isEmpty() && !stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
             Edge<Variable> antecedentEdge = queue.pollFirst();
             Node<Variable> antecedentNode = antecedentEdge.getSource();
-            boolean isSameLevel = stateGraph.getLevelOfNode(antecedentNode) == conflictLevel;
+            boolean isSameLevel = antecedentNode.getValue().getLevel() == conflictLevel;
             Clause antecedentClause = antecedentEdge.getAntecedent();
             if (isSameLevel && antecedentClause != null && !resolvedClauses.contains(antecedentClause)) {
                 learntClause = resolve(learntClause, antecedentClause);
@@ -109,16 +115,17 @@ public class CDCLSolver extends Solver {
             }
         }
         this.learntClause = learntClause;
-        return stateGraph.getBacktrackLevel(conflictClause, conflictLevel);
+        Integer highestLevel = stateGraph.getHighestLevel(conflictClause, conflictLevel);
+        return highestLevel == null ? null : highestLevel - 1;
     }
 
-    protected void backtrack(int proposedLevel) {
+    private void backtrack(int proposedLevel) {
         System.out.println("BACKTRACK: " + level + " -> " + proposedLevel);
         stateGraph.revertState(proposedLevel);
         level = proposedLevel;
     }
 
-    protected Clause resolve(Clause firstClause, Clause secondClause) {
+    private Clause resolve(Clause firstClause, Clause secondClause) {
         ArrayList<Literal> resolvedLiterals = new ArrayList<>();
         HashMap<String, ArrayList<Literal>> clauseMap = new HashMap<>();
         HashSet<Literal> combinedLiterals = new HashSet<>();

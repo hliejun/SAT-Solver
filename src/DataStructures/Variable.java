@@ -3,10 +3,12 @@ package DataStructures;
 public class Variable implements Comparable<Variable> {
     final private String symbol;
     final private boolean value;
+    private int level;
 
-    public Variable(String symbol, boolean value) {
+    public Variable(String symbol, boolean value, int level) {
         this.symbol = symbol;
         this.value = value;
+        this.level = level;
     }
 
     public String getSymbol() {
@@ -15,6 +17,14 @@ public class Variable implements Comparable<Variable> {
 
     public boolean getValue() {
         return value;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int newLevel) {
+        level = newLevel;
     }
 
     @Override
@@ -30,7 +40,9 @@ public class Variable implements Comparable<Variable> {
             return false;
         }
         Variable otherVariable = (Variable) otherObject;
-        return symbol == otherVariable.symbol && value == otherVariable.value;
+        return symbol.equals(otherVariable.symbol)
+                && value == otherVariable.value
+                && level == otherVariable.level;
     }
 
     @Override
@@ -40,7 +52,7 @@ public class Variable implements Comparable<Variable> {
 
     @Override
     public String toString() {
-        return symbol + "=" + value;
+        return symbol + "@" + level + "=" + value;
     }
 
 }
