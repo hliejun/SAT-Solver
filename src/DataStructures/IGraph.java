@@ -11,8 +11,6 @@ public class IGraph {
     private Clause conflictClause;
     private Node<Variable> conflictNode;
 
-    private enum Type { CONFLICT }
-
     // TODO: Save conflict as substitution to previous decisions
 
     public IGraph(HashSet<String> variables) {
@@ -46,17 +44,10 @@ public class IGraph {
         });
     }
 
-    public void addConflict(Clause conflictClause, int conflictLevel) {
-        HashSet<Literal> literals = conflictClause.getLiterals();
-        Node<Variable> conflictNode = createConflictNode(conflictLevel);
+    public void addConflict(Variable conflictVariable, Clause conflictClause) {
+        Node<Variable> conflictNode = values.get(conflictVariable.getSymbol());
         this.conflictClause = conflictClause;
         this.conflictNode = conflictNode;
-        graph.addNode(conflictNode);
-        values.put(conflictNode.value.getSymbol(), conflictNode);
-        literals.forEach(literal -> {
-            Node<Variable> conflictSource = values.get(literal.getName());
-            graph.addEdge(new Edge<>(conflictSource, conflictNode, conflictClause));
-        });
     }
 
     public void revertState(int level) {
@@ -97,6 +88,7 @@ public class IGraph {
             Node<Variable> node = values.get(literal.getName());
             Integer assignedLevel = node == null ? null : node.value.getLevel();
             if (assignedLevel != null && assignedLevel == level) {
+                System.out.println(node);
                 count += 1;
             }
         }
@@ -120,7 +112,7 @@ public class IGraph {
     }
 
     public Integer getHighestLevel(Clause clause, int conflictLevel) {
-        // TODO: Change to highest level of false assigned variables...
+        // TODO: Change to highest level of false assigned variables
         System.out.println("LEARNT CLAUSE: " + clause);
         int highestLevel = -1;
         HashSet<Literal> literals = clause.getLiterals();
@@ -134,8 +126,12 @@ public class IGraph {
         return highestLevel < 0 ? null : highestLevel;
     }
 
+    public HashSet<Node<Variable>> getPreviousDecisions(int level) {
+        return decisions.get(level);
+    }
+
     public Variable pickUnassignedVariable(int level) {
-        // TODO: Remove decision checking here?
+        // TODO: Remove decision checking here
         HashSet<String> unassignedSymbols = new HashSet<>();
         variables.forEach(symbol -> {
             if (values.get(symbol) == null) {
@@ -164,8 +160,19 @@ public class IGraph {
         return conflictNode;
     }
 
-    public HashSet<Edge<Variable>> getAntecedentEdges(Node<Variable> impliedNode) {
-        return graph.getEdgesToNode(impliedNode);
+    public Clause getAntecedentClause(Clause learntClause) {
+        HashSet<Literal> literals = learntClause.getLiterals();
+        for (Literal literal : literals) {
+            Node<Variable> node = values.get(literal.getName());
+            HashSet<Edge<Variable>> antecedentEdges = graph.getEdgesToNode(node);
+            for (Edge<Variable> edge : antecedentEdges) {
+                Clause antecedentClause = edge.getAntecedent();
+                if (antecedentClause != null) {
+                    return antecedentClause;
+                }
+            }
+        }
+        return null;
     }
 
     public HashMap<String, Boolean> getAssignment() {
@@ -201,12 +208,6 @@ public class IGraph {
     private Node<Variable> getNode(String symbol, boolean value, int level) {
         Variable variable = new Variable(symbol, value, level);
         return new Node<>(variable);
-    }
-
-    private Node<Variable> createConflictNode(int conflictLevel) {
-        Type conflictLabel = Type.CONFLICT;
-        Variable conflict = new Variable(conflictLabel.name(), true, conflictLevel);
-        return new Node<>(conflict.hashCode(), conflict);
     }
 
 }

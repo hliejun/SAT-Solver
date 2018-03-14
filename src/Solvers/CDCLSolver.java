@@ -11,6 +11,8 @@ public class CDCLSolver extends Solver {
         super(clauses, literalsCount);
     }
 
+    // TODO: Add learnt clauses and use them for evaluation
+    
     @Override
     public HashMap<String, Boolean> solve() {
         resetSolver();
@@ -65,7 +67,8 @@ public class CDCLSolver extends Solver {
                 continue;
             }
             if (stateGraph.isConflicted(clause)) {
-                stateGraph.addConflict(clause, level);
+                stateGraph.addConflict(decision, clause);
+                System.out.println("Conflict propagating " + decision + " at " + clause);
                 return;
             }
             Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
@@ -73,7 +76,7 @@ public class CDCLSolver extends Solver {
                 stateGraph.addImplication(clause, impliedVariable);
                 System.out.println("+ Implication: " + impliedVariable);
                 if (stateGraph.isConflicted(clause)) {
-                    stateGraph.addConflict(clause, level);
+                    stateGraph.addConflict(impliedVariable, clause);
                     System.out.println("Conflict implying " + impliedVariable + " using " + clause);
                     return;
                 }
@@ -90,42 +93,35 @@ public class CDCLSolver extends Solver {
      */
     private Variable pickBranchingVariable() {
         if (learntClause != null) {
-            // TODO: Check with decision otherwise return null
-            Variable branchingVariable = stateGraph.getImpliedVariable(learntClause, level + 1);
+            HashSet<Node<Variable>> previousDecisions = stateGraph.getPreviousDecisions(level);
+            if (previousDecisions == null || previousDecisions.size() > 1) {
+                return null;
+            }
+            Variable branchingVariable = null;
+            for (Node<Variable> node : previousDecisions) {
+                branchingVariable = node.getValue().getInverse();
+            }
             learntClause = null;
             System.out.println("+ Decision (conflict): " + branchingVariable);
             return branchingVariable;
         }
-        Variable branchingVariable = stateGraph.pickUnassignedVariable(level + 1);
+        Variable branchingVariable = stateGraph.pickUnassignedVariable(level);
         System.out.println("+ Decision (unassigned): " + branchingVariable);
         return branchingVariable;
     }
 
     private Integer analyzeConflict(Clause conflictClause) {
-        // TODO: Check this... seems that the learnt clause does not fit the notes description
         Node<Variable> conflictNode = stateGraph.getConflictNode();
         if (conflictClause == null || conflictNode == null) {
             return null; /** This shouldn't happen... **/
         }
         Integer conflictLevel = conflictNode.getValue().getLevel();
-        HashSet<Clause> resolvedClauses = new HashSet<>();
         Clause learntClause = new Clause(conflictClause.toArray());
-        LinkedList<Edge<Variable>> queue = new LinkedList<>();
-        queue.addAll(stateGraph.getAntecedentEdges(conflictNode));
-        while(!queue.isEmpty()) {
-            Edge<Variable> antecedentEdge = queue.pollFirst();
-            Node<Variable> antecedentNode = antecedentEdge.getSource();
-            boolean isSameLevel = antecedentNode.getValue().getLevel() == conflictLevel;
-            Clause antecedentClause = antecedentEdge.getAntecedent();
-            if (isSameLevel && antecedentClause != null && !resolvedClauses.contains(antecedentClause)) {
-                System.out.println("Resolving: " + learntClause + " with " + antecedentClause);
-                learntClause = resolve(learntClause, antecedentClause);
-                System.out.println(" ... into: " + learntClause);
-                resolvedClauses.add(antecedentClause);
-                if (!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
-                    queue.addAll(stateGraph.getAntecedentEdges(antecedentNode));
-                }
-            }
+        while(!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
+            Clause antecedentClause = stateGraph.getAntecedentClause(learntClause);
+            System.out.println("Resolving: " + learntClause + " with " + antecedentClause);
+            learntClause = resolve(learntClause, antecedentClause);
+            System.out.println(" ... into: " + learntClause);
         }
         this.learntClause = learntClause;
         Integer highestLevel = stateGraph.getHighestLevel(learntClause, conflictLevel);
@@ -138,13 +134,15 @@ public class CDCLSolver extends Solver {
         level = proposedLevel;
     }
 
-    private Clause resolve(Clause firstClause, Clause secondClause) {
-        // TODO: Check this... seems that the learnt clause does not fit the notes description
+    private Clause resolve(Clause mainClause, Clause targetClause) {
+        if (targetClause == null) {
+            return mainClause;
+        }
         ArrayList<Literal> resolvedLiterals = new ArrayList<>();
         HashMap<String, ArrayList<Literal>> clauseMap = new HashMap<>();
         HashSet<Literal> combinedLiterals = new HashSet<>();
-        combinedLiterals.addAll(firstClause.getLiterals());
-        combinedLiterals.addAll(secondClause.getLiterals());
+        combinedLiterals.addAll(mainClause.getLiterals());
+        combinedLiterals.addAll(targetClause.getLiterals());
         for (Literal literal : combinedLiterals) {
             clauseMap.computeIfAbsent(literal.getName(), key -> new ArrayList<>()).add(literal);
         }

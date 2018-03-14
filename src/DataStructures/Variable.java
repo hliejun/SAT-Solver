@@ -27,6 +27,10 @@ public class Variable implements Comparable<Variable> {
         level = newLevel;
     }
 
+    public Variable getInverse() {
+        return new Variable(symbol, !value, level);
+    }
+
     @Override
     public int compareTo(Variable otherVariable) {
         return symbol.compareTo(otherVariable.symbol);
