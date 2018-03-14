@@ -1,8 +1,10 @@
 package Solvers;
 
-import java.util.*;
-
 import DataStructures.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class CDCLSolver extends Solver {
     private IGraph stateGraph = new IGraph(variables);
@@ -29,6 +31,7 @@ public class CDCLSolver extends Solver {
             }
             level += 1;
             System.out.println("Level: " + (level - 1) + " -> " + level);
+            System.out.println("Adding decision to level " + level + " : " + decision);
             stateGraph.addDecision(decision, level);
             performUnitPropagation(decision);
             Clause conflict = stateGraph.getConflictClause();
@@ -95,6 +98,8 @@ public class CDCLSolver extends Solver {
         if (learntClause != null) {
             HashSet<Node<Variable>> previousDecisions = stateGraph.getPreviousDecisions(level);
             if (previousDecisions == null || previousDecisions.size() > 1) {
+                System.out.println("Unable to use learnt clause!");
+                System.out.println("Previous decisions at " + level + " : " + previousDecisions);
                 return null;
             }
             Variable branchingVariable = null;

@@ -27,6 +27,8 @@ public class IGraph {
         decision.setLevel(decisionLevel);
         Node<Variable> decisionNode = new Node<>(decision);
         assign(decisionNode);
+        System.out.println("Variable level : " + inferenceLevel);
+        System.out.println("Decision level : " + decisionLevel);
         decisions.computeIfAbsent(inferenceLevel, key -> new HashSet<>()).add(decisionNode);
     }
 
