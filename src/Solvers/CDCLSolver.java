@@ -31,7 +31,6 @@ public class CDCLSolver extends Solver {
             }
             level += 1;
             System.out.println("Level: " + (level - 1) + " -> " + level);
-            System.out.println("Adding decision to level " + level + " : " + decision);
             stateGraph.addDecision(decision, level);
             performUnitPropagation(decision);
             Clause conflict = stateGraph.getConflictClause();
@@ -105,6 +104,9 @@ public class CDCLSolver extends Solver {
             Variable branchingVariable = null;
             for (Node<Variable> node : previousDecisions) {
                 branchingVariable = node.getValue().getInverse();
+            }
+            if (branchingVariable != null) {
+                branchingVariable.setLevel(level);
             }
             learntClause = null;
             System.out.println("+ Decision (conflict): " + branchingVariable);

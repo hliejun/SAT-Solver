@@ -25,6 +25,7 @@ public class IGraph {
     public void addDecision(Variable decision, int decisionLevel) {
         int inferenceLevel = decision.getLevel();
         decision.setLevel(decisionLevel);
+        System.out.println("Adding decision to level " + decision.getLevel() + " : " + decision);
         Node<Variable> decisionNode = new Node<>(decision);
         assign(decisionNode);
         System.out.println("Variable level : " + inferenceLevel);
