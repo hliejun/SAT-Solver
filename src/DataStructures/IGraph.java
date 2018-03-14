@@ -121,7 +121,7 @@ public class IGraph {
 
     public Integer getHighestLevel(Clause clause, int conflictLevel) {
         // TODO: Change to highest level of false assigned variables...
-        System.out.println("CONFLICT CLAUSE: " + clause);
+        System.out.println("LEARNT CLAUSE: " + clause);
         int highestLevel = -1;
         HashSet<Literal> literals = clause.getLiterals();
         for (Literal literal : literals) {

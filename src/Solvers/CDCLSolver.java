@@ -126,6 +126,7 @@ public class CDCLSolver extends Solver {
     }
 
     private Clause resolve(Clause firstClause, Clause secondClause) {
+        // TODO: Check this... seems that the learnt clause does not fit the notes description
         ArrayList<Literal> resolvedLiterals = new ArrayList<>();
         HashMap<String, ArrayList<Literal>> clauseMap = new HashMap<>();
         HashSet<Literal> combinedLiterals = new HashSet<>();
