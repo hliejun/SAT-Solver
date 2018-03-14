@@ -16,20 +16,24 @@ public class CDCLSolver extends Solver {
         resetSolver();
         performUnitPropagation();
         if (stateGraph.getConflictClause() != null) {
+            System.out.println("Fail to propagate before entering loop.");
             return null;
         }
         while (!stateGraph.isAllAssigned()) {
             Variable decision = pickBranchingVariable();
             if (decision == null) {
+                System.out.println("Fail to make a decision.");
                 return null;
             }
             level += 1;
+            System.out.println("Level: " + (level - 1) + " -> " + level);
             stateGraph.addDecision(decision, level);
             performUnitPropagation(decision);
             Clause conflict = stateGraph.getConflictClause();
             if (conflict != null) {
                 Integer proposedLevel = analyzeConflict(conflict);
                 if (proposedLevel == null) {
+                    System.out.println("Fail to propose a backtrack level.");
                     return null;
                 }
                 backtrack(proposedLevel);
@@ -57,7 +61,7 @@ public class CDCLSolver extends Solver {
     private void performUnitPropagation(Variable decision) {
         HashSet<Clause> clauses = formula.getClausesSet();
         for (Clause clause : clauses) {
-            if (!clause.containsVariable(decision.getSymbol())) {
+            if (!clause.containsSymbol(decision.getSymbol())) {
                 continue;
             }
             if (stateGraph.isConflicted(clause)) {
@@ -67,8 +71,10 @@ public class CDCLSolver extends Solver {
             Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
             if (impliedVariable != null) {
                 stateGraph.addImplication(clause, impliedVariable);
+                System.out.println("+ Implication: " + impliedVariable);
                 if (stateGraph.isConflicted(clause)) {
                     stateGraph.addConflict(clause, level);
+                    System.out.println("Conflict implying " + impliedVariable + " using " + clause);
                     return;
                 }
                 performUnitPropagation(impliedVariable);
@@ -85,11 +91,14 @@ public class CDCLSolver extends Solver {
     private Variable pickBranchingVariable() {
         if (learntClause != null) {
             // TODO: Check with decision otherwise return null
-            Variable branchingVariable = stateGraph.getImpliedVariable(learntClause, level);
+            Variable branchingVariable = stateGraph.getImpliedVariable(learntClause, level + 1);
             learntClause = null;
+            System.out.println("+ Decision (conflict): " + branchingVariable);
             return branchingVariable;
         }
-        return stateGraph.pickUnassignedVariable(level);
+        Variable branchingVariable = stateGraph.pickUnassignedVariable(level + 1);
+        System.out.println("+ Decision (unassigned): " + branchingVariable);
+        return branchingVariable;
     }
 
     private Integer analyzeConflict(Clause conflictClause) {
@@ -103,19 +112,23 @@ public class CDCLSolver extends Solver {
         Clause learntClause = new Clause(conflictClause.toArray());
         LinkedList<Edge<Variable>> queue = new LinkedList<>();
         queue.addAll(stateGraph.getAntecedentEdges(conflictNode));
-        while(!queue.isEmpty() && !stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
+        while(!queue.isEmpty()) {
             Edge<Variable> antecedentEdge = queue.pollFirst();
             Node<Variable> antecedentNode = antecedentEdge.getSource();
             boolean isSameLevel = antecedentNode.getValue().getLevel() == conflictLevel;
             Clause antecedentClause = antecedentEdge.getAntecedent();
             if (isSameLevel && antecedentClause != null && !resolvedClauses.contains(antecedentClause)) {
+                System.out.println("Resolving: " + learntClause + " with " + antecedentClause);
                 learntClause = resolve(learntClause, antecedentClause);
+                System.out.println(" ... into: " + learntClause);
                 resolvedClauses.add(antecedentClause);
-                queue.addAll(stateGraph.getAntecedentEdges(antecedentNode));
+                if (!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
+                    queue.addAll(stateGraph.getAntecedentEdges(antecedentNode));
+                }
             }
         }
         this.learntClause = learntClause;
-        Integer highestLevel = stateGraph.getHighestLevel(conflictClause, conflictLevel);
+        Integer highestLevel = stateGraph.getHighestLevel(learntClause, conflictLevel);
         return highestLevel == null ? null : highestLevel - 1;
     }
 

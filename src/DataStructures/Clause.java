@@ -46,7 +46,7 @@ public class Clause implements Comparable<Clause> {
         return true;
     }
 
-    public boolean containsVariable(String symbol) {
+    public boolean containsSymbol(String symbol) {
         for (Literal literal : literals) {
             if (literal.getName().equals(symbol)) {
                 return true;
