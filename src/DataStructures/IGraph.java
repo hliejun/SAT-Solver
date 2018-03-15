@@ -1,7 +1,7 @@
 package DataStructures;
 
-import java.util.*;
-import java.util.stream.IntStream;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class IGraph {
     private Graph<Variable> graph;
@@ -23,7 +23,7 @@ public class IGraph {
     public void addDecision(Variable decision, int decisionLevel) {
         int inferenceLevel = decision.getLevel();
         decision.setLevel(decisionLevel);
-        System.out.println("Adding decision to level " + decision.getLevel() + " : " + decision);
+//        System.out.println("Adding decision to level " + decision.getLevel() + " : " + decision);
         Node<Variable> decisionNode = new Node<>(decision);
         assign(decisionNode);
 //        System.out.println("Variable level : " + inferenceLevel);
@@ -113,7 +113,7 @@ public class IGraph {
     }
 
     public Integer getHighestLevel(Clause clause, int conflictLevel) {
-        System.out.println("Learnt clause: " + clause);
+//        System.out.println("Learnt clause: " + clause);
         int highestLevel = -1;
         HashSet<Literal> literals = clause.getLiterals();
         for (Literal literal : literals) {

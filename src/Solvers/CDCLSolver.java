@@ -18,30 +18,30 @@ public class CDCLSolver extends Solver {
         resetSolver();
         performUnitPropagation();
         if (stateGraph.getConflictClause() != null) {
-            System.out.println("Fail to propagate before entering loop.");
+//            System.out.println("Fail to propagate before entering loop.");
             return null;
         }
         while (!stateGraph.isAllAssigned()) {
             Variable decision = pickBranchingVariable();
             if (decision == null) {
-                System.out.println("Fail to make a decision.");
+//                System.out.println("Fail to make a decision.");
                 return null;
             }
             level += 1;
-            System.out.println("Level: " + (level - 1) + " -> " + level);
+//            System.out.println("Level: " + (level - 1) + " -> " + level);
             stateGraph.addDecision(decision, level);
             performUnitPropagation(decision);
             Clause conflict = stateGraph.getConflictClause();
             if (conflict != null) {
                 Integer proposedLevel = analyzeConflict(conflict);
                 if (proposedLevel == null) {
-                    System.out.println("Fail to propose a backtrack level.");
+//                    System.out.println("Fail to propose a backtrack level.");
                     return null;
                 }
                 backtrack(proposedLevel);
             }
         }
-        System.out.println("Satisfiable: " + stateGraph.evaluate(formula));
+//        System.out.println("Satisfiable: " + stateGraph.evaluate(formula));
         return stateGraph.getAssignment();
     }
 
@@ -70,16 +70,16 @@ public class CDCLSolver extends Solver {
             }
             if (stateGraph.isConflicted(clause)) {
                 stateGraph.addConflict(decision, clause);
-                System.out.println("Conflict propagating " + decision + " at " + clause);
+//                System.out.println("Conflict propagating " + decision + " at " + clause);
                 return;
             }
             Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
             if (impliedVariable != null) {
                 stateGraph.addImplication(clause, impliedVariable);
-                System.out.println("+ Implication: " + impliedVariable);
+//                System.out.println("+ Implication: " + impliedVariable);
                 if (stateGraph.isConflicted(clause)) {
                     stateGraph.addConflict(impliedVariable, clause);
-                    System.out.println("Conflict implying " + impliedVariable + " using " + clause);
+//                    System.out.println("Conflict implying " + impliedVariable + " using " + clause);
                     return;
                 }
                 performUnitPropagation(impliedVariable);
@@ -101,7 +101,7 @@ public class CDCLSolver extends Solver {
             return branchingVariable;
         }
         branchingVariable = stateGraph.pickUnassignedVariable(level);
-        System.out.println("+ Decision (unassigned): " + branchingVariable);
+//        System.out.println("+ Decision (unassigned): " + branchingVariable);
         return branchingVariable;
     }
 
@@ -114,9 +114,9 @@ public class CDCLSolver extends Solver {
         Clause learntClause = new Clause(conflictClause.toArray());
         while(!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
             Clause antecedentClause = stateGraph.getAntecedentClause(learntClause);
-            System.out.println("Resolving: " + learntClause + " with " + antecedentClause);
+//            System.out.println("Resolving: " + learntClause + " with " + antecedentClause);
             learntClause = resolve(learntClause, antecedentClause);
-            System.out.println(" ... into: " + learntClause);
+//            System.out.println(" ... into: " + learntClause);
         }
         learntClauses.add(learntClause);
         conflictVariable = conflictNode.getValue();
@@ -125,7 +125,7 @@ public class CDCLSolver extends Solver {
     }
 
     private void backtrack(int proposedLevel) {
-        System.out.println("Backtracking: " + level + " -> " + proposedLevel);
+//        System.out.println("Backtracking: " + level + " -> " + proposedLevel);
         stateGraph.revertState(proposedLevel);
         level = proposedLevel;
     }
