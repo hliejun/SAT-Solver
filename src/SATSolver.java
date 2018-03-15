@@ -13,14 +13,14 @@ import java.util.HashMap;
 
 public class SATSolver {
     public static Strategy strategy = Strategy.DPLL; // Default
-    public static String path = "../test/testcases/benchmark"; // Default
+    public static String path = "test/"; // Default
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, InterruptedException {
 
         String chosenStrategy = "DPLL";
         if (args.length == 0) {
             System.out.println("Running testcases from : " + path);
-            System.out.println("Running Strategy : " + chosenStrategy);
+            System.out.println("Running default Strategy : " + chosenStrategy);
             Thread.sleep(3000);
             runBenchmarks(path, chosenStrategy);
         } else {
