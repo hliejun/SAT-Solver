@@ -23,7 +23,7 @@ rm -rf result
 mkdir result
 
 cp -r src/ release
-cp -r test/testcases/benchmark/ release/test
+cp -r test/ release/test
 echo -e "Setup complete!"
 echo -e "****************************************"
 
