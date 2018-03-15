@@ -1,0 +1,5000 @@
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/1.cnf
+=================================================
+Execution Time: 26.178 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/2.cnf
+=================================================
+Execution Time: 110.024 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/3.cnf
+=================================================
+Execution Time: 50.861 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/4.cnf
+=================================================
+Execution Time: 11.714 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/5.cnf
+=================================================
+Execution Time: 11.244 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/6.cnf
+=================================================
+Execution Time: 7.733 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/7.cnf
+=================================================
+Execution Time: 35.852 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/8.cnf
+=================================================
+Execution Time: 44.885 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/9.cnf
+=================================================
+Execution Time: 9.668 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/10.cnf
+=================================================
+Execution Time: 53.645 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/11.cnf
+=================================================
+Execution Time: 12.487 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/12.cnf
+=================================================
+Execution Time: 24.702 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/13.cnf
+=================================================
+Execution Time: 28.251 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/14.cnf
+=================================================
+Execution Time: 33.4 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/15.cnf
+=================================================
+Execution Time: 13.058 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/16.cnf
+=================================================
+Execution Time: 14.361 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/17.cnf
+=================================================
+Execution Time: 8.061 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/18.cnf
+=================================================
+Execution Time: 92.143 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/19.cnf
+=================================================
+Execution Time: 20.811 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/20.cnf
+=================================================
+Execution Time: 43.978 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/21.cnf
+=================================================
+Execution Time: 35.705 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/22.cnf
+=================================================
+Execution Time: 12.997 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/23.cnf
+=================================================
+Execution Time: 12.407 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/24.cnf
+=================================================
+Execution Time: 46.536 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/25.cnf
+=================================================
+Execution Time: 16.875 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/26.cnf
+=================================================
+Execution Time: 12.077 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/27.cnf
+=================================================
+Execution Time: 55.085 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/28.cnf
+=================================================
+Execution Time: 25.072 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/29.cnf
+=================================================
+Execution Time: 20.991 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/30.cnf
+=================================================
+Execution Time: 24.632 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/31.cnf
+=================================================
+Execution Time: 46.416 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/32.cnf
+=================================================
+Execution Time: 36.154 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/33.cnf
+=================================================
+Execution Time: 6.534 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/34.cnf
+=================================================
+Execution Time: 6.502 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/35.cnf
+=================================================
+Execution Time: 20.102 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/36.cnf
+=================================================
+Execution Time: 5.546 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/37.cnf
+=================================================
+Execution Time: 8.226 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/38.cnf
+=================================================
+Execution Time: 8.386 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/39.cnf
+=================================================
+Execution Time: 8.163 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/40.cnf
+=================================================
+Execution Time: 13.994 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/41.cnf
+=================================================
+Execution Time: 33.684 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/42.cnf
+=================================================
+Execution Time: 4.14 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/43.cnf
+=================================================
+Execution Time: 6.417 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/44.cnf
+=================================================
+Execution Time: 16.119 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/45.cnf
+=================================================
+Execution Time: 15.269 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/46.cnf
+=================================================
+Execution Time: 22.622 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/47.cnf
+=================================================
+Execution Time: 2.982 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/48.cnf
+=================================================
+Execution Time: 48.078 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/49.cnf
+=================================================
+Execution Time: 12.839 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/50.cnf
+=================================================
+Execution Time: 6.261 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/51.cnf
+=================================================
+Execution Time: 16.831 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/52.cnf
+=================================================
+Execution Time: 27.195 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/53.cnf
+=================================================
+Execution Time: 29.229 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/54.cnf
+=================================================
+Execution Time: 19.003 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/55.cnf
+=================================================
+Execution Time: 3.182 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/56.cnf
+=================================================
+Execution Time: 21.861 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/57.cnf
+=================================================
+Execution Time: 26.473 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/58.cnf
+=================================================
+Execution Time: 29.233 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/59.cnf
+=================================================
+Execution Time: 9.01 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/60.cnf
+=================================================
+Execution Time: 20.216 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/61.cnf
+=================================================
+Execution Time: 12.986 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/62.cnf
+=================================================
+Execution Time: 9.496 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/63.cnf
+=================================================
+Execution Time: 11.022 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/64.cnf
+=================================================
+Execution Time: 17.32 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/65.cnf
+=================================================
+Execution Time: 28.125 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/66.cnf
+=================================================
+Execution Time: 42.125 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/67.cnf
+=================================================
+Execution Time: 17.509 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/68.cnf
+=================================================
+Execution Time: 24.72 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/69.cnf
+=================================================
+Execution Time: 23.384 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/70.cnf
+=================================================
+Execution Time: 20.5 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/71.cnf
+=================================================
+Execution Time: 17.516 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/72.cnf
+=================================================
+Execution Time: 11.728 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/73.cnf
+=================================================
+Execution Time: 10.023 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/74.cnf
+=================================================
+Execution Time: 28.588 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/75.cnf
+=================================================
+Execution Time: 4.87 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/76.cnf
+=================================================
+Execution Time: 21.574 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/77.cnf
+=================================================
+Execution Time: 45.739 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/78.cnf
+=================================================
+Execution Time: 35.909 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/79.cnf
+=================================================
+Execution Time: 6.871 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/80.cnf
+=================================================
+Execution Time: 14.531 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/81.cnf
+=================================================
+Execution Time: 67.907 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/82.cnf
+=================================================
+Execution Time: 74.671 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/83.cnf
+=================================================
+Execution Time: 4.652 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/84.cnf
+=================================================
+Execution Time: 40.349 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/85.cnf
+=================================================
+Execution Time: 125.85 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/86.cnf
+=================================================
+Execution Time: 6.601 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/87.cnf
+=================================================
+Execution Time: 13.279 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/88.cnf
+=================================================
+Execution Time: 30.5 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/89.cnf
+=================================================
+Execution Time: 8.711 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/90.cnf
+=================================================
+Execution Time: 26.289 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/91.cnf
+=================================================
+Execution Time: 11.034 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/92.cnf
+=================================================
+Execution Time: 55.72 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/93.cnf
+=================================================
+Execution Time: 17.746 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/94.cnf
+=================================================
+Execution Time: 27.077 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/95.cnf
+=================================================
+Execution Time: 66.0 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/96.cnf
+=================================================
+Execution Time: 11.896 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/97.cnf
+=================================================
+Execution Time: 38.519 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/98.cnf
+=================================================
+Execution Time: 12.201 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/99.cnf
+=================================================
+Execution Time: 5.819 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/100.cnf
+=================================================
+Execution Time: 17.361 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/101.cnf
+=================================================
+Execution Time: 7.345 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/102.cnf
+=================================================
+Execution Time: 29.286 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/103.cnf
+=================================================
+Execution Time: 7.38 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/104.cnf
+=================================================
+Execution Time: 22.599 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/105.cnf
+=================================================
+Execution Time: 5.87 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/106.cnf
+=================================================
+Execution Time: 33.056 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/107.cnf
+=================================================
+Execution Time: 17.711 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/108.cnf
+=================================================
+Execution Time: 14.93 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/109.cnf
+=================================================
+Execution Time: 40.82 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/110.cnf
+=================================================
+Execution Time: 27.906 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/111.cnf
+=================================================
+Execution Time: 26.567 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/112.cnf
+=================================================
+Execution Time: 12.384 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/113.cnf
+=================================================
+Execution Time: 25.05 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/114.cnf
+=================================================
+Execution Time: 7.046 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/115.cnf
+=================================================
+Execution Time: 30.186 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/116.cnf
+=================================================
+Execution Time: 4.596 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/117.cnf
+=================================================
+Execution Time: 22.134 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/118.cnf
+=================================================
+Execution Time: 6.462 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/119.cnf
+=================================================
+Execution Time: 32.827 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/120.cnf
+=================================================
+Execution Time: 32.324 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/121.cnf
+=================================================
+Execution Time: 89.005 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/122.cnf
+=================================================
+Execution Time: 108.826 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/123.cnf
+=================================================
+Execution Time: 18.712 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/124.cnf
+=================================================
+Execution Time: 31.298 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/125.cnf
+=================================================
+Execution Time: 5.943 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/126.cnf
+=================================================
+Execution Time: 103.568 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/127.cnf
+=================================================
+Execution Time: 16.514 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/128.cnf
+=================================================
+Execution Time: 72.862 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/129.cnf
+=================================================
+Execution Time: 40.571 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/130.cnf
+=================================================
+Execution Time: 155.264 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/131.cnf
+=================================================
+Execution Time: 9.19 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/132.cnf
+=================================================
+Execution Time: 5.367 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/133.cnf
+=================================================
+Execution Time: 17.244 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/134.cnf
+=================================================
+Execution Time: 22.091 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/135.cnf
+=================================================
+Execution Time: 13.37 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/136.cnf
+=================================================
+Execution Time: 25.194 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/137.cnf
+=================================================
+Execution Time: 13.727 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/138.cnf
+=================================================
+Execution Time: 14.128 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/139.cnf
+=================================================
+Execution Time: 26.133 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/140.cnf
+=================================================
+Execution Time: 32.63 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/141.cnf
+=================================================
+Execution Time: 81.155 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/142.cnf
+=================================================
+Execution Time: 30.409 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/143.cnf
+=================================================
+Execution Time: 36.829 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/144.cnf
+=================================================
+Execution Time: 29.353 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/145.cnf
+=================================================
+Execution Time: 13.006 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/146.cnf
+=================================================
+Execution Time: 14.615 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/147.cnf
+=================================================
+Execution Time: 12.85 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/148.cnf
+=================================================
+Execution Time: 8.588 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/149.cnf
+=================================================
+Execution Time: 10.489 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/150.cnf
+=================================================
+Execution Time: 54.484 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/151.cnf
+=================================================
+Execution Time: 22.664 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/152.cnf
+=================================================
+Execution Time: 8.515 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/153.cnf
+=================================================
+Execution Time: 14.409 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/154.cnf
+=================================================
+Execution Time: 21.908 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/155.cnf
+=================================================
+Execution Time: 13.448 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/156.cnf
+=================================================
+Execution Time: 19.526 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/157.cnf
+=================================================
+Execution Time: 22.185 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/158.cnf
+=================================================
+Execution Time: 18.155 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/159.cnf
+=================================================
+Execution Time: 33.172 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/160.cnf
+=================================================
+Execution Time: 23.476 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/161.cnf
+=================================================
+Execution Time: 32.819 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/162.cnf
+=================================================
+Execution Time: 33.887 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/163.cnf
+=================================================
+Execution Time: 12.013 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/164.cnf
+=================================================
+Execution Time: 25.729 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/165.cnf
+=================================================
+Execution Time: 21.415 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/166.cnf
+=================================================
+Execution Time: 127.488 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/167.cnf
+=================================================
+Execution Time: 23.429 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/168.cnf
+=================================================
+Execution Time: 15.248 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/169.cnf
+=================================================
+Execution Time: 105.431 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/170.cnf
+=================================================
+Execution Time: 10.799 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/171.cnf
+=================================================
+Execution Time: 45.154 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/172.cnf
+=================================================
+Execution Time: 23.515 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/173.cnf
+=================================================
+Execution Time: 33.912 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/174.cnf
+=================================================
+Execution Time: 20.347 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/175.cnf
+=================================================
+Execution Time: 5.901 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/176.cnf
+=================================================
+Execution Time: 17.296 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/177.cnf
+=================================================
+Execution Time: 20.376 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/178.cnf
+=================================================
+Execution Time: 29.146 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/179.cnf
+=================================================
+Execution Time: 25.189 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/180.cnf
+=================================================
+Execution Time: 155.177 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/181.cnf
+=================================================
+Execution Time: 48.121 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/182.cnf
+=================================================
+Execution Time: 24.284 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/183.cnf
+=================================================
+Execution Time: 24.685 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/184.cnf
+=================================================
+Execution Time: 107.11 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/185.cnf
+=================================================
+Execution Time: 19.892 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/186.cnf
+=================================================
+Execution Time: 72.232 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/187.cnf
+=================================================
+Execution Time: 12.892 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/188.cnf
+=================================================
+Execution Time: 76.441 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/189.cnf
+=================================================
+Execution Time: 44.885 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/190.cnf
+=================================================
+Execution Time: 11.937 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/191.cnf
+=================================================
+Execution Time: 110.066 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/192.cnf
+=================================================
+Execution Time: 49.033 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/193.cnf
+=================================================
+Execution Time: 40.387 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/194.cnf
+=================================================
+Execution Time: 41.561 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/195.cnf
+=================================================
+Execution Time: 25.968 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/196.cnf
+=================================================
+Execution Time: 37.024 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/197.cnf
+=================================================
+Execution Time: 2.654 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/198.cnf
+=================================================
+Execution Time: 6.529 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/199.cnf
+=================================================
+Execution Time: 8.666 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/200.cnf
+=================================================
+Execution Time: 38.179 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/201.cnf
+=================================================
+Execution Time: 10.054 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/202.cnf
+=================================================
+Execution Time: 92.713 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/203.cnf
+=================================================
+Execution Time: 29.13 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/204.cnf
+=================================================
+Execution Time: 5.607 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/205.cnf
+=================================================
+Execution Time: 67.906 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/206.cnf
+=================================================
+Execution Time: 84.96 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/207.cnf
+=================================================
+Execution Time: 26.894 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/208.cnf
+=================================================
+Execution Time: 34.547 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/209.cnf
+=================================================
+Execution Time: 7.423 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/210.cnf
+=================================================
+Execution Time: 47.507 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/211.cnf
+=================================================
+Execution Time: 10.282 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/212.cnf
+=================================================
+Execution Time: 10.528 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/213.cnf
+=================================================
+Execution Time: 46.747 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/214.cnf
+=================================================
+Execution Time: 38.31 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/215.cnf
+=================================================
+Execution Time: 18.512 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/216.cnf
+=================================================
+Execution Time: 30.341 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/217.cnf
+=================================================
+Execution Time: 73.865 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/218.cnf
+=================================================
+Execution Time: 10.115 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/219.cnf
+=================================================
+Execution Time: 19.308 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/220.cnf
+=================================================
+Execution Time: 49.767 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/221.cnf
+=================================================
+Execution Time: 15.3 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/222.cnf
+=================================================
+Execution Time: 66.08 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/223.cnf
+=================================================
+Execution Time: 7.825 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/224.cnf
+=================================================
+Execution Time: 45.386 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/225.cnf
+=================================================
+Execution Time: 10.634 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/226.cnf
+=================================================
+Execution Time: 19.108 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/227.cnf
+=================================================
+Execution Time: 9.916 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/228.cnf
+=================================================
+Execution Time: 50.413 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/229.cnf
+=================================================
+Execution Time: 5.86 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/230.cnf
+=================================================
+Execution Time: 15.851 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/231.cnf
+=================================================
+Execution Time: 26.314 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/232.cnf
+=================================================
+Execution Time: 79.888 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/233.cnf
+=================================================
+Execution Time: 8.327 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/234.cnf
+=================================================
+Execution Time: 104.084 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/235.cnf
+=================================================
+Execution Time: 5.209 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/236.cnf
+=================================================
+Execution Time: 23.373 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/237.cnf
+=================================================
+Execution Time: 45.103 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/238.cnf
+=================================================
+Execution Time: 22.932 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/239.cnf
+=================================================
+Execution Time: 77.337 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/240.cnf
+=================================================
+Execution Time: 54.369 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/241.cnf
+=================================================
+Execution Time: 34.732 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/242.cnf
+=================================================
+Execution Time: 18.806 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/243.cnf
+=================================================
+Execution Time: 29.545 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/244.cnf
+=================================================
+Execution Time: 8.424 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/245.cnf
+=================================================
+Execution Time: 18.461 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/246.cnf
+=================================================
+Execution Time: 10.643 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/247.cnf
+=================================================
+Execution Time: 19.849 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/248.cnf
+=================================================
+Execution Time: 83.034 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/249.cnf
+=================================================
+Execution Time: 17.524 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/250.cnf
+=================================================
+Execution Time: 115.315 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/251.cnf
+=================================================
+Execution Time: 20.897 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/252.cnf
+=================================================
+Execution Time: 33.02 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/253.cnf
+=================================================
+Execution Time: 48.79 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/254.cnf
+=================================================
+Execution Time: 41.17 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/255.cnf
+=================================================
+Execution Time: 26.752 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/256.cnf
+=================================================
+Execution Time: 117.975 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/257.cnf
+=================================================
+Execution Time: 10.857 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/258.cnf
+=================================================
+Execution Time: 65.919 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/259.cnf
+=================================================
+Execution Time: 13.949 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/260.cnf
+=================================================
+Execution Time: 15.15 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/261.cnf
+=================================================
+Execution Time: 14.583 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/262.cnf
+=================================================
+Execution Time: 25.824 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/263.cnf
+=================================================
+Execution Time: 75.075 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/264.cnf
+=================================================
+Execution Time: 48.749 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/265.cnf
+=================================================
+Execution Time: 36.806 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/266.cnf
+=================================================
+Execution Time: 18.693 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/267.cnf
+=================================================
+Execution Time: 34.25 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/268.cnf
+=================================================
+Execution Time: 39.616 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/269.cnf
+=================================================
+Execution Time: 21.535 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/270.cnf
+=================================================
+Execution Time: 20.572 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/271.cnf
+=================================================
+Execution Time: 6.292 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/272.cnf
+=================================================
+Execution Time: 10.757 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/273.cnf
+=================================================
+Execution Time: 10.04 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/274.cnf
+=================================================
+Execution Time: 47.636 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/275.cnf
+=================================================
+Execution Time: 12.346 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/276.cnf
+=================================================
+Execution Time: 29.314 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/277.cnf
+=================================================
+Execution Time: 79.502 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/278.cnf
+=================================================
+Execution Time: 14.263 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/279.cnf
+=================================================
+Execution Time: 14.1 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/280.cnf
+=================================================
+Execution Time: 9.891 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/281.cnf
+=================================================
+Execution Time: 18.024 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/282.cnf
+=================================================
+Execution Time: 7.802 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/283.cnf
+=================================================
+Execution Time: 14.131 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/284.cnf
+=================================================
+Execution Time: 23.294 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/285.cnf
+=================================================
+Execution Time: 48.951 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/286.cnf
+=================================================
+Execution Time: 102.699 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/287.cnf
+=================================================
+Execution Time: 58.224 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/288.cnf
+=================================================
+Execution Time: 114.103 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/289.cnf
+=================================================
+Execution Time: 8.231 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/290.cnf
+=================================================
+Execution Time: 11.669 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/291.cnf
+=================================================
+Execution Time: 8.081 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/292.cnf
+=================================================
+Execution Time: 8.479 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/293.cnf
+=================================================
+Execution Time: 23.634 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/294.cnf
+=================================================
+Execution Time: 7.206 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/295.cnf
+=================================================
+Execution Time: 102.516 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/296.cnf
+=================================================
+Execution Time: 25.63 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/297.cnf
+=================================================
+Execution Time: 20.174 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/298.cnf
+=================================================
+Execution Time: 83.939 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/299.cnf
+=================================================
+Execution Time: 10.242 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/300.cnf
+=================================================
+Execution Time: 15.339 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/301.cnf
+=================================================
+Execution Time: 37.167 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/302.cnf
+=================================================
+Execution Time: 9.081 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/303.cnf
+=================================================
+Execution Time: 24.457 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/304.cnf
+=================================================
+Execution Time: 16.417 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/305.cnf
+=================================================
+Execution Time: 25.106 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/306.cnf
+=================================================
+Execution Time: 27.445 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/307.cnf
+=================================================
+Execution Time: 7.762 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/308.cnf
+=================================================
+Execution Time: 15.14 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/309.cnf
+=================================================
+Execution Time: 23.778 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/310.cnf
+=================================================
+Execution Time: 31.442 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/311.cnf
+=================================================
+Execution Time: 27.023 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/312.cnf
+=================================================
+Execution Time: 20.953 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/313.cnf
+=================================================
+Execution Time: 39.412 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/314.cnf
+=================================================
+Execution Time: 13.437 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/315.cnf
+=================================================
+Execution Time: 53.263 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/316.cnf
+=================================================
+Execution Time: 18.331 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/317.cnf
+=================================================
+Execution Time: 9.058 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/318.cnf
+=================================================
+Execution Time: 32.323 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/319.cnf
+=================================================
+Execution Time: 29.52 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/320.cnf
+=================================================
+Execution Time: 72.063 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/321.cnf
+=================================================
+Execution Time: 39.234 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/322.cnf
+=================================================
+Execution Time: 48.908 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/323.cnf
+=================================================
+Execution Time: 37.458 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/324.cnf
+=================================================
+Execution Time: 92.922 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/325.cnf
+=================================================
+Execution Time: 72.087 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/326.cnf
+=================================================
+Execution Time: 6.448 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/327.cnf
+=================================================
+Execution Time: 6.025 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/328.cnf
+=================================================
+Execution Time: 16.729 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/329.cnf
+=================================================
+Execution Time: 13.678 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/330.cnf
+=================================================
+Execution Time: 62.936 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/331.cnf
+=================================================
+Execution Time: 11.682 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/332.cnf
+=================================================
+Execution Time: 13.934 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/333.cnf
+=================================================
+Execution Time: 98.701 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/334.cnf
+=================================================
+Execution Time: 29.672 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/335.cnf
+=================================================
+Execution Time: 17.002 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/336.cnf
+=================================================
+Execution Time: 17.983 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/337.cnf
+=================================================
+Execution Time: 60.811 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/338.cnf
+=================================================
+Execution Time: 36.384 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/339.cnf
+=================================================
+Execution Time: 69.987 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/340.cnf
+=================================================
+Execution Time: 210.135 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/341.cnf
+=================================================
+Execution Time: 26.844 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/342.cnf
+=================================================
+Execution Time: 9.944 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/343.cnf
+=================================================
+Execution Time: 16.43 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/344.cnf
+=================================================
+Execution Time: 25.238 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/345.cnf
+=================================================
+Execution Time: 35.915 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/346.cnf
+=================================================
+Execution Time: 19.78 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/347.cnf
+=================================================
+Execution Time: 31.735 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/348.cnf
+=================================================
+Execution Time: 22.33 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/349.cnf
+=================================================
+Execution Time: 26.35 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/350.cnf
+=================================================
+Execution Time: 5.665 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/351.cnf
+=================================================
+Execution Time: 11.431 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/352.cnf
+=================================================
+Execution Time: 24.632 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/353.cnf
+=================================================
+Execution Time: 18.412 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/354.cnf
+=================================================
+Execution Time: 8.434 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/355.cnf
+=================================================
+Execution Time: 65.511 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/356.cnf
+=================================================
+Execution Time: 20.45 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/357.cnf
+=================================================
+Execution Time: 18.723 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/358.cnf
+=================================================
+Execution Time: 54.47 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/359.cnf
+=================================================
+Execution Time: 70.772 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/360.cnf
+=================================================
+Execution Time: 29.238 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/361.cnf
+=================================================
+Execution Time: 6.043 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/362.cnf
+=================================================
+Execution Time: 22.173 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/363.cnf
+=================================================
+Execution Time: 52.729 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/364.cnf
+=================================================
+Execution Time: 40.289 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/365.cnf
+=================================================
+Execution Time: 19.892 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/366.cnf
+=================================================
+Execution Time: 16.733 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/367.cnf
+=================================================
+Execution Time: 28.157 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/368.cnf
+=================================================
+Execution Time: 9.092 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/369.cnf
+=================================================
+Execution Time: 29.358 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/370.cnf
+=================================================
+Execution Time: 48.853 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/371.cnf
+=================================================
+Execution Time: 20.324 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/372.cnf
+=================================================
+Execution Time: 9.618 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/373.cnf
+=================================================
+Execution Time: 9.087 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/374.cnf
+=================================================
+Execution Time: 26.079 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/375.cnf
+=================================================
+Execution Time: 67.422 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/376.cnf
+=================================================
+Execution Time: 13.041 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/377.cnf
+=================================================
+Execution Time: 63.223 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/378.cnf
+=================================================
+Execution Time: 23.628 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/379.cnf
+=================================================
+Execution Time: 20.54 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/380.cnf
+=================================================
+Execution Time: 23.039 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/381.cnf
+=================================================
+Execution Time: 37.172 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/382.cnf
+=================================================
+Execution Time: 44.394 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/383.cnf
+=================================================
+Execution Time: 75.844 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/384.cnf
+=================================================
+Execution Time: 61.12 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/385.cnf
+=================================================
+Execution Time: 11.686 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/386.cnf
+=================================================
+Execution Time: 14.452 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/387.cnf
+=================================================
+Execution Time: 6.242 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/388.cnf
+=================================================
+Execution Time: 17.276 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/389.cnf
+=================================================
+Execution Time: 7.16 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/390.cnf
+=================================================
+Execution Time: 13.496 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/391.cnf
+=================================================
+Execution Time: 6.554 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/392.cnf
+=================================================
+Execution Time: 24.877 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/393.cnf
+=================================================
+Execution Time: 28.761 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/394.cnf
+=================================================
+Execution Time: 28.044 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/395.cnf
+=================================================
+Execution Time: 35.578 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/396.cnf
+=================================================
+Execution Time: 48.29 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/397.cnf
+=================================================
+Execution Time: 14.907 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/398.cnf
+=================================================
+Execution Time: 18.628 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/399.cnf
+=================================================
+Execution Time: 21.687 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/400.cnf
+=================================================
+Execution Time: 16.736 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/401.cnf
+=================================================
+Execution Time: 15.615 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/402.cnf
+=================================================
+Execution Time: 9.559 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/403.cnf
+=================================================
+Execution Time: 9.176 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/404.cnf
+=================================================
+Execution Time: 25.318 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/405.cnf
+=================================================
+Execution Time: 26.809 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/406.cnf
+=================================================
+Execution Time: 36.262 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/407.cnf
+=================================================
+Execution Time: 14.913 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/408.cnf
+=================================================
+Execution Time: 36.555 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/409.cnf
+=================================================
+Execution Time: 40.531 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/410.cnf
+=================================================
+Execution Time: 143.653 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/411.cnf
+=================================================
+Execution Time: 54.722 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/412.cnf
+=================================================
+Execution Time: 60.698 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/413.cnf
+=================================================
+Execution Time: 40.476 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/414.cnf
+=================================================
+Execution Time: 43.513 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/415.cnf
+=================================================
+Execution Time: 22.604 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/416.cnf
+=================================================
+Execution Time: 7.182 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/417.cnf
+=================================================
+Execution Time: 20.553 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/418.cnf
+=================================================
+Execution Time: 25.426 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/419.cnf
+=================================================
+Execution Time: 22.002 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/420.cnf
+=================================================
+Execution Time: 11.03 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/421.cnf
+=================================================
+Execution Time: 86.499 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/422.cnf
+=================================================
+Execution Time: 29.65 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/423.cnf
+=================================================
+Execution Time: 64.878 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/424.cnf
+=================================================
+Execution Time: 21.002 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/425.cnf
+=================================================
+Execution Time: 16.244 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/426.cnf
+=================================================
+Execution Time: 58.466 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/427.cnf
+=================================================
+Execution Time: 29.422 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/428.cnf
+=================================================
+Execution Time: 50.757 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/429.cnf
+=================================================
+Execution Time: 9.497 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/430.cnf
+=================================================
+Execution Time: 58.361 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/431.cnf
+=================================================
+Execution Time: 70.137 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/432.cnf
+=================================================
+Execution Time: 23.213 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/433.cnf
+=================================================
+Execution Time: 23.647 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/434.cnf
+=================================================
+Execution Time: 43.169 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/435.cnf
+=================================================
+Execution Time: 11.785 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/436.cnf
+=================================================
+Execution Time: 47.531 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/437.cnf
+=================================================
+Execution Time: 22.951 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/438.cnf
+=================================================
+Execution Time: 126.594 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/439.cnf
+=================================================
+Execution Time: 42.645 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/440.cnf
+=================================================
+Execution Time: 14.673 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/441.cnf
+=================================================
+Execution Time: 25.333 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/442.cnf
+=================================================
+Execution Time: 26.14 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/443.cnf
+=================================================
+Execution Time: 9.362 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/444.cnf
+=================================================
+Execution Time: 15.418 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/445.cnf
+=================================================
+Execution Time: 7.103 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/446.cnf
+=================================================
+Execution Time: 20.218 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/447.cnf
+=================================================
+Execution Time: 30.261 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/448.cnf
+=================================================
+Execution Time: 5.352 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/449.cnf
+=================================================
+Execution Time: 7.228 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/450.cnf
+=================================================
+Execution Time: 13.721 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/451.cnf
+=================================================
+Execution Time: 15.321 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/452.cnf
+=================================================
+Execution Time: 23.458 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/453.cnf
+=================================================
+Execution Time: 37.635 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/454.cnf
+=================================================
+Execution Time: 22.015 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/455.cnf
+=================================================
+Execution Time: 9.4 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/456.cnf
+=================================================
+Execution Time: 105.519 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/457.cnf
+=================================================
+Execution Time: 29.268 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/458.cnf
+=================================================
+Execution Time: 48.535 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/459.cnf
+=================================================
+Execution Time: 22.863 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/460.cnf
+=================================================
+Execution Time: 15.413 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/461.cnf
+=================================================
+Execution Time: 20.339 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/462.cnf
+=================================================
+Execution Time: 73.376 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/463.cnf
+=================================================
+Execution Time: 49.904 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/464.cnf
+=================================================
+Execution Time: 31.733 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/465.cnf
+=================================================
+Execution Time: 43.298 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/466.cnf
+=================================================
+Execution Time: 14.889 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/467.cnf
+=================================================
+Execution Time: 9.111 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/468.cnf
+=================================================
+Execution Time: 10.954 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/469.cnf
+=================================================
+Execution Time: 12.065 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/470.cnf
+=================================================
+Execution Time: 8.126 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/471.cnf
+=================================================
+Execution Time: 50.352 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/472.cnf
+=================================================
+Execution Time: 22.175 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/473.cnf
+=================================================
+Execution Time: 40.505 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/474.cnf
+=================================================
+Execution Time: 15.273 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/475.cnf
+=================================================
+Execution Time: 6.206 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/476.cnf
+=================================================
+Execution Time: 39.667 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/477.cnf
+=================================================
+Execution Time: 87.615 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/478.cnf
+=================================================
+Execution Time: 17.919 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/479.cnf
+=================================================
+Execution Time: 19.435 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/480.cnf
+=================================================
+Execution Time: 42.071 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/481.cnf
+=================================================
+Execution Time: 36.954 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/482.cnf
+=================================================
+Execution Time: 26.171 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/483.cnf
+=================================================
+Execution Time: 14.77 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/484.cnf
+=================================================
+Execution Time: 10.291 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/485.cnf
+=================================================
+Execution Time: 56.114 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/486.cnf
+=================================================
+Execution Time: 9.252 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/487.cnf
+=================================================
+Execution Time: 31.334 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/488.cnf
+=================================================
+Execution Time: 9.663 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/489.cnf
+=================================================
+Execution Time: 39.911 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/490.cnf
+=================================================
+Execution Time: 9.462 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/491.cnf
+=================================================
+Execution Time: 19.544 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/492.cnf
+=================================================
+Execution Time: 31.197 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/493.cnf
+=================================================
+Execution Time: 16.614 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/494.cnf
+=================================================
+Execution Time: 24.248 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/495.cnf
+=================================================
+Execution Time: 43.012 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/496.cnf
+=================================================
+Execution Time: 12.793 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/497.cnf
+=================================================
+Execution Time: 33.609 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/498.cnf
+=================================================
+Execution Time: 11.354 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/499.cnf
+=================================================
+Execution Time: 53.246 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/500.cnf
+=================================================
+Execution Time: 40.526 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/501.cnf
+=================================================
+Execution Time: 46.285 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/502.cnf
+=================================================
+Execution Time: 12.167 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/503.cnf
+=================================================
+Execution Time: 36.672 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/504.cnf
+=================================================
+Execution Time: 45.085 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/505.cnf
+=================================================
+Execution Time: 30.229 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/506.cnf
+=================================================
+Execution Time: 20.404 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/507.cnf
+=================================================
+Execution Time: 13.984 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/508.cnf
+=================================================
+Execution Time: 16.576 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/509.cnf
+=================================================
+Execution Time: 49.655 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/510.cnf
+=================================================
+Execution Time: 28.621 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/511.cnf
+=================================================
+Execution Time: 40.018 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/512.cnf
+=================================================
+Execution Time: 49.866 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/513.cnf
+=================================================
+Execution Time: 23.907 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/514.cnf
+=================================================
+Execution Time: 28.779 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/515.cnf
+=================================================
+Execution Time: 12.017 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/516.cnf
+=================================================
+Execution Time: 19.168 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/517.cnf
+=================================================
+Execution Time: 59.679 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/518.cnf
+=================================================
+Execution Time: 25.127 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/519.cnf
+=================================================
+Execution Time: 35.809 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/520.cnf
+=================================================
+Execution Time: 42.142 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/521.cnf
+=================================================
+Execution Time: 49.29 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/522.cnf
+=================================================
+Execution Time: 8.153 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/523.cnf
+=================================================
+Execution Time: 8.295 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/524.cnf
+=================================================
+Execution Time: 17.689 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/525.cnf
+=================================================
+Execution Time: 13.649 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/526.cnf
+=================================================
+Execution Time: 16.082 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/527.cnf
+=================================================
+Execution Time: 21.748 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/528.cnf
+=================================================
+Execution Time: 22.124 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/529.cnf
+=================================================
+Execution Time: 26.803 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/530.cnf
+=================================================
+Execution Time: 37.356 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/531.cnf
+=================================================
+Execution Time: 44.954 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/532.cnf
+=================================================
+Execution Time: 11.437 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/533.cnf
+=================================================
+Execution Time: 14.446 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/534.cnf
+=================================================
+Execution Time: 31.779 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/535.cnf
+=================================================
+Execution Time: 22.532 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/536.cnf
+=================================================
+Execution Time: 30.597 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/537.cnf
+=================================================
+Execution Time: 59.127 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/538.cnf
+=================================================
+Execution Time: 63.519 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/539.cnf
+=================================================
+Execution Time: 29.316 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/540.cnf
+=================================================
+Execution Time: 18.37 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/541.cnf
+=================================================
+Execution Time: 10.23 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/542.cnf
+=================================================
+Execution Time: 66.927 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/543.cnf
+=================================================
+Execution Time: 15.088 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/544.cnf
+=================================================
+Execution Time: 27.304 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/545.cnf
+=================================================
+Execution Time: 47.147 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/546.cnf
+=================================================
+Execution Time: 13.598 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/547.cnf
+=================================================
+Execution Time: 17.054 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/548.cnf
+=================================================
+Execution Time: 25.306 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/549.cnf
+=================================================
+Execution Time: 47.268 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/550.cnf
+=================================================
+Execution Time: 16.533 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/551.cnf
+=================================================
+Execution Time: 20.924 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/552.cnf
+=================================================
+Execution Time: 131.587 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/553.cnf
+=================================================
+Execution Time: 14.977 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/554.cnf
+=================================================
+Execution Time: 42.712 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/555.cnf
+=================================================
+Execution Time: 19.896 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/556.cnf
+=================================================
+Execution Time: 6.15 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/557.cnf
+=================================================
+Execution Time: 7.712 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/558.cnf
+=================================================
+Execution Time: 72.562 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/559.cnf
+=================================================
+Execution Time: 37.18 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/560.cnf
+=================================================
+Execution Time: 24.143 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/561.cnf
+=================================================
+Execution Time: 18.488 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/562.cnf
+=================================================
+Execution Time: 91.437 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/563.cnf
+=================================================
+Execution Time: 63.447 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/564.cnf
+=================================================
+Execution Time: 36.553 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/565.cnf
+=================================================
+Execution Time: 63.251 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/566.cnf
+=================================================
+Execution Time: 15.745 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/567.cnf
+=================================================
+Execution Time: 11.671 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/568.cnf
+=================================================
+Execution Time: 72.803 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/569.cnf
+=================================================
+Execution Time: 26.077 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/570.cnf
+=================================================
+Execution Time: 16.587 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/571.cnf
+=================================================
+Execution Time: 66.168 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/572.cnf
+=================================================
+Execution Time: 9.742 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/573.cnf
+=================================================
+Execution Time: 48.035 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/574.cnf
+=================================================
+Execution Time: 5.262 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/575.cnf
+=================================================
+Execution Time: 62.183 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/576.cnf
+=================================================
+Execution Time: 22.958 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/577.cnf
+=================================================
+Execution Time: 32.804 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/578.cnf
+=================================================
+Execution Time: 23.886 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/579.cnf
+=================================================
+Execution Time: 14.297 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/580.cnf
+=================================================
+Execution Time: 16.778 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/581.cnf
+=================================================
+Execution Time: 36.619 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/582.cnf
+=================================================
+Execution Time: 19.325 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/583.cnf
+=================================================
+Execution Time: 72.279 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/584.cnf
+=================================================
+Execution Time: 59.218 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/585.cnf
+=================================================
+Execution Time: 26.129 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/586.cnf
+=================================================
+Execution Time: 22.83 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/587.cnf
+=================================================
+Execution Time: 48.662 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/588.cnf
+=================================================
+Execution Time: 23.132 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/589.cnf
+=================================================
+Execution Time: 20.879 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/590.cnf
+=================================================
+Execution Time: 40.304 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/591.cnf
+=================================================
+Execution Time: 9.911 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/592.cnf
+=================================================
+Execution Time: 91.358 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/593.cnf
+=================================================
+Execution Time: 18.955 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/594.cnf
+=================================================
+Execution Time: 33.107 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/595.cnf
+=================================================
+Execution Time: 6.073 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/596.cnf
+=================================================
+Execution Time: 10.15 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/597.cnf
+=================================================
+Execution Time: 62.733 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/598.cnf
+=================================================
+Execution Time: 33.289 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/599.cnf
+=================================================
+Execution Time: 8.807 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/600.cnf
+=================================================
+Execution Time: 164.068 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/601.cnf
+=================================================
+Execution Time: 325.65 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/602.cnf
+=================================================
+Execution Time: 52.697 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/603.cnf
+=================================================
+Execution Time: 20.311 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/604.cnf
+=================================================
+Execution Time: 8.611 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/605.cnf
+=================================================
+Execution Time: 27.922 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/606.cnf
+=================================================
+Execution Time: 22.046 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/607.cnf
+=================================================
+Execution Time: 51.516 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/608.cnf
+=================================================
+Execution Time: 49.397 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/609.cnf
+=================================================
+Execution Time: 13.531 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/610.cnf
+=================================================
+Execution Time: 11.546 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/611.cnf
+=================================================
+Execution Time: 5.15 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/612.cnf
+=================================================
+Execution Time: 43.161 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/613.cnf
+=================================================
+Execution Time: 39.521 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/614.cnf
+=================================================
+Execution Time: 34.085 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/615.cnf
+=================================================
+Execution Time: 61.721 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/616.cnf
+=================================================
+Execution Time: 40.118 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/617.cnf
+=================================================
+Execution Time: 19.162 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/618.cnf
+=================================================
+Execution Time: 9.701 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/619.cnf
+=================================================
+Execution Time: 6.832 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/620.cnf
+=================================================
+Execution Time: 30.644 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/621.cnf
+=================================================
+Execution Time: 9.373 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/622.cnf
+=================================================
+Execution Time: 16.855 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/623.cnf
+=================================================
+Execution Time: 57.578 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/624.cnf
+=================================================
+Execution Time: 27.141 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/625.cnf
+=================================================
+Execution Time: 14.005 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/626.cnf
+=================================================
+Execution Time: 79.983 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/627.cnf
+=================================================
+Execution Time: 9.782 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/628.cnf
+=================================================
+Execution Time: 26.199 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/629.cnf
+=================================================
+Execution Time: 11.726 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/630.cnf
+=================================================
+Execution Time: 86.769 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/631.cnf
+=================================================
+Execution Time: 106.69 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/632.cnf
+=================================================
+Execution Time: 12.493 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/633.cnf
+=================================================
+Execution Time: 26.777 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/634.cnf
+=================================================
+Execution Time: 4.824 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/635.cnf
+=================================================
+Execution Time: 39.483 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/636.cnf
+=================================================
+Execution Time: 8.197 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/637.cnf
+=================================================
+Execution Time: 115.169 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/638.cnf
+=================================================
+Execution Time: 8.002 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/639.cnf
+=================================================
+Execution Time: 20.141 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/640.cnf
+=================================================
+Execution Time: 96.314 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/641.cnf
+=================================================
+Execution Time: 21.62 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/642.cnf
+=================================================
+Execution Time: 3.751 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/643.cnf
+=================================================
+Execution Time: 10.298 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/644.cnf
+=================================================
+Execution Time: 4.08 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/645.cnf
+=================================================
+Execution Time: 12.87 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/646.cnf
+=================================================
+Execution Time: 79.29 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/647.cnf
+=================================================
+Execution Time: 47.473 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/648.cnf
+=================================================
+Execution Time: 11.202 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/649.cnf
+=================================================
+Execution Time: 18.216 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/650.cnf
+=================================================
+Execution Time: 33.969 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/651.cnf
+=================================================
+Execution Time: 46.005 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/652.cnf
+=================================================
+Execution Time: 15.649 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/653.cnf
+=================================================
+Execution Time: 18.567 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/654.cnf
+=================================================
+Execution Time: 16.738 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/655.cnf
+=================================================
+Execution Time: 84.909 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/656.cnf
+=================================================
+Execution Time: 19.641 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/657.cnf
+=================================================
+Execution Time: 22.046 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/658.cnf
+=================================================
+Execution Time: 10.088 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/659.cnf
+=================================================
+Execution Time: 47.513 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/660.cnf
+=================================================
+Execution Time: 7.626 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/661.cnf
+=================================================
+Execution Time: 119.947 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/662.cnf
+=================================================
+Execution Time: 33.423 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/663.cnf
+=================================================
+Execution Time: 47.636 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/664.cnf
+=================================================
+Execution Time: 11.043 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/665.cnf
+=================================================
+Execution Time: 12.376 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/666.cnf
+=================================================
+Execution Time: 20.501 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/667.cnf
+=================================================
+Execution Time: 23.714 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/668.cnf
+=================================================
+Execution Time: 17.601 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/669.cnf
+=================================================
+Execution Time: 24.579 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/670.cnf
+=================================================
+Execution Time: 60.013 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/671.cnf
+=================================================
+Execution Time: 11.761 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/672.cnf
+=================================================
+Execution Time: 18.326 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/673.cnf
+=================================================
+Execution Time: 101.043 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/674.cnf
+=================================================
+Execution Time: 5.207 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/675.cnf
+=================================================
+Execution Time: 17.69 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/676.cnf
+=================================================
+Execution Time: 24.328 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/677.cnf
+=================================================
+Execution Time: 9.228 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/678.cnf
+=================================================
+Execution Time: 77.18 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/679.cnf
+=================================================
+Execution Time: 11.175 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/680.cnf
+=================================================
+Execution Time: 39.093 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/681.cnf
+=================================================
+Execution Time: 85.109 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/682.cnf
+=================================================
+Execution Time: 37.111 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/683.cnf
+=================================================
+Execution Time: 19.452 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/684.cnf
+=================================================
+Execution Time: 19.132 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/685.cnf
+=================================================
+Execution Time: 14.327 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/686.cnf
+=================================================
+Execution Time: 27.152 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/687.cnf
+=================================================
+Execution Time: 69.604 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/688.cnf
+=================================================
+Execution Time: 40.046 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/689.cnf
+=================================================
+Execution Time: 38.473 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/690.cnf
+=================================================
+Execution Time: 45.406 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/691.cnf
+=================================================
+Execution Time: 48.122 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/692.cnf
+=================================================
+Execution Time: 24.753 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/693.cnf
+=================================================
+Execution Time: 9.53 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/694.cnf
+=================================================
+Execution Time: 12.599 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/695.cnf
+=================================================
+Execution Time: 30.138 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/696.cnf
+=================================================
+Execution Time: 57.469 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/697.cnf
+=================================================
+Execution Time: 3.016 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/698.cnf
+=================================================
+Execution Time: 45.863 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/699.cnf
+=================================================
+Execution Time: 8.366 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/700.cnf
+=================================================
+Execution Time: 11.496 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/701.cnf
+=================================================
+Execution Time: 3.871 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/702.cnf
+=================================================
+Execution Time: 14.138 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/703.cnf
+=================================================
+Execution Time: 64.562 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/704.cnf
+=================================================
+Execution Time: 45.695 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/705.cnf
+=================================================
+Execution Time: 116.912 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/706.cnf
+=================================================
+Execution Time: 20.418 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/707.cnf
+=================================================
+Execution Time: 19.171 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/708.cnf
+=================================================
+Execution Time: 95.534 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/709.cnf
+=================================================
+Execution Time: 8.99 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/710.cnf
+=================================================
+Execution Time: 20.806 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/711.cnf
+=================================================
+Execution Time: 17.063 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/712.cnf
+=================================================
+Execution Time: 24.36 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/713.cnf
+=================================================
+Execution Time: 94.662 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/714.cnf
+=================================================
+Execution Time: 48.898 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/715.cnf
+=================================================
+Execution Time: 43.521 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/716.cnf
+=================================================
+Execution Time: 25.046 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/717.cnf
+=================================================
+Execution Time: 17.543 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/718.cnf
+=================================================
+Execution Time: 32.152 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/719.cnf
+=================================================
+Execution Time: 77.237 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/720.cnf
+=================================================
+Execution Time: 16.557 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/721.cnf
+=================================================
+Execution Time: 32.557 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/722.cnf
+=================================================
+Execution Time: 9.037 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/723.cnf
+=================================================
+Execution Time: 34.413 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/724.cnf
+=================================================
+Execution Time: 33.113 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/725.cnf
+=================================================
+Execution Time: 18.612 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/726.cnf
+=================================================
+Execution Time: 14.348 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/727.cnf
+=================================================
+Execution Time: 19.251 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/728.cnf
+=================================================
+Execution Time: 22.365 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/729.cnf
+=================================================
+Execution Time: 8.817 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/730.cnf
+=================================================
+Execution Time: 29.242 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/731.cnf
+=================================================
+Execution Time: 27.94 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/732.cnf
+=================================================
+Execution Time: 43.815 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/733.cnf
+=================================================
+Execution Time: 20.822 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/734.cnf
+=================================================
+Execution Time: 24.535 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/735.cnf
+=================================================
+Execution Time: 26.786 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/736.cnf
+=================================================
+Execution Time: 61.593 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/737.cnf
+=================================================
+Execution Time: 29.337 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/738.cnf
+=================================================
+Execution Time: 13.203 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/739.cnf
+=================================================
+Execution Time: 14.674 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/740.cnf
+=================================================
+Execution Time: 38.258 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/741.cnf
+=================================================
+Execution Time: 5.78 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/742.cnf
+=================================================
+Execution Time: 35.623 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/743.cnf
+=================================================
+Execution Time: 28.36 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/744.cnf
+=================================================
+Execution Time: 18.158 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/745.cnf
+=================================================
+Execution Time: 21.266 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/746.cnf
+=================================================
+Execution Time: 101.378 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/747.cnf
+=================================================
+Execution Time: 14.646 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/748.cnf
+=================================================
+Execution Time: 33.686 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/749.cnf
+=================================================
+Execution Time: 29.699 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/750.cnf
+=================================================
+Execution Time: 35.969 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/751.cnf
+=================================================
+Execution Time: 12.798 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/752.cnf
+=================================================
+Execution Time: 8.736 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/753.cnf
+=================================================
+Execution Time: 33.582 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/754.cnf
+=================================================
+Execution Time: 11.118 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/755.cnf
+=================================================
+Execution Time: 43.891 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/756.cnf
+=================================================
+Execution Time: 43.509 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/757.cnf
+=================================================
+Execution Time: 25.854 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/758.cnf
+=================================================
+Execution Time: 18.694 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/759.cnf
+=================================================
+Execution Time: 5.913 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/760.cnf
+=================================================
+Execution Time: 11.072 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/761.cnf
+=================================================
+Execution Time: 14.292 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/762.cnf
+=================================================
+Execution Time: 50.269 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/763.cnf
+=================================================
+Execution Time: 20.003 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/764.cnf
+=================================================
+Execution Time: 45.383 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/765.cnf
+=================================================
+Execution Time: 14.198 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/766.cnf
+=================================================
+Execution Time: 20.232 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/767.cnf
+=================================================
+Execution Time: 27.87 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/768.cnf
+=================================================
+Execution Time: 19.852 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/769.cnf
+=================================================
+Execution Time: 48.467 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/770.cnf
+=================================================
+Execution Time: 17.137 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/771.cnf
+=================================================
+Execution Time: 12.09 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/772.cnf
+=================================================
+Execution Time: 8.354 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/773.cnf
+=================================================
+Execution Time: 11.933 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/774.cnf
+=================================================
+Execution Time: 17.996 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/775.cnf
+=================================================
+Execution Time: 15.474 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/776.cnf
+=================================================
+Execution Time: 29.171 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/777.cnf
+=================================================
+Execution Time: 16.607 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/778.cnf
+=================================================
+Execution Time: 18.784 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/779.cnf
+=================================================
+Execution Time: 23.898 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/780.cnf
+=================================================
+Execution Time: 133.364 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/781.cnf
+=================================================
+Execution Time: 35.854 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/782.cnf
+=================================================
+Execution Time: 124.113 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/783.cnf
+=================================================
+Execution Time: 29.169 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/784.cnf
+=================================================
+Execution Time: 18.201 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/785.cnf
+=================================================
+Execution Time: 20.101 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/786.cnf
+=================================================
+Execution Time: 25.753 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/787.cnf
+=================================================
+Execution Time: 17.31 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/788.cnf
+=================================================
+Execution Time: 26.729 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/789.cnf
+=================================================
+Execution Time: 12.252 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/790.cnf
+=================================================
+Execution Time: 19.375 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/791.cnf
+=================================================
+Execution Time: 34.892 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/792.cnf
+=================================================
+Execution Time: 12.902 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/793.cnf
+=================================================
+Execution Time: 27.012 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/794.cnf
+=================================================
+Execution Time: 12.687 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/795.cnf
+=================================================
+Execution Time: 7.096 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/796.cnf
+=================================================
+Execution Time: 5.648 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/797.cnf
+=================================================
+Execution Time: 20.195 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/798.cnf
+=================================================
+Execution Time: 79.532 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/799.cnf
+=================================================
+Execution Time: 84.772 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/800.cnf
+=================================================
+Execution Time: 67.708 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/801.cnf
+=================================================
+Execution Time: 14.978 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/802.cnf
+=================================================
+Execution Time: 18.455 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/803.cnf
+=================================================
+Execution Time: 42.289 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/804.cnf
+=================================================
+Execution Time: 14.447 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/805.cnf
+=================================================
+Execution Time: 35.879 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/806.cnf
+=================================================
+Execution Time: 54.421 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/807.cnf
+=================================================
+Execution Time: 17.585 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/808.cnf
+=================================================
+Execution Time: 45.883 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/809.cnf
+=================================================
+Execution Time: 24.383 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/810.cnf
+=================================================
+Execution Time: 9.803 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/811.cnf
+=================================================
+Execution Time: 41.577 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/812.cnf
+=================================================
+Execution Time: 70.728 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/813.cnf
+=================================================
+Execution Time: 30.298 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/814.cnf
+=================================================
+Execution Time: 31.942 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/815.cnf
+=================================================
+Execution Time: 15.824 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/816.cnf
+=================================================
+Execution Time: 21.875 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/817.cnf
+=================================================
+Execution Time: 8.193 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/818.cnf
+=================================================
+Execution Time: 43.859 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/819.cnf
+=================================================
+Execution Time: 15.293 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/820.cnf
+=================================================
+Execution Time: 6.674 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/821.cnf
+=================================================
+Execution Time: 51.298 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/822.cnf
+=================================================
+Execution Time: 33.044 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/823.cnf
+=================================================
+Execution Time: 10.845 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/824.cnf
+=================================================
+Execution Time: 19.793 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/825.cnf
+=================================================
+Execution Time: 35.981 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/826.cnf
+=================================================
+Execution Time: 21.024 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/827.cnf
+=================================================
+Execution Time: 40.554 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/828.cnf
+=================================================
+Execution Time: 43.667 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/829.cnf
+=================================================
+Execution Time: 16.586 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/830.cnf
+=================================================
+Execution Time: 14.359 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/831.cnf
+=================================================
+Execution Time: 24.151 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/832.cnf
+=================================================
+Execution Time: 17.079 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/833.cnf
+=================================================
+Execution Time: 17.282 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/834.cnf
+=================================================
+Execution Time: 31.122 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/835.cnf
+=================================================
+Execution Time: 52.748 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/836.cnf
+=================================================
+Execution Time: 36.814 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/837.cnf
+=================================================
+Execution Time: 25.836 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/838.cnf
+=================================================
+Execution Time: 30.067 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/839.cnf
+=================================================
+Execution Time: 74.115 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/840.cnf
+=================================================
+Execution Time: 19.927 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/841.cnf
+=================================================
+Execution Time: 240.915 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/842.cnf
+=================================================
+Execution Time: 14.691 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/843.cnf
+=================================================
+Execution Time: 37.425 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/844.cnf
+=================================================
+Execution Time: 20.777 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/845.cnf
+=================================================
+Execution Time: 41.786 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/846.cnf
+=================================================
+Execution Time: 65.855 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/847.cnf
+=================================================
+Execution Time: 23.603 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/848.cnf
+=================================================
+Execution Time: 18.292 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/849.cnf
+=================================================
+Execution Time: 139.358 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/850.cnf
+=================================================
+Execution Time: 34.894 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/851.cnf
+=================================================
+Execution Time: 14.49 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/852.cnf
+=================================================
+Execution Time: 13.749 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/853.cnf
+=================================================
+Execution Time: 17.79 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/854.cnf
+=================================================
+Execution Time: 82.829 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/855.cnf
+=================================================
+Execution Time: 16.155 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/856.cnf
+=================================================
+Execution Time: 58.653 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/857.cnf
+=================================================
+Execution Time: 21.677 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/858.cnf
+=================================================
+Execution Time: 34.868 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/859.cnf
+=================================================
+Execution Time: 22.544 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/860.cnf
+=================================================
+Execution Time: 50.576 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/861.cnf
+=================================================
+Execution Time: 57.0 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/862.cnf
+=================================================
+Execution Time: 108.927 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/863.cnf
+=================================================
+Execution Time: 25.846 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/864.cnf
+=================================================
+Execution Time: 33.486 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/865.cnf
+=================================================
+Execution Time: 34.274 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/866.cnf
+=================================================
+Execution Time: 22.531 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/867.cnf
+=================================================
+Execution Time: 48.843 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/868.cnf
+=================================================
+Execution Time: 41.941 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/869.cnf
+=================================================
+Execution Time: 12.553 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/870.cnf
+=================================================
+Execution Time: 12.949 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/871.cnf
+=================================================
+Execution Time: 15.576 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/872.cnf
+=================================================
+Execution Time: 6.854 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/873.cnf
+=================================================
+Execution Time: 23.997 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/874.cnf
+=================================================
+Execution Time: 25.426 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/875.cnf
+=================================================
+Execution Time: 58.764 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/876.cnf
+=================================================
+Execution Time: 72.681 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/877.cnf
+=================================================
+Execution Time: 13.845 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/878.cnf
+=================================================
+Execution Time: 15.405 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/879.cnf
+=================================================
+Execution Time: 32.146 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/880.cnf
+=================================================
+Execution Time: 31.426 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/881.cnf
+=================================================
+Execution Time: 19.285 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/882.cnf
+=================================================
+Execution Time: 42.293 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/883.cnf
+=================================================
+Execution Time: 23.706 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/884.cnf
+=================================================
+Execution Time: 7.581 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/885.cnf
+=================================================
+Execution Time: 6.562 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/886.cnf
+=================================================
+Execution Time: 18.523 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/887.cnf
+=================================================
+Execution Time: 45.974 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/888.cnf
+=================================================
+Execution Time: 31.888 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/889.cnf
+=================================================
+Execution Time: 10.414 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/890.cnf
+=================================================
+Execution Time: 24.934 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/891.cnf
+=================================================
+Execution Time: 35.901 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/892.cnf
+=================================================
+Execution Time: 54.885 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/893.cnf
+=================================================
+Execution Time: 112.352 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/894.cnf
+=================================================
+Execution Time: 22.212 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/895.cnf
+=================================================
+Execution Time: 49.336 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/896.cnf
+=================================================
+Execution Time: 30.171 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/897.cnf
+=================================================
+Execution Time: 8.668 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/898.cnf
+=================================================
+Execution Time: 32.835 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/899.cnf
+=================================================
+Execution Time: 16.354 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/900.cnf
+=================================================
+Execution Time: 176.732 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/901.cnf
+=================================================
+Execution Time: 25.648 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/902.cnf
+=================================================
+Execution Time: 164.466 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/903.cnf
+=================================================
+Execution Time: 14.514 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/904.cnf
+=================================================
+Execution Time: 26.332 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/905.cnf
+=================================================
+Execution Time: 30.579 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/906.cnf
+=================================================
+Execution Time: 11.31 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/907.cnf
+=================================================
+Execution Time: 34.68 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/908.cnf
+=================================================
+Execution Time: 41.6 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/909.cnf
+=================================================
+Execution Time: 83.75 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/910.cnf
+=================================================
+Execution Time: 13.155 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/911.cnf
+=================================================
+Execution Time: 8.112 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/912.cnf
+=================================================
+Execution Time: 59.789 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/913.cnf
+=================================================
+Execution Time: 20.266 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/914.cnf
+=================================================
+Execution Time: 19.032 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/915.cnf
+=================================================
+Execution Time: 41.447 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/916.cnf
+=================================================
+Execution Time: 7.986 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/917.cnf
+=================================================
+Execution Time: 22.668 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/918.cnf
+=================================================
+Execution Time: 25.936 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/919.cnf
+=================================================
+Execution Time: 31.493 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/920.cnf
+=================================================
+Execution Time: 32.76 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/921.cnf
+=================================================
+Execution Time: 9.715 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/922.cnf
+=================================================
+Execution Time: 10.266 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/923.cnf
+=================================================
+Execution Time: 15.156 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/924.cnf
+=================================================
+Execution Time: 62.75 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/925.cnf
+=================================================
+Execution Time: 27.164 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/926.cnf
+=================================================
+Execution Time: 21.316 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/927.cnf
+=================================================
+Execution Time: 26.194 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/928.cnf
+=================================================
+Execution Time: 27.762 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/929.cnf
+=================================================
+Execution Time: 62.119 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/930.cnf
+=================================================
+Execution Time: 18.146 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/931.cnf
+=================================================
+Execution Time: 35.943 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/932.cnf
+=================================================
+Execution Time: 115.029 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/933.cnf
+=================================================
+Execution Time: 14.144 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/934.cnf
+=================================================
+Execution Time: 109.887 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/935.cnf
+=================================================
+Execution Time: 22.339 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/936.cnf
+=================================================
+Execution Time: 29.051 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/937.cnf
+=================================================
+Execution Time: 89.303 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/938.cnf
+=================================================
+Execution Time: 41.927 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/939.cnf
+=================================================
+Execution Time: 73.769 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/940.cnf
+=================================================
+Execution Time: 37.639 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/941.cnf
+=================================================
+Execution Time: 15.378 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/942.cnf
+=================================================
+Execution Time: 29.344 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/943.cnf
+=================================================
+Execution Time: 92.314 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/944.cnf
+=================================================
+Execution Time: 4.399 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/945.cnf
+=================================================
+Execution Time: 131.393 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/946.cnf
+=================================================
+Execution Time: 10.418 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/947.cnf
+=================================================
+Execution Time: 32.479 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/948.cnf
+=================================================
+Execution Time: 22.669 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/949.cnf
+=================================================
+Execution Time: 12.602 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/950.cnf
+=================================================
+Execution Time: 24.278 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/951.cnf
+=================================================
+Execution Time: 37.03 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/952.cnf
+=================================================
+Execution Time: 8.914 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/953.cnf
+=================================================
+Execution Time: 7.201 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/954.cnf
+=================================================
+Execution Time: 38.783 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/955.cnf
+=================================================
+Execution Time: 40.44 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/956.cnf
+=================================================
+Execution Time: 19.858 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/957.cnf
+=================================================
+Execution Time: 24.921 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/958.cnf
+=================================================
+Execution Time: 13.343 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/959.cnf
+=================================================
+Execution Time: 39.877 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/960.cnf
+=================================================
+Execution Time: 10.456 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/961.cnf
+=================================================
+Execution Time: 55.802 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/962.cnf
+=================================================
+Execution Time: 9.593 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/963.cnf
+=================================================
+Execution Time: 48.343 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/964.cnf
+=================================================
+Execution Time: 30.99 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/965.cnf
+=================================================
+Execution Time: 11.592 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/966.cnf
+=================================================
+Execution Time: 37.41 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/967.cnf
+=================================================
+Execution Time: 25.514 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/968.cnf
+=================================================
+Execution Time: 31.802 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/969.cnf
+=================================================
+Execution Time: 20.397 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/970.cnf
+=================================================
+Execution Time: 29.463 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/971.cnf
+=================================================
+Execution Time: 50.487 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/972.cnf
+=================================================
+Execution Time: 321.43 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/973.cnf
+=================================================
+Execution Time: 13.538 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/974.cnf
+=================================================
+Execution Time: 17.681 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/975.cnf
+=================================================
+Execution Time: 11.151 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/976.cnf
+=================================================
+Execution Time: 29.998 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/977.cnf
+=================================================
+Execution Time: 31.297 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/978.cnf
+=================================================
+Execution Time: 57.692 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/979.cnf
+=================================================
+Execution Time: 28.939 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/980.cnf
+=================================================
+Execution Time: 29.325 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/981.cnf
+=================================================
+Execution Time: 28.79 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/982.cnf
+=================================================
+Execution Time: 29.899 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/983.cnf
+=================================================
+Execution Time: 50.655 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/984.cnf
+=================================================
+Execution Time: 22.013 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/985.cnf
+=================================================
+Execution Time: 17.668 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/986.cnf
+=================================================
+Execution Time: 20.651 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/987.cnf
+=================================================
+Execution Time: 24.608 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/988.cnf
+=================================================
+Execution Time: 14.415 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/989.cnf
+=================================================
+Execution Time: 25.872 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/990.cnf
+=================================================
+Execution Time: 20.006 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/991.cnf
+=================================================
+Execution Time: 59.851 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/992.cnf
+=================================================
+Execution Time: 21.003 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/993.cnf
+=================================================
+Execution Time: 17.854 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/994.cnf
+=================================================
+Execution Time: 24.068 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/995.cnf
+=================================================
+Execution Time: 41.403 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/996.cnf
+=================================================
+Execution Time: 13.624 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/997.cnf
+=================================================
+Execution Time: 16.717 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/998.cnf
+=================================================
+Execution Time: 24.259 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/999.cnf
+=================================================
+Execution Time: 11.145 seconds
+UNSAT
+
+Testing file : ../test/testcases/benchmark/100V_430C_unsat/1000.cnf
+=================================================
+Execution Time: 19.028 seconds
+UNSAT
+
