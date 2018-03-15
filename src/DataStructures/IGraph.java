@@ -28,8 +28,8 @@ public class IGraph {
         System.out.println("Adding decision to level " + decision.getLevel() + " : " + decision);
         Node<Variable> decisionNode = new Node<>(decision);
         assign(decisionNode);
-        System.out.println("Variable level : " + inferenceLevel);
-        System.out.println("Decision level : " + decisionLevel);
+//        System.out.println("Variable level : " + inferenceLevel);
+//        System.out.println("Decision level : " + decisionLevel);
         decisions.computeIfAbsent(inferenceLevel, key -> new HashSet<>()).add(decisionNode);
     }
 
@@ -91,7 +91,7 @@ public class IGraph {
             Node<Variable> node = values.get(literal.getName());
             Integer assignedLevel = node == null ? null : node.value.getLevel();
             if (assignedLevel != null && assignedLevel == level) {
-                System.out.println(node);
+//                System.out.println(node);
                 count += 1;
             }
         }
@@ -116,7 +116,7 @@ public class IGraph {
 
     public Integer getHighestLevel(Clause clause, int conflictLevel) {
         // TODO: Change to highest level of false assigned variables
-        System.out.println("LEARNT CLAUSE: " + clause);
+        System.out.println("Learnt clause: " + clause);
         int highestLevel = -1;
         HashSet<Literal> literals = clause.getLiterals();
         for (Literal literal : literals) {

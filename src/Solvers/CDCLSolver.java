@@ -13,8 +13,6 @@ public class CDCLSolver extends Solver {
         super(clauses, literalsCount);
     }
 
-    // TODO: Add learnt clauses and use them for evaluation
-    
     @Override
     public HashMap<String, Boolean> solve() {
         resetSolver();
@@ -63,7 +61,9 @@ public class CDCLSolver extends Solver {
     }
 
     private void performUnitPropagation(Variable decision) {
-        HashSet<Clause> clauses = formula.getClausesSet();
+        HashSet<Clause> clauses = new HashSet<>();
+        clauses.addAll(formula.getClausesSet());
+        clauses.addAll(learntClauses);
         for (Clause clause : clauses) {
             if (!clause.containsSymbol(decision.getSymbol())) {
                 continue;
@@ -94,25 +94,13 @@ public class CDCLSolver extends Solver {
      (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
      */
     private Variable pickBranchingVariable() {
-        if (learntClause != null) {
-            HashSet<Node<Variable>> previousDecisions = stateGraph.getPreviousDecisions(level);
-            if (previousDecisions == null || previousDecisions.size() > 1) {
-                System.out.println("Unable to use learnt clause!");
-                System.out.println("Previous decisions at " + level + " : " + previousDecisions);
-                return null;
-            }
-            Variable branchingVariable = null;
-            for (Node<Variable> node : previousDecisions) {
-                branchingVariable = node.getValue().getInverse();
-            }
-            if (branchingVariable != null) {
-                branchingVariable.setLevel(level);
-            }
-            learntClause = null;
-            System.out.println("+ Decision (conflict): " + branchingVariable);
+        Variable branchingVariable;
+        if (conflictVariable != null) {
+            branchingVariable = conflictVariable;
+            conflictVariable = null;
             return branchingVariable;
         }
-        Variable branchingVariable = stateGraph.pickUnassignedVariable(level);
+        branchingVariable = stateGraph.pickUnassignedVariable(level);
         System.out.println("+ Decision (unassigned): " + branchingVariable);
         return branchingVariable;
     }
@@ -130,13 +118,14 @@ public class CDCLSolver extends Solver {
             learntClause = resolve(learntClause, antecedentClause);
             System.out.println(" ... into: " + learntClause);
         }
-        this.learntClause = learntClause;
+        learntClauses.add(learntClause);
+        conflictVariable = conflictNode.getValue();
         Integer highestLevel = stateGraph.getHighestLevel(learntClause, conflictLevel);
         return highestLevel == null ? null : highestLevel - 1;
     }
 
     private void backtrack(int proposedLevel) {
-        System.out.println("BACKTRACK: " + level + " -> " + proposedLevel);
+        System.out.println("Backtracking: " + level + " -> " + proposedLevel);
         stateGraph.revertState(proposedLevel);
         level = proposedLevel;
     }
@@ -176,6 +165,7 @@ public class CDCLSolver extends Solver {
     protected Literal pickBranchingAssignment() {
         return null;
     }
+
     @Override
     protected Assignment propagateUnit(Literal literal) {
         return null;
