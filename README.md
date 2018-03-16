@@ -1,4 +1,4 @@
-**Team members :** TIONG YAOCONG (A0139922Y), HUANG LIE JUN (A0123994W)
+**Team members :** TIONG YAOCONG (A0139922Y) yaocong@u.nus.edu.sg, HUANG LIE JUN (A0123994W) A0123994 hliejun@u.nus.edu
 
 ## CS4244 SATSolver Draft 1
 
@@ -7,9 +7,9 @@ Our team has decided to design different types of SATSolver to compare the effic
 
 #### Current progress
 - Iterative Davis–Putnam–Logemann–Loveland (DPLL)
-	- Tested with benchmark sat & unsat cnf  (Refer to `Appendix 1`)
+	- Tested with benchmark sat & unsat CNF  (Refer to `Appendix 1`)
 - Recursive Davis–Putnam–Logemann–Loveland (RDPLL)
-	- Tested with benchmark sat & unsat cnf (Refer to `Appendix 1`)
+	- Tested with benchmark sat & unsat CNF (Refer to `Appendix 1`)
 - CDCL (80%)
 	- Our team is still resolving some bugs that occured during resolution.
 	- Able to solve some cases in benchmark.
@@ -47,6 +47,11 @@ Our team is still in the midst of running through all the benchmark test cases o
 	
 	2. `./run.sh` to run through all testcases with the default strategy, which is `DPLL`
 	
+- Available CNF Folder Path : (Refer to `Appendix 1`)
+- Available Strategy : 
+	- `DPLL`
+	- `RDPLL` 
+	- `CDCL` (Not working as expected)
 - Result of the selected `CNF FOLDER PATH` will be in the `result` folder
 
 #### Running source code manually
@@ -57,6 +62,24 @@ Our team is still in the midst of running through all the benchmark test cases o
 
 ### Appendix
 1. Benchmark testcases - Folder path : `test/`
+	- `50V_218C_sat`
+	- `50V_218C_unsat`
+	- `75V_325C_sat`
+	- `75V_325C_unsat`
+	- `100V_430C_sat`
+	- `100V_430C_unsat`
+	- `125V_538C_sat`
+	- `125V_538C_unsat`
+	- `150V_645C_sat`
+	- `150V_645C_unsat`
+	- `175V_753C_sat`
+	- `175V_753C_unsat`
+	- `200V_860C_sat`
+	- `200V_860C_unsat`
+	- `225V_960C_sat`
+	- `225V_960C_unsat`
+	- `250V_1065C_sat`
+	- `250V_1065C_unsat` 
 
 	```
 	Testcases folder format : 50V_218C_sat 
