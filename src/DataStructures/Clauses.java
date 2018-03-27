@@ -1,12 +1,15 @@
 package DataStructures;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Clauses implements Comparable<Clauses> {
     private HashSet<Clause> clauses;
+    public HashMap<Literal, Integer> literalCount;
 
     public Clauses() {
         clauses = new HashSet<>();
+        literalCount = new HashMap<>();
     }
 
     public void addClause(Clause clause) {
@@ -14,7 +17,41 @@ public class Clauses implements Comparable<Clauses> {
     }
 
     public void addClause(String[] literalsString) {
-        clauses.add(new Clause(literalsString));
+        Clause clause = new Clause(literalsString);
+        updateLiteralCount(clause);
+        clauses.add(clause);
+    }
+
+    private void updateLiteralCount(Clause clause) {
+        for (Literal literal : clause.getLiterals()) {
+            if (literalCount.containsKey(literal)) {
+                literalCount.put(literal, literalCount.get(literal) + 1);
+            } else {
+                literalCount.put(literal, 1);
+            }
+        }
+
+        literalCount =
+                literalCount.entrySet().stream()
+                        .sorted(Map.Entry.<Literal, Integer>comparingByValue().reversed())
+                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                                (e1, e2) -> e1, LinkedHashMap::new));
+    }
+
+    public void updateLiteralCount(Clause clause, int constant) {
+        for (Literal literal : clause.getLiterals()) {
+            if (literalCount.containsKey(literal)) {
+                literalCount.put(literal, (literalCount.get(literal) + 1) / constant);
+            } else {
+                literalCount.put(literal, 1);
+            }
+        }
+
+        literalCount =
+                literalCount.entrySet().stream()
+                        .sorted(Map.Entry.<Literal, Integer>comparingByValue().reversed())
+                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                                (e1, e2) -> e1, LinkedHashMap::new));
     }
 
     public HashSet<Clause> getClausesSet() {
@@ -51,15 +88,20 @@ public class Clauses implements Comparable<Clauses> {
 
     public Literal pickUnassignedLiteral(Assignment assignment) {
 //        ArrayList<Clause> clauses = toArray();
+        Literal highestUnassignedLiteral = null;
         for (Clause clause : clauses) {
             ArrayList<Literal> literals = clause.toArray();
             for (Literal literal : literals) {
                 if (assignment.getValue(literal.getName()) == null) {
-                    return literal;
+                    if (highestUnassignedLiteral == null) {
+                        highestUnassignedLiteral = literal;
+                    } else if (literalCount.get(highestUnassignedLiteral) < literalCount.get(literal)) {
+                        highestUnassignedLiteral = literal;
+                    }
                 }
             }
         }
-        return null;
+        return highestUnassignedLiteral;
     }
 
     public ArrayList<Clause> toArray() {
