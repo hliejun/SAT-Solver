@@ -99,7 +99,12 @@ public class ChaffSolver extends CDCLSolver {
 
         // Add learnt clause to collection of learnt clauses
 
-        // Return largest level - 1 != decision level from learnt clause variables
+        // Return:
+
+            // A: largest level - 1 != decision level from learnt clause variables
+
+            // B: second largest level + 1 != decision level from learnt clause variables
+
 
         return null;
     }
