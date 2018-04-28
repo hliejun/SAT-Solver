@@ -1,8 +1,9 @@
-package Solvers;
+package Solvers.DPLL;
 
 import java.util.HashMap;
 
 import DataStructures.*;
+import Solvers.Solver;
 
 public class RDPLLSolver extends Solver {
     private Assignment satisfiedAssignments;

@@ -1,8 +1,9 @@
-package Solvers;
+package Solvers.DPLL;
 
 import java.util.*;
 
 import DataStructures.*;
+import Solvers.Solver;
 
 public class DPLLSolver extends Solver {
 

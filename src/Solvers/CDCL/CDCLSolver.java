@@ -1,10 +1,11 @@
-package Solvers;
+package Solvers.CDCL;
 
 import DataStructures.*;
+import Solvers.Solver;
 
 import java.util.*;
 
-// TODO: Make abstract...
+// TODO: Make abstract after fix...
 
 public class CDCLSolver extends Solver {
     protected IGraph stateGraph = new IGraph(variables);

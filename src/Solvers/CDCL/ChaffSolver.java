@@ -1,12 +1,12 @@
-package Solvers;
+package Solvers.CDCL;
 
 import DataStructures.*;
 
 import java.util.*;
 
-public class ChaffCDCLSolver extends CDCLSolver {
+public class ChaffSolver extends CDCLSolver {
 
-    public ChaffCDCLSolver(Clauses clauses, int literalsCount) {
+    public ChaffSolver(Clauses clauses, int literalsCount) {
         super(clauses, literalsCount);
     }
 

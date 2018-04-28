@@ -1,6 +1,11 @@
 import DataStructures.Clauses;
 import DataStructures.Utilities;
-import Solvers.*;
+
+import Solvers.Solver;
+import Solvers.CDCL.ChaffSolver;
+import Solvers.CDCL.VSIDSSolver;
+import Solvers.DPLL.DPLLSolver;
+import Solvers.DPLL.RDPLLSolver;
 
 import java.util.*;
 
@@ -8,7 +13,7 @@ public class SATSolver {
 
     public static void main(String[] args) {
         Solver solver = null;
-        String path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf";
+        String path = "./test/testcases/sat/1.cnf";
         if (args.length != 0) {
             path = args[0];
         }
@@ -18,21 +23,26 @@ public class SATSolver {
         System.out.println(clauses.literalCount);
         System.out.println(clauses);
 
-        Strategy strategy = Strategy.ChaffCDCL;
-//        Strategy strategy = Strategy.DPLL;
-//        Strategy strategy = Strategy.RDPLL;
+//        Strategy strategy = Strategy.VSIDS_CDCL;
+        Strategy strategy = Strategy.Chaff_CDCL;
+//        Strategy strategy = Strategy.Iterative_DPLL;
+//        Strategy strategy = Strategy.Recursive_DPLL;
 
         long startTime = System.currentTimeMillis();
 
         switch(strategy) {
-            case RDPLL:
+            case Recursive_DPLL:
                 solver = new RDPLLSolver(clauses, literalsCount);
                 break;
-            case DPLL:
+            case Iterative_DPLL:
                 solver = new DPLLSolver(clauses, literalsCount);
                 break;
-            case ChaffCDCL:
-                solver = new ChaffCDCLSolver(clauses, literalsCount);
+            case Chaff_CDCL:
+                solver = new ChaffSolver(clauses, literalsCount);
+                break;
+            case VSIDS_CDCL:
+                solver = new VSIDSSolver(clauses, literalsCount);
+                break;
             default:
                 break;
 
