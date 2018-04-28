@@ -1,6 +1,7 @@
 import DataStructures.Clauses;
 import DataStructures.Utilities;
 
+import Solvers.CDCL.BuggySolver;
 import Solvers.Solver;
 import Solvers.CDCL.ChaffSolver;
 import Solvers.CDCL.VSIDSSolver;
@@ -13,7 +14,7 @@ public class SATSolver {
 
     public static void main(String[] args) {
         Solver solver = null;
-        String path = "./test/testcases/sat/1.cnf";
+        String path = "./test/testcases/sat/7.cnf";
         if (args.length != 0) {
             path = args[0];
         }
@@ -25,6 +26,7 @@ public class SATSolver {
 
 //        Strategy strategy = Strategy.VSIDS_CDCL;
         Strategy strategy = Strategy.Chaff_CDCL;
+//        Strategy strategy = Strategy.Buggy_CDCL;
 //        Strategy strategy = Strategy.Iterative_DPLL;
 //        Strategy strategy = Strategy.Recursive_DPLL;
 
@@ -36,6 +38,9 @@ public class SATSolver {
                 break;
             case Iterative_DPLL:
                 solver = new DPLLSolver(clauses, literalsCount);
+                break;
+            case Buggy_CDCL:
+                solver = new BuggySolver(clauses, literalsCount);
                 break;
             case Chaff_CDCL:
                 solver = new ChaffSolver(clauses, literalsCount);

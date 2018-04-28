@@ -2,6 +2,8 @@ package DataStructures;
 
 import java.util.*;
 
+// TODO: Optimise...
+
 public class IGraph {
     private Graph<Variable> graph;
     private HashMap<String, Node<Variable>> values;
@@ -65,6 +67,10 @@ public class IGraph {
             }
         }
         return true;
+    }
+
+    public boolean isConflicted() {
+        return conflictClause != null;
     }
 
     public boolean isAllAssigned() {
@@ -132,10 +138,17 @@ public class IGraph {
         return conflictNode;
     }
 
-    public Clause getAntecedentClause(Clause learntClause) {
+    // TODO: Check this...
+    public Clause getNextAntecedentClause(Clause learntClause, Integer level) {
+        if (level == null) {
+            return null;
+        }
         HashSet<Literal> literals = learntClause.getLiterals();
         for (Literal literal : literals) {
             Node<Variable> node = values.get(literal.getName());
+            if (node.getValue().getLevel() != level) {
+                continue;
+            }
             HashSet<Edge<Variable>> antecedentEdges = graph.getEdgesToNode(node);
             for (Edge<Variable> edge : antecedentEdges) {
                 Clause antecedentClause = edge.getAntecedent();

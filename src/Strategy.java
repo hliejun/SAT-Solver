@@ -14,5 +14,5 @@ CDCL techniques to research on:
 - Pre-processing / In-processing
  */
 public enum Strategy {
-    Iterative_DPLL, Recursive_DPLL, Chaff_CDCL, VSIDS_CDCL
+    Iterative_DPLL, Recursive_DPLL, Buggy_CDCL, Chaff_CDCL, VSIDS_CDCL
 }

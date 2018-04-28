@@ -12,119 +12,173 @@ public class ChaffSolver extends CDCLSolver {
 
     @Override
     public HashMap<String, Boolean> solve() {
+        resetSolver();
 
-        // Perform initial unit propagation
+        performGeneralUnitPropagation();
 
-        // If conflicted, return null (UNSAT)
+        if (stateGraph.isConflicted()) {
 
-        // Initialise decision level = 0
+            System.out.println("Fail to propagate before entering loop."); ////
 
-        // While not all variables assigned
+            return null;
+        }
 
-            // If backtracked:
+        level = 0;
 
-                // Unflag backtracked
+        while (!stateGraph.isAllAssigned()) {
+            Variable decision = pickBranchingVariable();
+            if (decision == null) {
 
-                // Perform unit propagation on learnt clause
+                System.out.println("Fail to make a decision."); ////
 
-                // If conflicted, return null (UNSAT)
+                return null;
+            }
 
-                // Increment decision level
+            level += 1;
 
-            // Pick branching variable
+            System.out.println("Level: " + (level - 1) + " -> " + level); ////
 
-            // Increment decision level
+            stateGraph.addDecision(decision, level);
+            performDecisionUnitPropagation(decision);
 
-            // Add decision vertex to state graph
+            if (stateGraph.isConflicted()) {
+                Clause conflict = stateGraph.getConflictClause();
+                Integer proposedLevel = analyzeConflict(conflict);
 
-            // Perform unit propagation on decision
+                if (proposedLevel == null) {
 
-            // If conflicted, analyse conflict and get backtrack level
+                    System.out.println("Fail to propose a backtrack level."); ////
 
-            // If backtrack level < 0, return null (UNSAT)
+                    return null;
+                }
 
-            // Perform backtrack, set decision level to backtrack level
+                backtrack(proposedLevel);
 
-        // Return solution map (SAT)
+                performGeneralUnitPropagation();
 
-        return null;
+                //// !!! Do we check for conflict here? !!! ////
+
+                level += 1;
+            }
+        }
+
+        System.out.println("Satisfiable: " + stateGraph.evaluate(formula)); ////
+
+        return stateGraph.getAssignment();
     }
 
     @Override
-    protected void performUnitPropagation() {
+    protected void performGeneralUnitPropagation() {
+        HashSet<Clause> clauses = new HashSet<>();
+        clauses.addAll(formula.getClausesSet());
+        clauses.addAll(learntClauses);
 
-        // For all assertive clauses
+        for (Clause clause : clauses) {
+            Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
+            if (impliedVariable == null) {
+                continue;
+            }
 
-            // Make decision on asserted variable
+            stateGraph.addDecision(impliedVariable, level);
+            performDecisionUnitPropagation(impliedVariable);
 
-            // Perform unit propagation on decision
-
-            // If conflicted, break and return
-
+            if (stateGraph.isConflicted()) {
+                return;
+            }
+        }
     }
 
     @Override
-    protected void performUnitPropagation(Variable decision) {
+    protected void performDecisionUnitPropagation(Variable decision) {
+        HashSet<Clause> clauses = new HashSet<>();
+        clauses.addAll(formula.getClausesSet());
+        clauses.addAll(learntClauses);
 
-        // For all clauses (incl. learnt clauses) that contains decision variable
+        for (Clause clause : clauses) {
+            if (!clause.containsSymbol(decision.getSymbol())) {
+                continue;
+            }
 
-            // If conflicted, add conflict
+            if (stateGraph.isConflicted(clause)) {
+                stateGraph.addConflict(decision, clause);
 
-            // If clause is assertive, add implication
+                System.out.println("Conflict propagating " + decision + " at " + clause); ////
 
-            // If conflicted, add conflict
+                return;
+            }
 
-            // Perform unit propagation on implied variable
+            Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
+            if (impliedVariable != null) {
+                stateGraph.addImplication(clause, impliedVariable);
 
+                System.out.println("+ Implication: " + impliedVariable); ////
+
+                if (stateGraph.isConflicted(clause)) {
+                    stateGraph.addConflict(impliedVariable, clause);
+
+                    System.out.println("Conflict implying " + impliedVariable + " using " + clause); ////
+
+                    return;
+                }
+
+                performDecisionUnitPropagation(impliedVariable);
+            }
+        }
     }
 
     @Override
     protected Variable pickBranchingVariable() {
 
-        // A: Randomly pick an unassigned variable
+        // TODO: Pick an unassigned variable with most frequent occurrences in 2-clauses (see Clauses)
 
-        // B: Pick an unassigned variable with most frequent occurrences in 2-clauses
+        Variable branchingVariable = stateGraph.pickNextUnassignedVariable(level);
 
-        return null;
+        System.out.println("+ Decision (unassigned): " + branchingVariable); ////
+
+        return branchingVariable;
     }
 
     @Override
     protected Integer analyzeConflict(Clause conflictClause) {
+        Node<Variable> conflictNode = stateGraph.getConflictNode();
+        if (conflictClause == null || conflictNode == null) {
+            return null;
+        }
+        Integer conflictLevel = conflictNode.getValue().getLevel();
 
-        // From conflict clause, for all implied variables at decision level until reaching UIP (1 literal @ d.level)
+        Clause learntClause = new Clause(conflictClause.toArray());
+        while(!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
 
-            // Collect from antecedent literals assigned at level < decision level using resolution:
+            // TODO: Fix getting of next antecedent clause...
 
-                // Apply resolution
+            Clause antecedentClause = stateGraph.getNextAntecedentClause(learntClause, conflictLevel);
 
-        // Add learnt clause to collection of learnt clauses
+            System.out.println("Resolving: " + learntClause + " with " + antecedentClause); ////
 
-        // Return:
+            learntClause = applyResolution(learntClause, antecedentClause);
 
-            // A: largest level - 1 != decision level from learnt clause variables
+            System.out.println(" ... into: " + learntClause); ////
 
-            // B: second largest level + 1 != decision level from learnt clause variables
+        }
 
+        learntClauses.add(learntClause);
 
-        return null;
+        // A: Return (largest level - 1) < decision level from learnt clause variables
+        Integer highestLevel = stateGraph.getHighestLevel(learntClause, conflictLevel);
+
+        // B: Return (second largest level + 1) < decision level from learnt clause variables
+        // TODO: Implement to compare...
+
+        return highestLevel == null ? null : highestLevel - 1;
     }
 
     @Override
     protected void backtrack(int proposedLevel) {
 
-        // Revert state to proposed level
+        System.out.println("Backtracking: " + level + " -> " + proposedLevel); ////
 
-        // Set current level to proposed level
-
-        // Flag backtracked
-
-    }
-
-    protected Clause applyResolution(Clause intermediateClause, Clause targetClause) {
-
-        // Check rule Chase mentioned...
-
-        return null;
+        stateGraph.revertState(proposedLevel);
+        level = proposedLevel;
     }
 
 }
