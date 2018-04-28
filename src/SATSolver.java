@@ -14,7 +14,7 @@ public class SATSolver {
 
     public static void main(String[] args) {
         Solver solver = null;
-        String path = "./test/testcases/sat/7.cnf";
+        String path = "./test/testcases/unsat/2.cnf";
         if (args.length != 0) {
             path = args[0];
         }

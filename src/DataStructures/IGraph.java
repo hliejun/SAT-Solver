@@ -113,10 +113,18 @@ public class IGraph {
         for (Literal literal : literals) {
             Node<Variable> literalNode = values.get(literal.getName());
             Integer nodeLevel = literalNode == null ? null : literalNode.value.getLevel();
+
             if (nodeLevel != null && nodeLevel > highestLevel && nodeLevel < conflictLevel) {
                 highestLevel = nodeLevel;
             }
+
+            // Allowing conflict level...
+            if (literals.size() == 1 && nodeLevel != null && nodeLevel > highestLevel) {
+                highestLevel = nodeLevel;
+            }
+
         }
+
         return highestLevel < 0 ? null : highestLevel;
     }
 

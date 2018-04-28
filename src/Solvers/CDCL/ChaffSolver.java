@@ -4,6 +4,8 @@ import DataStructures.*;
 
 import java.util.*;
 
+//// !!! UNSAT 2 FAILING !!! ////
+
 public class ChaffSolver extends CDCLSolver {
 
     public ChaffSolver(Clauses clauses, int literalsCount) {
@@ -100,7 +102,9 @@ public class ChaffSolver extends CDCLSolver {
             }
 
             if (stateGraph.isConflicted(clause)) {
-                stateGraph.addConflict(decision, clause);
+                if (stateGraph.getConflictClause() == null) {
+                    stateGraph.addConflict(decision, clause);
+                }
 
                 System.out.println("Conflict propagating " + decision + " at " + clause); ////
 
@@ -114,7 +118,9 @@ public class ChaffSolver extends CDCLSolver {
                 System.out.println("+ Implication: " + impliedVariable); ////
 
                 if (stateGraph.isConflicted(clause)) {
-                    stateGraph.addConflict(impliedVariable, clause);
+                    if (stateGraph.getConflictClause() == null) {
+                        stateGraph.addConflict(impliedVariable, clause);
+                    }
 
                     System.out.println("Conflict implying " + impliedVariable + " using " + clause); ////
 
@@ -145,6 +151,8 @@ public class ChaffSolver extends CDCLSolver {
             return null;
         }
         Integer conflictLevel = conflictNode.getValue().getLevel();
+
+        System.out.println("CONFLICT: " + conflictNode); ////
 
         Clause learntClause = new Clause(conflictClause.toArray());
         while(!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
