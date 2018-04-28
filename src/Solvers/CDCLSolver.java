@@ -2,12 +2,12 @@ package Solvers;
 
 import DataStructures.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
+
+// TODO: Make abstract...
 
 public class CDCLSolver extends Solver {
-    private IGraph stateGraph = new IGraph(variables);
+    protected IGraph stateGraph = new IGraph(variables);
 
     public CDCLSolver(Clauses clauses, int literalsCount) {
         super(clauses, literalsCount);
@@ -45,7 +45,7 @@ public class CDCLSolver extends Solver {
         return stateGraph.getAssignment();
     }
 
-    private void performUnitPropagation() {
+    protected void performUnitPropagation() {
         HashSet<Clause> clauses = formula.getClausesSet();
         for (Clause clause : clauses) {
             Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
@@ -60,7 +60,7 @@ public class CDCLSolver extends Solver {
         }
     }
 
-    private void performUnitPropagation(Variable decision) {
+    protected void performUnitPropagation(Variable decision) {
         HashSet<Clause> clauses = new HashSet<>();
         clauses.addAll(formula.getClausesSet());
         clauses.addAll(learntClauses);
@@ -93,19 +93,19 @@ public class CDCLSolver extends Solver {
      #2. Exponential Recency Weighted Average
      (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
      */
-    private Variable pickBranchingVariable() {
+    protected Variable pickBranchingVariable() {
         Variable branchingVariable;
         if (conflictVariable != null) {
             branchingVariable = conflictVariable;
             conflictVariable = null;
             return branchingVariable;
         }
-        branchingVariable = stateGraph.pickUnassignedVariable(level);
+        branchingVariable = stateGraph.pickNextUnassignedVariable(level);
         System.out.println("+ Decision (unassigned): " + branchingVariable);
         return branchingVariable;
     }
 
-    private Integer analyzeConflict(Clause conflictClause) {
+    protected Integer analyzeConflict(Clause conflictClause) {
         Node<Variable> conflictNode = stateGraph.getConflictNode();
         if (conflictClause == null || conflictNode == null) {
             return null; /** This shouldn't happen... **/
@@ -124,13 +124,13 @@ public class CDCLSolver extends Solver {
         return highestLevel == null ? null : highestLevel - 1;
     }
 
-    private void backtrack(int proposedLevel) {
+    protected void backtrack(int proposedLevel) {
         System.out.println("Backtracking: " + level + " -> " + proposedLevel);
         stateGraph.revertState(proposedLevel);
         level = proposedLevel;
     }
 
-    private Clause resolve(Clause mainClause, Clause targetClause) {
+    protected Clause resolve(Clause mainClause, Clause targetClause) {
         if (targetClause == null) {
             return mainClause;
         }

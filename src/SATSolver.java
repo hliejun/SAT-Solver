@@ -1,11 +1,8 @@
 import DataStructures.Clauses;
 import DataStructures.Utilities;
-import Solvers.CDCLSolver;
-import Solvers.DPLLSolver;
-import Solvers.RDPLLSolver;
-import Solvers.Solver;
+import Solvers.*;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class SATSolver {
 
@@ -21,8 +18,8 @@ public class SATSolver {
         System.out.println(clauses.literalCount);
         System.out.println(clauses);
 
-        //Strategy strategy = Strategy.CDCL;
-        Strategy strategy = Strategy.DPLL;
+        Strategy strategy = Strategy.ChaffCDCL;
+//        Strategy strategy = Strategy.DPLL;
 //        Strategy strategy = Strategy.RDPLL;
 
         long startTime = System.currentTimeMillis();
@@ -34,9 +31,8 @@ public class SATSolver {
             case DPLL:
                 solver = new DPLLSolver(clauses, literalsCount);
                 break;
-            case CDCL:
-                solver = new CDCLSolver(clauses, literalsCount);
-                break;
+            case ChaffCDCL:
+                solver = new ChaffCDCLSolver(clauses, literalsCount);
             default:
                 break;
 

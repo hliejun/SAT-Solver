@@ -1,12 +1,10 @@
 package DataStructures;
 
 import java.util.*;
-import java.util.stream.IntStream;
 
 public class IGraph {
     private Graph<Variable> graph;
     private HashMap<String, Node<Variable>> values;
-//    private HashMap<Integer, HashSet<Node<Variable>>> decisions;
     private HashSet<String> variables;
     private Clause conflictClause;
     private Node<Variable> conflictNode;
@@ -15,20 +13,15 @@ public class IGraph {
         this.variables = variables;
         graph = new Graph<>();
         values = new HashMap<>();
-//        decisions = new HashMap<>();
         conflictClause = null;
         conflictNode = null;
     }
 
     public void addDecision(Variable decision, int decisionLevel) {
-        int inferenceLevel = decision.getLevel();
         decision.setLevel(decisionLevel);
         System.out.println("Adding decision to level " + decision.getLevel() + " : " + decision);
         Node<Variable> decisionNode = new Node<>(decision);
         assign(decisionNode);
-//        System.out.println("Variable level : " + inferenceLevel);
-//        System.out.println("Decision level : " + decisionLevel);
-//        decisions.computeIfAbsent(inferenceLevel, key -> new HashSet<>()).add(decisionNode);
     }
 
     public void addImplication(Clause antecedent, Variable impliedVariable) {
@@ -54,13 +47,9 @@ public class IGraph {
     public void revertState(int level) {
         graph.getNodes().forEach(node -> {
             Variable assignedVariable = node.value;
-            if(assignedVariable.getLevel() > level) {
+            if (assignedVariable.getLevel() > level) {
                 graph.removeNode(node);
                 values.remove(assignedVariable.getSymbol());
-//                int lastLevel = decisions.size() - 1;
-//                if (lastLevel > level) {
-//                    IntStream.range(level + 1, lastLevel).forEachOrdered(oldLevel -> decisions.remove(oldLevel));
-//                }
             }
         });
         conflictClause = null;
@@ -89,7 +78,6 @@ public class IGraph {
             Node<Variable> node = values.get(literal.getName());
             Integer assignedLevel = node == null ? null : node.value.getLevel();
             if (assignedLevel != null && assignedLevel == level) {
-//                System.out.println(node);
                 count += 1;
             }
         }
@@ -126,23 +114,12 @@ public class IGraph {
         return highestLevel < 0 ? null : highestLevel;
     }
 
-    public Variable pickUnassignedVariable(int level) {
-        HashSet<String> unassignedSymbols = new HashSet<>();
-        variables.forEach(symbol -> {
+    public Variable pickNextUnassignedVariable(int level) {
+        for (String symbol : variables) {
             if (values.get(symbol) == null) {
-                unassignedSymbols.add(symbol);
+                Node<Variable> positiveAssignment = getNode(symbol, true, level);
+                return positiveAssignment.getValue();
             }
-        });
-        for (String symbol : unassignedSymbols) {
-            Node<Variable> positiveAssignment = getNode(symbol, true, level);
-            return positiveAssignment.getValue();
-//            Node<Variable> negativeAssignment = getNode(symbol, false, level);
-//            if (previousDecisions == null || !previousDecisions.contains(positiveAssignment)) {
-//                return positiveAssignment.getValue();
-//            }
-//            if (!previousDecisions.contains(negativeAssignment)) {
-//                return negativeAssignment.getValue();
-//            }
         }
         return null;
     }
