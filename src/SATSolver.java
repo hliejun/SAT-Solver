@@ -27,9 +27,9 @@ public class SATSolver {
         // Strategy strategy = Strategy.Recursive_DPLL;
         // Strategy strategy = Strategy.Iterative_DPLL;
 
-        // Strategy strategy = Strategy.Chaff_CDCL;
-        // Strategy strategy = Strategy.TwoClause_CDCL;
-        Strategy strategy = Strategy.AllClause_CDCL;
+//         Strategy strategy = Strategy.Chaff_CDCL;
+         Strategy strategy = Strategy.TwoClause_CDCL;
+//        Strategy strategy = Strategy.AllClause_CDCL;
         // Strategy strategy = Strategy.ERWA_CDCL;
         // Strategy strategy = Strategy.VSIDS_CDCL;
         // Strategy strategy = Strategy.Advanced_CDCL;

@@ -232,14 +232,18 @@ public class IGraph {
     }
 
     public Variable getNextRandomUnassignedVariable(int level) {
+        if (unassignedVariables.isEmpty()) {
+            return null;
+        }
 
-        // FIXME: Make entirely pseudo-random (with normal distribution)
+        Random randomGenerator = new Random();
+        int randomNumber = randomGenerator.nextInt(unassignedVariables.size());
 
-        return unassignedVariables.stream()
-                .map(symbol -> getTruthNode(symbol, level))
-                .findAny()
-                .map(Node::getValue)
-                .orElse(null);
+        ArrayList<String> list = new ArrayList<>(unassignedVariables);
+        String symbol = list.get(randomNumber);
+        Node<Variable> node = getTruthNode(symbol, level);
+
+        return node.getValue();
     }
 
     public Variable getNextTwoClauseUnassignedVariable(int level) {
