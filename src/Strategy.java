@@ -3,10 +3,10 @@
 // TODO: Research on other CDCL techniques
 
 *** BASIC ***
+- Try: Search Restart
+- Try: Clause Deletion Policies
 - Minimization
-- Search Restart
 - Lightweight Branching
-- Clause Deletion Policies
 
 *** ADVANCED ***
 - Phase Saving
@@ -17,5 +17,14 @@
  */
 
 public enum Strategy {
-    Iterative_DPLL, Recursive_DPLL, TwoClause_CDCL, Chaff_CDCL, VSIDS_CDCL
+    Iterative_DPLL,
+    Recursive_DPLL,
+
+    Chaff_CDCL,
+    TwoClause_CDCL,
+    AllClause_CDCL,
+    ERWA_CDCL,
+    VSIDS_CDCL,
+
+    Advanced_CDCL
 }

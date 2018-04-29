@@ -117,9 +117,7 @@ public class ChaffSolver extends CDCLSolver {
 
     @Override
     protected Variable pickBranchingVariable() {
-//        Variable branchingVariable = stateGraph.getNextUnassignedVariable(level);
-//        Variable branchingVariable = stateGraph.getNextRandomUnassignedVariable(level);
-        Variable branchingVariable = stateGraph.getNextMostUnassignedVariable(level, formula.getFrequencyTable());
+        Variable branchingVariable = stateGraph.getNextRandomUnassignedVariable(level);
         //// System.out.println("+ Decision (unassigned): " + branchingVariable); ////
 
         return branchingVariable;

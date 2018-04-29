@@ -1,14 +1,11 @@
 import DataStructures.Clauses;
 import DataStructures.Utilities;
 
+import Solvers.CDCL.*;
 import Solvers.Solver;
 
 import Solvers.DPLL.DPLLSolver;
 import Solvers.DPLL.RDPLLSolver;
-
-import Solvers.CDCL.ChaffSolver;
-import Solvers.CDCL.TwoClauseSolver;
-import Solvers.CDCL.VSIDSSolver;
 
 import java.util.*;
 
@@ -30,9 +27,12 @@ public class SATSolver {
         // Strategy strategy = Strategy.Recursive_DPLL;
         // Strategy strategy = Strategy.Iterative_DPLL;
 
-        Strategy strategy = Strategy.Chaff_CDCL;
+        // Strategy strategy = Strategy.Chaff_CDCL;
         // Strategy strategy = Strategy.TwoClause_CDCL;
+        Strategy strategy = Strategy.AllClause_CDCL;
+        // Strategy strategy = Strategy.ERWA_CDCL;
         // Strategy strategy = Strategy.VSIDS_CDCL;
+        // Strategy strategy = Strategy.Advanced_CDCL;
 
         long startTime = System.currentTimeMillis();
 
@@ -49,8 +49,17 @@ public class SATSolver {
             case TwoClause_CDCL:
                 solver = new TwoClauseSolver(clauses, literalsCount);
                 break;
+            case AllClause_CDCL:
+                solver = new AllClauseSolver(clauses, literalsCount);
+                break;
+            case ERWA_CDCL:
+                solver = new ERWASolver(clauses, literalsCount);
+                break;
             case VSIDS_CDCL:
                 solver = new VSIDSSolver(clauses, literalsCount);
+                break;
+            case Advanced_CDCL:
+                solver = new AdvancedSolver(clauses, literalsCount);
                 break;
             default:
                 break;
