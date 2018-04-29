@@ -184,50 +184,6 @@ public class IGraph {
         return null;
     }
 
-    public Variable getNextRandomUnassignedVariable(int level) {
-        for (String symbol : unassignedVariables) {
-            Node<Variable> positiveAssignment = getTruthNode(symbol, level);
-            return positiveAssignment.getValue();
-        }
-
-        return null;
-    }
-
-    public Variable getNextMostUnassignedVariable(int level, HashMap<String, Integer> frequencyTable) {
-        if (unassignedVariables.isEmpty()) {
-            return null;
-        }
-
-        ArrayList<String> unassignedList = new ArrayList<>(unassignedVariables);
-        Collections.sort(unassignedList, Comparator.comparingInt(frequencyTable::get));
-
-        String mostUnassignedSymbol = unassignedList.get(unassignedList.size() - 1);
-        Node<Variable> positiveAssignment = getTruthNode(mostUnassignedSymbol, level);
-
-        return positiveAssignment.getValue();
-    }
-
-    public Variable getNextTwoClauseUnassignedVariable(int level) {
-
-        // TODO: Pick an unassigned variable with most occurrences in 2-clauses
-
-
-        return null;
-    }
-
-    public Variable getNextVSIDSUnassignedVariable(int level) {
-
-        /**
-         #1. Variable State Independent Decaying Sum (state-of-the-art?)
-         #2. Exponential Recency Weighted Average
-         (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
-         */
-
-        // TODO: Implement VSIDS heuristics for picking branch variables
-
-        return null;
-    }
-
     public boolean evaluate(Clauses formula) {
         HashSet<Clause> clauses = formula.getClausesSet();
         for (Clause clause : clauses) {
@@ -261,6 +217,70 @@ public class IGraph {
     private Node<Variable> getTruthNode(String symbol, int level) {
         Variable variable = new Variable(symbol, true, level);
         return new Node<>(variable);
+    }
+
+    /**
+     *  Branching Heuristics
+     */
+
+    public Variable getNextUnassignedVariable(int level) {
+        return unassignedVariables.stream()
+                .map(symbol -> getTruthNode(symbol, level))
+                .findFirst()
+                .map(Node::getValue)
+                .orElse(null);
+    }
+
+    public Variable getNextRandomUnassignedVariable(int level) {
+
+        // FIXME: Make entirely pseudo-random (with normal distribution)
+
+        return unassignedVariables.stream()
+                .map(symbol -> getTruthNode(symbol, level))
+                .findAny()
+                .map(Node::getValue)
+                .orElse(null);
+    }
+
+    public Variable getNextTwoClauseUnassignedVariable(int level) {
+
+        // TODO: Pick an unassigned variable with most occurrences in 2-clauses, ties broken randomly
+
+        return null;
+    }
+
+    public Variable getNextMostUnassignedVariable(int level, HashMap<String, Integer> frequencyTable) {
+        if (unassignedVariables.isEmpty()) {
+            return null;
+        }
+
+        ArrayList<String> unassignedList = new ArrayList<>(unassignedVariables);
+        Collections.sort(unassignedList, Comparator.comparingInt(frequencyTable::get));
+
+        String mostUnassignedSymbol = unassignedList.get(unassignedList.size() - 1);
+        Node<Variable> positiveAssignment = getTruthNode(mostUnassignedSymbol, level);
+
+        return positiveAssignment.getValue();
+    }
+
+    /**
+     #1. Variable State Independent Decaying Sum (state-of-the-art?)
+     #2. Exponential Recency Weighted Average
+     (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
+     */
+
+    public Variable getNextRecencyUnassignedVariable(int level) {
+
+        // TODO: Implement ERWA heuristics for picking branch variables
+
+        return null;
+    }
+
+    public Variable getNextVSIDSUnassignedVariable(int level) {
+
+        // TODO: Implement VSIDS heuristics for picking branch variables
+
+        return null;
     }
 
 }

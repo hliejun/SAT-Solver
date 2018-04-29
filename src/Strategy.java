@@ -1,6 +1,6 @@
 /*
 
-TODO: Research on other CDCL techniques
+// TODO: Research on other CDCL techniques
 
 *** BASIC ***
 - Minimization
