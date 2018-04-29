@@ -131,11 +131,11 @@ public class IGraph {
                 impliedVariable = literal.toVariable(level);
             }
 
-            else if (node == null && impliedVariable != null) {
+            else if (node == null) {
                 return null;
             }
 
-            else if (node != null && literal.evaluate(node.value.getValue())) {
+            else if (literal.evaluate(node.value.getValue())) {
                 return null;
             }
         }
@@ -165,7 +165,7 @@ public class IGraph {
         }
 
         String symbol = new ArrayList<>(unassignedVariables).get(0);
-        Node<Variable> positiveAssignment = getNode(symbol, true, level);
+        Node<Variable> positiveAssignment = getTruthNode(symbol, level);
 
         return positiveAssignment.getValue();
     }
@@ -233,8 +233,8 @@ public class IGraph {
         unassignedVariables.remove(symbol);
     }
 
-    private Node<Variable> getNode(String symbol, boolean value, int level) {
-        Variable variable = new Variable(symbol, value, level);
+    private Node<Variable> getTruthNode(String symbol, int level) {
+        Variable variable = new Variable(symbol, true, level);
         return new Node<>(variable);
     }
 
