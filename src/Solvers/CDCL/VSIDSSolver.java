@@ -17,7 +17,7 @@ public class VSIDSSolver extends ChaffSolver {
     @Override
     protected Variable pickBranchingVariable() {
 
-        // VSIDS heuristics for picking branch variables...
+        // TODO: Implement VSIDS heuristics for picking branch variables
 
         return null;
     }
