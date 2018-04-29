@@ -159,25 +159,6 @@ public class IGraph {
         return highestLevel < 0 ? null : highestLevel;
     }
 
-    public Variable getNextRandomUnassignedVariable(int level) {
-        if (unassignedVariables.isEmpty()) {
-            return null;
-        }
-
-        String symbol = new ArrayList<>(unassignedVariables).get(0);
-        Node<Variable> positiveAssignment = getTruthNode(symbol, level);
-
-        return positiveAssignment.getValue();
-    }
-
-    public Variable getNextBestUnassignedVariable(int level) {
-
-        // TODO: Pick an unassigned variable with most frequent occurrences in 2-clauses (see Clauses)
-        // --- Maintain a 2-clause frequency table and get highest ranked
-
-        return null;
-    }
-
     public Clause getNextAntecedentClause(Clause learntClause, Integer level) {
         if (level == null) {
             return null;
@@ -199,6 +180,49 @@ public class IGraph {
                 }
             }
         }
+
+        return null;
+    }
+
+    public Variable getNextRandomUnassignedVariable(int level) {
+        for (String symbol : unassignedVariables) {
+            Node<Variable> positiveAssignment = getTruthNode(symbol, level);
+            return positiveAssignment.getValue();
+        }
+
+        return null;
+    }
+
+    public Variable getNextMostUnassignedVariable(int level, HashMap<String, Integer> frequencyTable) {
+        if (unassignedVariables.isEmpty()) {
+            return null;
+        }
+
+        ArrayList<String> unassignedList = new ArrayList<>(unassignedVariables);
+        Collections.sort(unassignedList, Comparator.comparingInt(frequencyTable::get));
+
+        String mostUnassignedSymbol = unassignedList.get(unassignedList.size() - 1);
+        Node<Variable> positiveAssignment = getTruthNode(mostUnassignedSymbol, level);
+
+        return positiveAssignment.getValue();
+    }
+
+    public Variable getNextTwoClauseUnassignedVariable(int level) {
+
+        // TODO: Pick an unassigned variable with most occurrences in 2-clauses
+
+        return null;
+    }
+
+    public Variable getNextVSIDSUnassignedVariable(int level) {
+
+        /**
+         #1. Variable State Independent Decaying Sum (state-of-the-art?)
+         #2. Exponential Recency Weighted Average
+         (https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12451/12112)
+         */
+
+        // TODO: Implement VSIDS heuristics for picking branch variables
 
         return null;
     }

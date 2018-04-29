@@ -64,6 +64,13 @@ public class Clauses implements Comparable<Clauses> {
         return literals;
     }
 
+    public HashMap<String, Integer> getFrequencyTable() {
+        HashMap<String, Integer> frequencyTable = new HashMap<>();
+        literalCount.forEach((literal, count) -> frequencyTable.put(literal.getName(), count));
+
+        return frequencyTable;
+    }
+
     public boolean evaluate(Assignment assignment) {
         boolean isSatisfied = true;
 //        ArrayList<Clause> clauses = toArray();

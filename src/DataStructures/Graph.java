@@ -16,6 +16,7 @@ public class Graph<T> {
         if (adjacencyList.get(node) != null) {
             return;
         }
+
         adjacencyList.put(node, new HashSet<>());
         incidentList.put(node, new HashSet<>());
     }
@@ -24,14 +25,17 @@ public class Graph<T> {
         if (adjacencyList.get(node) == null) {
             return;
         }
+
         HashSet<Edge<T>> edgesFromNode = new HashSet<>(getEdgesFromNode(node));
         for (Edge<T> edge: edgesFromNode) {
             removeEdge(edge);
         }
+
         HashSet<Edge<T>> edgesToNode = new HashSet<>(getEdgesToNode(node));
         for (Edge<T> edge: edgesToNode) {
             removeEdge(edge);
         }
+
         adjacencyList.remove(node);
         incidentList.remove(node);
     }
@@ -44,18 +48,22 @@ public class Graph<T> {
         if (!containsNode(edge.source)) {
             addNode(edge.source);
         }
+
         if (!containsNode(edge.destination)) {
             addNode(edge.destination);
         }
+
         HashSet<Edge<T>> outgoingEdges = adjacencyList.get(edge.source);
-        HashSet<Edge<T>> incomingEdges = incidentList.get(edge.destination);
         outgoingEdges.add(edge);
+
+        HashSet<Edge<T>> incomingEdges = incidentList.get(edge.destination);
         incomingEdges.add(edge);
     }
 
     public HashSet<Edge<T>> getEdgesToNode(Node<T> node) {
         HashSet<Edge<T>> edges = incidentList.get(node);
         edges = edges == null ? new HashSet<>() : edges;
+
         return edges;
     }
 
@@ -65,12 +73,13 @@ public class Graph<T> {
 
     private void removeEdge(Edge<T> edge) {
         Node<T> source = edge.source;
-        Node<T> destination = edge.destination;
         HashSet<Edge<T>> outgoingEdges = adjacencyList.get(source);
-        HashSet<Edge<T>> incomingEdges = incidentList.get(destination);
         if (outgoingEdges != null) {
             outgoingEdges.remove(edge);
         }
+
+        Node<T> destination = edge.destination;
+        HashSet<Edge<T>> incomingEdges = incidentList.get(destination);
         if (incomingEdges != null) {
             incomingEdges.remove(edge);
         }
@@ -84,26 +93,32 @@ public class Graph<T> {
     public HashSet<Node<T>> getAdjacentNodes(Node<T> node) {
         HashSet<Edge<T>> edges = getEdgesFromNode(node);
         HashSet<Node<T>> adjacentNodes = new HashSet<>();
+
         edges.forEach(edge -> adjacentNodes.add(edge.destination));
+
         return adjacentNodes;
     }
 
     public HashSet<Node<T>> getIncidentNodes(Node<T> node) {
         HashSet<Edge<T>> edges = getEdgesToNode(node);
         HashSet<Node<T>> incidentNodes = new HashSet<>();
+
         edges.forEach(edge -> incidentNodes.add(edge.source));
+
         return incidentNodes;
     }
 
     public HashSet<Edge<T>> getEdges() {
         HashSet<Edge<T>> edges = new HashSet<>();
         adjacencyList.values().forEach(edges::addAll);
+
         return edges;
     }
 
     public boolean containsEdge(Edge<T> edge) {
         Node<T> source = edge.source;
         HashSet<Edge<T>> edges = adjacencyList.get(source);
+
         return edges != null && edges.contains(edge);
     }
 

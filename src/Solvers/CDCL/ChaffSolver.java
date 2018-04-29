@@ -19,7 +19,7 @@ public class ChaffSolver extends CDCLSolver {
         performGeneralUnitPropagation();
 
         if (stateGraph.isConflicted()) {
-            System.out.println("Fail to propagate before entering loop."); ////
+            //// System.out.println("Fail to propagate before entering loop."); ////
             return null;
         }
 
@@ -28,12 +28,12 @@ public class ChaffSolver extends CDCLSolver {
         while (!stateGraph.isAllAssigned()) {
             Variable decision = pickBranchingVariable();
             if (decision == null) {
-                System.out.println("Fail to make a decision."); ////
+                //// System.out.println("Fail to make a decision."); ////
                 return null;
             }
 
             level += 1;
-            System.out.println("Level: " + (level - 1) + " -> " + level); ////
+            //// System.out.println("Level: " + (level - 1) + " -> " + level); ////
 
             stateGraph.addDecision(decision, level);
             performDecisionUnitPropagation(decision);
@@ -45,7 +45,7 @@ public class ChaffSolver extends CDCLSolver {
             Clause conflict = stateGraph.getConflictClause();
             Integer proposedLevel = analyzeConflict(conflict);
             if (proposedLevel == null) {
-                System.out.println("Fail to propose a backtrack level."); ////
+                //// System.out.println("Fail to propose a backtrack level."); ////
                 return null;
             }
 
@@ -56,7 +56,7 @@ public class ChaffSolver extends CDCLSolver {
             performGeneralUnitPropagation();
 
             if (stateGraph.isConflicted()) {
-                System.out.println("Fail to propagate after backtracking from conflict."); ////
+                //// System.out.println("Fail to propagate after backtracking from conflict."); ////
                 return null;
             }
         }
@@ -67,9 +67,7 @@ public class ChaffSolver extends CDCLSolver {
 
     @Override
     protected void performGeneralUnitPropagation() {
-        HashSet<Clause> clauses = new HashSet<>();
-        clauses.addAll(formula.getClausesSet());
-        clauses.addAll(learntClauses);
+        HashSet<Clause> clauses = getAllClauses();
 
         for (Clause clause : clauses) {
             Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
@@ -88,9 +86,7 @@ public class ChaffSolver extends CDCLSolver {
 
     @Override
     protected void performDecisionUnitPropagation(Variable decision) {
-        HashSet<Clause> clauses = new HashSet<>();
-        clauses.addAll(formula.getClausesSet());
-        clauses.addAll(learntClauses);
+        HashSet<Clause> clauses = getAllClauses();
 
         for (Clause clause : clauses) {
             if (stateGraph.isConflicted()) {
@@ -103,7 +99,7 @@ public class ChaffSolver extends CDCLSolver {
 
             if (stateGraph.isConflicted(clause)) {
                 stateGraph.addConflict(decision, clause);
-                System.out.println("Conflict propagating " + decision + " at " + clause); ////
+                //// System.out.println("Conflict propagating " + decision + " at " + clause); ////
                 return;
             }
 
@@ -113,15 +109,7 @@ public class ChaffSolver extends CDCLSolver {
             }
 
             stateGraph.addImplication(clause, impliedVariable);
-            System.out.println("+ Implication: " + impliedVariable); ////
-
-            // !!! Do we check if the implication causes a conflict?
-
-//            if (stateGraph.isConflicted(clause)) {
-//                stateGraph.addConflict(impliedVariable, clause);
-//                System.out.println("Conflict implying " + impliedVariable + " using " + clause); ////
-//                return;
-//            }
+            //// System.out.println("+ Implication: " + impliedVariable); ////
 
             performDecisionUnitPropagation(impliedVariable);
         }
@@ -129,9 +117,9 @@ public class ChaffSolver extends CDCLSolver {
 
     @Override
     protected Variable pickBranchingVariable() {
-        Variable branchingVariable = stateGraph.getNextRandomUnassignedVariable(level);
-//        Variable branchingVariable = stateGraph.getNextBestUnassignedVariable(level);
-        System.out.println("+ Decision (unassigned): " + branchingVariable); ////
+//        Variable branchingVariable = stateGraph.getNextRandomUnassignedVariable(level);
+         Variable branchingVariable = stateGraph.getNextMostUnassignedVariable(level, formula.getFrequencyTable());
+        //// System.out.println("+ Decision (unassigned): " + branchingVariable); ////
 
         return branchingVariable;
     }
@@ -162,9 +150,17 @@ public class ChaffSolver extends CDCLSolver {
 
     @Override
     protected void backtrack(int proposedLevel) {
-        System.out.println("Backtracking: " + level + " -> " + proposedLevel); ////
+        //// System.out.println("Backtracking: " + level + " -> " + proposedLevel); ////
         stateGraph.revertState(proposedLevel);
         level = proposedLevel;
+    }
+
+    protected HashSet<Clause> getAllClauses() {
+        HashSet<Clause> clauses = new HashSet<>();
+        clauses.addAll(formula.getClausesSet());
+        clauses.addAll(learntClauses);
+
+        return clauses;
     }
 
 }

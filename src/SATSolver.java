@@ -2,6 +2,7 @@ import DataStructures.Clauses;
 import DataStructures.Utilities;
 
 import Solvers.CDCL.BuggySolver;
+import Solvers.CDCL.TwoClauseSolver;
 import Solvers.Solver;
 import Solvers.CDCL.ChaffSolver;
 import Solvers.CDCL.VSIDSSolver;
@@ -25,8 +26,8 @@ public class SATSolver {
         System.out.println(clauses);
 
 //        Strategy strategy = Strategy.VSIDS_CDCL;
+//        Strategy strategy = Strategy.TwoClause_CDCL;
         Strategy strategy = Strategy.Chaff_CDCL;
-//        Strategy strategy = Strategy.Buggy_CDCL;
 //        Strategy strategy = Strategy.Iterative_DPLL;
 //        Strategy strategy = Strategy.Recursive_DPLL;
 
@@ -39,8 +40,8 @@ public class SATSolver {
             case Iterative_DPLL:
                 solver = new DPLLSolver(clauses, literalsCount);
                 break;
-            case Buggy_CDCL:
-                solver = new BuggySolver(clauses, literalsCount);
+            case TwoClause_CDCL:
+                solver = new TwoClauseSolver(clauses, literalsCount);
                 break;
             case Chaff_CDCL:
                 solver = new ChaffSolver(clauses, literalsCount);
