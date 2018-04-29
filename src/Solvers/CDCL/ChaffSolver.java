@@ -49,14 +49,14 @@ public class ChaffSolver extends CDCLSolver {
 
             backtrack(proposedLevel);
 
+            level += 1;
+
             performGeneralUnitPropagation();
 
             if (stateGraph.isConflicted()) {
                 //// System.out.println("Fail to propagate after backtracking from conflict."); ////
                 return null;
             }
-
-            level += 1;
         }
 
         System.out.println("Satisfiable: " + stateGraph.evaluate(formula)); ////
@@ -127,10 +127,8 @@ public class ChaffSolver extends CDCLSolver {
 
     @Override
     protected Variable pickBranchingVariable() {
-
-        // TODO: Pick an unassigned variable with most frequent occurrences in 2-clauses (see Clauses)
-
-        Variable branchingVariable = stateGraph.getNextUnassignedVariable(level);
+        Variable branchingVariable = stateGraph.getNextRandomUnassignedVariable(level);
+//        Variable branchingVariable = stateGraph.getNextBestUnassignedVariable(level);
         //// System.out.println("+ Decision (unassigned): " + branchingVariable); ////
 
         return branchingVariable;

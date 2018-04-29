@@ -3,16 +3,24 @@ package DataStructures;
 import java.util.*;
 
 public class IGraph {
+
     private Graph<Variable> graph;
-    private HashMap<String, Node<Variable>> values;
+
     private HashSet<String> variables;
+    private HashMap<String, Node<Variable>> assignedVariables;
+    private HashSet<String> unassignedVariables;
+
     private Clause conflictClause;
     private Node<Variable> conflictNode;
 
     public IGraph(HashSet<String> variables) {
-        this.variables = variables;
         graph = new Graph<>();
-        values = new HashMap<>();
+
+        this.variables = variables;
+        assignedVariables = new HashMap<>();
+        unassignedVariables = new HashSet<>();
+        unassignedVariables.addAll(variables);
+
         conflictClause = null;
         conflictNode = null;
     }
@@ -31,7 +39,7 @@ public class IGraph {
 
         HashSet<Literal> literals = antecedent.getLiterals();
         literals.forEach(literal -> {
-            Node<Variable> antecedentNode = values.get(literal.getName());
+            Node<Variable> antecedentNode = assignedVariables.get(literal.getName());
             if (antecedentNode != null
                     && !literal.getName().equals(impliedVariable.getSymbol())
                     && graph.containsNode(antecedentNode)) {
@@ -41,7 +49,7 @@ public class IGraph {
     }
 
     public void addConflict(Variable conflictVariable, Clause conflictClause) {
-        Node<Variable> conflictNode = values.get(conflictVariable.getSymbol());
+        Node<Variable> conflictNode = assignedVariables.get(conflictVariable.getSymbol());
         this.conflictClause = conflictClause;
         this.conflictNode = conflictNode;
     }
@@ -51,7 +59,10 @@ public class IGraph {
             Variable assignedVariable = node.value;
             if (assignedVariable.getLevel() > level) {
                 graph.removeNode(node);
-                values.remove(assignedVariable.getSymbol());
+
+                String symbol = assignedVariable.getSymbol();
+                assignedVariables.remove(symbol);
+                unassignedVariables.add(symbol);
             }
         });
 
@@ -63,7 +74,7 @@ public class IGraph {
         HashSet<Literal> literals = clause.getLiterals();
 
         for (Literal literal : literals) {
-            Node<Variable> node = values.get(literal.getName());
+            Node<Variable> node = assignedVariables.get(literal.getName());
             if (node == null || literal.evaluate(node.value.getValue())) {
                 return false;
             }
@@ -85,7 +96,7 @@ public class IGraph {
 
         HashSet<Literal> literals = clause.getLiterals();
         for (Literal literal : literals) {
-            Node<Variable> node = values.get(literal.getName());
+            Node<Variable> node = assignedVariables.get(literal.getName());
             Integer assignedLevel = node == null ? null : node.value.getLevel();
             if (assignedLevel != null && assignedLevel == level) {
                 count += 1;
@@ -105,7 +116,7 @@ public class IGraph {
 
     public HashMap<String, Boolean> getAssignment() {
         HashMap<String, Boolean> assignment = new HashMap<>();
-        values.forEach((key, node) -> assignment.put(key, node.value.getValue()));
+        assignedVariables.forEach((key, node) -> assignment.put(key, node.value.getValue()));
         return assignment;
     }
 
@@ -114,7 +125,7 @@ public class IGraph {
 
         HashSet<Literal> literals = clause.getLiterals();
         for (Literal literal : literals) {
-            Node<Variable> node = values.get(literal.getName());
+            Node<Variable> node = assignedVariables.get(literal.getName());
 
             if (node == null && impliedVariable == null) {
                 impliedVariable = literal.toVariable(level);
@@ -137,7 +148,7 @@ public class IGraph {
 
         HashSet<Literal> literals = clause.getLiterals();
         for (Literal literal : literals) {
-            Node<Variable> literalNode = values.get(literal.getName());
+            Node<Variable> literalNode = assignedVariables.get(literal.getName());
             Integer nodeLevel = literalNode == null ? null : literalNode.value.getLevel();
 
             if (nodeLevel != null && nodeLevel > highestLevel && (literals.size() == 1 || nodeLevel < conflictLevel)) {
@@ -148,28 +159,38 @@ public class IGraph {
         return highestLevel < 0 ? null : highestLevel;
     }
 
-    // TODO: Improve efficiency
-    public Variable getNextUnassignedVariable(int level) {
-        for (String symbol : variables) {
-            if (values.get(symbol) == null) {
-                Node<Variable> positiveAssignment = getNode(symbol, true, level);
-                return positiveAssignment.getValue();
-            }
+    public Variable getNextRandomUnassignedVariable(int level) {
+        if (unassignedVariables.isEmpty()) {
+            return null;
         }
+
+        String symbol = new ArrayList<>(unassignedVariables).get(0);
+        Node<Variable> positiveAssignment = getNode(symbol, true, level);
+
+        return positiveAssignment.getValue();
+    }
+
+    public Variable getNextBestUnassignedVariable(int level) {
+
+        // TODO: Pick an unassigned variable with most frequent occurrences in 2-clauses (see Clauses)
+        // --- Maintain a 2-clause frequency table and get highest ranked
+
         return null;
     }
 
-    // TODO: Improve efficiency
     public Clause getNextAntecedentClause(Clause learntClause, Integer level) {
         if (level == null) {
             return null;
         }
+
         HashSet<Literal> literals = learntClause.getLiterals();
         for (Literal literal : literals) {
-            Node<Variable> node = values.get(literal.getName());
+            Node<Variable> node = assignedVariables.get(literal.getName());
+
             if (node.getValue().getLevel() != level) {
                 continue;
             }
+
             HashSet<Edge<Variable>> antecedentEdges = graph.getEdgesToNode(node);
             for (Edge<Variable> edge : antecedentEdges) {
                 Clause antecedentClause = edge.getAntecedent();
@@ -178,6 +199,7 @@ public class IGraph {
                 }
             }
         }
+
         return null;
     }
 
@@ -188,7 +210,7 @@ public class IGraph {
 
             HashSet<Literal> literals = clause.getLiterals();
             for (Literal literal : literals) {
-                Node<Variable> node = values.get(literal.getName());
+                Node<Variable> node = assignedVariables.get(literal.getName());
                 if (node != null && literal.evaluate(node.value.getValue())) {
                     isClauseSatisfied = true;
                 }
@@ -205,7 +227,10 @@ public class IGraph {
     private void assign(Node<Variable> node) {
         Variable assignment = node.value;
         graph.addNode(node);
-        values.put(assignment.getSymbol(), node);
+
+        String symbol = assignment.getSymbol();
+        assignedVariables.put(symbol, node);
+        unassignedVariables.remove(symbol);
     }
 
     private Node<Variable> getNode(String symbol, boolean value, int level) {

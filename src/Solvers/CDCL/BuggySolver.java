@@ -62,7 +62,7 @@ public class BuggySolver extends CDCLSolver {
             conflictVariable = null;
             return branchingVariable;
         }
-        branchingVariable = stateGraph.getNextUnassignedVariable(level);
+        branchingVariable = stateGraph.getNextRandomUnassignedVariable(level);
         System.out.println("+ Decision (unassigned): " + branchingVariable);
         return branchingVariable;
     }
