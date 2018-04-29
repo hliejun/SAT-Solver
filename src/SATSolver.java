@@ -1,13 +1,14 @@
 import DataStructures.Clauses;
 import DataStructures.Utilities;
 
-import Solvers.CDCL.BuggySolver;
-import Solvers.CDCL.TwoClauseSolver;
 import Solvers.Solver;
-import Solvers.CDCL.ChaffSolver;
-import Solvers.CDCL.VSIDSSolver;
+
 import Solvers.DPLL.DPLLSolver;
 import Solvers.DPLL.RDPLLSolver;
+
+import Solvers.CDCL.ChaffSolver;
+import Solvers.CDCL.TwoClauseSolver;
+import Solvers.CDCL.VSIDSSolver;
 
 import java.util.*;
 
@@ -22,14 +23,16 @@ public class SATSolver {
         Parser parser = new Parser(path);
         Clauses clauses = parser.getParsedClauses();
         int literalsCount = parser.getNumOfLiterals();
-        System.out.println(clauses.literalCount);
-        System.out.println(clauses);
 
-//        Strategy strategy = Strategy.VSIDS_CDCL;
-//        Strategy strategy = Strategy.TwoClause_CDCL;
+        //// System.out.println(clauses.literalCount); ////
+        //// System.out.println(clauses); ////
+
+        // Strategy strategy = Strategy.Recursive_DPLL;
+        // Strategy strategy = Strategy.Iterative_DPLL;
+
         Strategy strategy = Strategy.Chaff_CDCL;
-//        Strategy strategy = Strategy.Iterative_DPLL;
-//        Strategy strategy = Strategy.Recursive_DPLL;
+        // Strategy strategy = Strategy.TwoClause_CDCL;
+        // Strategy strategy = Strategy.VSIDS_CDCL;
 
         long startTime = System.currentTimeMillis();
 
@@ -40,11 +43,11 @@ public class SATSolver {
             case Iterative_DPLL:
                 solver = new DPLLSolver(clauses, literalsCount);
                 break;
-            case TwoClause_CDCL:
-                solver = new TwoClauseSolver(clauses, literalsCount);
-                break;
             case Chaff_CDCL:
                 solver = new ChaffSolver(clauses, literalsCount);
+                break;
+            case TwoClause_CDCL:
+                solver = new TwoClauseSolver(clauses, literalsCount);
                 break;
             case VSIDS_CDCL:
                 solver = new VSIDSSolver(clauses, literalsCount);

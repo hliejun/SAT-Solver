@@ -211,6 +211,7 @@ public class IGraph {
 
         // TODO: Pick an unassigned variable with most occurrences in 2-clauses
 
+
         return null;
     }
 
