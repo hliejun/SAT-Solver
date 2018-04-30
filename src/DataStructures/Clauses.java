@@ -6,10 +6,12 @@ import java.util.stream.Collectors;
 public class Clauses implements Comparable<Clauses> {
     private HashSet<Clause> clauses;
     public HashMap<Literal, Integer> literalCount;
+    public HashMap<Literal, Integer> twoClauseLiteralCount;
 
     public Clauses() {
         clauses = new HashSet<>();
         literalCount = new HashMap<>();
+        twoClauseLiteralCount = new HashMap<>();
     }
 
     public void addClause(Clause clause) {
@@ -29,13 +31,21 @@ public class Clauses implements Comparable<Clauses> {
             } else {
                 literalCount.put(literal, 1);
             }
+
+            if (clause.getLiterals().size() == 2 && twoClauseLiteralCount.containsKey(literal)) {
+                twoClauseLiteralCount.put(literal, twoClauseLiteralCount.get(literal) + 1);
+            } else if (clause.getLiterals().size() == 2){
+                twoClauseLiteralCount.put(literal, 1);
+            } else {
+                twoClauseLiteralCount.put(literal, 0);
+            }
         }
 
-        literalCount =
-                literalCount.entrySet().stream()
-                        .sorted(Map.Entry.<Literal, Integer>comparingByValue().reversed())
-                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-                                (e1, e2) -> e1, LinkedHashMap::new));
+        //// !!! Do we need to sort here? !!! ////
+        literalCount = literalCount.entrySet()
+                .stream()
+                .sorted(Map.Entry.<Literal, Integer>comparingByValue().reversed())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     }
 
     public void updateLiteralCount(Clause clause, int constant) {
@@ -64,9 +74,10 @@ public class Clauses implements Comparable<Clauses> {
         return literals;
     }
 
-    public HashMap<String, Integer> getFrequencyTable() {
+    public HashMap<String, Integer> getFrequencyTable(boolean isTwoClause) {
         HashMap<String, Integer> frequencyTable = new HashMap<>();
-        literalCount.forEach((literal, count) -> frequencyTable.put(literal.getName(), count));
+        HashMap<Literal, Integer> countTable = isTwoClause ? twoClauseLiteralCount : literalCount;
+        countTable.forEach((literal, count) -> frequencyTable.put(literal.getName(), count));
 
         return frequencyTable;
     }

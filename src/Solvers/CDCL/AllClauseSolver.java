@@ -2,6 +2,8 @@ package Solvers.CDCL;
 
 import DataStructures.*;
 
+import java.util.*;
+
 public class AllClauseSolver extends ChaffSolver {
 
     public AllClauseSolver(Clauses clauses, int literalsCount) {
@@ -10,10 +12,11 @@ public class AllClauseSolver extends ChaffSolver {
 
     @Override
     protected Variable pickBranchingVariable() {
-        Variable branchingVariable = stateGraph.getNextMostUnassignedVariable(level, formula.getFrequencyTable());
-        //// System.out.println("+ Decision (unassigned): " + branchingVariable); ////
+        HashMap<String, Integer> frequencyTable = formula.getFrequencyTable(false);
+        Variable branchVariable = stateGraph.getNextMostUnassignedVariable(level, frequencyTable, false);
+        //// System.out.println("+ Decision (unassigned): " + branchVariable); ////
 
-        return branchingVariable;
+        return branchVariable;
     }
 
 }

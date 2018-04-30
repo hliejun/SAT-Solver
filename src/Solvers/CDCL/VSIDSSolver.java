@@ -10,10 +10,10 @@ public class VSIDSSolver extends ChaffSolver {
 
     @Override
     protected Variable pickBranchingVariable() {
-        Variable branchingVariable = stateGraph.getNextVSIDSUnassignedVariable(level);
-        //// System.out.println("+ Decision (unassigned): " + branchingVariable); ////
+        Variable branchVariable = stateGraph.getNextVSIDSUnassignedVariable(level);
+        //// System.out.println("+ Decision (unassigned): " + branchVariable); ////
 
-        return branchingVariable;
+        return branchVariable;
     }
 
 }

@@ -246,23 +246,41 @@ public class IGraph {
         return node.getValue();
     }
 
-    public Variable getNextTwoClauseUnassignedVariable(int level) {
-
-        // TODO: Pick an unassigned variable with most occurrences in 2-clauses, ties broken randomly
-
-        return null;
-    }
-
-    public Variable getNextMostUnassignedVariable(int level, HashMap<String, Integer> frequencyTable) {
+    public Variable getNextMostUnassignedVariable(int level, HashMap<String, Integer> table, boolean shouldBreakTie) {
         if (unassignedVariables.isEmpty()) {
             return null;
         }
 
-        ArrayList<String> unassignedList = new ArrayList<>(unassignedVariables);
-        Collections.sort(unassignedList, Comparator.comparingInt(frequencyTable::get));
+        String selectedSymbol;
 
-        String mostUnassignedSymbol = unassignedList.get(unassignedList.size() - 1);
-        Node<Variable> positiveAssignment = getTruthNode(mostUnassignedSymbol, level);
+        if (shouldBreakTie) {
+            HashMap<Integer, ArrayList<String>> countList = new HashMap<>();
+            for (String variable : unassignedVariables) {
+                countList.computeIfAbsent(table.get(variable),key -> new ArrayList<>()).add(variable);
+            }
+
+            Optional<Map.Entry<Integer, ArrayList<String>>> entry = countList.entrySet()
+                    .stream()
+                    .max(Map.Entry.comparingByKey());
+
+            if (!entry.isPresent()) {
+                return null;
+            }
+
+            ArrayList<String> mostUnassignedSymbols = entry.get().getValue();
+
+            Random randomGenerator = new Random();
+            int randomNumber = randomGenerator.nextInt(mostUnassignedSymbols.size());
+
+            selectedSymbol = mostUnassignedSymbols.get(randomNumber);
+        } else {
+            ArrayList<String> unassignedList = new ArrayList<>(unassignedVariables);
+            unassignedList.sort(Comparator.comparingInt(table::get));
+
+            selectedSymbol = unassignedList.get(unassignedList.size() - 1);
+        }
+
+        Node<Variable> positiveAssignment = getTruthNode(selectedSymbol, level);
 
         return positiveAssignment.getValue();
     }
