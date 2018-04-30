@@ -1,6 +1,7 @@
 package DataStructures;
 
 public class Literal implements Comparable<Literal> {
+
     private final boolean sign;
     private final String label;
 
@@ -31,7 +32,7 @@ public class Literal implements Comparable<Literal> {
     }
 
     public Boolean evaluate(boolean truthValue) {
-        return !(sign ^ truthValue);
+        return sign == truthValue;
     }
 
     public String toString() {
@@ -60,6 +61,7 @@ public class Literal implements Comparable<Literal> {
         } else if (!(otherObject instanceof Literal)) {
             return false;
         }
+
         Literal otherLiteral = (Literal) otherObject;
         return sign == otherLiteral.sign && label.equals(otherLiteral.label);
     }

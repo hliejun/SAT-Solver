@@ -3,11 +3,12 @@ package DataStructures;
 import java.util.*;
 
 public class Clause implements Comparable<Clause> {
+
     private HashSet<Literal> literals;
 
     public Clause(ArrayList<Literal> listOfLiterals) {
         literals = new HashSet<>();
-        listOfLiterals.forEach(literal -> addLiteral(literal));
+        listOfLiterals.forEach(this::addLiteral);
     }
 
     public Clause(String[] literalsString) {
@@ -26,23 +27,23 @@ public class Clause implements Comparable<Clause> {
     }
 
     public boolean evaluate(Assignment assignment) {
-//        ArrayList<Literal> literals = toArray();
         for (Literal literal : literals) {
             Boolean variableValue = assignment.getValue(literal.getName());
             if (variableValue != null && literal.evaluate(variableValue)) {
                 return true;
             }
         }
+
         return false;
     }
 
     public boolean hasConflicts(Assignment assignment) {
-//        ArrayList<Literal> literals = toArray();
         for (Literal literal: literals) {
             if (!literal.hasConflicts(assignment)) {
                 return false;
             }
         }
+
         return true;
     }
 
@@ -52,17 +53,19 @@ public class Clause implements Comparable<Clause> {
                 return true;
             }
         }
+
         return false;
     }
 
     public boolean isUnitClause(Assignment assignment) {
         int numOfUnassignedLiterals = 0;
-//        ArrayList<Literal> literals = toArray();
+
         for (Literal literal : literals) {
             if (assignment.getValue(literal.getName()) == null) {
                 numOfUnassignedLiterals++;
             }
         }
+
         return numOfUnassignedLiterals == 1;
     }
 
@@ -70,12 +73,13 @@ public class Clause implements Comparable<Clause> {
         if (!isUnitClause(assignment)) {
             return null;
         }
-//        ArrayList<Literal> literals = toArray();
+
         for (Literal literal : literals) {
             if (assignment.getValue(literal.getName()) == null) {
                 return literal;
             }
         }
+
         return null;
     }
 
@@ -86,6 +90,7 @@ public class Clause implements Comparable<Clause> {
     public ArrayList<Literal> toArray() {
         ArrayList<Literal> listOfLiterals = new ArrayList<>(literals);
         Collections.sort(listOfLiterals);
+
         return listOfLiterals;
     }
 

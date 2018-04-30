@@ -16,7 +16,9 @@ public class SATSolver {
 
         // TODO: Model Einstein's Puzzle as a SAT problem
 
-        String path = "./test/testcases/benchmark/125V_538C_sat/1.cnf";
+        // FIXME: Could be a sign that we need something like a search restart
+        String path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
+//        String path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
         if (args.length != 0) {
             path = args[0];
         }
