@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Graph<T> {
+
     private HashMap<Node<T>, HashSet<Edge<T>>> adjacencyList;
     private HashMap<Node<T>, HashSet<Edge<T>>> incidentList;
 
@@ -89,6 +90,10 @@ public class Graph<T> {
         HashSet<Edge<T>> edges = adjacencyList.get(node);
         return edges == null ? new HashSet<>() : edges;
     }
+
+    /**
+     * Unused methods
+     */
 
     public HashSet<Node<T>> getAdjacentNodes(Node<T> node) {
         HashSet<Edge<T>> edges = getEdgesFromNode(node);

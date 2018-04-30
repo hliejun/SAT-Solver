@@ -2,8 +2,6 @@ package DataStructures;
 
 import java.util.*;
 
-// TODO: Extend with lazy data structure: watched literals
-
 public class IGraph {
 
     private Graph<Variable> graph;
@@ -69,9 +67,6 @@ public class IGraph {
                 String symbol = assignedVariable.getSymbol();
                 assignedVariables.remove(symbol);
                 unassignedVariables.add(symbol);
-
-                // TODO: Update clause count?
-
             }
         });
 
@@ -131,11 +126,8 @@ public class IGraph {
         return assignment;
     }
 
-    // TODO: Optimise
     public Variable getImpliedVariable(Clause clause, int level) {
         Variable impliedVariable = null;
-
-        // TODO: Use clause count?
 
         HashSet<Literal> literals = clause.getLiterals();
         for (Literal literal : literals) {
@@ -143,13 +135,9 @@ public class IGraph {
 
             if (node == null && impliedVariable == null) {
                 impliedVariable = literal.toVariable(level);
-            }
-
-            else if (node == null) {
+            } else if (node == null) {
                 return null;
-            }
-
-            else if (literal.evaluate(node.value.getValue())) {
+            } else if (literal.evaluate(node.value.getValue())) {
                 return null;
             }
         }
@@ -245,9 +233,6 @@ public class IGraph {
         String symbol = assignment.getSymbol();
         assignedVariables.put(symbol, node);
         unassignedVariables.remove(symbol);
-
-        // TODO: Update clause count?
-
     }
 
     private Node<Variable> getTruthNode(String symbol, int level) {
@@ -282,7 +267,7 @@ public class IGraph {
         return node.getValue();
     }
 
-    public Variable getNextMostUnassignedVariable(int level, HashMap<String, Integer> table, boolean shouldBreakTie) {
+    public Variable getNextMostUnassignedVariable(int level, TreeMap<String, Integer> table, boolean shouldBreakTie) {
         if (unassignedVariables.isEmpty()) {
             return null;
         }
@@ -312,7 +297,6 @@ public class IGraph {
         } else {
             ArrayList<String> unassignedList = new ArrayList<>(unassignedVariables);
             unassignedList.sort(Comparator.comparingInt(table::get));
-
             selectedSymbol = unassignedList.get(unassignedList.size() - 1);
         }
 

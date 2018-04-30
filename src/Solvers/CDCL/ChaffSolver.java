@@ -108,9 +108,7 @@ public class ChaffSolver extends CDCLSolver {
                 //// System.out.println("+ Implication: " + impliedVariable); ////
 
                 performDecisionUnitPropagation(impliedVariable);
-            }
-
-            else if (!clauseTruth) {
+            } else if (!clauseTruth) {
                 stateGraph.addConflict(decision, clause);
                 //// System.out.println("Conflict propagating " + decision + " at " + clause); ////
                 return;

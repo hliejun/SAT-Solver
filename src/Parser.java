@@ -26,6 +26,9 @@ public class Parser {
             }
         }
 
+        clauses.sortLiteralCount();
+        clauses.sortSymbolCount();
+
         return clauses;
     }
 

@@ -16,7 +16,7 @@ public class SATSolver {
 
         // TODO: Model Einstein's Puzzle as a SAT problem
 
-        String path = "./test/testcases/sat/1.cnf";
+        String path = "./test/testcases/sat/7.cnf";
         if (args.length != 0) {
             path = args[0];
         }
@@ -27,7 +27,7 @@ public class SATSolver {
         //// System.out.println(clauses.literalCount); ////
         //// System.out.println(clauses); ////
 
-        // Strategy strategy = Strategy.Recursive_DPLL;
+//         Strategy strategy = Strategy.Recursive_DPLL;
 //         Strategy strategy = Strategy.Iterative_DPLL;
 
 //         Strategy strategy = Strategy.Chaff_CDCL;

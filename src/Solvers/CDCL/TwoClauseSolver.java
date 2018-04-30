@@ -12,7 +12,7 @@ public class TwoClauseSolver extends ChaffSolver {
 
     @Override
     protected Variable pickBranchingVariable() {
-        HashMap<String, Integer> frequencyTable = formula.getFrequencyTable(true);
+        TreeMap<String, Integer> frequencyTable = formula.getFrequencyTable(true);
         Variable branchVariable = stateGraph.getNextMostUnassignedVariable(level, frequencyTable, false);
         //// System.out.println("+ Decision (unassigned): " + branchVariable); ////
 

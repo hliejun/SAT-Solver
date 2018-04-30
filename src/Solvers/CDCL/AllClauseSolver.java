@@ -12,7 +12,7 @@ public class AllClauseSolver extends ChaffSolver {
 
     @Override
     protected Variable pickBranchingVariable() {
-        HashMap<String, Integer> frequencyTable = formula.getFrequencyTable(false);
+        TreeMap<String, Integer> frequencyTable = formula.getFrequencyTable(false);
         Variable branchVariable = stateGraph.getNextMostUnassignedVariable(level, frequencyTable, false);
         //// System.out.println("+ Decision (unassigned): " + branchVariable); ////
 
