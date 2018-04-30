@@ -70,7 +70,7 @@ public class Clauses implements Comparable<Clauses> {
         return false;
     }
 
-    //// !!! Does this ignore literal signs? !!! ////
+    //// FIXME: Does this ignore literal signs? If so, switch to use symbolCount.
     public Literal pickUnassignedLiteral(Assignment assignment) {
         Literal pickedLiteral = null;
 

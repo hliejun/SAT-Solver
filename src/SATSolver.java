@@ -16,7 +16,7 @@ public class SATSolver {
 
         // TODO: Model Einstein's Puzzle as a SAT problem
 
-        String path = "./test/testcases/sat/7.cnf";
+        String path = "./test/testcases/benchmark/125V_538C_sat/1.cnf";
         if (args.length != 0) {
             path = args[0];
         }

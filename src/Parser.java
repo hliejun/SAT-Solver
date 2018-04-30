@@ -26,6 +26,7 @@ public class Parser {
             }
         }
 
+        // FIXME: Might want to remove this if it is included in the timing (for CDCL -- since we sort it later)
         clauses.sortLiteralCount();
         clauses.sortSymbolCount();
 
