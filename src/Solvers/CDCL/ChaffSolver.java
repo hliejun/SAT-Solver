@@ -4,8 +4,6 @@ import DataStructures.*;
 
 import java.util.*;
 
-// TODO: Add lazy evaluation of clause(s)
-
 public class ChaffSolver extends CDCLSolver {
 
     public ChaffSolver(Clauses clauses, int literalsCount) {
@@ -97,21 +95,26 @@ public class ChaffSolver extends CDCLSolver {
                 continue;
             }
 
-            if (stateGraph.isConflicted(clause)) {
+            Boolean clauseTruth = stateGraph.evaluate(clause);
+
+            if (clauseTruth == null) {
+                Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
+
+                if (impliedVariable == null) {
+                    continue;
+                }
+
+                stateGraph.addImplication(clause, impliedVariable);
+                //// System.out.println("+ Implication: " + impliedVariable); ////
+
+                performDecisionUnitPropagation(impliedVariable);
+            }
+
+            else if (!clauseTruth) {
                 stateGraph.addConflict(decision, clause);
                 //// System.out.println("Conflict propagating " + decision + " at " + clause); ////
                 return;
             }
-
-            Variable impliedVariable = stateGraph.getImpliedVariable(clause, level);
-            if (impliedVariable == null) {
-                continue;
-            }
-
-            stateGraph.addImplication(clause, impliedVariable);
-            //// System.out.println("+ Implication: " + impliedVariable); ////
-
-            performDecisionUnitPropagation(impliedVariable);
         }
     }
 
@@ -154,7 +157,7 @@ public class ChaffSolver extends CDCLSolver {
         level = proposedLevel;
     }
 
-    protected HashSet<Clause> getAllClauses() {
+    private HashSet<Clause> getAllClauses() {
         HashSet<Clause> clauses = new HashSet<>();
         clauses.addAll(formula.getClausesSet());
         clauses.addAll(learntClauses);

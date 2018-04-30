@@ -2,6 +2,8 @@ package DataStructures;
 
 import java.util.*;
 
+// TODO: Extend with lazy data structure: watched literals
+
 public class IGraph {
 
     private Graph<Variable> graph;
@@ -13,6 +15,8 @@ public class IGraph {
     private Clause conflictClause;
     private Node<Variable> conflictNode;
 
+    private HashMap<Clause, Boolean> clauseTruthMap;
+
     public IGraph(HashSet<String> variables) {
         graph = new Graph<>();
 
@@ -20,6 +24,8 @@ public class IGraph {
         assignedVariables = new HashMap<>();
         unassignedVariables = new HashSet<>();
         unassignedVariables.addAll(variables);
+
+        clauseTruthMap = new HashMap<>();
 
         conflictClause = null;
         conflictNode = null;
@@ -63,8 +69,13 @@ public class IGraph {
                 String symbol = assignedVariable.getSymbol();
                 assignedVariables.remove(symbol);
                 unassignedVariables.add(symbol);
+
+                // TODO: Update clause count?
+
             }
         });
+
+        clauseTruthMap = new HashMap<>();
 
         conflictClause = null;
         conflictNode = null;
@@ -120,8 +131,11 @@ public class IGraph {
         return assignment;
     }
 
+    // TODO: Optimise
     public Variable getImpliedVariable(Clause clause, int level) {
         Variable impliedVariable = null;
+
+        // TODO: Use clause count?
 
         HashSet<Literal> literals = clause.getLiterals();
         for (Literal literal : literals) {
@@ -184,20 +198,39 @@ public class IGraph {
         return null;
     }
 
+    public Boolean evaluate(Clause clause) {
+        boolean isIncomplete = false;
+
+        Boolean memoizedTruth = clauseTruthMap.get(clause);
+
+        if (memoizedTruth != null) {
+            return memoizedTruth;
+        }
+
+        HashSet<Literal> literals = clause.getLiterals();
+        for (Literal literal : literals) {
+            Node<Variable> node = assignedVariables.get(literal.getName());
+            if (node == null) {
+                isIncomplete = true;
+            } else if (literal.evaluate(node.value.getValue())) {
+                clauseTruthMap.put(clause, true);
+                return true;
+            }
+        }
+
+        if (!isIncomplete) {
+            clauseTruthMap.put(clause, false);
+            return false;
+        }
+
+        return null;
+    }
+
     public boolean evaluate(Clauses formula) {
         HashSet<Clause> clauses = formula.getClausesSet();
         for (Clause clause : clauses) {
-            boolean isClauseSatisfied = false;
-
-            HashSet<Literal> literals = clause.getLiterals();
-            for (Literal literal : literals) {
-                Node<Variable> node = assignedVariables.get(literal.getName());
-                if (node != null && literal.evaluate(node.value.getValue())) {
-                    isClauseSatisfied = true;
-                }
-            }
-
-            if (!isClauseSatisfied) {
+            Boolean clauseTruth = evaluate(clause);
+            if (clauseTruth == null || !clauseTruth) {
                 return false;
             }
         }
@@ -212,6 +245,9 @@ public class IGraph {
         String symbol = assignment.getSymbol();
         assignedVariables.put(symbol, node);
         unassignedVariables.remove(symbol);
+
+        // TODO: Update clause count?
+
     }
 
     private Node<Variable> getTruthNode(String symbol, int level) {
