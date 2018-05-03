@@ -143,7 +143,8 @@ public class ChaffSolver extends CDCLSolver {
 
         learntClauses.add(learntClause);
 
-        Integer backtrackLevel = stateGraph.getHighestLevel(learntClause, conflictLevel) - 1;
+        Integer highestLevel = stateGraph.getHighestLevel(learntClause, conflictLevel);
+        Integer backtrackLevel = highestLevel == 0 ? 0 : highestLevel - 1;
 
         return backtrackLevel < 0 ? null : backtrackLevel;
     }
