@@ -23,8 +23,26 @@ public class Clauses implements Comparable<Clauses> {
         twoClauseSymbolCount = new TreeMap<>();
     }
 
+    private boolean contains(Clause clause) {
+        for (Clause c : clauses) {
+            if (c.equals(clause)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addClause(Clause clause) {
-        clauses.add(clause);
+
+        if (!contains(clause)) {
+            clauses.add(clause);
+        }
+    }
+
+    public void addAllClauses(Clauses clauses) {
+        for (Clause clause : clauses.getClausesSet()) {
+            addClause(clause);
+        }
     }
 
     public void addClause(String[] literalsString) {

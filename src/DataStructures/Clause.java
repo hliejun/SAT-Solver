@@ -69,6 +69,36 @@ public class Clause implements Comparable<Clause> {
         return numOfUnassignedLiterals == 1;
     }
 
+    public Literal getConflictLiteral() {
+        HashMap<String, ArrayList<Literal>> clauseMap = new HashMap<>();
+
+        for (Literal literal : literals) {
+            clauseMap.computeIfAbsent(literal.getName(), key -> new ArrayList<>()).add(literal);
+        }
+
+        for (String key : clauseMap.keySet()) {
+            if (clauseMap.get(key).size() > 1) {
+                return clauseMap.get(key).get(0);
+            }
+        }
+        return null;
+    }
+
+    public boolean isTautology() {
+        HashMap<String, ArrayList<Literal>> clauseMap = new HashMap<>();
+
+        for (Literal literal : literals) {
+            clauseMap.computeIfAbsent(literal.getName(), key -> new ArrayList<>()).add(literal);
+        }
+
+        for (String key : clauseMap.keySet()) {
+            if (clauseMap.get(key).size() > 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Literal getUnitLiteral(Assignment assignment) {
         if (!isUnitClause(assignment)) {
             return null;

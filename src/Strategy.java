@@ -8,5 +8,6 @@ public enum Strategy {
     ERWA_CDCL,
     VSIDS_CDCL,
 
-    Advanced_CDCL
+    Advanced_CDCL,
+    PLResolution
 }

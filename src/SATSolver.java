@@ -2,6 +2,7 @@ import DataStructures.Clauses;
 import DataStructures.Utilities;
 
 import Solvers.CDCL.*;
+import Solvers.RESOLUTION.PLResolution;
 import Solvers.Solver;
 
 import Solvers.DPLL.DPLLSolver;
@@ -17,7 +18,7 @@ public class SATSolver {
         // TODO: Model Einstein's Puzzle as a SAT problem
 
         // FIXME: Could be a sign that we need something like a search restart
-        String path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
+        String path = "./test/testcases/sat/1.cnf"; // CDCL outperformed DPLL iterative here...
 //        String path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
         if (args.length != 0) {
             path = args[0];
@@ -34,10 +35,11 @@ public class SATSolver {
 
 //         Strategy strategy = Strategy.Chaff_CDCL;
 //         Strategy strategy = Strategy.TwoClause_CDCL;
-        Strategy strategy = Strategy.AllClause_CDCL;
+//        Strategy strategy = Strategy.AllClause_CDCL;
         // Strategy strategy = Strategy.ERWA_CDCL;
         // Strategy strategy = Strategy.VSIDS_CDCL;
         // Strategy strategy = Strategy.Advanced_CDCL;
+        Strategy strategy = Strategy.PLResolution;
 
         long startTime = System.currentTimeMillis();
 
@@ -66,6 +68,8 @@ public class SATSolver {
             case Advanced_CDCL:
                 solver = new AdvancedSolver(clauses, literalsCount);
                 break;
+            case PLResolution:
+                solver = new PLResolution(clauses, literalsCount);
             default:
                 break;
 
