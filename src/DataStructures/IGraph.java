@@ -186,6 +186,22 @@ public class IGraph {
         return null;
     }
 
+    public Clause getNextAntecedentClause(Clause learntClause) {
+        HashSet<Literal> literals = learntClause.getLiterals();
+        for (Literal literal : literals) {
+            Node<Variable> node = assignedVariables.get(literal.getName());
+            HashSet<Edge<Variable>> antecedentEdges = graph.getEdgesToNode(node);
+            for (Edge<Variable> edge : antecedentEdges) {
+                Clause antecedentClause = edge.getAntecedent();
+                if (antecedentClause != null) {
+                    return antecedentClause;
+                }
+            }
+        }
+
+        return null;
+    }
+
     public Boolean evaluate(Clause clause) {
         boolean isIncomplete = false;
 
