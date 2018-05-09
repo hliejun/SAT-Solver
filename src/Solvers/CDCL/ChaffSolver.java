@@ -68,10 +68,18 @@ public class ChaffSolver extends CDCLSolver {
             if (stateGraph.isConflicted()) {
 
 
+
                 /** CONFLICT **/
-                Clause conflictClause = stateGraph.getConflictClause();
-                analyzeConflict(conflictClause);
-                
+                //Clause conflictClause = stateGraph.getConflictClause();
+                //System.out.println("CONFLICT at: " + conflictClause);
+                //analyzeConflict(conflictClause);
+
+                // TODO: Prove UNSAT by performing resolution with clauses
+                    // 1. Take the most recent learnt clause
+                    // 2. Get all base clauses (array) from learnt clause map
+                    // 3. Take conflict clause
+                    // 4. Apply resolution strategy
+                    // 5. Check for resolved empty clause
 
 
 
@@ -154,6 +162,15 @@ public class ChaffSolver extends CDCLSolver {
         Integer conflictLevel = conflictNode.getValue().getLevel();
 
         Clause learntClause = new Clause(conflictClause.toArray());
+
+
+
+        // TODO: Capture resolution clauses in order mapped to learnt clause
+            // 1. Collect an array (ordered) of conflict + antecedent clauses
+            // 2. Map array to learnt clause
+
+
+
         while(!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
             Clause antecedentClause = stateGraph.getNextAntecedentClause(learntClause, conflictLevel);
 
@@ -161,6 +178,12 @@ public class ChaffSolver extends CDCLSolver {
             learntClause = applyResolution(learntClause, antecedentClause);
             System.out.println(" ... into: " + learntClause); ////
         }
+
+
+
+        // TODO: Set most recent learnt clause variable for later reference
+        
+
 
         learntClauses.add(learntClause);
 
