@@ -62,10 +62,12 @@ public class SATSolver {
     private void parseArgs(String[] args) throws IllegalArgumentException {
         if (args.length == 0) {
             strategy = Strategy.AllClause_CDCL;
-            path = "./test/testcases/unsat/5.cnf";
+            path = IDE_ENVIRONMENT ? "./test/testcases/unsat/5.cnf" : "../test/testcases/unsat/5.cnf";
+            //path = IDE_ENVIRONMENT ? "./puzzle/einstein.cnf" : "../puzzle/einstein.cnf";
+
             //path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
             //path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
-            //path = "./puzzle/einstein.cnf";
+
             return;
         } else if (args.length != 2) {
             throw new IllegalArgumentException(INVALID_ARGUMENTS_MESSAGE);
