@@ -15,7 +15,7 @@ public class SATSolver {
 
     private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments expected. Expected format:" +
             "java SATSolver <Strategy> <Path>";
-
+    private PrintWriter writer = null;
     private final boolean BENCHMARK_MODE = true;
     private final boolean IDE_ENVIRONMENT = false;
 
@@ -47,6 +47,7 @@ public class SATSolver {
             HashMap<String, Boolean> results = solver.solve();
             String output = results == null ? "UNSAT" : Utilities.getOutputFromMap(results);
             System.out.println(output); ////
+            this.writer.println(output); ////
         } else {
             System.out.println("Unsupported strategy."); ////
         }
@@ -54,6 +55,7 @@ public class SATSolver {
         long endTime = System.currentTimeMillis();
         double elapsedTime = (endTime - startTime) / 1000.0;
         System.out.println("Execution Time: " + elapsedTime + " seconds"); ////
+        this.writer.println("Execution Time: " + elapsedTime + " seconds"); ////
         return elapsedTime;
     }
 
@@ -120,7 +122,7 @@ public class SATSolver {
             String folderPath = IDE_ENVIRONMENT ? "./test/testcases/benchmark" : "../test/testcases/benchmark";
             file = new File(folderPath);
             File[] benchmarkFolders = file.listFiles();
-
+            Arrays.sort(benchmarkFolders);
             assert benchmarkFolders != null;
 
             for (File benchmarkFolder : benchmarkFolders) {
@@ -203,9 +205,11 @@ public class SATSolver {
 
             Map<String, String> row;
             int fileCounter = 1;
+            this.writer = new PrintWriter(file.getName() + "-" + strategyName + ".txt");
             while ((row = mapReader.read(readHeader)) != null) {
                 if (file.isDirectory()) {
                     String filename = fileCounter + ".cnf";
+                    this.writer.println(filename);
                     path = file.getAbsolutePath() + "/" + filename;
                     row.put(strategyHeader, String.valueOf(run()));
                     fileCounter++;
@@ -214,6 +218,7 @@ public class SATSolver {
                 }
                 mapWriter.write(row, writeHeader);
             }
+            this.writer.close();
         } finally {
             if(mapReader != null) {
                 mapReader.close();
@@ -226,7 +231,7 @@ public class SATSolver {
 
     private double run() {
         Parser parser = new Parser(path);
-        //// System.out.println(path); ////
+        System.out.println(path); ////
 
         Clauses clauses = parser.getParsedClauses();
         int literalsCount = parser.getNumOfLiterals();
