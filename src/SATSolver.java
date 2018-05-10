@@ -2,6 +2,7 @@ import DataStructures.Clauses;
 import DataStructures.Utilities;
 
 import Solvers.CDCL.*;
+import Solvers.RESOLUTION.PLResolution;
 import Solvers.Solver;
 
 import Solvers.DPLL.DPLLSolver;
@@ -37,10 +38,11 @@ public class SATSolver {
 
 //         Strategy strategy = Strategy.Chaff_CDCL;
 //         Strategy strategy = Strategy.TwoClause_CDCL;
-        Strategy strategy = Strategy.AllClause_CDCL;
+//        Strategy strategy = Strategy.AllClause_CDCL;
         // Strategy strategy = Strategy.ERWA_CDCL;
         // Strategy strategy = Strategy.VSIDS_CDCL;
         // Strategy strategy = Strategy.Advanced_CDCL;
+        Strategy strategy = Strategy.PLResolution;
 
         long startTime = System.currentTimeMillis();
 
@@ -69,6 +71,8 @@ public class SATSolver {
             case Advanced_CDCL:
                 solver = new AdvancedSolver(clauses, literalsCount);
                 break;
+            case PLResolution:
+                solver = new PLResolution(clauses, literalsCount);
             default:
                 break;
 
