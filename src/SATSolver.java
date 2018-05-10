@@ -1,43 +1,34 @@
-import DataStructures.Clauses;
-import DataStructures.Utilities;
+import DataStructures.*;
+
 import Solvers.CDCL.*;
-import Solvers.DPLL.DPLLSolver;
-import Solvers.DPLL.RDPLLSolver;
+import Solvers.DPLL.*;
 import Solvers.Solver;
-import org.supercsv.io.CsvMapReader;
-import org.supercsv.io.CsvMapWriter;
-import org.supercsv.io.ICsvMapReader;
-import org.supercsv.io.ICsvMapWriter;
+
+import org.supercsv.io.*;
 import org.supercsv.prefs.CsvPreference;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.util.HashMap;
-import java.util.Map;
+import java.nio.file.*;
+import java.util.*;
 
 public class SATSolver {
 
-    private final boolean IS_BENCHMARKING = true;
-    private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments expected. java SatSolver <Strategy> <Path>";
+    private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments expected. Expected format:" +
+            "java SATSolver <Strategy> <Path>";
 
-    private Strategy strategy = Strategy.AllClause_CDCL; // Default fastest strategy
+    private final boolean BENCHMARK_MODE = true;
+
+    private Strategy strategy = Strategy.AllClause_CDCL;
     private String strategyName = null;
     private String path = null;
     private Solver solver = null;
 
-    public void init(String[] args) {
+    public static void main(String[] args) {
+        SATSolver satSolver = new SATSolver();
+        satSolver.init(args);
+    }
 
-//        String path = "./test/testcases/unsat/5.cnf";
-////        String path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
-////        String path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
-//
-////        String path = "./puzzle/einstein.cnf";
-//
-//        if (args.length != 0) {
-//            path = args[0];
-//        }
-
+    private void init(String[] args) {
         try {
             parseArgs(args);
         } catch (IllegalArgumentException e) {
@@ -46,19 +37,6 @@ public class SATSolver {
         }
 
         parsePath();
-
-        //// System.out.println(clauses.literalCount); ////
-        //// System.out.println(clauses); ////
-
-//         Strategy strategy = Strategy.Recursive_DPLL;
-//         Strategy strategy = Strategy.Iterative_DPLL;
-
-//         Strategy strategy = Strategy.Chaff_CDCL;
-//         Strategy strategy = Strategy.TwoClause_CDCL;
-        //Strategy strategy = Strategy.AllClause_CDCL;
-        // Strategy strategy = Strategy.ERWA_CDCL;
-        // Strategy strategy = Strategy.VSIDS_CDCL;
-        // Strategy strategy = Strategy.Advanced_CDCL;
     }
 
     private double solve() {
@@ -78,9 +56,51 @@ public class SATSolver {
         return elapsedTime;
     }
 
-    public static void main(String[] args) {
-        SATSolver satSolver = new SATSolver();
-        satSolver.init(args);
+    private void parseArgs(String[] args) throws IllegalArgumentException {
+        if (args.length != 2) {
+
+            // TODO: Fallback to default and set strategy and path if args is not available (use enum for combo)
+
+            //String path = "./test/testcases/unsat/5.cnf";
+            //String path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
+            //String path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
+            //String path = "./puzzle/einstein.cnf";
+
+            //Strategy strategy = Strategy.Recursive_DPLL;
+            //Strategy strategy = Strategy.Iterative_DPLL;
+
+            //Strategy strategy = Strategy.Chaff_CDCL;
+            //Strategy strategy = Strategy.TwoClause_CDCL;
+            //Strategy strategy = Strategy.AllClause_CDCL;
+            //Strategy strategy = Strategy.ERWA_CDCL;
+            //Strategy strategy = Strategy.VSIDS_CDCL;
+            //Strategy strategy = Strategy.Advanced_CDCL;
+
+            throw new IllegalArgumentException(INVALID_ARGUMENTS_MESSAGE);
+        }
+
+        // FIXME: Use switch case
+
+        if (args[0].equals("RDPLL")) {
+            strategy = Strategy.Recursive_DPLL;
+        } else if (args[0].equals("DPLL")) {
+            strategy = Strategy.Iterative_DPLL;
+        } else if (args[0].equals("CHAFF_CDCL")) {
+            strategy = Strategy.Chaff_CDCL;
+        } else if (args[0].equals("TWOCLAUSES_CDCL")) {
+            strategy = Strategy.TwoClause_CDCL;
+        } else if (args[0].equals("ALLCLAUSES_CDCL")) {
+            strategy = Strategy.Chaff_CDCL;
+        } else if (args[0].equals("ERWA_CDCL")) {
+            strategy = Strategy.Chaff_CDCL;
+        } else if (args[0].equals("VSIDS_CDCL")) {
+            strategy = Strategy.Chaff_CDCL;
+        } else if (args[0].equals("ADVANCED_CDCL")) {
+            strategy = Strategy.Advanced_CDCL;
+        }
+
+        strategyName = strategy.name();
+        path = args[1];
     }
 
     private void parseStrategy(Strategy strategy, Clauses clauses, int literalsCount) {
@@ -114,39 +134,15 @@ public class SATSolver {
         }
     }
 
-    private void parseArgs(String[] args) throws IllegalArgumentException {
-        if (args.length != 2) {
-            throw new IllegalArgumentException(INVALID_ARGUMENTS_MESSAGE);
-        }
-
-        if (args[0].equals("RDPLL")) {
-            strategy = Strategy.Recursive_DPLL;
-        } else if (args[0].equals("DPLL")) {
-            strategy = Strategy.Iterative_DPLL;
-        } else if (args[0].equals("CHAFF_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("TWOCLAUSES_CDCL")) {
-            strategy = Strategy.TwoClause_CDCL;
-        } else if (args[0].equals("ALLCLAUSES_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("ERWA_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("VSIDS_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("ADVANCED_CDCL")) {
-            strategy = Strategy.Advanced_CDCL;
-        }
-
-        strategyName = strategy.name();
-        path = args[1];
-    }
-
     private void parsePath() {
-        File file = new File(path);
+        File file;
 
-        if (IS_BENCHMARKING) {
+        if (BENCHMARK_MODE) {
             file = new File("../test/testcases/benchmark");
             File[] benchmarkFolders = file.listFiles();
+
+            assert benchmarkFolders != null;
+
             for (File benchmarkFolder : benchmarkFolders) {
                 try {
                     System.out.println("Testing " + benchmarkFolder.getName());
@@ -156,8 +152,7 @@ public class SATSolver {
                     System.exit(0);
                 }
             }
-        }
-        else if (file.exists()) {
+        } else if (file.exists()) {
             try {
                 parseFile(file);
             } catch (IOException e) {
@@ -171,11 +166,12 @@ public class SATSolver {
 
     private void parseFile(File file) throws IOException {
         File csvFile = new File(file.getName() + "-Template.csv");
-        if (csvFile.createNewFile() && IS_BENCHMARKING) {
+        if (csvFile.createNewFile() && BENCHMARK_MODE) {
             PrintWriter writer = new PrintWriter(csvFile);
             writer.println("S/N");
             if (file.isDirectory()) {
-                for (int i = 1; i < file.listFiles().length + 1; i++) {
+                int filesCount = Objects.requireNonNull(file.listFiles()).length;
+                for (int i = 1; i < filesCount + 1; i++) {
                     writer.println(i);
                 }
             } else {
@@ -186,14 +182,17 @@ public class SATSolver {
 
         String csvPath = csvFile.getPath();
 
-        if (IS_BENCHMARKING) {
+        if (BENCHMARK_MODE) {
             for (Strategy strategy : Strategy.values()) {
                 this.strategy = strategy;
                 this.strategyName = strategy.name();
                 writeCSV(csvPath, file);
 
-                Files.copy(new File(file.getName() + ".csv").toPath(),
-                        new File(file.getName() + "-Template.csv").toPath(), StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(
+                        new File(file.getName() + ".csv").toPath(),
+                        new File(file.getName() + "-Template.csv").toPath(),
+                        StandardCopyOption.REPLACE_EXISTING
+                );
             }
         } else {
             writeCSV(csvPath, file);
@@ -203,20 +202,18 @@ public class SATSolver {
     private void writeCSV(String csvPath, File file) throws IOException {
         ICsvMapReader mapReader = null;
         ICsvMapWriter mapWriter = null;
+
         try {
             String outputFileName = file.getName() + ".csv";
             CsvPreference prefs = CsvPreference.STANDARD_PREFERENCE;
             mapReader = new CsvMapReader(new FileReader(csvPath), prefs);
             mapWriter = new CsvMapWriter(new FileWriter(outputFileName), prefs);
 
-            // header used to read the original file
             String[] readHeader = mapReader.getHeader(true);
             if (readHeader == null) {
                 readHeader = new String[0];
             }
 
-            // header used to write the new file
-            // (same as 'readHeader', but with additional column)
             final String[] writeHeader = new String[readHeader.length + 1];
             System.arraycopy(readHeader, 0, writeHeader, 0, readHeader.length);
             final String strategyHeader = strategyName;
@@ -225,39 +222,37 @@ public class SATSolver {
             mapWriter.writeHeader(writeHeader);
 
             Map<String, String> row;
-            int filecounter = 1;
+            int fileCounter = 1;
             while ((row = mapReader.read(readHeader)) != null) {
                 if (file.isDirectory()) {
-                    String filename = filecounter + ".cnf";
+                    String filename = fileCounter + ".cnf";
                     path = file.getAbsolutePath() + "/" + filename;
                     row.put(strategyHeader, String.valueOf(run()));
-                    filecounter ++;
+                    fileCounter++;
                 } else {
                     row.put(strategyHeader, String.valueOf(run()));
-
                 }
-                // add your column with desired value
-
                 mapWriter.write(row, writeHeader);
             }
-
-        }
-        finally {
-            if( mapReader != null ) {
+        } finally {
+            if(mapReader != null) {
                 mapReader.close();
             }
-            if( mapWriter != null ) {
+            if(mapWriter != null) {
                 mapWriter.close();
             }
         }
     }
 
-    private double run() throws  IOException {
+    private double run() {
         Parser parser = new Parser(path);
-        System.out.println(path);
+        //// System.out.println(path); ////
+
         Clauses clauses = parser.getParsedClauses();
         int literalsCount = parser.getNumOfLiterals();
         parseStrategy(strategy, clauses, literalsCount);
+
         return solve();
     }
+
 }
