@@ -143,7 +143,21 @@ public class SATSolver {
 
     private void parsePath() {
         File file = new File(path);
-        if (file.exists()) {
+
+        if (IS_BENCHMARKING) {
+            file = new File("../test/testcases/benchmark");
+            File[] benchmarkFolders = file.listFiles();
+            for (File benchmarkFolder : benchmarkFolders) {
+                try {
+                    System.out.println("Testing " + benchmarkFolder.getName());
+                    parseFile(benchmarkFolder);
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                    System.exit(0);
+                }
+            }
+        }
+        else if (file.exists()) {
             try {
                 parseFile(file);
             } catch (IOException e) {
