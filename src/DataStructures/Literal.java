@@ -36,7 +36,7 @@ public class Literal implements Comparable<Literal> {
     }
 
     public String toString() {
-        return sign ? label : String.format("¬%s", label);
+        return sign ? label : String.format("-%s", label);
     }
 
     public Variable toVariable(int level) {

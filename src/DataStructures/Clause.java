@@ -95,7 +95,7 @@ public class Clause implements Comparable<Clause> {
     }
 
     public String toString() {
-        return String.format("(%s)", Utilities.implode(toArray(), " ∨ "));
+        return String.format("(%s)", Utilities.implode(toArray(), " v "));
     }
 
     @Override

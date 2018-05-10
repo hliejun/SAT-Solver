@@ -170,7 +170,7 @@ public class Clauses implements Comparable<Clauses> {
     }
 
     public String toString() {
-        return Utilities.implode(toArray(), " ∧ ");
+        return Utilities.implode(toArray(), " ^ ");
     }
 
     @Override
