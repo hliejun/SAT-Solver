@@ -94,6 +94,11 @@ public class Clause implements Comparable<Clause> {
         return listOfLiterals;
     }
 
+    public ArrayList<Literal> toUnsortedArray() {
+        ArrayList<Literal> listOfLiterals = new ArrayList<>(literals);
+        return listOfLiterals;
+    }
+
     public String toString() {
         return String.format("(%s)", Utilities.implode(toArray(), " ∨ "));
     }

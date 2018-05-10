@@ -39,13 +39,20 @@ abstract public class CDCLSolver extends Solver {
         for (Literal literal : combinedLiterals) {
             clauseMap.computeIfAbsent(literal.getName(), key -> new ArrayList<>()).add(literal);
         }
-        clauseMap.forEach((symbol, literalSet) -> {
+
+        int complementCount = 0;
+        for (Map.Entry<String, ArrayList<Literal>> entry : clauseMap.entrySet()) {
+            ArrayList<Literal> literalSet = entry.getValue();
             if (literalSet.size() == 1) {
                 resolvedLiterals.add(literalSet.get(0));
+            } else if (literalSet.size() > 1) {
+                complementCount += 1;
             }
-        });
+        }
 
-        return new Clause(resolvedLiterals);
+        // FIXME: Do we check for single complementary?
+
+        return complementCount > 1 ? intermediateClause : new Clause(resolvedLiterals);
     }
 
     @Override
