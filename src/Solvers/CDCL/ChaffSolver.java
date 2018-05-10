@@ -197,7 +197,7 @@ public class ChaffSolver extends CDCLSolver {
     }
 
     private boolean certifyUnsatisfiable(HashSet<Clause> seedClauses) {
-        int threshold = 5;
+        int threshold = 4;
         ArrayList<Clause> resolutionList = new ArrayList<>(seedClauses);
 
         while(!resolutionList.isEmpty()) {

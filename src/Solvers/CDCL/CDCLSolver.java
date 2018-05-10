@@ -52,7 +52,9 @@ abstract public class CDCLSolver extends Solver {
 
         // FIXME: Do we check for single complementary?
 
-        return complementCount > 1 ? intermediateClause : new Clause(resolvedLiterals);
+        //return complementCount > 1 ? intermediateClause : new Clause(resolvedLiterals);
+
+        return new Clause(resolvedLiterals);
     }
 
     @Override
