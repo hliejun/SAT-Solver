@@ -99,6 +99,11 @@ public class Clause implements Comparable<Clause> {
     }
 
     @Override
+    public int hashCode() {
+        return toString().hashCode();
+    }
+
+    @Override
     public int compareTo(Clause otherClause) {
         if (literals.size() == otherClause.literals.size()) {
             return 0;

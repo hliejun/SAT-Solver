@@ -14,7 +14,9 @@ public class SATSolver {
     public static void main(String[] args) {
         Solver solver = null;
 
-        String path = "./test/testcases/unsat/5.cnf";
+        // FIXME: Issue running ChaffSolver with aim-50-2_0-yes1-2.cnf
+
+        String path = "./test/testcases/unsat/1.cnf";
 //        String path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
 //        String path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
 

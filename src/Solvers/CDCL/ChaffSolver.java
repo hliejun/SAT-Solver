@@ -6,8 +6,12 @@ import java.util.*;
 
 public class ChaffSolver extends CDCLSolver {
 
+    protected HashMap<Clause, ArrayList<Clause>> resolutionMap;
+    protected Clause resolutionEntry;
+
     public ChaffSolver(Clauses clauses, int literalsCount) {
         super(clauses, literalsCount);
+        resolutionMap = new HashMap<>();
     }
 
     @Override
@@ -17,11 +21,7 @@ public class ChaffSolver extends CDCLSolver {
         performGeneralUnitPropagation();
 
         if (stateGraph.isConflicted()) {
-
-
             /** CONFLICT **/
-
-
             System.out.println("Fail to propagate before entering loop."); ////
             return null;
         }
@@ -50,11 +50,7 @@ public class ChaffSolver extends CDCLSolver {
             Clause conflict = stateGraph.getConflictClause();
             Integer proposedLevel = analyzeConflict(conflict);
             if (proposedLevel == null) {
-
-
                 /** CONFLICT **/
-
-
                 System.out.println("Fail to propose a backtrack level."); ////
                 return null;
             }
@@ -66,22 +62,33 @@ public class ChaffSolver extends CDCLSolver {
             performGeneralUnitPropagation();
 
             if (stateGraph.isConflicted()) {
-
-
-
                 /** CONFLICT **/
-                //Clause conflictClause = stateGraph.getConflictClause();
-                //System.out.println("CONFLICT at: " + conflictClause);
-                //analyzeConflict(conflictClause);
+                Clause learntClause = new Clause(resolutionEntry.toArray());
+                ArrayList<Clause> chain = getRootClauses(learntClause);
 
                 // TODO: Prove UNSAT by performing resolution with clauses
-                    // 1. Take the most recent learnt clause
-                    // 2. Get all base clauses (array) from learnt clause map
-                    // 3. Take conflict clause
-                    // 4. Apply resolution strategy
-                    // 5. Check for resolved empty clause
+                // 4. Apply resolution strategy (try linear, if not try combi? Re-look at AIMA...)
+                // 5. Check for resolved empty clause
 
+                HashSet<Clause> uniqueChain = new HashSet<>();
+                uniqueChain.addAll(chain);
+                chain = new ArrayList<>();
+                chain.addAll(uniqueChain);
 
+                Clause resolutionClause = new Clause(stateGraph.getConflictClause().toArray());
+
+                // FIXME: Explore all orders?
+//                for (Clause clause : chain) {
+//                    System.out.println("[UNSAT] Resolving: " + resolutionClause + " with " + clause); ////
+//                    resolutionClause = applyResolution(resolutionClause, clause);
+//                    System.out.println("[UNSAT]  ... into: " + resolutionClause); ////
+//                }
+
+                System.out.println("Resolved clause: " + resolutionClause);
+
+                System.out.println("Root clauses: " + chain);
+
+                System.out.println("Conflict clause: " + stateGraph.getConflictClause());
 
                 System.out.println("Fail to propagate after backtracking from conflict."); ////
                 return null;
@@ -163,29 +170,21 @@ public class ChaffSolver extends CDCLSolver {
 
         Clause learntClause = new Clause(conflictClause.toArray());
 
-
-
-        // TODO: Capture resolution clauses in order mapped to learnt clause
-            // 1. Collect an array (ordered) of conflict + antecedent clauses
-            // 2. Map array to learnt clause
-
-
+        ArrayList<Clause> resolutionChain = new ArrayList<>();
+        resolutionChain.add(conflictClause);
 
         while(!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
             Clause antecedentClause = stateGraph.getNextAntecedentClause(learntClause, conflictLevel);
 
             System.out.println("Resolving: " + learntClause + " with " + antecedentClause); ////
             learntClause = applyResolution(learntClause, antecedentClause);
+            resolutionChain.add(antecedentClause);
             System.out.println(" ... into: " + learntClause); ////
         }
 
-
-
-        // TODO: Set most recent learnt clause variable for later reference
-        
-
-
         learntClauses.add(learntClause);
+        resolutionMap.put(learntClause, resolutionChain);
+        resolutionEntry = learntClause;
 
         Integer highestLevel = stateGraph.getHighestLevel(learntClause, conflictLevel);
 
@@ -207,12 +206,56 @@ public class ChaffSolver extends CDCLSolver {
         level = proposedLevel;
     }
 
+    @Override
+    protected void resetSolver() {
+        super.resetSolver();
+        resolutionMap = new HashMap<>();
+    }
+
     private HashSet<Clause> getAllClauses() {
         HashSet<Clause> clauses = new HashSet<>();
         clauses.addAll(formula.getClausesSet());
         clauses.addAll(learntClauses);
 
         return clauses;
+    }
+
+    private ArrayList<Clause> getRootClauses(Clause learntClause) {
+        ArrayList<Clause> rootClauses = new ArrayList<>();
+
+        ArrayList<Clause> chain = resolutionMap.get(learntClause);
+        if (chain == null) {
+            System.out.println("Fail to propagate after backtracking from conflict."); ////
+            return null;
+        }
+
+        rootClauses.addAll(chain);
+
+        while(!isRoot(rootClauses)) {
+            ArrayList<Clause> clauses = new ArrayList<>(rootClauses);
+            ArrayList<Clause> intermediateClauses = new ArrayList<>();
+
+            for (Clause clause : clauses) {
+                ArrayList<Clause> chainClauses = resolutionMap.get(clause);
+                if (chainClauses != null) {
+                    rootClauses.remove(clause);
+                    intermediateClauses.addAll(chainClauses);
+                }
+            }
+            rootClauses.addAll(0, intermediateClauses);
+        }
+
+        return rootClauses;
+    }
+
+    private boolean isRoot(ArrayList<Clause> clauses) {
+        for(Clause clause : clauses) {
+            if (resolutionMap.get(clause) != null) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 }
