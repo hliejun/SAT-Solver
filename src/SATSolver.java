@@ -92,13 +92,7 @@ public class SATSolver {
         } else if (args[0].equals("TWOCLAUSES_CDCL")) {
             strategy = Strategy.TwoClause_CDCL;
         } else if (args[0].equals("ALLCLAUSES_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("ERWA_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("VSIDS_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("ADVANCED_CDCL")) {
-            strategy = Strategy.Advanced_CDCL;
+            strategy = Strategy.AllClause_CDCL;
         }
 
         strategyName = strategy.name();
@@ -122,15 +116,6 @@ public class SATSolver {
             case AllClause_CDCL:
                 solver = new AllClauseSolver(clauses, literalsCount);
                 break;
-            case ERWA_CDCL:
-                solver = new ERWASolver(clauses, literalsCount);
-                break;
-            case VSIDS_CDCL:
-                solver = new VSIDSSolver(clauses, literalsCount);
-                break;
-            case Advanced_CDCL:
-                solver = new AdvancedSolver(clauses, literalsCount);
-                break;
             default:
                 break;
         }
@@ -142,7 +127,7 @@ public class SATSolver {
         if (BENCHMARK_MODE) {
             file = new File("../test/testcases/benchmark");
             File[] benchmarkFolders = file.listFiles();
-
+            Arrays.sort(benchmarkFolders);
             assert benchmarkFolders != null;
 
             for (File benchmarkFolder : benchmarkFolders) {
