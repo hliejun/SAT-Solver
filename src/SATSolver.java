@@ -11,6 +11,8 @@ import org.supercsv.io.ICsvMapWriter;
 import org.supercsv.prefs.CsvPreference;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -135,7 +137,7 @@ public class SATSolver {
             strategy = Strategy.Advanced_CDCL;
         }
 
-        strategyName = args[0];
+        strategyName = strategy.name();
         path = args[1];
     }
 
@@ -175,9 +177,9 @@ public class SATSolver {
                 this.strategy = strategy;
                 this.strategyName = strategy.name();
                 writeCSV(csvPath, file);
-                if (this.strategy == Strategy.Recursive_DPLL) {
-                    break;
-                }
+
+                Files.copy(new File(file.getName() + ".csv").toPath(),
+                        new File(file.getName() + "-Template.csv").toPath(), StandardCopyOption.REPLACE_EXISTING);
             }
         } else {
             writeCSV(csvPath, file);
@@ -189,13 +191,8 @@ public class SATSolver {
         ICsvMapWriter mapWriter = null;
         try {
             String outputFileName = file.getName() + ".csv";
-            File output = new File(outputFileName);
             CsvPreference prefs = CsvPreference.STANDARD_PREFERENCE;
-            if (output.exists()) {
-                mapReader = new CsvMapReader(new FileReader(output.getPath()), prefs);
-            } else {
-                mapReader = new CsvMapReader(new FileReader(csvPath), prefs);
-            }
+            mapReader = new CsvMapReader(new FileReader(csvPath), prefs);
             mapWriter = new CsvMapWriter(new FileWriter(outputFileName), prefs);
 
             // header used to read the original file
