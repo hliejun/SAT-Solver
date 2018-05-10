@@ -17,6 +17,7 @@ public class SATSolver {
             "java SATSolver <Strategy> <Path>";
 
     private final boolean BENCHMARK_MODE = true;
+    private final boolean IDE_ENVIRONMENT = false;
 
     private Strategy strategy = Strategy.AllClause_CDCL;
     private String strategyName = null;
@@ -32,7 +33,7 @@ public class SATSolver {
         try {
             parseArgs(args);
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()); ////
             System.exit(0);
         }
 
@@ -45,58 +46,45 @@ public class SATSolver {
         if (solver != null) {
             HashMap<String, Boolean> results = solver.solve();
             String output = results == null ? "UNSAT" : Utilities.getOutputFromMap(results);
-            System.out.println(output);
+            System.out.println(output); ////
         } else {
-            System.out.println("Unsupported strategy.");
+            System.out.println("Unsupported strategy."); ////
         }
 
         long endTime = System.currentTimeMillis();
         double elapsedTime = (endTime - startTime) / 1000.0;
-        System.out.println("Execution Time: " + elapsedTime + " seconds");
+        System.out.println("Execution Time: " + elapsedTime + " seconds"); ////
         return elapsedTime;
     }
 
     private void parseArgs(String[] args) throws IllegalArgumentException {
-        if (args.length != 2) {
-
-            // TODO: Fallback to default and set strategy and path if args is not available (use enum for combo)
-
-            //String path = "./test/testcases/unsat/5.cnf";
-            //String path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
-            //String path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
-            //String path = "./puzzle/einstein.cnf";
-
-            //Strategy strategy = Strategy.Recursive_DPLL;
-            //Strategy strategy = Strategy.Iterative_DPLL;
-
-            //Strategy strategy = Strategy.Chaff_CDCL;
-            //Strategy strategy = Strategy.TwoClause_CDCL;
-            //Strategy strategy = Strategy.AllClause_CDCL;
-            //Strategy strategy = Strategy.ERWA_CDCL;
-            //Strategy strategy = Strategy.VSIDS_CDCL;
-            //Strategy strategy = Strategy.Advanced_CDCL;
-
+        if (args.length == 0) {
+            strategy = Strategy.AllClause_CDCL;
+            path = "./test/testcases/unsat/5.cnf";
+            //path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
+            //path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
+            //path = "./puzzle/einstein.cnf";
+            return;
+        } else if (args.length != 2) {
             throw new IllegalArgumentException(INVALID_ARGUMENTS_MESSAGE);
         }
 
-        // FIXME: Use switch case
-
-        if (args[0].equals("RDPLL")) {
-            strategy = Strategy.Recursive_DPLL;
-        } else if (args[0].equals("DPLL")) {
-            strategy = Strategy.Iterative_DPLL;
-        } else if (args[0].equals("CHAFF_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("TWOCLAUSES_CDCL")) {
-            strategy = Strategy.TwoClause_CDCL;
-        } else if (args[0].equals("ALLCLAUSES_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("ERWA_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("VSIDS_CDCL")) {
-            strategy = Strategy.Chaff_CDCL;
-        } else if (args[0].equals("ADVANCED_CDCL")) {
-            strategy = Strategy.Advanced_CDCL;
+        switch(args[0]) {
+            case "RDPLL":
+                strategy = Strategy.Recursive_DPLL;
+                break;
+            case "DPLL":
+                strategy = Strategy.Iterative_DPLL;
+                break;
+            case "CHAFF_CDCL":
+                strategy = Strategy.Chaff_CDCL;
+                break;
+            case "TWOCLAUSES_CDCL":
+                strategy = Strategy.TwoClause_CDCL;
+                break;
+            case "ALLCLAUSES_CDCL":
+                strategy = Strategy.AllClause_CDCL;
+                break;
         }
 
         strategyName = strategy.name();
@@ -120,15 +108,6 @@ public class SATSolver {
             case AllClause_CDCL:
                 solver = new AllClauseSolver(clauses, literalsCount);
                 break;
-            case ERWA_CDCL:
-                solver = new ERWASolver(clauses, literalsCount);
-                break;
-            case VSIDS_CDCL:
-                solver = new VSIDSSolver(clauses, literalsCount);
-                break;
-            case Advanced_CDCL:
-                solver = new AdvancedSolver(clauses, literalsCount);
-                break;
             default:
                 break;
         }
@@ -138,17 +117,18 @@ public class SATSolver {
         File file;
 
         if (BENCHMARK_MODE) {
-            file = new File("../test/testcases/benchmark");
+            String folderPath = IDE_ENVIRONMENT ? "./test/testcases/benchmark" : "../test/testcases/benchmark";
+            file = new File(folderPath);
             File[] benchmarkFolders = file.listFiles();
 
             assert benchmarkFolders != null;
 
             for (File benchmarkFolder : benchmarkFolders) {
                 try {
-                    System.out.println("Testing " + benchmarkFolder.getName());
+                    System.out.println("Testing " + benchmarkFolder.getName()); ////
                     parseFile(benchmarkFolder);
                 } catch (IOException e) {
-                    System.out.println(e.getMessage());
+                    System.out.println(e.getMessage()); ////
                     System.exit(0);
                 }
             }
@@ -156,7 +136,7 @@ public class SATSolver {
             try {
                 parseFile(file);
             } catch (IOException e) {
-                System.out.println(e.getMessage());
+                System.out.println(e.getMessage()); ////
                 System.exit(0);
             }
         } else {

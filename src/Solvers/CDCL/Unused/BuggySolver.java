@@ -1,6 +1,7 @@
-package Solvers.CDCL;
+package Solvers.CDCL.Unused;
 
 import DataStructures.*;
+import Solvers.CDCL.CDCLSolver;
 
 import java.util.*;
 
