@@ -13,11 +13,10 @@ import java.util.*;
 
 public class SATSolver {
 
-    private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments expected. Expected format:" +
-            "java SATSolver <Strategy> <Path>";
+    private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments. Expected: java SATSolver <strategy> <path>";
     private PrintWriter writer = null;
-    private final boolean BENCHMARK_MODE = true;
-    private final boolean IDE_ENVIRONMENT = false;
+    private final boolean BENCHMARK_MODE = false;
+    private final boolean IDE_ENVIRONMENT = true;
 
     private Strategy strategy = Strategy.AllClause_CDCL;
     private String strategyName = null;
@@ -62,10 +61,13 @@ public class SATSolver {
     private void parseArgs(String[] args) throws IllegalArgumentException {
         if (args.length == 0) {
             strategy = Strategy.AllClause_CDCL;
-            path = "./test/testcases/unsat/5.cnf";
+            strategyName = strategy.name();
+            path = IDE_ENVIRONMENT ? "./puzzle/einstein.cnf" : "../puzzle/einstein.cnf";
+            //path = IDE_ENVIRONMENT ? "./test/testcases/unsat/5.cnf" : "../test/testcases/unsat/5.cnf";
+
             //path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
             //path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
-            //path = "./puzzle/einstein.cnf";
+
             return;
         } else if (args.length != 2) {
             throw new IllegalArgumentException(INVALID_ARGUMENTS_MESSAGE);
@@ -116,7 +118,7 @@ public class SATSolver {
     }
 
     private void parsePath() {
-        File file;
+        File file = new File(path);
 
         if (BENCHMARK_MODE) {
             String folderPath = IDE_ENVIRONMENT ? "./test/testcases/benchmark" : "../test/testcases/benchmark";
@@ -206,6 +208,9 @@ public class SATSolver {
             Map<String, String> row;
             int fileCounter = 1;
             this.writer = new PrintWriter(file.getName() + "-" + strategyName + ".txt");
+
+            // FIXME: Solver not triggered in non-benchmark IDE mode and no output to file either
+
             while ((row = mapReader.read(readHeader)) != null) {
                 if (file.isDirectory()) {
                     String filename = fileCounter + ".cnf";
