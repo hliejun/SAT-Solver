@@ -26,7 +26,7 @@ public class ChaffSolver extends CDCLSolver {
         while (!stateGraph.isAllAssigned()) {
             Variable decision = pickBranchingVariable();
             if (decision == null) {
-                System.out.println("Fail to make a decision."); ////
+                //System.out.println("Fail to make a decision."); ////
                 return null;
             }
 
@@ -61,7 +61,7 @@ public class ChaffSolver extends CDCLSolver {
             }
         }
 
-        System.out.println("Satisfiable: " + stateGraph.evaluate(formula)); ////
+        //System.out.println("Satisfiable: " + stateGraph.evaluate(formula)); ////
         return stateGraph.getAssignment();
     }
 
@@ -121,7 +121,7 @@ public class ChaffSolver extends CDCLSolver {
     @Override
     protected Variable pickBranchingVariable() {
         Variable branchVariable = stateGraph.getNextRandomUnassignedVariable(level);
-        //// System.out.println("+ Decision (unassigned): " + branchVariable); ////
+        //System.out.println("+ Decision (unassigned): " + branchVariable); ////
 
         return branchVariable;
     }
