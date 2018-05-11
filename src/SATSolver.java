@@ -15,8 +15,8 @@ public class SATSolver {
 
     private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments. Expected: java SATSolver <strategy> <path>";
     private PrintWriter writer = null;
-    private final boolean BENCHMARK_MODE = false;
-    private final boolean IDE_ENVIRONMENT = true;
+    private boolean BENCHMARK_MODE = false;
+    private final boolean IDE_ENVIRONMENT = false;
 
     private Strategy strategy = Strategy.AllClause_CDCL;
     private String strategyName = null;
@@ -69,11 +69,14 @@ public class SATSolver {
             //path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
 
             return;
-        } else if (args.length != 2) {
+        } else if (args.length > 2) {
             throw new IllegalArgumentException(INVALID_ARGUMENTS_MESSAGE);
         }
 
         switch(args[0]) {
+            case "BENCHMARK":
+                BENCHMARK_MODE = true;
+                return;
             case "RDPLL":
                 strategy = Strategy.Recursive_DPLL;
                 break;
@@ -118,11 +121,10 @@ public class SATSolver {
     }
 
     private void parsePath() {
-        File file = new File(path);
 
         if (BENCHMARK_MODE) {
             String folderPath = IDE_ENVIRONMENT ? "./test/testcases/benchmark" : "../test/testcases/benchmark";
-            file = new File(folderPath);
+            File file = new File(folderPath);
             File[] benchmarkFolders = file.listFiles();
             Arrays.sort(benchmarkFolders);
             assert benchmarkFolders != null;
@@ -136,37 +138,24 @@ public class SATSolver {
                     System.exit(0);
                 }
             }
-        } else if (file.exists()) {
-            try {
-                parseFile(file);
-            } catch (IOException e) {
-                System.out.println(e.getMessage()); ////
-                System.exit(0);
-            }
         } else {
-            throw new IllegalArgumentException("Invalid path");
+            File file = new File(path);
+            if (file.exists()) {
+                try {
+                    parseFile(file);
+                } catch (IOException e) {
+                    System.out.println(e.getMessage()); ////
+                    System.exit(0);
+                }
+            } else {
+                throw new IllegalArgumentException("Invalid path");
+            }
         }
     }
 
     private void parseFile(File file) throws IOException {
-        File csvFile = new File(file.getName() + "-Template.csv");
-        if (csvFile.createNewFile() && BENCHMARK_MODE) {
-            PrintWriter writer = new PrintWriter(csvFile);
-            writer.println("S/N");
-            if (file.isDirectory()) {
-                int filesCount = Objects.requireNonNull(file.listFiles()).length;
-                for (int i = 1; i < filesCount + 1; i++) {
-                    writer.println(i);
-                }
-            } else {
-                writer.println(1);
-            }
-            writer.close();
-        }
-
-        String csvPath = csvFile.getPath();
-
         if (BENCHMARK_MODE) {
+            String csvPath = setupBenchmark(file);
             for (Strategy strategy : Strategy.values()) {
                 this.strategy = strategy;
                 this.strategyName = strategy.name();
@@ -179,8 +168,38 @@ public class SATSolver {
                 );
             }
         } else {
-            writeCSV(csvPath, file);
+            this.writer = new PrintWriter(file.getName() + "-" + strategyName + ".txt");
+            if (file.isDirectory()) {
+                int folderSize = file.listFiles().length;
+                String folderPath = path;
+                for (int i = 1; i <= folderSize; i ++) {
+                    path = folderPath + "/" + i + ".cnf";
+                    run();
+                }
+            } else {
+                run();
+            }
+            this.writer.close();
         }
+    }
+
+    private String setupBenchmark(File file) throws IOException {
+        File csvFile = new File(file.getName() + "-Template.csv");
+        if (csvFile.createNewFile() && BENCHMARK_MODE) {
+            PrintWriter csvWriter = new PrintWriter(csvFile);
+            csvWriter.println("S/N");
+            if (file.isDirectory()) {
+                int filesCount = Objects.requireNonNull(file.listFiles()).length;
+                for (int i = 1; i < filesCount + 1; i++) {
+                    csvWriter.println(i);
+                }
+            } else {
+                csvWriter.println(1);
+            }
+            csvWriter.close();
+        }
+
+        return csvFile.getPath();
     }
 
     private void writeCSV(String csvPath, File file) throws IOException {
