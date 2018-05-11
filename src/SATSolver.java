@@ -127,7 +127,8 @@ public class SATSolver {
                 solver = new AllClauseSolver(clauses, literalsCount);
                 break;
             case Resolution_CDCL:
-                solver = new ResolutionSolver(clauses, literalsCount);
+                solver = new ResolutionSolver(clauses, literalsCount, path);
+
                 break;
             default:
                 break;

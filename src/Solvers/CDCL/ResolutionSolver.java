@@ -2,19 +2,28 @@ package Solvers.CDCL;
 
 import DataStructures.*;
 
+import java.io.PrintWriter;
 import java.util.*;
 
 public class ResolutionSolver extends AllClauseSolver {
+
+    private static final boolean FILE_OUTPUT = true;
 
     private HashMap<Clause, ArrayList<Clause>> resolutions;
     private HashSet<Clause> learntAntecedents;
     private Clause emptyClause;
 
-    public ResolutionSolver(Clauses clauses, int literalsCount) {
+    private String fileName;
+
+    public ResolutionSolver(Clauses clauses, int literalsCount, String formulaPath) {
         super(clauses, literalsCount);
+
         resolutions = new HashMap<>();
         learntAntecedents = new HashSet<>();
         emptyClause = null;
+
+        fileName = formulaPath.replaceFirst("[.]+/", "");
+        fileName = fileName.replaceAll("[^-_A-Za-z0-9]", "_");
     }
 
     @Override
@@ -245,13 +254,26 @@ public class ResolutionSolver extends AllClauseSolver {
              clausesOutput.add(index + " " + clause);
         });
 
-        // TODO: Add toggle
-        // If in file output mode, write to file
-        // Otherwise, print to console log
+        if (FILE_OUTPUT) {
+            PrintWriter unsatWriter = null;
+            try {
+                unsatWriter = new PrintWriter(fileName + "_proof.txt");
+                unsatWriter.println("v " + identifier);
+                clausesOutput.forEach(unsatWriter::println);
+                workingsOutput.forEach(unsatWriter::println);
+            } catch(Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (unsatWriter != null) {
+                    unsatWriter.close();
+                }
+            }
 
-        System.out.println("v " + identifier);
-        clausesOutput.forEach(System.out::println);
-        workingsOutput.forEach(System.out::println);
+        } else {
+            System.out.println("v " + identifier);
+            clausesOutput.forEach(System.out::println);
+            workingsOutput.forEach(System.out::println);
+        }
     }
 
 }
