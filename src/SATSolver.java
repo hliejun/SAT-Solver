@@ -258,7 +258,7 @@ public class SATSolver {
 
     private double run() {
         Parser parser = new Parser(path);
-        System.out.println(path); ////
+        //System.out.println(path); ////
 
         Clauses clauses = parser.getParsedClauses();
         int literalsCount = parser.getNumOfLiterals();
