@@ -16,9 +16,7 @@ public class SATSolver {
     private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments. Expected: java SATSolver <strategy> <path>";
     private PrintWriter writer = null;
 
-    private final boolean IDE_ENVIRONMENT = true;
-    private final boolean PRINT_FILE = false;
-
+    private final boolean IDE_ENVIRONMENT = false;
     private boolean isBenchmarkEnabled = false;
 
     private Strategy strategy = Strategy.Resolution_CDCL;
@@ -48,22 +46,18 @@ public class SATSolver {
         if (solver != null) {
             HashMap<String, Boolean> results = solver.solve();
             String output = results == null ? "UNSAT" : Utilities.getOutputFromMap(results);
-            System.out.println(output); ////
+            // System.out.println(output); ////
+            this.writer.println(output); ////
 
-            if (PRINT_FILE) {
-                this.writer.println(output); ////
-            }
         } else {
             System.out.println("Unsupported strategy."); ////
         }
 
         long endTime = System.currentTimeMillis();
         double elapsedTime = (endTime - startTime) / 1000.0;
-        System.out.println("Execution Time: " + elapsedTime + " seconds"); ////
+        // System.out.println("Execution Time: " + elapsedTime + " seconds"); ////
 
-        if (PRINT_FILE) {
-            this.writer.println("Execution Time: " + elapsedTime + " seconds"); ////
-        }
+        this.writer.println("Execution Time: " + elapsedTime + " seconds"); ////
         return elapsedTime;
     }
 
@@ -71,11 +65,7 @@ public class SATSolver {
         if (args.length == 0) {
             strategy = Strategy.Resolution_CDCL;
             strategyName = strategy.name();
-            //path = IDE_ENVIRONMENT ? "./puzzle/einstein.cnf" : "../puzzle/einstein.cnf";
-            path = IDE_ENVIRONMENT ? "./test/testcases/unsat/1.cnf" : "../test/testcases/unsat/1.cnf";
-
-            //path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
-            //path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
+            path = IDE_ENVIRONMENT ? "./puzzle/einstein.cnf" : "../puzzle/einstein.cnf";
 
             return;
         } else if (args.length > 2) {
@@ -145,7 +135,7 @@ public class SATSolver {
 
             for (File benchmarkFolder : benchmarkFolders) {
                 try {
-                    System.out.println("Testing " + benchmarkFolder.getName()); ////
+                    // System.out.println("Testing " + benchmarkFolder.getName()); ////
                     parseFile(benchmarkFolder);
                 } catch (IOException e) {
                     System.out.println(e.getMessage()); ////
