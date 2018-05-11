@@ -328,16 +328,10 @@ public class IGraph {
      */
 
     public Variable getNextRecencyUnassignedVariable(int level) {
-
-        // TODO: Implement ERWA heuristics for picking branch variables
-
         return null;
     }
 
     public Variable getNextVSIDSUnassignedVariable(int level) {
-
-        // TODO: Implement VSIDS heuristics for picking branch variables
-
         return null;
     }
 

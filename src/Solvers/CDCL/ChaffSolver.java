@@ -6,11 +6,8 @@ import java.util.*;
 
 public class ChaffSolver extends CDCLSolver {
 
-    private HashSet<Clause> learntAntecedents;
-
     public ChaffSolver(Clauses clauses, int literalsCount) {
         super(clauses, literalsCount);
-        learntAntecedents = new HashSet<>();
     }
 
     @Override
@@ -20,8 +17,7 @@ public class ChaffSolver extends CDCLSolver {
         performGeneralUnitPropagation();
 
         if (stateGraph.isConflicted()) {
-            /** CONFLICT **/
-            //System.out.println("Fail to propagate before entering loop."); ////
+            System.out.println("Fail to propagate before entering loop."); ////
             return null;
         }
 
@@ -49,8 +45,7 @@ public class ChaffSolver extends CDCLSolver {
             Clause conflict = stateGraph.getConflictClause();
             Integer proposedLevel = analyzeConflict(conflict);
             if (proposedLevel == null) {
-                /** CONFLICT **/
-                //System.out.println("Fail to propose a backtrack level."); ////
+                System.out.println("Fail to propose a backtrack level."); ////
                 return null;
             }
 
@@ -61,12 +56,7 @@ public class ChaffSolver extends CDCLSolver {
             performGeneralUnitPropagation();
 
             if (stateGraph.isConflicted()) {
-
-                boolean isCertified = certifyUnsatisfiable(learntAntecedents);
-                if (isCertified) {
-                    outputProof();
-                }
-                //System.out.println("Fail to propagate after backtracking from conflict."); ////
+                System.out.println("Fail to propagate after backtracking from conflict."); ////
                 return null;
             }
         }
@@ -146,8 +136,6 @@ public class ChaffSolver extends CDCLSolver {
 
         Clause learntClause = new Clause(conflictClause.toArray());
 
-        learntAntecedents.add(conflictClause);
-
         while(!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
             Clause oldClause = new Clause(learntClause.toUnsortedArray());
             Clause antecedentClause = stateGraph.getNextAntecedentClause(learntClause, conflictLevel);
@@ -155,10 +143,6 @@ public class ChaffSolver extends CDCLSolver {
             //// System.out.println("Resolving: " + learntClause + " with " + antecedentClause); ////
             learntClause = applyResolution(learntClause, antecedentClause);
             //// System.out.println(" ... into: " + learntClause); ////
-
-            if (!learntClause.equals(oldClause)) {
-                learntAntecedents.add(antecedentClause);
-            }
         }
 
         learntClauses.add(learntClause);
@@ -186,7 +170,6 @@ public class ChaffSolver extends CDCLSolver {
     @Override
     protected void resetSolver() {
         super.resetSolver();
-        learntAntecedents = new HashSet<>();
     }
 
     private HashSet<Clause> getAllClauses() {
@@ -195,65 +178,6 @@ public class ChaffSolver extends CDCLSolver {
         clauses.addAll(learntClauses);
 
         return clauses;
-    }
-
-    private boolean certifyUnsatisfiable(HashSet<Clause> seedClauses) {
-        int threshold = 4;
-        ArrayList<Clause> resolutionList = new ArrayList<>(seedClauses);
-
-        while(!resolutionList.isEmpty()) {
-
-            System.out.println(resolutionList); ////
-
-            HashSet<Clause> derivedSet = new HashSet<>();
-            int listSize = resolutionList.size();
-
-
-            // TODO: Update resolution trace map
-
-
-            for (int i = 0; i < listSize; i++) {
-                Clause clauseA = resolutionList.get(i);
-                if (clauseA.getLiterals().size() > threshold) {
-                    continue;
-                }
-
-                for (int j = 0; j < listSize; j++) {
-                    Clause clauseB = resolutionList.get(j);
-                    if (clauseB.getLiterals().size() > threshold) {
-                        continue;
-                    }
-
-                    Clause resolvedClause = applyResolution(clauseA, clauseB);
-                    if (resolvedClause.getLiterals().isEmpty()) {
-                        return true;
-                    }
-                    if (resolvedClause.getLiterals().size() <= threshold) {
-                        derivedSet.add(resolvedClause);
-                    }
-                }
-            }
-
-            HashSet<Clause> newSet = new HashSet<>(resolutionList);
-            newSet.addAll(derivedSet);
-
-            if (newSet.size() == listSize) {
-                return false;
-            }
-
-            resolutionList = new ArrayList<>(newSet);
-        }
-
-        return false;
-    }
-
-    private void outputProof() {
-
-
-        // TODO: Output proof to print or to file using resolution trace map...
-
-
-        System.out.println("Certified UNSAT!");
     }
 
 }

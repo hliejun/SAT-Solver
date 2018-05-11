@@ -15,10 +15,13 @@ public class SATSolver {
 
     private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments. Expected: java SATSolver <strategy> <path>";
     private PrintWriter writer = null;
-    private boolean BENCHMARK_MODE = false;
-    private final boolean IDE_ENVIRONMENT = false;
 
-    private Strategy strategy = Strategy.AllClause_CDCL;
+    private final boolean IDE_ENVIRONMENT = true;
+    private final boolean PRINT_FILE = false;
+
+    private boolean isBenchmarkEnabled = false;
+
+    private Strategy strategy = Strategy.Resolution_CDCL;
     private String strategyName = null;
     private String path = null;
     private Solver solver = null;
@@ -46,7 +49,10 @@ public class SATSolver {
             HashMap<String, Boolean> results = solver.solve();
             String output = results == null ? "UNSAT" : Utilities.getOutputFromMap(results);
             System.out.println(output); ////
-            this.writer.println(output); ////
+
+            if (PRINT_FILE) {
+                this.writer.println(output); ////
+            }
         } else {
             System.out.println("Unsupported strategy."); ////
         }
@@ -54,16 +60,19 @@ public class SATSolver {
         long endTime = System.currentTimeMillis();
         double elapsedTime = (endTime - startTime) / 1000.0;
         System.out.println("Execution Time: " + elapsedTime + " seconds"); ////
-        this.writer.println("Execution Time: " + elapsedTime + " seconds"); ////
+
+        if (PRINT_FILE) {
+            this.writer.println("Execution Time: " + elapsedTime + " seconds"); ////
+        }
         return elapsedTime;
     }
 
     private void parseArgs(String[] args) throws IllegalArgumentException {
         if (args.length == 0) {
-            strategy = Strategy.AllClause_CDCL;
+            strategy = Strategy.Resolution_CDCL;
             strategyName = strategy.name();
-            path = IDE_ENVIRONMENT ? "./puzzle/einstein.cnf" : "../puzzle/einstein.cnf";
-            //path = IDE_ENVIRONMENT ? "./test/testcases/unsat/5.cnf" : "../test/testcases/unsat/5.cnf";
+            //path = IDE_ENVIRONMENT ? "./puzzle/einstein.cnf" : "../puzzle/einstein.cnf";
+            path = IDE_ENVIRONMENT ? "./test/testcases/unsat/2.cnf" : "../test/testcases/unsat/2.cnf";
 
             //path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
             //path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
@@ -75,7 +84,7 @@ public class SATSolver {
 
         switch(args[0]) {
             case "BENCHMARK":
-                BENCHMARK_MODE = true;
+                isBenchmarkEnabled = true;
                 return;
             case "RDPLL":
                 strategy = Strategy.Recursive_DPLL;
@@ -92,6 +101,8 @@ public class SATSolver {
             case "ALLCLAUSES_CDCL":
                 strategy = Strategy.AllClause_CDCL;
                 break;
+            case "RESOLUTION_CDCL":
+                strategy = Strategy.Resolution_CDCL;
         }
 
         strategyName = strategy.name();
@@ -115,14 +126,16 @@ public class SATSolver {
             case AllClause_CDCL:
                 solver = new AllClauseSolver(clauses, literalsCount);
                 break;
+            case Resolution_CDCL:
+                solver = new ResolutionSolver(clauses, literalsCount);
+                break;
             default:
                 break;
         }
     }
 
     private void parsePath() {
-
-        if (BENCHMARK_MODE) {
+        if (isBenchmarkEnabled) {
             String folderPath = IDE_ENVIRONMENT ? "./test/testcases/benchmark" : "../test/testcases/benchmark";
             File file = new File(folderPath);
             File[] benchmarkFolders = file.listFiles();
@@ -154,11 +167,12 @@ public class SATSolver {
     }
 
     private void parseFile(File file) throws IOException {
-        if (BENCHMARK_MODE) {
+        if (isBenchmarkEnabled) {
             String csvPath = setupBenchmark(file);
             for (Strategy strategy : Strategy.values()) {
                 this.strategy = strategy;
                 this.strategyName = strategy.name();
+
                 writeCSV(csvPath, file);
 
                 Files.copy(
@@ -185,7 +199,7 @@ public class SATSolver {
 
     private String setupBenchmark(File file) throws IOException {
         File csvFile = new File(file.getName() + "-Template.csv");
-        if (csvFile.createNewFile() && BENCHMARK_MODE) {
+        if (csvFile.createNewFile() && isBenchmarkEnabled) {
             PrintWriter csvWriter = new PrintWriter(csvFile);
             csvWriter.println("S/N");
             if (file.isDirectory()) {
@@ -228,7 +242,7 @@ public class SATSolver {
             int fileCounter = 1;
             this.writer = new PrintWriter(file.getName() + "-" + strategyName + ".txt");
 
-            // FIXME: Solver not triggered in non-benchmark IDE mode and no output to file either
+            // FIXME: Fix toggle - solver not triggered in non-benchmark IDE mode and no output to file either
 
             while ((row = mapReader.read(readHeader)) != null) {
                 if (file.isDirectory()) {
