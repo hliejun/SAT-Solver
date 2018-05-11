@@ -243,7 +243,7 @@ public class SATSolver {
             int fileCounter = 1;
             this.writer = new PrintWriter(file.getName() + "-" + strategyName + ".txt");
 
-            // FIXME: Solver not triggered in non-benchmark IDE mode and no output to file either
+            // FIXME: Fix toggle - solver not triggered in non-benchmark IDE mode and no output to file either
 
             while ((row = mapReader.read(readHeader)) != null) {
                 if (file.isDirectory()) {

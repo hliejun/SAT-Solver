@@ -4,8 +4,6 @@ import DataStructures.*;
 
 /**
 
-// TODO: Try search restart, clause deletion policies and maybe watched literals...
-
 *** BASIC ***
 - Try: Search Restart
 - Try: Clause Deletion Policies
