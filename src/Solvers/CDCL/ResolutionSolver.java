@@ -145,11 +145,11 @@ public class ResolutionSolver extends AllClauseSolver {
 
                     Clause resolvedClause = applyResolution(clauseA, clauseB);
                     if (resolvedClause.getLiterals().isEmpty()) {
-                        // TODO: Save reference for backtracing
+                        // TODO: Save reference for tracing (finalClause = resolvedClause)
                         return true;
                     }
                     if (resolvedClause.getLiterals().size() <= threshold) {
-                        // TODO: Update resolution trace map
+                        // TODO: Update resolution trace map if absent (resolvedClause: {clauseA, clauseB})
                         derivedSet.add(resolvedClause);
                     }
                 }
@@ -170,6 +170,9 @@ public class ResolutionSolver extends AllClauseSolver {
 
     private void outputProof() {
         // TODO: Output proof to print or to file using resolution trace map...
+        // If in map, recursively extract and append to new set
+        // Insert new set to front of main set
+
         // TODO: Make toggleable between print to console and to file...
         System.out.println("Certified UNSAT!");
     }
