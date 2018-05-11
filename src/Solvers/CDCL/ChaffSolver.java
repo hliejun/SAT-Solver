@@ -22,7 +22,7 @@ public class ChaffSolver extends CDCLSolver {
             /** CONFLICT **/
 
 
-            System.out.println("Fail to propagate before entering loop."); ////
+            //System.out.println("Fail to propagate before entering loop."); ////
             return null;
         }
 
@@ -31,15 +31,15 @@ public class ChaffSolver extends CDCLSolver {
         while (!stateGraph.isAllAssigned()) {
             Variable decision = pickBranchingVariable();
             if (decision == null) {
-                System.out.println("Fail to make a decision."); ////
+                //System.out.println("Fail to make a decision."); ////
                 return null;
             }
 
             level += 1;
-            System.out.println("Level: " + (level - 1) + " -> " + level); ////
+            //System.out.println("Level: " + (level - 1) + " -> " + level); ////
 
             stateGraph.addDecision(decision, level);
-            System.out.println("Decision: " + decision); ////
+            //System.out.println("Decision: " + decision); ////
 
             performDecisionUnitPropagation(decision);
 
@@ -55,7 +55,7 @@ public class ChaffSolver extends CDCLSolver {
                 /** CONFLICT **/
 
 
-                System.out.println("Fail to propose a backtrack level."); ////
+                //System.out.println("Fail to propose a backtrack level."); ////
                 return null;
             }
 
@@ -71,7 +71,7 @@ public class ChaffSolver extends CDCLSolver {
 
                 /** CONFLICT **/
                 //Clause conflictClause = stateGraph.getConflictClause();
-                //System.out.println("CONFLICT at: " + conflictClause);
+                ////System.out.println("CONFLICT at: " + conflictClause);
                 //analyzeConflict(conflictClause);
 
                 // TODO: Prove UNSAT by performing resolution with clauses
@@ -83,12 +83,12 @@ public class ChaffSolver extends CDCLSolver {
 
 
 
-                System.out.println("Fail to propagate after backtracking from conflict."); ////
+                //System.out.println("Fail to propagate after backtracking from conflict."); ////
                 return null;
             }
         }
 
-        System.out.println("Satisfiable: " + stateGraph.evaluate(formula)); ////
+        //System.out.println("Satisfiable: " + stateGraph.evaluate(formula)); ////
         return stateGraph.getAssignment();
     }
 
@@ -134,12 +134,12 @@ public class ChaffSolver extends CDCLSolver {
                 }
 
                 stateGraph.addImplication(clause, impliedVariable);
-                System.out.println("+ Implication: " + impliedVariable); ////
+                //System.out.println("+ Implication: " + impliedVariable); ////
 
                 performDecisionUnitPropagation(impliedVariable);
             } else if (!clauseTruth) {
                 stateGraph.addConflict(decision, clause);
-                System.out.println("Conflict propagating " + decision + " at " + clause); ////
+                //System.out.println("Conflict propagating " + decision + " at " + clause); ////
                 return;
             }
         }
@@ -148,7 +148,7 @@ public class ChaffSolver extends CDCLSolver {
     @Override
     protected Variable pickBranchingVariable() {
         Variable branchVariable = stateGraph.getNextRandomUnassignedVariable(level);
-        System.out.println("+ Decision (unassigned): " + branchVariable); ////
+        //System.out.println("+ Decision (unassigned): " + branchVariable); ////
 
         return branchVariable;
     }
@@ -174,9 +174,9 @@ public class ChaffSolver extends CDCLSolver {
         while(!stateGraph.isAtUniqueImplicationPoint(learntClause, conflictLevel)) {
             Clause antecedentClause = stateGraph.getNextAntecedentClause(learntClause, conflictLevel);
 
-            System.out.println("Resolving: " + learntClause + " with " + antecedentClause); ////
+            //System.out.println("Resolving: " + learntClause + " with " + antecedentClause); ////
             learntClause = applyResolution(learntClause, antecedentClause);
-            System.out.println(" ... into: " + learntClause); ////
+            //System.out.println(" ... into: " + learntClause); ////
         }
 
 
@@ -190,19 +190,19 @@ public class ChaffSolver extends CDCLSolver {
         Integer highestLevel = stateGraph.getHighestLevel(learntClause, conflictLevel);
 
         if (highestLevel == null) {
-            System.out.println("Fail to obtain highest level for backtrack."); ////
+            //System.out.println("Fail to obtain highest level for backtrack."); ////
             return null;
         }
 
         Integer backtrackLevel = highestLevel == 0 ? 0 : highestLevel - 1;
-        System.out.println("Proposed backtrack level: " + backtrackLevel); ////
+        //System.out.println("Proposed backtrack level: " + backtrackLevel); ////
 
         return backtrackLevel < 0 ? null : backtrackLevel;
     }
 
     @Override
     protected void backtrack(int proposedLevel) {
-        System.out.println("Backtracking: " + level + " -> " + proposedLevel); ////
+        //System.out.println("Backtracking: " + level + " -> " + proposedLevel); ////
         stateGraph.revertState(proposedLevel);
         level = proposedLevel;
     }
