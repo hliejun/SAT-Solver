@@ -1,0 +1,2 @@
+UNSAT
+Execution Time: 4.688 seconds
