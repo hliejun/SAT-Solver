@@ -1,7 +1,8 @@
 public enum Strategy {
-    AllClause_CDCL,
-    TwoClause_CDCL,
-    Chaff_CDCL,
+    Recursive_DPLL,
     Iterative_DPLL,
-    Recursive_DPLL
+    Chaff_CDCL,
+    TwoClause_CDCL,
+    AllClause_CDCL,
+    Resolution_CDCL
 }

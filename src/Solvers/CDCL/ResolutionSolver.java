@@ -132,7 +132,7 @@ public class ResolutionSolver extends AllClauseSolver {
 
         while(!resolutionList.isEmpty()) {
 
-            System.out.println(resolutionList); ////
+            //// System.out.println(resolutionList); ////
 
             HashSet<Clause> derivedSet = new HashSet<>();
             int listSize = resolutionList.size();
