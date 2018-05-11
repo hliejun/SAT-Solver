@@ -15,10 +15,12 @@ public class SATSolver {
 
     private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments. Expected: java SATSolver <strategy> <path>";
     private PrintWriter writer = null;
+
     private final boolean BENCHMARK_MODE = false;
     private final boolean IDE_ENVIRONMENT = true;
+    private final boolean PRINT_FILE = false;
 
-    private Strategy strategy = Strategy.AllClause_CDCL;
+    private Strategy strategy = Strategy.Resolution_CDCL;
     private String strategyName = null;
     private String path = null;
     private Solver solver = null;
@@ -46,7 +48,10 @@ public class SATSolver {
             HashMap<String, Boolean> results = solver.solve();
             String output = results == null ? "UNSAT" : Utilities.getOutputFromMap(results);
             System.out.println(output); ////
-            this.writer.println(output); ////
+
+            if (PRINT_FILE) {
+                this.writer.println(output); ////
+            }
         } else {
             System.out.println("Unsupported strategy."); ////
         }
@@ -54,16 +59,19 @@ public class SATSolver {
         long endTime = System.currentTimeMillis();
         double elapsedTime = (endTime - startTime) / 1000.0;
         System.out.println("Execution Time: " + elapsedTime + " seconds"); ////
-        this.writer.println("Execution Time: " + elapsedTime + " seconds"); ////
+
+        if (PRINT_FILE) {
+            this.writer.println("Execution Time: " + elapsedTime + " seconds"); ////
+        }
         return elapsedTime;
     }
 
     private void parseArgs(String[] args) throws IllegalArgumentException {
         if (args.length == 0) {
-            strategy = Strategy.AllClause_CDCL;
+            strategy = Strategy.Resolution_CDCL;
             strategyName = strategy.name();
-            path = IDE_ENVIRONMENT ? "./puzzle/einstein.cnf" : "../puzzle/einstein.cnf";
-            //path = IDE_ENVIRONMENT ? "./test/testcases/unsat/5.cnf" : "../test/testcases/unsat/5.cnf";
+            //path = IDE_ENVIRONMENT ? "./puzzle/einstein.cnf" : "../puzzle/einstein.cnf";
+            path = IDE_ENVIRONMENT ? "./test/testcases/unsat/2.cnf" : "../test/testcases/unsat/2.cnf";
 
             //path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
             //path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
@@ -89,6 +97,8 @@ public class SATSolver {
             case "ALLCLAUSES_CDCL":
                 strategy = Strategy.AllClause_CDCL;
                 break;
+            case "RESOLUTION_CDCL":
+                strategy = Strategy.Resolution_CDCL;
         }
 
         strategyName = strategy.name();
@@ -112,6 +122,9 @@ public class SATSolver {
             case AllClause_CDCL:
                 solver = new AllClauseSolver(clauses, literalsCount);
                 break;
+            case Resolution_CDCL:
+                solver = new ResolutionSolver(clauses, literalsCount);
+                break;
             default:
                 break;
         }
@@ -130,7 +143,7 @@ public class SATSolver {
             for (File benchmarkFolder : benchmarkFolders) {
                 try {
                     System.out.println("Testing " + benchmarkFolder.getName()); ////
-                    parseFile(benchmarkFolder);
+                    process(benchmarkFolder);
                 } catch (IOException e) {
                     System.out.println(e.getMessage()); ////
                     System.exit(0);
@@ -138,7 +151,7 @@ public class SATSolver {
             }
         } else if (file.exists()) {
             try {
-                parseFile(file);
+                process(file);
             } catch (IOException e) {
                 System.out.println(e.getMessage()); ////
                 System.exit(0);
@@ -148,9 +161,29 @@ public class SATSolver {
         }
     }
 
+    private void process(File file) throws IOException {
+        if (PRINT_FILE) {
+            parseFile(file);
+        } else {
+            runFile(file);
+        }
+    }
+
+    private void runFile(File file) {
+        if (BENCHMARK_MODE) {
+            for (Strategy strategy : Strategy.values()) {
+                this.strategy = strategy;
+                this.strategyName = strategy.name();
+                run();
+            }
+        } else {
+            run();
+        }
+    }
+
     private void parseFile(File file) throws IOException {
         File csvFile = new File(file.getName() + "-Template.csv");
-        if (csvFile.createNewFile() && BENCHMARK_MODE) {
+        if (BENCHMARK_MODE && csvFile.createNewFile()) {
             PrintWriter writer = new PrintWriter(csvFile);
             writer.println("S/N");
             if (file.isDirectory()) {
@@ -170,6 +203,7 @@ public class SATSolver {
             for (Strategy strategy : Strategy.values()) {
                 this.strategy = strategy;
                 this.strategyName = strategy.name();
+
                 writeCSV(csvPath, file);
 
                 Files.copy(
