@@ -1,0 +1,300 @@
+1.cnf
+UNSAT
+Execution Time: 0.503 seconds
+2.cnf
+UNSAT
+Execution Time: 0.978 seconds
+3.cnf
+UNSAT
+Execution Time: 1.338 seconds
+4.cnf
+UNSAT
+Execution Time: 0.598 seconds
+5.cnf
+UNSAT
+Execution Time: 3.223 seconds
+6.cnf
+UNSAT
+Execution Time: 0.778 seconds
+7.cnf
+UNSAT
+Execution Time: 2.139 seconds
+8.cnf
+UNSAT
+Execution Time: 1.051 seconds
+9.cnf
+UNSAT
+Execution Time: 1.68 seconds
+10.cnf
+UNSAT
+Execution Time: 1.297 seconds
+11.cnf
+UNSAT
+Execution Time: 0.86 seconds
+12.cnf
+UNSAT
+Execution Time: 0.97 seconds
+13.cnf
+UNSAT
+Execution Time: 0.885 seconds
+14.cnf
+UNSAT
+Execution Time: 2.496 seconds
+15.cnf
+UNSAT
+Execution Time: 0.74 seconds
+16.cnf
+UNSAT
+Execution Time: 0.622 seconds
+17.cnf
+UNSAT
+Execution Time: 1.231 seconds
+18.cnf
+UNSAT
+Execution Time: 2.11 seconds
+19.cnf
+UNSAT
+Execution Time: 1.497 seconds
+20.cnf
+UNSAT
+Execution Time: 0.478 seconds
+21.cnf
+UNSAT
+Execution Time: 0.985 seconds
+22.cnf
+UNSAT
+Execution Time: 0.695 seconds
+23.cnf
+UNSAT
+Execution Time: 2.959 seconds
+24.cnf
+UNSAT
+Execution Time: 1.227 seconds
+25.cnf
+UNSAT
+Execution Time: 0.831 seconds
+26.cnf
+UNSAT
+Execution Time: 0.822 seconds
+27.cnf
+UNSAT
+Execution Time: 1.111 seconds
+28.cnf
+UNSAT
+Execution Time: 0.877 seconds
+29.cnf
+UNSAT
+Execution Time: 1.153 seconds
+30.cnf
+UNSAT
+Execution Time: 1.491 seconds
+31.cnf
+UNSAT
+Execution Time: 1.661 seconds
+32.cnf
+UNSAT
+Execution Time: 0.466 seconds
+33.cnf
+UNSAT
+Execution Time: 1.722 seconds
+34.cnf
+UNSAT
+Execution Time: 2.097 seconds
+35.cnf
+UNSAT
+Execution Time: 1.512 seconds
+36.cnf
+UNSAT
+Execution Time: 0.929 seconds
+37.cnf
+UNSAT
+Execution Time: 1.706 seconds
+38.cnf
+UNSAT
+Execution Time: 1.907 seconds
+39.cnf
+UNSAT
+Execution Time: 0.662 seconds
+40.cnf
+UNSAT
+Execution Time: 1.012 seconds
+41.cnf
+UNSAT
+Execution Time: 0.777 seconds
+42.cnf
+UNSAT
+Execution Time: 0.8 seconds
+43.cnf
+UNSAT
+Execution Time: 1.502 seconds
+44.cnf
+UNSAT
+Execution Time: 1.196 seconds
+45.cnf
+UNSAT
+Execution Time: 0.685 seconds
+46.cnf
+UNSAT
+Execution Time: 1.922 seconds
+47.cnf
+UNSAT
+Execution Time: 2.198 seconds
+48.cnf
+UNSAT
+Execution Time: 0.724 seconds
+49.cnf
+UNSAT
+Execution Time: 0.528 seconds
+50.cnf
+UNSAT
+Execution Time: 0.598 seconds
+51.cnf
+UNSAT
+Execution Time: 1.371 seconds
+52.cnf
+UNSAT
+Execution Time: 0.776 seconds
+53.cnf
+UNSAT
+Execution Time: 1.482 seconds
+54.cnf
+UNSAT
+Execution Time: 3.855 seconds
+55.cnf
+UNSAT
+Execution Time: 1.126 seconds
+56.cnf
+UNSAT
+Execution Time: 1.316 seconds
+57.cnf
+UNSAT
+Execution Time: 0.757 seconds
+58.cnf
+UNSAT
+Execution Time: 0.851 seconds
+59.cnf
+UNSAT
+Execution Time: 1.607 seconds
+60.cnf
+UNSAT
+Execution Time: 0.949 seconds
+61.cnf
+UNSAT
+Execution Time: 0.395 seconds
+62.cnf
+UNSAT
+Execution Time: 0.92 seconds
+63.cnf
+UNSAT
+Execution Time: 0.819 seconds
+64.cnf
+UNSAT
+Execution Time: 1.077 seconds
+65.cnf
+UNSAT
+Execution Time: 1.363 seconds
+66.cnf
+UNSAT
+Execution Time: 1.183 seconds
+67.cnf
+UNSAT
+Execution Time: 1.727 seconds
+68.cnf
+UNSAT
+Execution Time: 0.828 seconds
+69.cnf
+UNSAT
+Execution Time: 1.231 seconds
+70.cnf
+UNSAT
+Execution Time: 1.217 seconds
+71.cnf
+UNSAT
+Execution Time: 0.753 seconds
+72.cnf
+UNSAT
+Execution Time: 1.044 seconds
+73.cnf
+UNSAT
+Execution Time: 0.723 seconds
+74.cnf
+UNSAT
+Execution Time: 0.956 seconds
+75.cnf
+UNSAT
+Execution Time: 0.928 seconds
+76.cnf
+UNSAT
+Execution Time: 0.751 seconds
+77.cnf
+UNSAT
+Execution Time: 0.531 seconds
+78.cnf
+UNSAT
+Execution Time: 1.011 seconds
+79.cnf
+UNSAT
+Execution Time: 1.251 seconds
+80.cnf
+UNSAT
+Execution Time: 0.633 seconds
+81.cnf
+UNSAT
+Execution Time: 0.834 seconds
+82.cnf
+UNSAT
+Execution Time: 0.525 seconds
+83.cnf
+UNSAT
+Execution Time: 0.9 seconds
+84.cnf
+UNSAT
+Execution Time: 1.292 seconds
+85.cnf
+UNSAT
+Execution Time: 0.459 seconds
+86.cnf
+UNSAT
+Execution Time: 1.136 seconds
+87.cnf
+UNSAT
+Execution Time: 1.044 seconds
+88.cnf
+UNSAT
+Execution Time: 0.775 seconds
+89.cnf
+UNSAT
+Execution Time: 1.297 seconds
+90.cnf
+UNSAT
+Execution Time: 0.464 seconds
+91.cnf
+UNSAT
+Execution Time: 0.457 seconds
+92.cnf
+UNSAT
+Execution Time: 0.844 seconds
+93.cnf
+UNSAT
+Execution Time: 0.662 seconds
+94.cnf
+UNSAT
+Execution Time: 0.329 seconds
+95.cnf
+UNSAT
+Execution Time: 1.286 seconds
+96.cnf
+UNSAT
+Execution Time: 2.633 seconds
+97.cnf
+UNSAT
+Execution Time: 0.879 seconds
+98.cnf
+UNSAT
+Execution Time: 1.251 seconds
+99.cnf
+UNSAT
+Execution Time: 0.354 seconds
+100.cnf
+UNSAT
+Execution Time: 1.238 seconds

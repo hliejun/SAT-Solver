@@ -1,0 +1,3000 @@
+1.cnf
+UNSAT
+Execution Time: 0.18 seconds
+2.cnf
+UNSAT
+Execution Time: 0.09 seconds
+3.cnf
+UNSAT
+Execution Time: 0.067 seconds
+4.cnf
+UNSAT
+Execution Time: 0.222 seconds
+5.cnf
+UNSAT
+Execution Time: 0.132 seconds
+6.cnf
+UNSAT
+Execution Time: 0.125 seconds
+7.cnf
+UNSAT
+Execution Time: 0.133 seconds
+8.cnf
+UNSAT
+Execution Time: 0.116 seconds
+9.cnf
+UNSAT
+Execution Time: 0.11 seconds
+10.cnf
+UNSAT
+Execution Time: 0.125 seconds
+11.cnf
+UNSAT
+Execution Time: 0.213 seconds
+12.cnf
+UNSAT
+Execution Time: 0.164 seconds
+13.cnf
+UNSAT
+Execution Time: 0.104 seconds
+14.cnf
+UNSAT
+Execution Time: 0.085 seconds
+15.cnf
+UNSAT
+Execution Time: 0.204 seconds
+16.cnf
+UNSAT
+Execution Time: 0.185 seconds
+17.cnf
+UNSAT
+Execution Time: 0.25 seconds
+18.cnf
+UNSAT
+Execution Time: 0.315 seconds
+19.cnf
+UNSAT
+Execution Time: 0.101 seconds
+20.cnf
+UNSAT
+Execution Time: 0.18 seconds
+21.cnf
+UNSAT
+Execution Time: 0.197 seconds
+22.cnf
+UNSAT
+Execution Time: 0.094 seconds
+23.cnf
+UNSAT
+Execution Time: 0.19 seconds
+24.cnf
+UNSAT
+Execution Time: 0.291 seconds
+25.cnf
+UNSAT
+Execution Time: 0.17 seconds
+26.cnf
+UNSAT
+Execution Time: 0.134 seconds
+27.cnf
+UNSAT
+Execution Time: 0.074 seconds
+28.cnf
+UNSAT
+Execution Time: 0.132 seconds
+29.cnf
+UNSAT
+Execution Time: 0.183 seconds
+30.cnf
+UNSAT
+Execution Time: 0.23 seconds
+31.cnf
+UNSAT
+Execution Time: 0.085 seconds
+32.cnf
+UNSAT
+Execution Time: 0.1 seconds
+33.cnf
+UNSAT
+Execution Time: 0.183 seconds
+34.cnf
+UNSAT
+Execution Time: 0.136 seconds
+35.cnf
+UNSAT
+Execution Time: 0.118 seconds
+36.cnf
+UNSAT
+Execution Time: 0.108 seconds
+37.cnf
+UNSAT
+Execution Time: 0.171 seconds
+38.cnf
+UNSAT
+Execution Time: 0.171 seconds
+39.cnf
+UNSAT
+Execution Time: 0.216 seconds
+40.cnf
+UNSAT
+Execution Time: 0.223 seconds
+41.cnf
+UNSAT
+Execution Time: 0.12 seconds
+42.cnf
+UNSAT
+Execution Time: 0.164 seconds
+43.cnf
+UNSAT
+Execution Time: 0.112 seconds
+44.cnf
+UNSAT
+Execution Time: 0.141 seconds
+45.cnf
+UNSAT
+Execution Time: 0.081 seconds
+46.cnf
+UNSAT
+Execution Time: 0.128 seconds
+47.cnf
+UNSAT
+Execution Time: 0.09 seconds
+48.cnf
+UNSAT
+Execution Time: 0.15 seconds
+49.cnf
+UNSAT
+Execution Time: 0.158 seconds
+50.cnf
+UNSAT
+Execution Time: 0.179 seconds
+51.cnf
+UNSAT
+Execution Time: 0.14 seconds
+52.cnf
+UNSAT
+Execution Time: 0.135 seconds
+53.cnf
+UNSAT
+Execution Time: 0.107 seconds
+54.cnf
+UNSAT
+Execution Time: 0.045 seconds
+55.cnf
+UNSAT
+Execution Time: 0.275 seconds
+56.cnf
+UNSAT
+Execution Time: 0.262 seconds
+57.cnf
+UNSAT
+Execution Time: 0.099 seconds
+58.cnf
+UNSAT
+Execution Time: 0.084 seconds
+59.cnf
+UNSAT
+Execution Time: 0.215 seconds
+60.cnf
+UNSAT
+Execution Time: 0.116 seconds
+61.cnf
+UNSAT
+Execution Time: 0.179 seconds
+62.cnf
+UNSAT
+Execution Time: 0.242 seconds
+63.cnf
+UNSAT
+Execution Time: 0.125 seconds
+64.cnf
+UNSAT
+Execution Time: 0.195 seconds
+65.cnf
+UNSAT
+Execution Time: 0.086 seconds
+66.cnf
+UNSAT
+Execution Time: 0.152 seconds
+67.cnf
+UNSAT
+Execution Time: 0.139 seconds
+68.cnf
+UNSAT
+Execution Time: 0.164 seconds
+69.cnf
+UNSAT
+Execution Time: 0.069 seconds
+70.cnf
+UNSAT
+Execution Time: 0.207 seconds
+71.cnf
+UNSAT
+Execution Time: 0.115 seconds
+72.cnf
+UNSAT
+Execution Time: 0.155 seconds
+73.cnf
+UNSAT
+Execution Time: 0.204 seconds
+74.cnf
+UNSAT
+Execution Time: 0.14 seconds
+75.cnf
+UNSAT
+Execution Time: 0.172 seconds
+76.cnf
+UNSAT
+Execution Time: 0.088 seconds
+77.cnf
+UNSAT
+Execution Time: 0.1 seconds
+78.cnf
+UNSAT
+Execution Time: 0.159 seconds
+79.cnf
+UNSAT
+Execution Time: 0.058 seconds
+80.cnf
+UNSAT
+Execution Time: 0.126 seconds
+81.cnf
+UNSAT
+Execution Time: 0.179 seconds
+82.cnf
+UNSAT
+Execution Time: 0.276 seconds
+83.cnf
+UNSAT
+Execution Time: 0.079 seconds
+84.cnf
+UNSAT
+Execution Time: 0.132 seconds
+85.cnf
+UNSAT
+Execution Time: 0.087 seconds
+86.cnf
+UNSAT
+Execution Time: 0.105 seconds
+87.cnf
+UNSAT
+Execution Time: 0.289 seconds
+88.cnf
+UNSAT
+Execution Time: 0.186 seconds
+89.cnf
+UNSAT
+Execution Time: 0.309 seconds
+90.cnf
+UNSAT
+Execution Time: 0.067 seconds
+91.cnf
+UNSAT
+Execution Time: 0.138 seconds
+92.cnf
+UNSAT
+Execution Time: 0.234 seconds
+93.cnf
+UNSAT
+Execution Time: 0.115 seconds
+94.cnf
+UNSAT
+Execution Time: 0.22 seconds
+95.cnf
+UNSAT
+Execution Time: 0.245 seconds
+96.cnf
+UNSAT
+Execution Time: 0.146 seconds
+97.cnf
+UNSAT
+Execution Time: 0.15 seconds
+98.cnf
+UNSAT
+Execution Time: 0.149 seconds
+99.cnf
+UNSAT
+Execution Time: 0.129 seconds
+100.cnf
+UNSAT
+Execution Time: 0.154 seconds
+101.cnf
+UNSAT
+Execution Time: 0.207 seconds
+102.cnf
+UNSAT
+Execution Time: 0.118 seconds
+103.cnf
+UNSAT
+Execution Time: 0.119 seconds
+104.cnf
+UNSAT
+Execution Time: 0.176 seconds
+105.cnf
+UNSAT
+Execution Time: 0.133 seconds
+106.cnf
+UNSAT
+Execution Time: 0.084 seconds
+107.cnf
+UNSAT
+Execution Time: 0.164 seconds
+108.cnf
+UNSAT
+Execution Time: 0.194 seconds
+109.cnf
+UNSAT
+Execution Time: 0.213 seconds
+110.cnf
+UNSAT
+Execution Time: 0.127 seconds
+111.cnf
+UNSAT
+Execution Time: 0.037 seconds
+112.cnf
+UNSAT
+Execution Time: 0.168 seconds
+113.cnf
+UNSAT
+Execution Time: 0.101 seconds
+114.cnf
+UNSAT
+Execution Time: 0.124 seconds
+115.cnf
+UNSAT
+Execution Time: 0.156 seconds
+116.cnf
+UNSAT
+Execution Time: 0.119 seconds
+117.cnf
+UNSAT
+Execution Time: 0.243 seconds
+118.cnf
+UNSAT
+Execution Time: 0.212 seconds
+119.cnf
+UNSAT
+Execution Time: 0.058 seconds
+120.cnf
+UNSAT
+Execution Time: 0.261 seconds
+121.cnf
+UNSAT
+Execution Time: 0.118 seconds
+122.cnf
+UNSAT
+Execution Time: 0.215 seconds
+123.cnf
+UNSAT
+Execution Time: 0.115 seconds
+124.cnf
+UNSAT
+Execution Time: 0.139 seconds
+125.cnf
+UNSAT
+Execution Time: 0.29 seconds
+126.cnf
+UNSAT
+Execution Time: 0.229 seconds
+127.cnf
+UNSAT
+Execution Time: 0.214 seconds
+128.cnf
+UNSAT
+Execution Time: 0.087 seconds
+129.cnf
+UNSAT
+Execution Time: 0.088 seconds
+130.cnf
+UNSAT
+Execution Time: 0.144 seconds
+131.cnf
+UNSAT
+Execution Time: 0.081 seconds
+132.cnf
+UNSAT
+Execution Time: 0.123 seconds
+133.cnf
+UNSAT
+Execution Time: 0.116 seconds
+134.cnf
+UNSAT
+Execution Time: 0.069 seconds
+135.cnf
+UNSAT
+Execution Time: 0.1 seconds
+136.cnf
+UNSAT
+Execution Time: 0.27 seconds
+137.cnf
+UNSAT
+Execution Time: 0.074 seconds
+138.cnf
+UNSAT
+Execution Time: 0.059 seconds
+139.cnf
+UNSAT
+Execution Time: 0.078 seconds
+140.cnf
+UNSAT
+Execution Time: 0.156 seconds
+141.cnf
+UNSAT
+Execution Time: 0.253 seconds
+142.cnf
+UNSAT
+Execution Time: 0.065 seconds
+143.cnf
+UNSAT
+Execution Time: 0.18 seconds
+144.cnf
+UNSAT
+Execution Time: 0.079 seconds
+145.cnf
+UNSAT
+Execution Time: 0.143 seconds
+146.cnf
+UNSAT
+Execution Time: 0.152 seconds
+147.cnf
+UNSAT
+Execution Time: 0.175 seconds
+148.cnf
+UNSAT
+Execution Time: 0.174 seconds
+149.cnf
+UNSAT
+Execution Time: 0.096 seconds
+150.cnf
+UNSAT
+Execution Time: 0.111 seconds
+151.cnf
+UNSAT
+Execution Time: 0.151 seconds
+152.cnf
+UNSAT
+Execution Time: 0.088 seconds
+153.cnf
+UNSAT
+Execution Time: 0.121 seconds
+154.cnf
+UNSAT
+Execution Time: 0.151 seconds
+155.cnf
+UNSAT
+Execution Time: 0.126 seconds
+156.cnf
+UNSAT
+Execution Time: 0.139 seconds
+157.cnf
+UNSAT
+Execution Time: 0.101 seconds
+158.cnf
+UNSAT
+Execution Time: 0.141 seconds
+159.cnf
+UNSAT
+Execution Time: 0.049 seconds
+160.cnf
+UNSAT
+Execution Time: 0.106 seconds
+161.cnf
+UNSAT
+Execution Time: 0.106 seconds
+162.cnf
+UNSAT
+Execution Time: 0.09 seconds
+163.cnf
+UNSAT
+Execution Time: 0.266 seconds
+164.cnf
+UNSAT
+Execution Time: 0.094 seconds
+165.cnf
+UNSAT
+Execution Time: 0.104 seconds
+166.cnf
+UNSAT
+Execution Time: 0.12 seconds
+167.cnf
+UNSAT
+Execution Time: 0.173 seconds
+168.cnf
+UNSAT
+Execution Time: 0.178 seconds
+169.cnf
+UNSAT
+Execution Time: 0.112 seconds
+170.cnf
+UNSAT
+Execution Time: 0.077 seconds
+171.cnf
+UNSAT
+Execution Time: 0.244 seconds
+172.cnf
+UNSAT
+Execution Time: 0.317 seconds
+173.cnf
+UNSAT
+Execution Time: 0.084 seconds
+174.cnf
+UNSAT
+Execution Time: 0.122 seconds
+175.cnf
+UNSAT
+Execution Time: 0.2 seconds
+176.cnf
+UNSAT
+Execution Time: 0.284 seconds
+177.cnf
+UNSAT
+Execution Time: 0.262 seconds
+178.cnf
+UNSAT
+Execution Time: 0.069 seconds
+179.cnf
+UNSAT
+Execution Time: 0.034 seconds
+180.cnf
+UNSAT
+Execution Time: 0.108 seconds
+181.cnf
+UNSAT
+Execution Time: 0.15 seconds
+182.cnf
+UNSAT
+Execution Time: 0.125 seconds
+183.cnf
+UNSAT
+Execution Time: 0.193 seconds
+184.cnf
+UNSAT
+Execution Time: 0.209 seconds
+185.cnf
+UNSAT
+Execution Time: 0.177 seconds
+186.cnf
+UNSAT
+Execution Time: 0.135 seconds
+187.cnf
+UNSAT
+Execution Time: 0.092 seconds
+188.cnf
+UNSAT
+Execution Time: 0.193 seconds
+189.cnf
+UNSAT
+Execution Time: 0.117 seconds
+190.cnf
+UNSAT
+Execution Time: 0.151 seconds
+191.cnf
+UNSAT
+Execution Time: 0.135 seconds
+192.cnf
+UNSAT
+Execution Time: 0.071 seconds
+193.cnf
+UNSAT
+Execution Time: 0.149 seconds
+194.cnf
+UNSAT
+Execution Time: 0.193 seconds
+195.cnf
+UNSAT
+Execution Time: 0.084 seconds
+196.cnf
+UNSAT
+Execution Time: 0.103 seconds
+197.cnf
+UNSAT
+Execution Time: 0.194 seconds
+198.cnf
+UNSAT
+Execution Time: 0.119 seconds
+199.cnf
+UNSAT
+Execution Time: 0.099 seconds
+200.cnf
+UNSAT
+Execution Time: 0.116 seconds
+201.cnf
+UNSAT
+Execution Time: 0.083 seconds
+202.cnf
+UNSAT
+Execution Time: 0.119 seconds
+203.cnf
+UNSAT
+Execution Time: 0.103 seconds
+204.cnf
+UNSAT
+Execution Time: 0.189 seconds
+205.cnf
+UNSAT
+Execution Time: 0.111 seconds
+206.cnf
+UNSAT
+Execution Time: 0.129 seconds
+207.cnf
+UNSAT
+Execution Time: 0.159 seconds
+208.cnf
+UNSAT
+Execution Time: 0.125 seconds
+209.cnf
+UNSAT
+Execution Time: 0.104 seconds
+210.cnf
+UNSAT
+Execution Time: 0.227 seconds
+211.cnf
+UNSAT
+Execution Time: 0.107 seconds
+212.cnf
+UNSAT
+Execution Time: 0.096 seconds
+213.cnf
+UNSAT
+Execution Time: 0.111 seconds
+214.cnf
+UNSAT
+Execution Time: 0.073 seconds
+215.cnf
+UNSAT
+Execution Time: 0.152 seconds
+216.cnf
+UNSAT
+Execution Time: 0.125 seconds
+217.cnf
+UNSAT
+Execution Time: 0.107 seconds
+218.cnf
+UNSAT
+Execution Time: 0.161 seconds
+219.cnf
+UNSAT
+Execution Time: 0.388 seconds
+220.cnf
+UNSAT
+Execution Time: 0.094 seconds
+221.cnf
+UNSAT
+Execution Time: 0.175 seconds
+222.cnf
+UNSAT
+Execution Time: 0.159 seconds
+223.cnf
+UNSAT
+Execution Time: 0.207 seconds
+224.cnf
+UNSAT
+Execution Time: 0.081 seconds
+225.cnf
+UNSAT
+Execution Time: 0.072 seconds
+226.cnf
+UNSAT
+Execution Time: 0.127 seconds
+227.cnf
+UNSAT
+Execution Time: 0.19 seconds
+228.cnf
+UNSAT
+Execution Time: 0.096 seconds
+229.cnf
+UNSAT
+Execution Time: 0.06 seconds
+230.cnf
+UNSAT
+Execution Time: 0.152 seconds
+231.cnf
+UNSAT
+Execution Time: 0.098 seconds
+232.cnf
+UNSAT
+Execution Time: 0.156 seconds
+233.cnf
+UNSAT
+Execution Time: 0.233 seconds
+234.cnf
+UNSAT
+Execution Time: 0.079 seconds
+235.cnf
+UNSAT
+Execution Time: 0.173 seconds
+236.cnf
+UNSAT
+Execution Time: 0.109 seconds
+237.cnf
+UNSAT
+Execution Time: 0.13 seconds
+238.cnf
+UNSAT
+Execution Time: 0.121 seconds
+239.cnf
+UNSAT
+Execution Time: 0.078 seconds
+240.cnf
+UNSAT
+Execution Time: 0.152 seconds
+241.cnf
+UNSAT
+Execution Time: 0.296 seconds
+242.cnf
+UNSAT
+Execution Time: 0.124 seconds
+243.cnf
+UNSAT
+Execution Time: 0.215 seconds
+244.cnf
+UNSAT
+Execution Time: 0.09 seconds
+245.cnf
+UNSAT
+Execution Time: 0.113 seconds
+246.cnf
+UNSAT
+Execution Time: 0.116 seconds
+247.cnf
+UNSAT
+Execution Time: 0.103 seconds
+248.cnf
+UNSAT
+Execution Time: 0.17 seconds
+249.cnf
+UNSAT
+Execution Time: 0.13 seconds
+250.cnf
+UNSAT
+Execution Time: 0.261 seconds
+251.cnf
+UNSAT
+Execution Time: 0.188 seconds
+252.cnf
+UNSAT
+Execution Time: 0.238 seconds
+253.cnf
+UNSAT
+Execution Time: 0.234 seconds
+254.cnf
+UNSAT
+Execution Time: 0.252 seconds
+255.cnf
+UNSAT
+Execution Time: 0.164 seconds
+256.cnf
+UNSAT
+Execution Time: 0.167 seconds
+257.cnf
+UNSAT
+Execution Time: 0.262 seconds
+258.cnf
+UNSAT
+Execution Time: 0.087 seconds
+259.cnf
+UNSAT
+Execution Time: 0.145 seconds
+260.cnf
+UNSAT
+Execution Time: 0.26 seconds
+261.cnf
+UNSAT
+Execution Time: 0.318 seconds
+262.cnf
+UNSAT
+Execution Time: 0.12 seconds
+263.cnf
+UNSAT
+Execution Time: 0.151 seconds
+264.cnf
+UNSAT
+Execution Time: 0.169 seconds
+265.cnf
+UNSAT
+Execution Time: 0.45 seconds
+266.cnf
+UNSAT
+Execution Time: 0.148 seconds
+267.cnf
+UNSAT
+Execution Time: 0.283 seconds
+268.cnf
+UNSAT
+Execution Time: 0.14 seconds
+269.cnf
+UNSAT
+Execution Time: 0.154 seconds
+270.cnf
+UNSAT
+Execution Time: 0.159 seconds
+271.cnf
+UNSAT
+Execution Time: 0.154 seconds
+272.cnf
+UNSAT
+Execution Time: 0.159 seconds
+273.cnf
+UNSAT
+Execution Time: 0.189 seconds
+274.cnf
+UNSAT
+Execution Time: 0.232 seconds
+275.cnf
+UNSAT
+Execution Time: 0.17 seconds
+276.cnf
+UNSAT
+Execution Time: 0.102 seconds
+277.cnf
+UNSAT
+Execution Time: 0.164 seconds
+278.cnf
+UNSAT
+Execution Time: 0.116 seconds
+279.cnf
+UNSAT
+Execution Time: 0.194 seconds
+280.cnf
+UNSAT
+Execution Time: 0.206 seconds
+281.cnf
+UNSAT
+Execution Time: 0.226 seconds
+282.cnf
+UNSAT
+Execution Time: 0.284 seconds
+283.cnf
+UNSAT
+Execution Time: 0.046 seconds
+284.cnf
+UNSAT
+Execution Time: 0.217 seconds
+285.cnf
+UNSAT
+Execution Time: 0.162 seconds
+286.cnf
+UNSAT
+Execution Time: 0.206 seconds
+287.cnf
+UNSAT
+Execution Time: 0.139 seconds
+288.cnf
+UNSAT
+Execution Time: 0.14 seconds
+289.cnf
+UNSAT
+Execution Time: 0.086 seconds
+290.cnf
+UNSAT
+Execution Time: 0.12 seconds
+291.cnf
+UNSAT
+Execution Time: 0.068 seconds
+292.cnf
+UNSAT
+Execution Time: 0.06 seconds
+293.cnf
+UNSAT
+Execution Time: 0.093 seconds
+294.cnf
+UNSAT
+Execution Time: 0.293 seconds
+295.cnf
+UNSAT
+Execution Time: 0.157 seconds
+296.cnf
+UNSAT
+Execution Time: 0.149 seconds
+297.cnf
+UNSAT
+Execution Time: 0.123 seconds
+298.cnf
+UNSAT
+Execution Time: 0.146 seconds
+299.cnf
+UNSAT
+Execution Time: 0.183 seconds
+300.cnf
+UNSAT
+Execution Time: 0.105 seconds
+301.cnf
+UNSAT
+Execution Time: 0.167 seconds
+302.cnf
+UNSAT
+Execution Time: 0.167 seconds
+303.cnf
+UNSAT
+Execution Time: 0.11 seconds
+304.cnf
+UNSAT
+Execution Time: 0.129 seconds
+305.cnf
+UNSAT
+Execution Time: 0.082 seconds
+306.cnf
+UNSAT
+Execution Time: 0.071 seconds
+307.cnf
+UNSAT
+Execution Time: 0.088 seconds
+308.cnf
+UNSAT
+Execution Time: 0.235 seconds
+309.cnf
+UNSAT
+Execution Time: 0.1 seconds
+310.cnf
+UNSAT
+Execution Time: 0.241 seconds
+311.cnf
+UNSAT
+Execution Time: 0.108 seconds
+312.cnf
+UNSAT
+Execution Time: 0.107 seconds
+313.cnf
+UNSAT
+Execution Time: 0.046 seconds
+314.cnf
+UNSAT
+Execution Time: 0.2 seconds
+315.cnf
+UNSAT
+Execution Time: 0.108 seconds
+316.cnf
+UNSAT
+Execution Time: 0.234 seconds
+317.cnf
+UNSAT
+Execution Time: 0.099 seconds
+318.cnf
+UNSAT
+Execution Time: 0.098 seconds
+319.cnf
+UNSAT
+Execution Time: 0.1 seconds
+320.cnf
+UNSAT
+Execution Time: 0.252 seconds
+321.cnf
+UNSAT
+Execution Time: 0.088 seconds
+322.cnf
+UNSAT
+Execution Time: 0.079 seconds
+323.cnf
+UNSAT
+Execution Time: 0.1 seconds
+324.cnf
+UNSAT
+Execution Time: 0.111 seconds
+325.cnf
+UNSAT
+Execution Time: 0.061 seconds
+326.cnf
+UNSAT
+Execution Time: 0.172 seconds
+327.cnf
+UNSAT
+Execution Time: 0.09 seconds
+328.cnf
+UNSAT
+Execution Time: 0.239 seconds
+329.cnf
+UNSAT
+Execution Time: 0.039 seconds
+330.cnf
+UNSAT
+Execution Time: 0.07 seconds
+331.cnf
+UNSAT
+Execution Time: 0.186 seconds
+332.cnf
+UNSAT
+Execution Time: 0.061 seconds
+333.cnf
+UNSAT
+Execution Time: 0.156 seconds
+334.cnf
+UNSAT
+Execution Time: 0.12 seconds
+335.cnf
+UNSAT
+Execution Time: 0.175 seconds
+336.cnf
+UNSAT
+Execution Time: 0.132 seconds
+337.cnf
+UNSAT
+Execution Time: 0.128 seconds
+338.cnf
+UNSAT
+Execution Time: 0.228 seconds
+339.cnf
+UNSAT
+Execution Time: 0.091 seconds
+340.cnf
+UNSAT
+Execution Time: 0.163 seconds
+341.cnf
+UNSAT
+Execution Time: 0.086 seconds
+342.cnf
+UNSAT
+Execution Time: 0.162 seconds
+343.cnf
+UNSAT
+Execution Time: 0.208 seconds
+344.cnf
+UNSAT
+Execution Time: 0.091 seconds
+345.cnf
+UNSAT
+Execution Time: 0.091 seconds
+346.cnf
+UNSAT
+Execution Time: 0.204 seconds
+347.cnf
+UNSAT
+Execution Time: 0.178 seconds
+348.cnf
+UNSAT
+Execution Time: 0.282 seconds
+349.cnf
+UNSAT
+Execution Time: 0.162 seconds
+350.cnf
+UNSAT
+Execution Time: 0.125 seconds
+351.cnf
+UNSAT
+Execution Time: 0.194 seconds
+352.cnf
+UNSAT
+Execution Time: 0.105 seconds
+353.cnf
+UNSAT
+Execution Time: 0.048 seconds
+354.cnf
+UNSAT
+Execution Time: 0.19 seconds
+355.cnf
+UNSAT
+Execution Time: 0.174 seconds
+356.cnf
+UNSAT
+Execution Time: 0.13 seconds
+357.cnf
+UNSAT
+Execution Time: 0.109 seconds
+358.cnf
+UNSAT
+Execution Time: 0.165 seconds
+359.cnf
+UNSAT
+Execution Time: 0.141 seconds
+360.cnf
+UNSAT
+Execution Time: 0.195 seconds
+361.cnf
+UNSAT
+Execution Time: 0.299 seconds
+362.cnf
+UNSAT
+Execution Time: 0.085 seconds
+363.cnf
+UNSAT
+Execution Time: 0.092 seconds
+364.cnf
+UNSAT
+Execution Time: 0.125 seconds
+365.cnf
+UNSAT
+Execution Time: 0.093 seconds
+366.cnf
+UNSAT
+Execution Time: 0.14 seconds
+367.cnf
+UNSAT
+Execution Time: 0.15 seconds
+368.cnf
+UNSAT
+Execution Time: 0.107 seconds
+369.cnf
+UNSAT
+Execution Time: 0.16 seconds
+370.cnf
+UNSAT
+Execution Time: 0.079 seconds
+371.cnf
+UNSAT
+Execution Time: 0.097 seconds
+372.cnf
+UNSAT
+Execution Time: 0.152 seconds
+373.cnf
+UNSAT
+Execution Time: 0.12 seconds
+374.cnf
+UNSAT
+Execution Time: 0.11 seconds
+375.cnf
+UNSAT
+Execution Time: 0.167 seconds
+376.cnf
+UNSAT
+Execution Time: 0.075 seconds
+377.cnf
+UNSAT
+Execution Time: 0.126 seconds
+378.cnf
+UNSAT
+Execution Time: 0.148 seconds
+379.cnf
+UNSAT
+Execution Time: 0.099 seconds
+380.cnf
+UNSAT
+Execution Time: 0.166 seconds
+381.cnf
+UNSAT
+Execution Time: 0.18 seconds
+382.cnf
+UNSAT
+Execution Time: 0.276 seconds
+383.cnf
+UNSAT
+Execution Time: 0.133 seconds
+384.cnf
+UNSAT
+Execution Time: 0.149 seconds
+385.cnf
+UNSAT
+Execution Time: 0.117 seconds
+386.cnf
+UNSAT
+Execution Time: 0.126 seconds
+387.cnf
+UNSAT
+Execution Time: 0.101 seconds
+388.cnf
+UNSAT
+Execution Time: 0.203 seconds
+389.cnf
+UNSAT
+Execution Time: 0.136 seconds
+390.cnf
+UNSAT
+Execution Time: 0.143 seconds
+391.cnf
+UNSAT
+Execution Time: 0.202 seconds
+392.cnf
+UNSAT
+Execution Time: 0.09 seconds
+393.cnf
+UNSAT
+Execution Time: 0.22 seconds
+394.cnf
+UNSAT
+Execution Time: 0.118 seconds
+395.cnf
+UNSAT
+Execution Time: 0.153 seconds
+396.cnf
+UNSAT
+Execution Time: 0.075 seconds
+397.cnf
+UNSAT
+Execution Time: 0.218 seconds
+398.cnf
+UNSAT
+Execution Time: 0.149 seconds
+399.cnf
+UNSAT
+Execution Time: 0.132 seconds
+400.cnf
+UNSAT
+Execution Time: 0.086 seconds
+401.cnf
+UNSAT
+Execution Time: 0.181 seconds
+402.cnf
+UNSAT
+Execution Time: 0.13 seconds
+403.cnf
+UNSAT
+Execution Time: 0.147 seconds
+404.cnf
+UNSAT
+Execution Time: 0.155 seconds
+405.cnf
+UNSAT
+Execution Time: 0.314 seconds
+406.cnf
+UNSAT
+Execution Time: 0.127 seconds
+407.cnf
+UNSAT
+Execution Time: 0.057 seconds
+408.cnf
+UNSAT
+Execution Time: 0.113 seconds
+409.cnf
+UNSAT
+Execution Time: 0.196 seconds
+410.cnf
+UNSAT
+Execution Time: 0.13 seconds
+411.cnf
+UNSAT
+Execution Time: 0.267 seconds
+412.cnf
+UNSAT
+Execution Time: 0.144 seconds
+413.cnf
+UNSAT
+Execution Time: 0.184 seconds
+414.cnf
+UNSAT
+Execution Time: 0.2 seconds
+415.cnf
+UNSAT
+Execution Time: 0.137 seconds
+416.cnf
+UNSAT
+Execution Time: 0.068 seconds
+417.cnf
+UNSAT
+Execution Time: 0.166 seconds
+418.cnf
+UNSAT
+Execution Time: 0.364 seconds
+419.cnf
+UNSAT
+Execution Time: 0.104 seconds
+420.cnf
+UNSAT
+Execution Time: 0.214 seconds
+421.cnf
+UNSAT
+Execution Time: 0.114 seconds
+422.cnf
+UNSAT
+Execution Time: 0.116 seconds
+423.cnf
+UNSAT
+Execution Time: 0.18 seconds
+424.cnf
+UNSAT
+Execution Time: 0.13 seconds
+425.cnf
+UNSAT
+Execution Time: 0.156 seconds
+426.cnf
+UNSAT
+Execution Time: 0.153 seconds
+427.cnf
+UNSAT
+Execution Time: 0.287 seconds
+428.cnf
+UNSAT
+Execution Time: 0.108 seconds
+429.cnf
+UNSAT
+Execution Time: 0.122 seconds
+430.cnf
+UNSAT
+Execution Time: 0.084 seconds
+431.cnf
+UNSAT
+Execution Time: 0.061 seconds
+432.cnf
+UNSAT
+Execution Time: 0.067 seconds
+433.cnf
+UNSAT
+Execution Time: 0.203 seconds
+434.cnf
+UNSAT
+Execution Time: 0.365 seconds
+435.cnf
+UNSAT
+Execution Time: 0.179 seconds
+436.cnf
+UNSAT
+Execution Time: 0.112 seconds
+437.cnf
+UNSAT
+Execution Time: 0.078 seconds
+438.cnf
+UNSAT
+Execution Time: 0.135 seconds
+439.cnf
+UNSAT
+Execution Time: 0.208 seconds
+440.cnf
+UNSAT
+Execution Time: 0.129 seconds
+441.cnf
+UNSAT
+Execution Time: 0.071 seconds
+442.cnf
+UNSAT
+Execution Time: 0.128 seconds
+443.cnf
+UNSAT
+Execution Time: 0.115 seconds
+444.cnf
+UNSAT
+Execution Time: 0.068 seconds
+445.cnf
+UNSAT
+Execution Time: 0.059 seconds
+446.cnf
+UNSAT
+Execution Time: 0.101 seconds
+447.cnf
+UNSAT
+Execution Time: 0.143 seconds
+448.cnf
+UNSAT
+Execution Time: 0.15 seconds
+449.cnf
+UNSAT
+Execution Time: 0.112 seconds
+450.cnf
+UNSAT
+Execution Time: 0.15 seconds
+451.cnf
+UNSAT
+Execution Time: 0.134 seconds
+452.cnf
+UNSAT
+Execution Time: 0.104 seconds
+453.cnf
+UNSAT
+Execution Time: 0.154 seconds
+454.cnf
+UNSAT
+Execution Time: 0.105 seconds
+455.cnf
+UNSAT
+Execution Time: 0.086 seconds
+456.cnf
+UNSAT
+Execution Time: 0.218 seconds
+457.cnf
+UNSAT
+Execution Time: 0.094 seconds
+458.cnf
+UNSAT
+Execution Time: 0.171 seconds
+459.cnf
+UNSAT
+Execution Time: 0.074 seconds
+460.cnf
+UNSAT
+Execution Time: 0.087 seconds
+461.cnf
+UNSAT
+Execution Time: 0.327 seconds
+462.cnf
+UNSAT
+Execution Time: 0.129 seconds
+463.cnf
+UNSAT
+Execution Time: 0.202 seconds
+464.cnf
+UNSAT
+Execution Time: 0.071 seconds
+465.cnf
+UNSAT
+Execution Time: 0.304 seconds
+466.cnf
+UNSAT
+Execution Time: 0.13 seconds
+467.cnf
+UNSAT
+Execution Time: 0.2 seconds
+468.cnf
+UNSAT
+Execution Time: 0.11 seconds
+469.cnf
+UNSAT
+Execution Time: 0.256 seconds
+470.cnf
+UNSAT
+Execution Time: 0.19 seconds
+471.cnf
+UNSAT
+Execution Time: 0.113 seconds
+472.cnf
+UNSAT
+Execution Time: 0.14 seconds
+473.cnf
+UNSAT
+Execution Time: 0.084 seconds
+474.cnf
+UNSAT
+Execution Time: 0.118 seconds
+475.cnf
+UNSAT
+Execution Time: 0.114 seconds
+476.cnf
+UNSAT
+Execution Time: 0.16 seconds
+477.cnf
+UNSAT
+Execution Time: 0.215 seconds
+478.cnf
+UNSAT
+Execution Time: 0.224 seconds
+479.cnf
+UNSAT
+Execution Time: 0.098 seconds
+480.cnf
+UNSAT
+Execution Time: 0.085 seconds
+481.cnf
+UNSAT
+Execution Time: 0.071 seconds
+482.cnf
+UNSAT
+Execution Time: 0.056 seconds
+483.cnf
+UNSAT
+Execution Time: 0.178 seconds
+484.cnf
+UNSAT
+Execution Time: 0.086 seconds
+485.cnf
+UNSAT
+Execution Time: 0.187 seconds
+486.cnf
+UNSAT
+Execution Time: 0.156 seconds
+487.cnf
+UNSAT
+Execution Time: 0.127 seconds
+488.cnf
+UNSAT
+Execution Time: 0.087 seconds
+489.cnf
+UNSAT
+Execution Time: 0.135 seconds
+490.cnf
+UNSAT
+Execution Time: 0.582 seconds
+491.cnf
+UNSAT
+Execution Time: 0.304 seconds
+492.cnf
+UNSAT
+Execution Time: 0.134 seconds
+493.cnf
+UNSAT
+Execution Time: 0.131 seconds
+494.cnf
+UNSAT
+Execution Time: 0.19 seconds
+495.cnf
+UNSAT
+Execution Time: 0.106 seconds
+496.cnf
+UNSAT
+Execution Time: 0.098 seconds
+497.cnf
+UNSAT
+Execution Time: 0.157 seconds
+498.cnf
+UNSAT
+Execution Time: 0.272 seconds
+499.cnf
+UNSAT
+Execution Time: 0.123 seconds
+500.cnf
+UNSAT
+Execution Time: 0.142 seconds
+501.cnf
+UNSAT
+Execution Time: 0.141 seconds
+502.cnf
+UNSAT
+Execution Time: 0.14 seconds
+503.cnf
+UNSAT
+Execution Time: 0.133 seconds
+504.cnf
+UNSAT
+Execution Time: 0.196 seconds
+505.cnf
+UNSAT
+Execution Time: 0.189 seconds
+506.cnf
+UNSAT
+Execution Time: 0.186 seconds
+507.cnf
+UNSAT
+Execution Time: 0.114 seconds
+508.cnf
+UNSAT
+Execution Time: 0.1 seconds
+509.cnf
+UNSAT
+Execution Time: 0.145 seconds
+510.cnf
+UNSAT
+Execution Time: 0.109 seconds
+511.cnf
+UNSAT
+Execution Time: 0.089 seconds
+512.cnf
+UNSAT
+Execution Time: 0.212 seconds
+513.cnf
+UNSAT
+Execution Time: 0.253 seconds
+514.cnf
+UNSAT
+Execution Time: 0.057 seconds
+515.cnf
+UNSAT
+Execution Time: 0.084 seconds
+516.cnf
+UNSAT
+Execution Time: 0.123 seconds
+517.cnf
+UNSAT
+Execution Time: 0.174 seconds
+518.cnf
+UNSAT
+Execution Time: 0.138 seconds
+519.cnf
+UNSAT
+Execution Time: 0.108 seconds
+520.cnf
+UNSAT
+Execution Time: 0.238 seconds
+521.cnf
+UNSAT
+Execution Time: 0.035 seconds
+522.cnf
+UNSAT
+Execution Time: 0.163 seconds
+523.cnf
+UNSAT
+Execution Time: 0.076 seconds
+524.cnf
+UNSAT
+Execution Time: 0.13 seconds
+525.cnf
+UNSAT
+Execution Time: 0.154 seconds
+526.cnf
+UNSAT
+Execution Time: 0.109 seconds
+527.cnf
+UNSAT
+Execution Time: 0.083 seconds
+528.cnf
+UNSAT
+Execution Time: 0.172 seconds
+529.cnf
+UNSAT
+Execution Time: 0.091 seconds
+530.cnf
+UNSAT
+Execution Time: 0.209 seconds
+531.cnf
+UNSAT
+Execution Time: 0.136 seconds
+532.cnf
+UNSAT
+Execution Time: 0.139 seconds
+533.cnf
+UNSAT
+Execution Time: 0.461 seconds
+534.cnf
+UNSAT
+Execution Time: 0.107 seconds
+535.cnf
+UNSAT
+Execution Time: 0.086 seconds
+536.cnf
+UNSAT
+Execution Time: 0.068 seconds
+537.cnf
+UNSAT
+Execution Time: 0.143 seconds
+538.cnf
+UNSAT
+Execution Time: 0.082 seconds
+539.cnf
+UNSAT
+Execution Time: 0.144 seconds
+540.cnf
+UNSAT
+Execution Time: 0.112 seconds
+541.cnf
+UNSAT
+Execution Time: 0.093 seconds
+542.cnf
+UNSAT
+Execution Time: 0.13 seconds
+543.cnf
+UNSAT
+Execution Time: 0.208 seconds
+544.cnf
+UNSAT
+Execution Time: 0.177 seconds
+545.cnf
+UNSAT
+Execution Time: 0.131 seconds
+546.cnf
+UNSAT
+Execution Time: 0.142 seconds
+547.cnf
+UNSAT
+Execution Time: 0.107 seconds
+548.cnf
+UNSAT
+Execution Time: 0.157 seconds
+549.cnf
+UNSAT
+Execution Time: 0.179 seconds
+550.cnf
+UNSAT
+Execution Time: 0.139 seconds
+551.cnf
+UNSAT
+Execution Time: 0.192 seconds
+552.cnf
+UNSAT
+Execution Time: 0.07 seconds
+553.cnf
+UNSAT
+Execution Time: 0.16 seconds
+554.cnf
+UNSAT
+Execution Time: 0.234 seconds
+555.cnf
+UNSAT
+Execution Time: 0.29 seconds
+556.cnf
+UNSAT
+Execution Time: 0.084 seconds
+557.cnf
+UNSAT
+Execution Time: 0.157 seconds
+558.cnf
+UNSAT
+Execution Time: 0.191 seconds
+559.cnf
+UNSAT
+Execution Time: 0.083 seconds
+560.cnf
+UNSAT
+Execution Time: 0.238 seconds
+561.cnf
+UNSAT
+Execution Time: 0.087 seconds
+562.cnf
+UNSAT
+Execution Time: 0.138 seconds
+563.cnf
+UNSAT
+Execution Time: 0.098 seconds
+564.cnf
+UNSAT
+Execution Time: 0.154 seconds
+565.cnf
+UNSAT
+Execution Time: 0.195 seconds
+566.cnf
+UNSAT
+Execution Time: 0.133 seconds
+567.cnf
+UNSAT
+Execution Time: 0.124 seconds
+568.cnf
+UNSAT
+Execution Time: 0.105 seconds
+569.cnf
+UNSAT
+Execution Time: 0.181 seconds
+570.cnf
+UNSAT
+Execution Time: 0.1 seconds
+571.cnf
+UNSAT
+Execution Time: 0.205 seconds
+572.cnf
+UNSAT
+Execution Time: 0.143 seconds
+573.cnf
+UNSAT
+Execution Time: 0.144 seconds
+574.cnf
+UNSAT
+Execution Time: 0.126 seconds
+575.cnf
+UNSAT
+Execution Time: 0.098 seconds
+576.cnf
+UNSAT
+Execution Time: 0.14 seconds
+577.cnf
+UNSAT
+Execution Time: 0.221 seconds
+578.cnf
+UNSAT
+Execution Time: 0.074 seconds
+579.cnf
+UNSAT
+Execution Time: 0.248 seconds
+580.cnf
+UNSAT
+Execution Time: 0.107 seconds
+581.cnf
+UNSAT
+Execution Time: 0.097 seconds
+582.cnf
+UNSAT
+Execution Time: 0.077 seconds
+583.cnf
+UNSAT
+Execution Time: 0.091 seconds
+584.cnf
+UNSAT
+Execution Time: 0.2 seconds
+585.cnf
+UNSAT
+Execution Time: 0.232 seconds
+586.cnf
+UNSAT
+Execution Time: 0.169 seconds
+587.cnf
+UNSAT
+Execution Time: 0.211 seconds
+588.cnf
+UNSAT
+Execution Time: 0.134 seconds
+589.cnf
+UNSAT
+Execution Time: 0.208 seconds
+590.cnf
+UNSAT
+Execution Time: 0.082 seconds
+591.cnf
+UNSAT
+Execution Time: 0.177 seconds
+592.cnf
+UNSAT
+Execution Time: 0.052 seconds
+593.cnf
+UNSAT
+Execution Time: 0.189 seconds
+594.cnf
+UNSAT
+Execution Time: 0.199 seconds
+595.cnf
+UNSAT
+Execution Time: 0.079 seconds
+596.cnf
+UNSAT
+Execution Time: 0.164 seconds
+597.cnf
+UNSAT
+Execution Time: 0.103 seconds
+598.cnf
+UNSAT
+Execution Time: 0.053 seconds
+599.cnf
+UNSAT
+Execution Time: 0.175 seconds
+600.cnf
+UNSAT
+Execution Time: 0.246 seconds
+601.cnf
+UNSAT
+Execution Time: 0.09 seconds
+602.cnf
+UNSAT
+Execution Time: 0.144 seconds
+603.cnf
+UNSAT
+Execution Time: 0.186 seconds
+604.cnf
+UNSAT
+Execution Time: 0.173 seconds
+605.cnf
+UNSAT
+Execution Time: 0.172 seconds
+606.cnf
+UNSAT
+Execution Time: 0.091 seconds
+607.cnf
+UNSAT
+Execution Time: 0.097 seconds
+608.cnf
+UNSAT
+Execution Time: 0.099 seconds
+609.cnf
+UNSAT
+Execution Time: 0.105 seconds
+610.cnf
+UNSAT
+Execution Time: 0.079 seconds
+611.cnf
+UNSAT
+Execution Time: 0.257 seconds
+612.cnf
+UNSAT
+Execution Time: 0.17 seconds
+613.cnf
+UNSAT
+Execution Time: 0.157 seconds
+614.cnf
+UNSAT
+Execution Time: 0.104 seconds
+615.cnf
+UNSAT
+Execution Time: 0.071 seconds
+616.cnf
+UNSAT
+Execution Time: 0.217 seconds
+617.cnf
+UNSAT
+Execution Time: 0.264 seconds
+618.cnf
+UNSAT
+Execution Time: 0.099 seconds
+619.cnf
+UNSAT
+Execution Time: 0.132 seconds
+620.cnf
+UNSAT
+Execution Time: 0.169 seconds
+621.cnf
+UNSAT
+Execution Time: 0.09 seconds
+622.cnf
+UNSAT
+Execution Time: 0.229 seconds
+623.cnf
+UNSAT
+Execution Time: 0.212 seconds
+624.cnf
+UNSAT
+Execution Time: 0.151 seconds
+625.cnf
+UNSAT
+Execution Time: 0.168 seconds
+626.cnf
+UNSAT
+Execution Time: 0.168 seconds
+627.cnf
+UNSAT
+Execution Time: 0.065 seconds
+628.cnf
+UNSAT
+Execution Time: 0.086 seconds
+629.cnf
+UNSAT
+Execution Time: 0.121 seconds
+630.cnf
+UNSAT
+Execution Time: 0.128 seconds
+631.cnf
+UNSAT
+Execution Time: 0.066 seconds
+632.cnf
+UNSAT
+Execution Time: 0.252 seconds
+633.cnf
+UNSAT
+Execution Time: 0.173 seconds
+634.cnf
+UNSAT
+Execution Time: 0.144 seconds
+635.cnf
+UNSAT
+Execution Time: 0.198 seconds
+636.cnf
+UNSAT
+Execution Time: 0.107 seconds
+637.cnf
+UNSAT
+Execution Time: 0.24 seconds
+638.cnf
+UNSAT
+Execution Time: 0.089 seconds
+639.cnf
+UNSAT
+Execution Time: 0.083 seconds
+640.cnf
+UNSAT
+Execution Time: 0.093 seconds
+641.cnf
+UNSAT
+Execution Time: 0.12 seconds
+642.cnf
+UNSAT
+Execution Time: 0.077 seconds
+643.cnf
+UNSAT
+Execution Time: 0.103 seconds
+644.cnf
+UNSAT
+Execution Time: 0.1 seconds
+645.cnf
+UNSAT
+Execution Time: 0.186 seconds
+646.cnf
+UNSAT
+Execution Time: 0.124 seconds
+647.cnf
+UNSAT
+Execution Time: 0.207 seconds
+648.cnf
+UNSAT
+Execution Time: 0.149 seconds
+649.cnf
+UNSAT
+Execution Time: 0.168 seconds
+650.cnf
+UNSAT
+Execution Time: 0.347 seconds
+651.cnf
+UNSAT
+Execution Time: 0.206 seconds
+652.cnf
+UNSAT
+Execution Time: 0.123 seconds
+653.cnf
+UNSAT
+Execution Time: 0.087 seconds
+654.cnf
+UNSAT
+Execution Time: 0.215 seconds
+655.cnf
+UNSAT
+Execution Time: 0.093 seconds
+656.cnf
+UNSAT
+Execution Time: 0.093 seconds
+657.cnf
+UNSAT
+Execution Time: 0.128 seconds
+658.cnf
+UNSAT
+Execution Time: 0.206 seconds
+659.cnf
+UNSAT
+Execution Time: 0.231 seconds
+660.cnf
+UNSAT
+Execution Time: 0.272 seconds
+661.cnf
+UNSAT
+Execution Time: 0.147 seconds
+662.cnf
+UNSAT
+Execution Time: 0.248 seconds
+663.cnf
+UNSAT
+Execution Time: 0.07 seconds
+664.cnf
+UNSAT
+Execution Time: 0.274 seconds
+665.cnf
+UNSAT
+Execution Time: 0.147 seconds
+666.cnf
+UNSAT
+Execution Time: 0.119 seconds
+667.cnf
+UNSAT
+Execution Time: 0.107 seconds
+668.cnf
+UNSAT
+Execution Time: 0.124 seconds
+669.cnf
+UNSAT
+Execution Time: 0.137 seconds
+670.cnf
+UNSAT
+Execution Time: 0.216 seconds
+671.cnf
+UNSAT
+Execution Time: 0.144 seconds
+672.cnf
+UNSAT
+Execution Time: 0.104 seconds
+673.cnf
+UNSAT
+Execution Time: 0.088 seconds
+674.cnf
+UNSAT
+Execution Time: 0.11 seconds
+675.cnf
+UNSAT
+Execution Time: 0.116 seconds
+676.cnf
+UNSAT
+Execution Time: 0.164 seconds
+677.cnf
+UNSAT
+Execution Time: 0.213 seconds
+678.cnf
+UNSAT
+Execution Time: 0.106 seconds
+679.cnf
+UNSAT
+Execution Time: 0.124 seconds
+680.cnf
+UNSAT
+Execution Time: 0.105 seconds
+681.cnf
+UNSAT
+Execution Time: 0.113 seconds
+682.cnf
+UNSAT
+Execution Time: 0.108 seconds
+683.cnf
+UNSAT
+Execution Time: 0.109 seconds
+684.cnf
+UNSAT
+Execution Time: 0.101 seconds
+685.cnf
+UNSAT
+Execution Time: 0.151 seconds
+686.cnf
+UNSAT
+Execution Time: 0.094 seconds
+687.cnf
+UNSAT
+Execution Time: 0.126 seconds
+688.cnf
+UNSAT
+Execution Time: 0.138 seconds
+689.cnf
+UNSAT
+Execution Time: 0.2 seconds
+690.cnf
+UNSAT
+Execution Time: 0.175 seconds
+691.cnf
+UNSAT
+Execution Time: 0.108 seconds
+692.cnf
+UNSAT
+Execution Time: 0.126 seconds
+693.cnf
+UNSAT
+Execution Time: 0.187 seconds
+694.cnf
+UNSAT
+Execution Time: 0.046 seconds
+695.cnf
+UNSAT
+Execution Time: 0.094 seconds
+696.cnf
+UNSAT
+Execution Time: 0.14 seconds
+697.cnf
+UNSAT
+Execution Time: 0.136 seconds
+698.cnf
+UNSAT
+Execution Time: 0.075 seconds
+699.cnf
+UNSAT
+Execution Time: 0.096 seconds
+700.cnf
+UNSAT
+Execution Time: 0.191 seconds
+701.cnf
+UNSAT
+Execution Time: 0.081 seconds
+702.cnf
+UNSAT
+Execution Time: 0.167 seconds
+703.cnf
+UNSAT
+Execution Time: 0.076 seconds
+704.cnf
+UNSAT
+Execution Time: 0.116 seconds
+705.cnf
+UNSAT
+Execution Time: 0.182 seconds
+706.cnf
+UNSAT
+Execution Time: 0.103 seconds
+707.cnf
+UNSAT
+Execution Time: 0.2 seconds
+708.cnf
+UNSAT
+Execution Time: 0.108 seconds
+709.cnf
+UNSAT
+Execution Time: 0.215 seconds
+710.cnf
+UNSAT
+Execution Time: 0.281 seconds
+711.cnf
+UNSAT
+Execution Time: 0.205 seconds
+712.cnf
+UNSAT
+Execution Time: 0.289 seconds
+713.cnf
+UNSAT
+Execution Time: 0.128 seconds
+714.cnf
+UNSAT
+Execution Time: 0.24 seconds
+715.cnf
+UNSAT
+Execution Time: 0.238 seconds
+716.cnf
+UNSAT
+Execution Time: 0.139 seconds
+717.cnf
+UNSAT
+Execution Time: 0.119 seconds
+718.cnf
+UNSAT
+Execution Time: 0.176 seconds
+719.cnf
+UNSAT
+Execution Time: 0.162 seconds
+720.cnf
+UNSAT
+Execution Time: 0.075 seconds
+721.cnf
+UNSAT
+Execution Time: 0.165 seconds
+722.cnf
+UNSAT
+Execution Time: 0.15 seconds
+723.cnf
+UNSAT
+Execution Time: 0.218 seconds
+724.cnf
+UNSAT
+Execution Time: 0.077 seconds
+725.cnf
+UNSAT
+Execution Time: 0.111 seconds
+726.cnf
+UNSAT
+Execution Time: 0.176 seconds
+727.cnf
+UNSAT
+Execution Time: 0.19 seconds
+728.cnf
+UNSAT
+Execution Time: 0.085 seconds
+729.cnf
+UNSAT
+Execution Time: 0.087 seconds
+730.cnf
+UNSAT
+Execution Time: 0.087 seconds
+731.cnf
+UNSAT
+Execution Time: 0.191 seconds
+732.cnf
+UNSAT
+Execution Time: 0.162 seconds
+733.cnf
+UNSAT
+Execution Time: 0.066 seconds
+734.cnf
+UNSAT
+Execution Time: 0.129 seconds
+735.cnf
+UNSAT
+Execution Time: 0.126 seconds
+736.cnf
+UNSAT
+Execution Time: 0.082 seconds
+737.cnf
+UNSAT
+Execution Time: 0.21 seconds
+738.cnf
+UNSAT
+Execution Time: 0.088 seconds
+739.cnf
+UNSAT
+Execution Time: 0.121 seconds
+740.cnf
+UNSAT
+Execution Time: 0.136 seconds
+741.cnf
+UNSAT
+Execution Time: 0.134 seconds
+742.cnf
+UNSAT
+Execution Time: 0.181 seconds
+743.cnf
+UNSAT
+Execution Time: 0.262 seconds
+744.cnf
+UNSAT
+Execution Time: 0.171 seconds
+745.cnf
+UNSAT
+Execution Time: 0.155 seconds
+746.cnf
+UNSAT
+Execution Time: 0.138 seconds
+747.cnf
+UNSAT
+Execution Time: 0.077 seconds
+748.cnf
+UNSAT
+Execution Time: 0.137 seconds
+749.cnf
+UNSAT
+Execution Time: 0.245 seconds
+750.cnf
+UNSAT
+Execution Time: 0.049 seconds
+751.cnf
+UNSAT
+Execution Time: 0.187 seconds
+752.cnf
+UNSAT
+Execution Time: 0.153 seconds
+753.cnf
+UNSAT
+Execution Time: 0.075 seconds
+754.cnf
+UNSAT
+Execution Time: 0.115 seconds
+755.cnf
+UNSAT
+Execution Time: 0.154 seconds
+756.cnf
+UNSAT
+Execution Time: 0.083 seconds
+757.cnf
+UNSAT
+Execution Time: 0.127 seconds
+758.cnf
+UNSAT
+Execution Time: 0.112 seconds
+759.cnf
+UNSAT
+Execution Time: 0.11 seconds
+760.cnf
+UNSAT
+Execution Time: 0.108 seconds
+761.cnf
+UNSAT
+Execution Time: 0.179 seconds
+762.cnf
+UNSAT
+Execution Time: 0.145 seconds
+763.cnf
+UNSAT
+Execution Time: 0.13 seconds
+764.cnf
+UNSAT
+Execution Time: 0.155 seconds
+765.cnf
+UNSAT
+Execution Time: 0.302 seconds
+766.cnf
+UNSAT
+Execution Time: 0.117 seconds
+767.cnf
+UNSAT
+Execution Time: 0.259 seconds
+768.cnf
+UNSAT
+Execution Time: 0.147 seconds
+769.cnf
+UNSAT
+Execution Time: 0.059 seconds
+770.cnf
+UNSAT
+Execution Time: 0.139 seconds
+771.cnf
+UNSAT
+Execution Time: 0.086 seconds
+772.cnf
+UNSAT
+Execution Time: 0.052 seconds
+773.cnf
+UNSAT
+Execution Time: 0.093 seconds
+774.cnf
+UNSAT
+Execution Time: 0.059 seconds
+775.cnf
+UNSAT
+Execution Time: 0.215 seconds
+776.cnf
+UNSAT
+Execution Time: 0.072 seconds
+777.cnf
+UNSAT
+Execution Time: 0.141 seconds
+778.cnf
+UNSAT
+Execution Time: 0.18 seconds
+779.cnf
+UNSAT
+Execution Time: 0.105 seconds
+780.cnf
+UNSAT
+Execution Time: 0.088 seconds
+781.cnf
+UNSAT
+Execution Time: 0.167 seconds
+782.cnf
+UNSAT
+Execution Time: 0.127 seconds
+783.cnf
+UNSAT
+Execution Time: 0.103 seconds
+784.cnf
+UNSAT
+Execution Time: 0.158 seconds
+785.cnf
+UNSAT
+Execution Time: 0.055 seconds
+786.cnf
+UNSAT
+Execution Time: 0.14 seconds
+787.cnf
+UNSAT
+Execution Time: 0.122 seconds
+788.cnf
+UNSAT
+Execution Time: 0.153 seconds
+789.cnf
+UNSAT
+Execution Time: 0.189 seconds
+790.cnf
+UNSAT
+Execution Time: 0.093 seconds
+791.cnf
+UNSAT
+Execution Time: 0.064 seconds
+792.cnf
+UNSAT
+Execution Time: 0.234 seconds
+793.cnf
+UNSAT
+Execution Time: 0.066 seconds
+794.cnf
+UNSAT
+Execution Time: 0.099 seconds
+795.cnf
+UNSAT
+Execution Time: 0.177 seconds
+796.cnf
+UNSAT
+Execution Time: 0.123 seconds
+797.cnf
+UNSAT
+Execution Time: 0.099 seconds
+798.cnf
+UNSAT
+Execution Time: 0.135 seconds
+799.cnf
+UNSAT
+Execution Time: 0.21 seconds
+800.cnf
+UNSAT
+Execution Time: 0.118 seconds
+801.cnf
+UNSAT
+Execution Time: 0.087 seconds
+802.cnf
+UNSAT
+Execution Time: 0.084 seconds
+803.cnf
+UNSAT
+Execution Time: 0.165 seconds
+804.cnf
+UNSAT
+Execution Time: 0.135 seconds
+805.cnf
+UNSAT
+Execution Time: 0.124 seconds
+806.cnf
+UNSAT
+Execution Time: 0.097 seconds
+807.cnf
+UNSAT
+Execution Time: 0.181 seconds
+808.cnf
+UNSAT
+Execution Time: 0.206 seconds
+809.cnf
+UNSAT
+Execution Time: 0.068 seconds
+810.cnf
+UNSAT
+Execution Time: 0.196 seconds
+811.cnf
+UNSAT
+Execution Time: 0.261 seconds
+812.cnf
+UNSAT
+Execution Time: 0.119 seconds
+813.cnf
+UNSAT
+Execution Time: 0.198 seconds
+814.cnf
+UNSAT
+Execution Time: 0.118 seconds
+815.cnf
+UNSAT
+Execution Time: 0.091 seconds
+816.cnf
+UNSAT
+Execution Time: 0.166 seconds
+817.cnf
+UNSAT
+Execution Time: 0.139 seconds
+818.cnf
+UNSAT
+Execution Time: 0.131 seconds
+819.cnf
+UNSAT
+Execution Time: 0.167 seconds
+820.cnf
+UNSAT
+Execution Time: 0.087 seconds
+821.cnf
+UNSAT
+Execution Time: 0.125 seconds
+822.cnf
+UNSAT
+Execution Time: 0.191 seconds
+823.cnf
+UNSAT
+Execution Time: 0.126 seconds
+824.cnf
+UNSAT
+Execution Time: 0.126 seconds
+825.cnf
+UNSAT
+Execution Time: 0.203 seconds
+826.cnf
+UNSAT
+Execution Time: 0.162 seconds
+827.cnf
+UNSAT
+Execution Time: 0.11 seconds
+828.cnf
+UNSAT
+Execution Time: 0.067 seconds
+829.cnf
+UNSAT
+Execution Time: 0.118 seconds
+830.cnf
+UNSAT
+Execution Time: 0.154 seconds
+831.cnf
+UNSAT
+Execution Time: 0.151 seconds
+832.cnf
+UNSAT
+Execution Time: 0.139 seconds
+833.cnf
+UNSAT
+Execution Time: 0.161 seconds
+834.cnf
+UNSAT
+Execution Time: 0.13 seconds
+835.cnf
+UNSAT
+Execution Time: 0.191 seconds
+836.cnf
+UNSAT
+Execution Time: 0.233 seconds
+837.cnf
+UNSAT
+Execution Time: 0.145 seconds
+838.cnf
+UNSAT
+Execution Time: 0.149 seconds
+839.cnf
+UNSAT
+Execution Time: 0.14 seconds
+840.cnf
+UNSAT
+Execution Time: 0.047 seconds
+841.cnf
+UNSAT
+Execution Time: 0.106 seconds
+842.cnf
+UNSAT
+Execution Time: 0.187 seconds
+843.cnf
+UNSAT
+Execution Time: 0.084 seconds
+844.cnf
+UNSAT
+Execution Time: 0.052 seconds
+845.cnf
+UNSAT
+Execution Time: 0.099 seconds
+846.cnf
+UNSAT
+Execution Time: 0.21 seconds
+847.cnf
+UNSAT
+Execution Time: 0.169 seconds
+848.cnf
+UNSAT
+Execution Time: 0.165 seconds
+849.cnf
+UNSAT
+Execution Time: 0.147 seconds
+850.cnf
+UNSAT
+Execution Time: 0.075 seconds
+851.cnf
+UNSAT
+Execution Time: 0.197 seconds
+852.cnf
+UNSAT
+Execution Time: 0.217 seconds
+853.cnf
+UNSAT
+Execution Time: 0.142 seconds
+854.cnf
+UNSAT
+Execution Time: 0.121 seconds
+855.cnf
+UNSAT
+Execution Time: 0.104 seconds
+856.cnf
+UNSAT
+Execution Time: 0.15 seconds
+857.cnf
+UNSAT
+Execution Time: 0.178 seconds
+858.cnf
+UNSAT
+Execution Time: 0.185 seconds
+859.cnf
+UNSAT
+Execution Time: 0.121 seconds
+860.cnf
+UNSAT
+Execution Time: 0.117 seconds
+861.cnf
+UNSAT
+Execution Time: 0.112 seconds
+862.cnf
+UNSAT
+Execution Time: 0.137 seconds
+863.cnf
+UNSAT
+Execution Time: 0.115 seconds
+864.cnf
+UNSAT
+Execution Time: 0.133 seconds
+865.cnf
+UNSAT
+Execution Time: 0.193 seconds
+866.cnf
+UNSAT
+Execution Time: 0.203 seconds
+867.cnf
+UNSAT
+Execution Time: 0.288 seconds
+868.cnf
+UNSAT
+Execution Time: 0.07 seconds
+869.cnf
+UNSAT
+Execution Time: 0.169 seconds
+870.cnf
+UNSAT
+Execution Time: 0.146 seconds
+871.cnf
+UNSAT
+Execution Time: 0.128 seconds
+872.cnf
+UNSAT
+Execution Time: 0.112 seconds
+873.cnf
+UNSAT
+Execution Time: 0.146 seconds
+874.cnf
+UNSAT
+Execution Time: 0.107 seconds
+875.cnf
+UNSAT
+Execution Time: 0.141 seconds
+876.cnf
+UNSAT
+Execution Time: 0.16 seconds
+877.cnf
+UNSAT
+Execution Time: 0.167 seconds
+878.cnf
+UNSAT
+Execution Time: 0.18 seconds
+879.cnf
+UNSAT
+Execution Time: 0.11 seconds
+880.cnf
+UNSAT
+Execution Time: 0.161 seconds
+881.cnf
+UNSAT
+Execution Time: 0.184 seconds
+882.cnf
+UNSAT
+Execution Time: 0.131 seconds
+883.cnf
+UNSAT
+Execution Time: 0.184 seconds
+884.cnf
+UNSAT
+Execution Time: 0.171 seconds
+885.cnf
+UNSAT
+Execution Time: 0.079 seconds
+886.cnf
+UNSAT
+Execution Time: 0.201 seconds
+887.cnf
+UNSAT
+Execution Time: 0.09 seconds
+888.cnf
+UNSAT
+Execution Time: 0.166 seconds
+889.cnf
+UNSAT
+Execution Time: 0.208 seconds
+890.cnf
+UNSAT
+Execution Time: 0.088 seconds
+891.cnf
+UNSAT
+Execution Time: 0.137 seconds
+892.cnf
+UNSAT
+Execution Time: 0.127 seconds
+893.cnf
+UNSAT
+Execution Time: 0.107 seconds
+894.cnf
+UNSAT
+Execution Time: 0.09 seconds
+895.cnf
+UNSAT
+Execution Time: 0.172 seconds
+896.cnf
+UNSAT
+Execution Time: 0.189 seconds
+897.cnf
+UNSAT
+Execution Time: 0.052 seconds
+898.cnf
+UNSAT
+Execution Time: 0.076 seconds
+899.cnf
+UNSAT
+Execution Time: 0.088 seconds
+900.cnf
+UNSAT
+Execution Time: 0.166 seconds
+901.cnf
+UNSAT
+Execution Time: 0.136 seconds
+902.cnf
+UNSAT
+Execution Time: 0.074 seconds
+903.cnf
+UNSAT
+Execution Time: 0.163 seconds
+904.cnf
+UNSAT
+Execution Time: 0.133 seconds
+905.cnf
+UNSAT
+Execution Time: 0.039 seconds
+906.cnf
+UNSAT
+Execution Time: 0.138 seconds
+907.cnf
+UNSAT
+Execution Time: 0.231 seconds
+908.cnf
+UNSAT
+Execution Time: 0.067 seconds
+909.cnf
+UNSAT
+Execution Time: 0.149 seconds
+910.cnf
+UNSAT
+Execution Time: 0.154 seconds
+911.cnf
+UNSAT
+Execution Time: 0.186 seconds
+912.cnf
+UNSAT
+Execution Time: 0.153 seconds
+913.cnf
+UNSAT
+Execution Time: 0.323 seconds
+914.cnf
+UNSAT
+Execution Time: 0.112 seconds
+915.cnf
+UNSAT
+Execution Time: 0.096 seconds
+916.cnf
+UNSAT
+Execution Time: 0.099 seconds
+917.cnf
+UNSAT
+Execution Time: 0.061 seconds
+918.cnf
+UNSAT
+Execution Time: 0.165 seconds
+919.cnf
+UNSAT
+Execution Time: 0.126 seconds
+920.cnf
+UNSAT
+Execution Time: 0.092 seconds
+921.cnf
+UNSAT
+Execution Time: 0.231 seconds
+922.cnf
+UNSAT
+Execution Time: 0.161 seconds
+923.cnf
+UNSAT
+Execution Time: 0.131 seconds
+924.cnf
+UNSAT
+Execution Time: 0.1 seconds
+925.cnf
+UNSAT
+Execution Time: 0.166 seconds
+926.cnf
+UNSAT
+Execution Time: 0.189 seconds
+927.cnf
+UNSAT
+Execution Time: 0.028 seconds
+928.cnf
+UNSAT
+Execution Time: 0.109 seconds
+929.cnf
+UNSAT
+Execution Time: 0.198 seconds
+930.cnf
+UNSAT
+Execution Time: 0.174 seconds
+931.cnf
+UNSAT
+Execution Time: 0.194 seconds
+932.cnf
+UNSAT
+Execution Time: 0.133 seconds
+933.cnf
+UNSAT
+Execution Time: 0.088 seconds
+934.cnf
+UNSAT
+Execution Time: 0.112 seconds
+935.cnf
+UNSAT
+Execution Time: 0.166 seconds
+936.cnf
+UNSAT
+Execution Time: 0.175 seconds
+937.cnf
+UNSAT
+Execution Time: 0.071 seconds
+938.cnf
+UNSAT
+Execution Time: 0.158 seconds
+939.cnf
+UNSAT
+Execution Time: 0.089 seconds
+940.cnf
+UNSAT
+Execution Time: 0.162 seconds
+941.cnf
+UNSAT
+Execution Time: 0.135 seconds
+942.cnf
+UNSAT
+Execution Time: 0.19 seconds
+943.cnf
+UNSAT
+Execution Time: 0.193 seconds
+944.cnf
+UNSAT
+Execution Time: 0.072 seconds
+945.cnf
+UNSAT
+Execution Time: 0.143 seconds
+946.cnf
+UNSAT
+Execution Time: 0.124 seconds
+947.cnf
+UNSAT
+Execution Time: 0.224 seconds
+948.cnf
+UNSAT
+Execution Time: 0.126 seconds
+949.cnf
+UNSAT
+Execution Time: 0.234 seconds
+950.cnf
+UNSAT
+Execution Time: 0.114 seconds
+951.cnf
+UNSAT
+Execution Time: 0.184 seconds
+952.cnf
+UNSAT
+Execution Time: 0.237 seconds
+953.cnf
+UNSAT
+Execution Time: 0.151 seconds
+954.cnf
+UNSAT
+Execution Time: 0.126 seconds
+955.cnf
+UNSAT
+Execution Time: 0.19 seconds
+956.cnf
+UNSAT
+Execution Time: 0.159 seconds
+957.cnf
+UNSAT
+Execution Time: 0.148 seconds
+958.cnf
+UNSAT
+Execution Time: 0.103 seconds
+959.cnf
+UNSAT
+Execution Time: 0.096 seconds
+960.cnf
+UNSAT
+Execution Time: 0.139 seconds
+961.cnf
+UNSAT
+Execution Time: 0.08 seconds
+962.cnf
+UNSAT
+Execution Time: 0.044 seconds
+963.cnf
+UNSAT
+Execution Time: 0.205 seconds
+964.cnf
+UNSAT
+Execution Time: 0.061 seconds
+965.cnf
+UNSAT
+Execution Time: 0.213 seconds
+966.cnf
+UNSAT
+Execution Time: 0.098 seconds
+967.cnf
+UNSAT
+Execution Time: 0.205 seconds
+968.cnf
+UNSAT
+Execution Time: 0.152 seconds
+969.cnf
+UNSAT
+Execution Time: 0.138 seconds
+970.cnf
+UNSAT
+Execution Time: 0.153 seconds
+971.cnf
+UNSAT
+Execution Time: 0.184 seconds
+972.cnf
+UNSAT
+Execution Time: 0.116 seconds
+973.cnf
+UNSAT
+Execution Time: 0.124 seconds
+974.cnf
+UNSAT
+Execution Time: 0.076 seconds
+975.cnf
+UNSAT
+Execution Time: 0.096 seconds
+976.cnf
+UNSAT
+Execution Time: 0.243 seconds
+977.cnf
+UNSAT
+Execution Time: 0.108 seconds
+978.cnf
+UNSAT
+Execution Time: 0.124 seconds
+979.cnf
+UNSAT
+Execution Time: 0.138 seconds
+980.cnf
+UNSAT
+Execution Time: 0.152 seconds
+981.cnf
+UNSAT
+Execution Time: 0.167 seconds
+982.cnf
+UNSAT
+Execution Time: 0.134 seconds
+983.cnf
+UNSAT
+Execution Time: 0.092 seconds
+984.cnf
+UNSAT
+Execution Time: 0.103 seconds
+985.cnf
+UNSAT
+Execution Time: 0.25 seconds
+986.cnf
+UNSAT
+Execution Time: 0.109 seconds
+987.cnf
+UNSAT
+Execution Time: 0.09 seconds
+988.cnf
+UNSAT
+Execution Time: 0.127 seconds
+989.cnf
+UNSAT
+Execution Time: 0.147 seconds
+990.cnf
+UNSAT
+Execution Time: 0.318 seconds
+991.cnf
+UNSAT
+Execution Time: 0.14 seconds
+992.cnf
+UNSAT
+Execution Time: 0.233 seconds
+993.cnf
+UNSAT
+Execution Time: 0.192 seconds
+994.cnf
+UNSAT
+Execution Time: 0.194 seconds
+995.cnf
+UNSAT
+Execution Time: 0.079 seconds
+996.cnf
+UNSAT
+Execution Time: 0.068 seconds
+997.cnf
+UNSAT
+Execution Time: 0.093 seconds
+998.cnf
+UNSAT
+Execution Time: 0.11 seconds
+999.cnf
+UNSAT
+Execution Time: 0.074 seconds
+1000.cnf
+UNSAT
+Execution Time: 0.194 seconds
