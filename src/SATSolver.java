@@ -242,9 +242,7 @@ public class SATSolver {
             Map<String, String> row;
             int fileCounter = 1;
             this.writer = new PrintWriter(file.getName() + "-" + strategyName + ".txt");
-
-            // FIXME: Fix toggle - solver not triggered in non-benchmark IDE mode and no output to file either
-
+            
             while ((row = mapReader.read(readHeader)) != null) {
                 if (file.isDirectory()) {
                     String filename = fileCounter + ".cnf";
