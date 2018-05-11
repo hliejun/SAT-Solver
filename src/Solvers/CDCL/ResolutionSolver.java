@@ -6,11 +6,15 @@ import java.util.*;
 
 public class ResolutionSolver extends AllClauseSolver {
 
+    private HashMap<Clause, ArrayList<Clause>> resolutions;
     private HashSet<Clause> learntAntecedents;
+    private Clause emptyClause;
 
     public ResolutionSolver(Clauses clauses, int literalsCount) {
         super(clauses, literalsCount);
+        resolutions = new HashMap<>();
         learntAntecedents = new HashSet<>();
+        emptyClause = null;
     }
 
     @Override
@@ -117,7 +121,9 @@ public class ResolutionSolver extends AllClauseSolver {
     @Override
     protected void resetSolver() {
         super.resetSolver();
+        resolutions = new HashMap<>();
         learntAntecedents = new HashSet<>();
+        emptyClause = null;
     }
 
     private boolean certifyUnsatisfiable(HashSet<Clause> seedClauses) {
@@ -145,11 +151,14 @@ public class ResolutionSolver extends AllClauseSolver {
 
                     Clause resolvedClause = applyResolution(clauseA, clauseB);
                     if (resolvedClause.getLiterals().isEmpty()) {
-                        // TODO: Save reference for tracing (finalClause = resolvedClause)
+                        emptyClause = resolvedClause;
                         return true;
                     }
-                    if (resolvedClause.getLiterals().size() <= threshold) {
-                        // TODO: Update resolution trace map if absent (resolvedClause: {clauseA, clauseB})
+                    if (resolvedClause.getLiterals().size() <= threshold && !resolutions.containsKey(resolvedClause)) {
+                        ArrayList<Clause> workingSet = new ArrayList<>();
+                        workingSet.add(clauseA);
+                        workingSet.add(clauseB);
+                        resolutions.put(resolvedClause, workingSet);
                         derivedSet.add(resolvedClause);
                     }
                 }
@@ -169,11 +178,36 @@ public class ResolutionSolver extends AllClauseSolver {
     }
 
     private void outputProof() {
-        // TODO: Output proof to print or to file using resolution trace map...
-        // If in map, recursively extract and append to new set
-        // Insert new set to front of main set
+        if (emptyClause == null) {
+            return;
+        }
 
-        // TODO: Make toggleable between print to console and to file...
+        ArrayList<String> clausesOutput = new ArrayList<>();
+        ArrayList<String> workingsOutput = new ArrayList<>();
+
+        HashSet<Clause> clauses = new HashSet<>();
+        HashSet<Clause> currentClauses = new HashSet<>();
+        currentClauses.add(emptyClause);
+
+        while (!currentClauses.isEmpty()) {
+            // 1. Create derived workings list
+            // 2. Create removed clauses set
+            // 3. Create complex clauses set
+            // 4. For each clause in current clauses set, check for resolution reference
+                // a. If reference exists, parse and append to derived workings list
+                // b. Add all 3 clauses to clause log set
+                // c. Add clause to removed clause set
+                // d. Add complex derived working clauses to complex clause set
+            // 5. Insert derived workings to start of workings output list
+            // 6. Remove removed clauses from clauses set
+            // 7. Add complex clauses to clauses set
+        }
+
+        // For all clauses in clauses set, populate clauses output
+
+        // If in file output mode, write clause and working output to file
+        // Otherwise, print clause and working output to console log
+
         System.out.println("Certified UNSAT!");
     }
 
