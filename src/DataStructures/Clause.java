@@ -123,4 +123,9 @@ public class Clause implements Comparable<Clause> {
         }
     }
 
+    @Override
+    public int hashCode() {
+        return toString().hashCode();
+    }
+
 }

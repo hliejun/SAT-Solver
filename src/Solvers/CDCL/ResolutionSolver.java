@@ -149,8 +149,18 @@ public class ResolutionSolver extends AllClauseSolver {
                         continue;
                     }
 
+                    if (clauseA.equals(clauseB)) {
+                        continue;
+                    }
+
                     Clause resolvedClause = applyResolution(clauseA, clauseB);
                     if (resolvedClause.getLiterals().isEmpty()) {
+                        ArrayList<Clause> workingSet = new ArrayList<>();
+                        workingSet.add(clauseA);
+                        workingSet.add(clauseB);
+                        resolutions.put(resolvedClause, workingSet);
+                        derivedSet.add(resolvedClause);
+
                         emptyClause = resolvedClause;
                         return true;
                     }
@@ -182,33 +192,66 @@ public class ResolutionSolver extends AllClauseSolver {
             return;
         }
 
+        int identifier = 1;
+
         ArrayList<String> clausesOutput = new ArrayList<>();
         ArrayList<String> workingsOutput = new ArrayList<>();
 
-        HashSet<Clause> clauses = new HashSet<>();
+        HashMap<Clause, Integer> clauses = new HashMap<>();
         HashSet<Clause> currentClauses = new HashSet<>();
         currentClauses.add(emptyClause);
 
         while (!currentClauses.isEmpty()) {
-            // 1. Create derived workings list
-            // 2. Create removed clauses set
-            // 3. Create complex clauses set
-            // 4. For each clause in current clauses set, check for resolution reference
-                // a. If reference exists, parse and append to derived workings list
-                // b. Add all 3 clauses to clause log set
-                // c. Add clause to removed clause set
-                // d. Add complex derived working clauses to complex clause set
-            // 5. Insert derived workings to start of workings output list
-            // 6. Remove removed clauses from clauses set
-            // 7. Add complex clauses to clauses set
+            ArrayList<String> workings = new ArrayList<>();
+            HashSet<Clause> complexClauses = new HashSet<>();
+
+            for (Clause clause : currentClauses) {
+                ArrayList<Clause> working = resolutions.get(clause);
+
+                if (working == null || working.size() != 2) {
+
+                    System.err.println("Bad working: " + working);
+                    break; // This should not happen (invariant guard)
+                }
+
+                ArrayList<Clause> workingClauses = new ArrayList<>();
+                workingClauses.addAll(working);
+                workingClauses.add(clause);
+
+                ArrayList<String> workingClauseIndices = new ArrayList<>();
+
+                for (Clause workingClause : workingClauses) {
+                    if (!clauses.containsKey(workingClause) && workingClause.getLiterals().isEmpty()) {
+                        clauses.put(workingClause, -1);
+                    } else if (!clauses.containsKey(workingClause)) {
+                        clauses.put(workingClause, identifier);
+                        identifier += 1;
+
+                        if (!workingClause.equals(clause) && resolutions.containsKey(workingClause)) {
+                            complexClauses.add(workingClause);
+                        }
+                    }
+
+                    workingClauseIndices.add(clauses.get(workingClause).toString());
+                }
+
+                workings.add(String.join(" ", workingClauseIndices));
+            }
+            workingsOutput.addAll(0, workings);
+            currentClauses = complexClauses;
         }
 
-        // For all clauses in clauses set, populate clauses output
+        clauses.forEach((clause, index) -> {
+             clausesOutput.add(index + " " + clause);
+        });
 
-        // If in file output mode, write clause and working output to file
-        // Otherwise, print clause and working output to console log
+        // TODO: Add toggle
+        // If in file output mode, write to file
+        // Otherwise, print to console log
 
-        System.out.println("Certified UNSAT!");
+        System.out.println("v " + identifier);
+        clausesOutput.forEach(System.out::println);
+        workingsOutput.forEach(System.out::println);
     }
 
 }

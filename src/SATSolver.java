@@ -72,7 +72,7 @@ public class SATSolver {
             strategy = Strategy.Resolution_CDCL;
             strategyName = strategy.name();
             //path = IDE_ENVIRONMENT ? "./puzzle/einstein.cnf" : "../puzzle/einstein.cnf";
-            path = IDE_ENVIRONMENT ? "./test/testcases/unsat/2.cnf" : "../test/testcases/unsat/2.cnf";
+            path = IDE_ENVIRONMENT ? "./test/testcases/unsat/1.cnf" : "../test/testcases/unsat/1.cnf";
 
             //path = "./test/testcases/benchmark/125V_538C_sat/4.cnf"; // CDCL outperformed DPLL iterative here...
             //path = "./test/testcases/benchmark/250V_1065C_sat/82.cnf"; // DPLL iterative outperformed CDCL here...
