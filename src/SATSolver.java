@@ -16,7 +16,7 @@ public class SATSolver {
     private final String INVALID_ARGUMENTS_MESSAGE = "Invalid arguments. Expected: java SATSolver <strategy> <path>";
     private PrintWriter writer = null;
 
-    private final boolean IDE_ENVIRONMENT = false;
+    private final boolean IDE_ENVIRONMENT = true;
     private boolean isBenchmarkEnabled = false;
 
     private Strategy strategy = Strategy.Resolution_CDCL;
@@ -46,7 +46,7 @@ public class SATSolver {
         if (solver != null) {
             HashMap<String, Boolean> results = solver.solve();
             String output = results == null ? "UNSAT" : Utilities.getOutputFromMap(results);
-            // System.out.println(output); ////
+             System.out.println(output); ////
             this.writer.println(output); ////
 
         } else {
