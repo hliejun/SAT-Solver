@@ -1,4 +1,10 @@
 /bin/
 /.idea/*
-*.class
 
+result/production/*
+result/test/*
+
+Thumbs.db
+.DS_Store
+*.log
+*.class
